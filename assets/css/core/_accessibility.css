@@ -197,7 +197,8 @@ select:focus-visible {
     border-color: var(--zz-color-primary, #6366F1);
 }
 
-input:invalid,
+/* Invalid state - exclude search inputs (they don't need validation styling) */
+input:invalid:not([type="search"]),
 textarea:invalid {
     border-color: var(--token-color-red-500, #EF4444);
 }

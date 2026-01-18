@@ -51,6 +51,90 @@ body.post-type-archive-prompt {
     top: 100px;
 }
 
+/* Sidebar Widgets in Prompt Pages */
+.zz-prompt-sidebar .widget {
+    background: var(--zz-glass-bg, rgba(255, 255, 255, 0.75));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--zz-radius-xl, 16px);
+    padding: var(--zz-space-5, 20px);
+    margin-bottom: var(--zz-space-5, 20px);
+}
+
+.zz-prompt-sidebar .widget-title {
+    font-family: var(--zz-font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-4, 16px);
+    padding-bottom: var(--zz-space-2, 8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Search Widget in Prompt Sidebar */
+.zz-prompt-sidebar .widget_search .search-form {
+    flex-direction: column;
+    gap: 0;
+}
+
+.zz-prompt-sidebar .widget_search .search-field {
+    width: 100%;
+    padding: 14px 16px;
+    padding-inline-end: 50px;
+    border: 1px solid rgba(100, 116, 139, 0.15);
+    border-radius: var(--zz-radius-lg, 12px);
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    color: var(--zz-text-primary);
+    transition: all 0.2s ease;
+}
+
+.zz-prompt-sidebar .widget_search .search-field:focus {
+    background: #fff;
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 0 0 3px var(--zz-color-primary-light, rgba(99, 102, 241, 0.1));
+}
+
+.zz-prompt-sidebar .widget_search .search-submit {
+    position: absolute;
+    inset-inline-end: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 14px;
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    border: none;
+    border-radius: var(--zz-radius-md, 8px);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.zz-prompt-sidebar .widget_search .search-submit:hover {
+    background: var(--zz-color-primary-dark, #4F46E5);
+}
+
+/* Dark Mode - Prompt Sidebar */
+[data-theme="dark"] .zz-prompt-sidebar .widget {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.15);
+}
+
+[data-theme="dark"] .zz-prompt-sidebar .widget-title {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .zz-prompt-sidebar .widget_search .search-field {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-prompt-sidebar .widget_search .search-field:focus {
+    background: rgba(30, 41, 59, 0.95);
+}
+
 /* =========================================
    3. HEADER SECTION (Badge, Title, Meta)
    ========================================= */
@@ -948,21 +1032,26 @@ body.single-prompt .zz-prompt-card__title {
     color: #A5B4FC;
 }
 
-[data-theme="dark"] .zz-prompt-card {
+[data-theme="dark"] body.single-prompt .zz-prompt-card {
     background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="dark"] .zz-prompt-card:hover {
-    border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+[data-theme="dark"] body.single-prompt .zz-prompt-card:hover {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
-[data-theme="dark"] .zz-prompt-card__title {
-    color: #F1F5F9;
+[data-theme="dark"] .zz-prompt-card__title,
+[data-theme="dark"] body.single-prompt .zz-prompt-card__title {
+    color: #F1F5F9 !important;
 }
 
-[data-theme="dark"] .zz-prompt-card__meta {
+[data-theme="dark"] .zz-prompt-card__meta,
+[data-theme="dark"] body.single-prompt .zz-prompt-card__meta {
     color: #94A3B8;
 }
 

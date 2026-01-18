@@ -85,7 +85,7 @@ function zz_highlight_search_term($text, $query) {
                                name="s" 
                                class="zz-search-hero__input" 
                                value="<?php echo esc_attr($search_query); ?>" 
-                               placeholder="<?php esc_attr_e('Refine your search...', 'zzprompts'); ?>">
+                               placeholder="<?php esc_attr_e('Search Prompts & Articles...', 'zzprompts'); ?>">
                         <button type="submit" class="zz-search-hero__btn" aria-label="<?php esc_attr_e('Search', 'zzprompts'); ?>">
                             <i class="fas fa-search"></i>
                         </button>
@@ -163,11 +163,31 @@ function zz_highlight_search_term($text, $query) {
 
                         <article class="zz-res-card <?php echo $is_prompt ? 'zz-res-card--prompt' : 'zz-res-card--blog'; ?>">
                             
-                            <?php if (!$is_prompt && has_post_thumbnail()) : ?>
+                            <div class="zz-res-card__thumb-wrapper">
                                 <a href="<?php the_permalink(); ?>" class="zz-res-card__thumb">
-                                    <?php the_post_thumbnail('medium', array('class' => 'zz-res-card__thumb-img')); ?>
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium', array('class' => 'zz-res-card__thumb-img')); ?>
+                                    <?php else : 
+                                        // Get category for placeholder
+                                        if ($is_prompt) {
+                                            $terms = get_the_terms(get_the_ID(), 'prompt_category');
+                                            $cat_name = ($terms && !is_wp_error($terms)) ? $terms[0]->name : __('Prompt', 'zzprompts');
+                                        } else {
+                                            $categories = get_the_category();
+                                            $cat_name = !empty($categories) ? $categories[0]->name : __('Article', 'zzprompts');
+                                        }
+
+                                        // Light professional colors
+                                        $colors = ['#EEF2FF', '#ECFDF5', '#F0F9FF', '#FEF2F2', '#F5F3FF'];
+                                        $bg_color = $colors[abs(crc32($cat_name)) % count($colors)];
+                                    ?>
+                                        <div class="zz-res-card__placeholder" style="background-color: <?php echo esc_attr($bg_color); ?>;">
+                                            <span><?php echo esc_html($cat_name); ?></span>
+                                        </div>
+                                    <?php endif; ?>
                                 </a>
-                            <?php endif; ?>
+                                <span class="zz-res-card__date-badge"><?php echo esc_html(get_the_date('M d, Y')); ?></span>
+                            </div>
 
                             <div class="zz-res-card__header">
                                 <span class="zz-res-card__badge <?php echo $is_prompt ? 'zz-res-card__badge--prompt' : 'zz-res-card__badge--blog'; ?>">
