@@ -98,13 +98,23 @@ if ($sidebar_sticky) {
         <div class="zz-popular-posts">
             <?php foreach ($popular_posts as $post) : ?>
                 <div class="zz-popular-post-item">
-                    <?php if ($popular_thumbnail && !empty($post['image'])) : ?>
-                        <div class="zz-popular-post-image">
-                            <a href="<?php echo esc_url($post['url']); ?>">
+                    <div class="zz-popular-post-image">
+                        <a href="<?php echo esc_url($post['url']); ?>">
+                            <?php if ($popular_thumbnail && !empty($post['image'])) : ?>
                                 <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>">
-                            </a>
-                        </div>
-                    <?php endif; ?>
+                            <?php else : 
+                                // Get first category for color
+                                $item_cats = get_the_category($post['ID']);
+                                $item_cat_name = !empty($item_cats) ? $item_cats[0]->name : 'Blog';
+                                $colors = ['#EEF2FF', '#ECFDF5', '#F0F9FF', '#FEF2F2', '#F5F3FF'];
+                                $bg_color = $colors[abs(crc32($item_cat_name)) % count($colors)];
+                            ?>
+                                <div style="width:100%;height:100%;background-color:<?php echo esc_attr($bg_color); ?>;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:rgba(0,0,0,0.3);text-transform:uppercase;">
+                                    <?php echo esc_html(substr($item_cat_name, 0, 3)); ?>
+                                </div>
+                            <?php endif; ?>
+                        </a>
+                    </div>
                     
                     <div class="zz-popular-post-content">
                         <h4 class="zz-popular-post-title">

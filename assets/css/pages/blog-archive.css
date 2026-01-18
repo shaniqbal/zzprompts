@@ -12,31 +12,29 @@
 
 .zz-blog-hero {
     text-align: center;
-    padding: var(--zz-space-14) var(--zz-space-5) var(--zz-space-10);
+    padding: var(--zz-space-16) var(--zz-space-5) var(--zz-space-10);
 }
 
-.zz-blog-hero .container {
+/* Hero Container */
+.zz-blog-hero .zz-container {
     max-width: var(--zz-container-lg);
     margin: 0 auto;
 }
 
 /* Breadcrumbs */
+/* Breadcrumbs */
 .zz-blog-hero .zz-breadcrumbs {
     font-size: 0.85rem;
     color: var(--zz-text-muted);
-    margin-bottom: var(--zz-space-3);
+    margin-bottom: var(--zz-space-4);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--zz-space-1);
 }
 
 .zz-blog-hero .zz-breadcrumbs__link {
     color: var(--zz-text-muted);
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--zz-space-1);
     transition: color 0.2s ease;
 }
 
@@ -45,7 +43,8 @@
 }
 
 .zz-blog-hero .zz-breadcrumbs__separator {
-    color: var(--zz-border-light);
+    margin: 0 var(--zz-space-2);
+    color: var(--zz-text-light);
 }
 
 .zz-blog-hero .zz-breadcrumbs__current {
@@ -77,22 +76,26 @@
 .zz-blog-layout {
     display: grid;
     grid-template-columns: 1fr 340px;
-    gap: var(--zz-space-10);
+    gap: var(--zz-gap-layout);
     align-items: start;
+    width: 100%;
 }
 
 .zz-blog-main-content {
-    min-width: 0; /* Prevent grid blowout */
+    min-width: 0;
+    /* Prevent grid blowout */
 }
 
 /* ==========================================================================
    3. BLOG GRID (3 Columns)
    ========================================================================== */
 
-.zz-blog-section .zz-blog-grid {
+/* Force 3 items per row on Archive */
+body.zz-layout-modern .zz-blog-layout .zz-blog-grid,
+body.zz-layout-modern .zz-blog-full .zz-blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--zz-space-6);
+    gap: var(--zz-gap-cards);
     margin-bottom: var(--zz-space-12);
 }
 
@@ -161,6 +164,25 @@
     z-index: 1;
 }
 
+.zz-blog-card__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--zz-font-heading, inherit);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-align: center;
+    padding: var(--zz-space-4);
+    transition: transform 0.4s ease;
+}
+
+.zz-blog-card:hover .zz-blog-card__placeholder {
+    transform: scale(1.05);
+}
+
 /* Content Area */
 .zz-blog-card__content {
     display: flex;
@@ -188,12 +210,10 @@
     gap: 4px;
 }
 
-.zz-blog-card__read-time::before {
-    content: '\f017'; /* fa-clock */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 400;
-    color: var(--zz-color-primary);
-    font-size: 0.8em;
+.zz-blog-card__read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .zz-blog-card__category {
@@ -307,10 +327,8 @@
 
 /* Search Widget */
 .zz-search-widget {
-    background: var(--zz-glass-surface, rgba(255, 255, 255, 0.75));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    background: #fff;
+    border: 1px solid var(--zz-border-light, #eee);
     border-radius: var(--zz-radius-xl);
     padding: var(--zz-space-6);
     margin-bottom: var(--zz-space-6);
@@ -420,10 +438,8 @@
 
 /* Categories Widget (Pills Style) */
 .zz-categories-widget {
-    background: var(--zz-glass-surface, rgba(255, 255, 255, 0.75));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    background: #fff;
+    border: 1px solid var(--zz-border-light, #eee);
     border-radius: var(--zz-radius-xl);
     padding: var(--zz-space-6);
     margin-bottom: var(--zz-space-6);
@@ -471,10 +487,8 @@
 
 /* Popular/Trending Posts Widget */
 .zz-popular-widget {
-    background: var(--zz-glass-surface, rgba(255, 255, 255, 0.75));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    background: #fff;
+    border: 1px solid var(--zz-border-light, #eee);
     border-radius: var(--zz-radius-xl);
     padding: var(--zz-space-6);
     margin-bottom: var(--zz-space-6);
@@ -493,35 +507,70 @@
     align-items: flex-start;
 }
 
-.zz-popular-post-thumb {
+.zz-popular-post-image {
     width: 60px;
     height: 60px;
     border-radius: var(--zz-radius-md);
-    object-fit: cover;
+    overflow: hidden;
     flex-shrink: 0;
 }
 
-.zz-popular-post-info h5 {
-    font-size: 0.9rem;
+.zz-popular-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zz-popular-post-content {
+    flex: 1;
+}
+
+.zz-popular-post-title {
+    font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 4px;
     color: var(--zz-text-primary);
 }
 
-.zz-popular-post-info h5 a {
+.zz-popular-post-title a {
     color: inherit;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.zz-popular-post-info h5 a:hover {
+.zz-popular-post-title a:hover {
     color: var(--zz-color-primary);
 }
 
 .zz-popular-post-date {
     font-size: 0.75rem;
     color: var(--zz-text-muted);
+}
+
+/* Fix Explore Topics Pills to look like the image (clean, light, colored on hover) */
+.zz-categories-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--zz-space-2);
+}
+
+.zz-category-pill {
+    background: #fff;
+    border: 1px solid var(--zz-border-light);
+    padding: 6px 14px;
+    border-radius: var(--zz-radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.zz-category-pill:hover {
+    border-color: var(--zz-color-primary);
+    color: var(--zz-color-primary);
+    transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -568,33 +617,58 @@
    7. NO RESULTS STATE
    ========================================================================== */
 
+
+
 .zz-no-results {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: var(--zz-space-12) var(--zz-space-6);
     text-align: center;
-    padding: var(--zz-space-16) var(--zz-space-4);
+    background: #fff;
+    border: 1px solid var(--zz-border-light, #eee);
+    border-radius: var(--zz-radius-xl);
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.zz-no-results__content {
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 .zz-no-results__icon {
-    width: 80px;
-    height: 80px;
-    background: var(--zz-bg-surface-secondary, #F3F4F6);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto var(--zz-space-6);
+    font-size: 3.5rem;
     color: var(--zz-text-muted);
+    margin-bottom: var(--zz-space-6);
+    opacity: 0.5;
 }
 
 .zz-no-results h3 {
     font-family: var(--zz-font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.75rem;
+    font-weight: 800;
     color: var(--zz-text-primary);
-    margin-bottom: var(--zz-space-2);
+    margin-bottom: var(--zz-space-3);
 }
 
 .zz-no-results p {
+    font-size: 1rem;
     color: var(--zz-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--zz-space-8);
+}
+
+.zz-no-results__cta {
+    display: flex;
+    justify-content: center;
+}
+
+/* Dark Mode for No Results */
+[data-theme="dark"] .zz-no-results {
+    background: var(--zz-bg-surface-secondary, #1a1f2e);
+    border-color: var(--zz-border-light, rgba(255, 255, 255, 0.1));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================================
@@ -681,16 +755,16 @@
     .zz-blog-section .zz-blog-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .zz-blog-layout {
         grid-template-columns: 1fr;
     }
-    
+
     .zz-blog-sidebar {
         position: static;
         margin-top: var(--zz-space-10);
     }
-    
+
     /* Convert sidebar to horizontal layout on tablet */
     .zz-blog-sidebar {
         display: grid;
@@ -703,11 +777,11 @@
     .zz-blog-hero {
         padding: var(--zz-space-10) var(--zz-space-4) var(--zz-space-8);
     }
-    
+
     .zz-blog-hero__title {
         font-size: 2rem;
     }
-    
+
     .zz-blog-sidebar {
         grid-template-columns: 1fr;
     }
@@ -717,11 +791,11 @@
     .zz-blog-section .zz-blog-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .zz-blog-hero__title {
         font-size: 1.75rem;
     }
-    
+
     .zz-blog-card__image-wrapper {
         height: 160px;
     }

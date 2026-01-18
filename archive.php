@@ -11,77 +11,71 @@ defined('ABSPATH') || exit;
 get_header();
 
 $blog_layout = zzprompts_get_option('blog_layout_select', 'v1');
-
 $is_blog_archive = is_category() || is_tag() || is_author() || is_date();
 
-if ('v2' === $blog_layout && $is_blog_archive) :
+// Blog Hero Section for Archives
 ?>
-
-<div class="container section-padding">
-    <div class="zz-blog-layout content-sidebar-wrap sidebar-right">
-        <div class="zz-blog-main-content">
-            <header class="page-header mb-8 pb-8 border-b border-gray-100">
-                <?php
-                the_archive_title('<h1 class="page-title text-3xl font-bold mb-2 text-heading">', '</h1>');
-                the_archive_description('<div class="archive-description text-muted text-lg">', '</div>');
-                ?>
-            </header>
-
-            <?php get_template_part('template-parts/blog/card', 'blog'); ?>
-        </div>
-
-        <?php get_template_part('template-parts/sidebar', 'blog'); ?>
-    </div>
-</div>
-
-<?php
-get_footer();
-return;
-endif;
-
-$sidebar_enabled = zzprompts_get_option('blog_sidebar_enabled', true);
-$layout_class = $sidebar_enabled ? 'content-sidebar-wrap' : 'single-centered-wrap';
-?>
-
-<div class="container section-padding">
-    <div class="<?php echo esc_attr($layout_class); ?>">
+<section class="zz-blog-hero">
+    <div class="zz-container">
+        <!-- Breadcrumbs -->
+        <nav class="zz-breadcrumbs" aria-label="<?php esc_attr_e('Breadcrumb', 'zzprompts'); ?>">
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="zz-breadcrumbs__link"><?php esc_html_e('Home', 'zzprompts'); ?></a>
+            <span class="zz-breadcrumbs__separator">&rsaquo;</span>
+            <span class="zz-breadcrumbs__current"><?php echo get_the_archive_title(); ?></span>
+        </nav>
         
-        <main id="primary" class="site-main">
-            <header class="page-header mb-8 pb-8 border-b border-gray-100">
-                <?php
-                the_archive_title('<h1 class="page-title text-3xl font-bold mb-2 text-heading">', '</h1>');
-                the_archive_description('<div class="archive-description text-muted text-lg">', '</div>');
-                ?>
-            </header>
+        <h1 class="zz-blog-hero__title"><?php the_archive_title(); ?></h1>
+        <?php the_archive_description('<p class="zz-blog-hero__subtitle">', '</p>'); ?>
+    </div>
+</section>
 
+<div class="zz-container u-py-10">
+    <?php
+    $sidebar_enabled = zzprompts_get_option('blog_sidebar_enabled', true);
+    $layout_class = $sidebar_enabled ? 'zz-blog-layout' : 'zz-blog-full';
+    ?>
+    
+    <div class="<?php echo esc_attr($layout_class); ?>">
+        <main id="primary" class="zz-blog-main-content">
             <?php if (have_posts()) : ?>
-                <div class="zz-archive-list">
-                    <?php 
-                    while (have_posts()) : 
-                        the_post(); 
-                        get_template_part('template-parts/content'); 
-                    endwhile; 
-                    ?>
+                <div class="zz-blog-section">
+                    <div class="zz-blog-grid">
+                        <?php while (have_posts()) : the_post(); ?>
+                            <?php get_template_part('template-parts/blog/card', 'blog'); ?>
+                        <?php endwhile; ?>
+                    </div>
                 </div>
-                
-                <div class="mt-8">
-                    <?php 
-                    the_posts_pagination(array(
-                        'prev_text' => '<span class="icon-arrow-left"></span>', 
-                        'next_text' => '<span class="icon-arrow-right"></span>'
-                    )); 
-                    ?>
-                </div>
+
+                <?php
+                the_posts_pagination(array(
+                    'prev_text' => '<i class="fas fa-chevron-left"></i>',
+                    'next_text' => '<i class="fas fa-chevron-right"></i>',
+                ));
+                ?>
+
             <?php else : ?>
-                <div class="no-results">
-                    <h2 class="text-xl font-bold"><?php esc_html_e('Nothing Found', 'zzprompts'); ?></h2>
-                    <p class="text-muted"><?php esc_html_e('It seems we can\'t find what you\'re looking for.', 'zzprompts'); ?></p>
+                <div class="zz-no-results">
+                    <div class="zz-no-results__content">
+                        <div class="zz-no-results__icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <h3><?php esc_html_e('No Posts Found', 'zzprompts'); ?></h3>
+                        <p><?php esc_html_e('We couldn\'t find any articles matching your request. Try a different search or browse all our articles.', 'zzprompts'); ?></p>
+                        <div class="zz-no-results__cta">
+                            <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="zz-btn zz-btn--primary">
+                                <?php esc_html_e('Browse All Articles', 'zzprompts'); ?>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             <?php endif; ?>
         </main>
 
-        <?php if ($sidebar_enabled) get_sidebar(); ?>
-
+        <?php
+        if ($sidebar_enabled) {
+            get_template_part('template-parts/sidebar', 'blog');
+        }
+        ?>
     </div>
 </div>
 

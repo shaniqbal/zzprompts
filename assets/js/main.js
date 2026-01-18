@@ -1158,10 +1158,10 @@
 
                         if (isModernLayout) {
                             // Modern Card Template (BEM naming)
-                            const categoryHtml = post.category 
-                                ? `<a href="${post.category_url || '#'}" class="zz-blog-card__category">${post.category}</a>` 
+                            const categoryHtml = post.category
+                                ? `<a href="${post.category_url || '#'}" class="zz-blog-card__category">${post.category}</a>`
                                 : '';
-                            
+
                             html += `
                             <article class="zz-blog-card">
                                 <a href="${post.url}" class="zz-blog-card__image-wrapper">
@@ -1221,7 +1221,21 @@
                     });
                     blogGrid.innerHTML = html;
                 } else {
-                    blogGrid.innerHTML = '<div class="no-search-results" style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #9ca3af;">No posts found matching your search.</div>';
+                    const browseUrl = window.zzprompts_vars ? window.zzprompts_vars.blog_archive_url : '#';
+                    blogGrid.innerHTML = `
+                        <div class="zz-no-results" style="grid-column: 1/-1; width: 100%;">
+                            <div class="zz-no-results__content">
+                                <div class="zz-no-results__icon">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <h3>No Posts Found</h3>
+                                <p>We couldn't find any articles matching your request. Try a different search or browse all our articles.</p>
+                                <div class="zz-no-results__cta">
+                                    <a href="${browseUrl}" class="zz-btn zz-btn--primary">Browse All Articles</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
                 }
 
                 // Restore opacity after content is updated
@@ -1347,7 +1361,7 @@
     /**
      * Theme Toggle (Dark/Light Mode)
      */
-   function initThemeToggle() {
+    function initThemeToggle() {
         const toggle = document.getElementById('zz-theme-toggle');
         if (!toggle) return;
 
@@ -1372,7 +1386,7 @@
                 setTheme(e.matches ? 'dark' : 'light', false);
             }
         });
-        
+
         // No need to run setTheme() on load here, header.php already did it.
     }
 
@@ -1503,7 +1517,7 @@
         updateProgress();
     }
 
-  // DOM Ready
+    // DOM Ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             init();

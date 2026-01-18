@@ -132,7 +132,7 @@ add_action('widgets_init', 'zzprompts_widgets_init');
 // GLOBAL VERSION CONTROL (One place to bust cache)
 // ==========================================================================
 if (!defined('ZZ_THEME_VERSION')) {
-    define('ZZ_THEME_VERSION', '1.0.9');
+    define('ZZ_THEME_VERSION', '1.0.10');
 }
 
 // ==========================================================================
@@ -377,6 +377,7 @@ function zzprompts_enqueue_assets() {
             'copy_success_text'  => esc_html(zzprompts_get_option('copy_success_text', __('Copied! 🎉', 'zzprompts'))),
             'like_success_text'  => esc_html__('Thank you for liking!', 'zzprompts'),
             'already_liked_text' => esc_html__('You already liked this!', 'zzprompts'),
+            'blog_archive_url'   => get_post_type_archive_link('post') ?: home_url('/blog/'),
             'copy_failed_text'   => esc_html__('Copy failed. Please try again.', 'zzprompts'),
             'like_failed_text'   => esc_html__('Like failed. Please try again.', 'zzprompts'),
         ));
