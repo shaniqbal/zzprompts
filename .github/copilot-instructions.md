@@ -45,6 +45,7 @@ assets/css/
 ├── pages/              # Page-specific styles
 │   ├── home.css
 │   ├── archive-prompts.css
+│   ├── blog-archive.css
 │   ├── blog-single.css
 │   └── search-results.css
 ├── i18n/               # RTL overrides
@@ -90,6 +91,7 @@ assets/css/
 |------|-----------|
 | Homepage | `Modern Layout/Homepage/final v1.html` |
 | Single Prompt | `Modern Layout/Single Prompt Page/final v1.html` |
+| Blog Archive | `Modern Layout/Blog Archive/final v1.html` |
 | Blog Single | `Modern Layout/Blog Single Page/` |
 | Prompt Archive | `Modern Layout/Prompt Archive/` |
 | Search Results | `Modern Layout/Search Results/final ready v1.html` |
@@ -188,6 +190,7 @@ assets/css/
 | `prompts.css` | `is_singular('prompt')` or `is_post_type_archive('prompt')` |
 | `single-prompt.css` | `is_singular('prompt')` |
 | `archive-prompts.css` | `is_post_type_archive('prompt')` or `is_tax()` |
+| `blog-archive.css` | `is_home()` or `is_category()` or `is_tag()` or `is_author()` |
 | `blog-single.css` | `is_singular('post')` |
 | `search-results.css` | `is_search()` |
 | `pagination.css` | `is_archive()` or `is_search()` or `is_home()` |
@@ -298,6 +301,7 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 | Homepage | Hero title |
 | Prompt Single | Prompt title |
 | Blog Single | Post title |
+| Blog Archive | "Latest Articles" or category name |
 | Prompt Archive | `archive_seo_title` from Customizer |
 | Category/Taxonomy | Term name |
 
@@ -385,6 +389,35 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 - Always loads `skin.css` (renamed from skin-modern.css)
 - Body classes: `zz-layout-modern`, `zz-style-default`
 - `zzprompts_vars.layout` hardcoded to `'modern'`
+
+### 2026-01-18: Blog Archive Page (Premium Design)
+**New Files:**
+- `assets/css/pages/blog-archive.css` - Blog archive styles (~600 lines)
+
+**Updated Files:**
+- `page-blog.php` - New card structure v2.0 (BEM classes, Read Article link)
+- `assets/js/main.js` - AJAX search card template updated to BEM
+- `functions.php` - Added `category_url` to AJAX response
+
+**Blog Archive Features:**
+- Glass card design with backdrop blur
+- 3-column responsive grid (3 → 2 → 1)
+- Date badge positioned on image wrapper
+- Category + reading time meta row
+- "Read Article" link with arrow icon
+- AJAX instant search in sidebar
+- Dark mode support
+- RTL-ready logical properties
+
+**Card BEM Structure:**
+- `.zz-blog-card` - Block
+- `.zz-blog-card__image-wrapper` - Clickable image container
+- `.zz-blog-card__date` - Date badge on image
+- `.zz-blog-card__content` - Content area
+- `.zz-blog-card__meta` - Category + reading time
+- `.zz-blog-card__title` - Post title
+- `.zz-blog-card__excerpt` - Excerpt text
+- `.zz-blog-card__link` - Read Article CTA
 
 ### 2026-01-18: Search Results Page (Premium Design)
 **New Files:**

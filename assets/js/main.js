@@ -1157,33 +1157,37 @@
                             : '';
 
                         if (isModernLayout) {
-                            // Modern Card Template
+                            // Modern Card Template (BEM naming)
+                            const categoryHtml = post.category 
+                                ? `<a href="${post.category_url || '#'}" class="zz-blog-card__category">${post.category}</a>` 
+                                : '';
+                            
                             html += `
                             <article class="zz-blog-card">
-                                <div class="zz-blog-card-image-wrapper">
-                                    <div class="zz-blog-card-image">
+                                <a href="${post.url}" class="zz-blog-card__image-wrapper">
+                                    <div class="zz-blog-card__image">
                                         ${imageHtml}
                                     </div>
-                                </div>
+                                    <span class="zz-blog-card__date">${post.date}</span>
+                                </a>
 
-                                <span class="zz-blog-date-badge">${post.date}</span>
-
-                                <div class="zz-blog-card-content">
-                                    <div class="zz-blog-meta">
-                                        <span class="zz-read-time">${post.reading_time}</span>
+                                <div class="zz-blog-card__content">
+                                    <div class="zz-blog-card__meta">
+                                        ${categoryHtml}
+                                        <span class="zz-blog-card__reading-time">
+                                            <i class="far fa-clock"></i> ${post.reading_time}
+                                        </span>
                                     </div>
 
-                                    <h3 class="zz-blog-card-title">
+                                    <h3 class="zz-blog-card__title">
                                         <a href="${post.url}">${post.title}</a>
                                     </h3>
 
-                                    <div class="zz-blog-card-excerpt">
-                                        ${post.excerpt}
-                                    </div>
+                                    <p class="zz-blog-card__excerpt">${post.excerpt}</p>
 
-                                    <div class="zz-blog-author">
-                                        <span class="zz-author-name">${post.author}</span>
-                                    </div>
+                                    <a href="${post.url}" class="zz-blog-card__link">
+                                        Read Article <i class="fas fa-arrow-right"></i>
+                                    </a>
                                 </div>
                             </article>
                         `;

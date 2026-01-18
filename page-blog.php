@@ -3,14 +3,15 @@ defined('ABSPATH') || exit;
 
 /**
  * Template Name: Blog Page
- * Description: Default blog listing template
+ * Description: Blog archive listing with sidebar
  * 
  * @package zzprompts
+ * @version 2.0.0
  */
 
 get_header();
 
-$posts_per_page = intval(get_option('zzprompts_blog_posts_per_page', 10));
+$posts_per_page = intval(get_option('zzprompts_blog_posts_per_page', 9));
 $paged = max(1, (int) get_query_var('paged'));
 
 $blog_query = new WP_Query(array(
@@ -43,26 +44,35 @@ $blog_query = new WP_Query(array(
 
 <div class="container">
     <div class="section-padding">
-        <div class="zz-blog-layout content-sidebar-wrap sidebar-right">
+        <div class="zz-blog-layout">
             <div class="zz-blog-main-content">
                 <?php if ($blog_query->have_posts()) : ?>
                     <div class="zz-blog-section">
                         <div class="zz-blog-grid">
-                            <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
+                            <?php while ($blog_query->have_posts()) : $blog_query->the_post(); 
+                                $categories = get_the_category();
+                                $category_name = !empty($categories) ? $categories[0]->name : '';
+                            ?>
                                 <article class="zz-blog-card">
                                     <div class="zz-blog-card__image-wrapper">
-                                        <div class="zz-blog-card__image">
+                                        <a href="<?php the_permalink(); ?>" class="zz-blog-card__image">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('medium_large'); ?>
+                                            <?php else : ?>
+                                                <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);"></div>
                                             <?php endif; ?>
-                                        </div>
+                                        </a>
+                                        <span class="zz-blog-card__date-badge"><?php echo esc_html(get_the_date('M d, Y')); ?></span>
                                     </div>
-
-                                    <span class="zz-blog-card__date-badge"><?php echo esc_html(get_the_date('M d, Y')); ?></span>
 
                                     <div class="zz-blog-card__content">
                                         <div class="zz-blog-card__meta">
-                                            <span class="zz-blog-card__read-time"><?php echo esc_html(zzprompts_reading_time()); ?></span>
+                                            <span class="zz-blog-card__read-time">
+                                                <i class="far fa-clock"></i> <?php echo esc_html(zzprompts_reading_time()); ?>
+                                            </span>
+                                            <?php if ($category_name) : ?>
+                                                &bull; <span class="zz-blog-card__category"><?php echo esc_html($category_name); ?></span>
+                                            <?php endif; ?>
                                         </div>
 
                                         <h3 class="zz-blog-card__title">
@@ -70,12 +80,12 @@ $blog_query = new WP_Query(array(
                                         </h3>
 
                                         <div class="zz-blog-card__excerpt">
-                                            <?php echo wp_trim_words(get_the_excerpt(), 26); ?>
+                                            <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                                         </div>
 
-                                        <div class="zz-blog-card__author">
-                                            <span class="zz-blog-card__author-name"><?php the_author(); ?></span>
-                                        </div>
+                                        <a href="<?php the_permalink(); ?>" class="zz-blog-card__read-link">
+                                            <?php esc_html_e('Read Article', 'zzprompts'); ?> <i class="fas fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </article>
                             <?php endwhile; ?>
@@ -86,8 +96,8 @@ $blog_query = new WP_Query(array(
                             echo paginate_links(array(
                                 'total'     => (int) $blog_query->max_num_pages,
                                 'current'   => $paged,
-                                'prev_text' => '&larr;',
-                                'next_text' => '&rarr;',
+                                'prev_text' => '<i class="fas fa-chevron-left"></i>',
+                                'next_text' => '<i class="fas fa-chevron-right"></i>',
                             ));
                             ?>
                         </div>

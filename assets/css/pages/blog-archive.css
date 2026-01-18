@@ -1,0 +1,728 @@
+/**
+ * Blog Archive Page Styles
+ * Premium glassmorphism design matching HTML final v1.html
+ *
+ * @package zzprompts
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   1. PAGE HEADER / HERO
+   ========================================================================== */
+
+.zz-blog-hero {
+    text-align: center;
+    padding: var(--zz-space-14) var(--zz-space-5) var(--zz-space-10);
+}
+
+.zz-blog-hero .container {
+    max-width: var(--zz-container-lg);
+    margin: 0 auto;
+}
+
+/* Breadcrumbs */
+.zz-blog-hero .zz-breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--zz-text-muted);
+    margin-bottom: var(--zz-space-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--zz-space-1);
+}
+
+.zz-blog-hero .zz-breadcrumbs__link {
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--zz-space-1);
+    transition: color 0.2s ease;
+}
+
+.zz-blog-hero .zz-breadcrumbs__link:hover {
+    color: var(--zz-color-primary);
+}
+
+.zz-blog-hero .zz-breadcrumbs__separator {
+    color: var(--zz-border-light);
+}
+
+.zz-blog-hero .zz-breadcrumbs__current {
+    color: var(--zz-text-secondary);
+}
+
+/* Title */
+.zz-blog-hero__title {
+    font-family: var(--zz-font-heading);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-3);
+    letter-spacing: -0.02em;
+}
+
+.zz-blog-hero__subtitle {
+    font-size: 1rem;
+    color: var(--zz-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. BLOG LAYOUT (Content + Sidebar)
+   ========================================================================== */
+
+.zz-blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--zz-space-10);
+    align-items: start;
+}
+
+.zz-blog-main-content {
+    min-width: 0; /* Prevent grid blowout */
+}
+
+/* ==========================================================================
+   3. BLOG GRID (3 Columns)
+   ========================================================================== */
+
+.zz-blog-section .zz-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--zz-space-6);
+    margin-bottom: var(--zz-space-12);
+}
+
+/* ==========================================================================
+   4. BLOG CARD (Glass Style - Archive Specific)
+   ========================================================================== */
+
+.zz-blog-layout .zz-blog-card {
+    background: var(--zz-bg-card, #fff);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl);
+    padding: var(--zz-space-4);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.zz-blog-layout .zz-blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    border-color: var(--zz-color-primary);
+}
+
+/* Thumbnail Box */
+.zz-blog-card__image-wrapper {
+    position: relative;
+    border-radius: var(--zz-radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--zz-space-4);
+    height: 180px;
+}
+
+.zz-blog-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.zz-blog-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zz-blog-card:hover .zz-blog-card__image,
+.zz-blog-card:hover .zz-blog-card__image img {
+    transform: scale(1.05);
+}
+
+/* Date Badge on Image */
+.zz-blog-card__date-badge {
+    position: absolute;
+    top: 10px;
+    inset-inline-end: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--zz-radius-sm);
+    z-index: 1;
+}
+
+/* Content Area */
+.zz-blog-card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Meta (Reading time + Category) */
+.zz-blog-card__meta {
+    font-size: 0.75rem;
+    color: var(--zz-text-muted);
+    margin-bottom: var(--zz-space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--zz-space-2);
+}
+
+.zz-blog-card__meta i {
+    color: var(--zz-color-primary);
+}
+
+.zz-blog-card__read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.zz-blog-card__read-time::before {
+    content: '\f017'; /* fa-clock */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 400;
+    color: var(--zz-color-primary);
+    font-size: 0.8em;
+}
+
+.zz-blog-card__category {
+    color: var(--zz-color-primary);
+    font-weight: 600;
+}
+
+/* Title */
+.zz-blog-card__title {
+    font-family: var(--zz-font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: var(--zz-space-3);
+    color: var(--zz-text-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.zz-blog-card__title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.zz-blog-card__title a:hover {
+    color: var(--zz-color-primary);
+}
+
+/* Excerpt */
+.zz-blog-card__excerpt {
+    font-size: 0.9rem;
+    color: var(--zz-text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--zz-space-5);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+/* Read Link */
+.zz-blog-card__read-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--zz-color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--zz-space-2);
+    text-decoration: none;
+    margin-top: auto;
+    transition: gap 0.2s ease;
+}
+
+.zz-blog-card__read-link:hover {
+    gap: var(--zz-space-3);
+}
+
+.zz-blog-card__read-link i {
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+}
+
+.zz-blog-card__read-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Author (if shown) */
+.zz-blog-card__author {
+    font-size: 0.8rem;
+    color: var(--zz-text-muted);
+    margin-top: auto;
+    padding-top: var(--zz-space-3);
+    border-top: 1px solid var(--zz-border-light);
+}
+
+.zz-blog-card__author-name {
+    font-weight: 600;
+    color: var(--zz-text-secondary);
+}
+
+/* ==========================================================================
+   5. SIDEBAR STYLES (Blog Archive Specific)
+   ========================================================================== */
+
+.zz-blog-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.zz-blog-sidebar.sticky-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+/* Widget Title */
+.zz-widget-title {
+    font-family: var(--zz-font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--zz-space-5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: var(--zz-space-3);
+    color: var(--zz-text-primary);
+}
+
+/* Search Widget */
+.zz-search-widget {
+    background: var(--zz-glass-surface, rgba(255, 255, 255, 0.75));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl);
+    padding: var(--zz-space-6);
+    margin-bottom: var(--zz-space-6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.zz-blog-search-form {
+    position: relative;
+}
+
+.zz-blog-search-input {
+    width: 100%;
+    padding: var(--zz-space-3) var(--zz-space-4);
+    border-radius: var(--zz-radius-lg);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    background: var(--zz-bg-card, #fff);
+    font-size: 0.9rem;
+    color: var(--zz-text-primary);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.zz-blog-search-input::placeholder {
+    color: var(--zz-text-muted);
+}
+
+.zz-blog-search-input:focus {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 0 0 3px var(--zz-color-primary-pale, #EEF2FF);
+}
+
+/* AJAX Search Results Dropdown */
+.zz-blog-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--zz-bg-card, #fff);
+    border: 1px solid var(--zz-border-light);
+    border-radius: var(--zz-radius-lg);
+    box-shadow: var(--zz-shadow-lg);
+    margin-top: var(--zz-space-2);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+}
+
+.zz-blog-search-results.is-active {
+    display: block;
+}
+
+.zz-blog-search-results__item {
+    display: flex;
+    gap: var(--zz-space-3);
+    padding: var(--zz-space-3);
+    border-bottom: 1px solid var(--zz-border-light);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.zz-blog-search-results__item:last-child {
+    border-bottom: none;
+}
+
+.zz-blog-search-results__item:hover {
+    background: var(--zz-bg-surface-secondary, #F9FAFB);
+}
+
+.zz-blog-search-results__thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--zz-radius-md);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.zz-blog-search-results__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.zz-blog-search-results__title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--zz-text-primary);
+    line-height: 1.3;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.zz-blog-search-results__date {
+    font-size: 0.75rem;
+    color: var(--zz-text-muted);
+}
+
+.zz-blog-search-results__empty,
+.zz-blog-search-results__loading {
+    padding: var(--zz-space-4);
+    text-align: center;
+    color: var(--zz-text-muted);
+    font-size: 0.85rem;
+}
+
+/* Categories Widget (Pills Style) */
+.zz-categories-widget {
+    background: var(--zz-glass-surface, rgba(255, 255, 255, 0.75));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl);
+    padding: var(--zz-space-6);
+    margin-bottom: var(--zz-space-6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.zz-categories-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--zz-space-2);
+}
+
+.zz-category-pill {
+    background: var(--zz-bg-card, #fff);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    padding: 6px 14px;
+    border-radius: var(--zz-radius-pill);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--zz-space-2);
+    transition: all 0.2s ease;
+}
+
+.zz-category-pill:hover {
+    background: var(--zz-color-primary);
+    color: #fff;
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.zz-category-count {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: var(--zz-radius-sm);
+    font-size: 0.7rem;
+}
+
+.zz-category-pill:hover .zz-category-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Popular/Trending Posts Widget */
+.zz-popular-widget {
+    background: var(--zz-glass-surface, rgba(255, 255, 255, 0.75));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl);
+    padding: var(--zz-space-6);
+    margin-bottom: var(--zz-space-6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.zz-popular-posts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zz-space-4);
+}
+
+.zz-popular-post-item {
+    display: flex;
+    gap: var(--zz-space-3);
+    align-items: flex-start;
+}
+
+.zz-popular-post-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--zz-radius-md);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.zz-popular-post-info h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    color: var(--zz-text-primary);
+}
+
+.zz-popular-post-info h5 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.zz-popular-post-info h5 a:hover {
+    color: var(--zz-color-primary);
+}
+
+.zz-popular-post-date {
+    font-size: 0.75rem;
+    color: var(--zz-text-muted);
+}
+
+/* ==========================================================================
+   6. PAGINATION
+   ========================================================================== */
+
+.zz-blog-section .navigation.pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--zz-space-2);
+    margin-top: var(--zz-space-14);
+}
+
+.zz-blog-section .navigation.pagination .nav-links {
+    display: flex;
+    gap: var(--zz-space-2);
+}
+
+.zz-blog-section .navigation.pagination .page-numbers {
+    min-width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--zz-radius-md);
+    background: var(--zz-bg-card, #fff);
+    border: 1px solid var(--zz-border-light, #E5E7EB);
+    color: var(--zz-text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 0 var(--zz-space-2);
+}
+
+.zz-blog-section .navigation.pagination .page-numbers:hover,
+.zz-blog-section .navigation.pagination .page-numbers.current {
+    background: var(--zz-color-primary);
+    color: #fff;
+    border-color: var(--zz-color-primary);
+}
+
+/* ==========================================================================
+   7. NO RESULTS STATE
+   ========================================================================== */
+
+.zz-no-results {
+    text-align: center;
+    padding: var(--zz-space-16) var(--zz-space-4);
+}
+
+.zz-no-results__icon {
+    width: 80px;
+    height: 80px;
+    background: var(--zz-bg-surface-secondary, #F3F4F6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--zz-space-6);
+    color: var(--zz-text-muted);
+}
+
+.zz-no-results h3 {
+    font-family: var(--zz-font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-2);
+}
+
+.zz-no-results p {
+    color: var(--zz-text-muted);
+}
+
+/* ==========================================================================
+   8. DARK MODE SUPPORT
+   ========================================================================== */
+
+[data-theme="dark"] .zz-blog-layout .zz-blog-card {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-blog-layout .zz-blog-card:hover {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .zz-search-widget,
+[data-theme="dark"] .zz-categories-widget,
+[data-theme="dark"] .zz-popular-widget {
+    background: var(--zz-glass-bg, rgba(26, 31, 46, 0.85));
+    border-color: var(--zz-glass-border, rgba(74, 85, 104, 0.3));
+}
+
+[data-theme="dark"] .zz-blog-search-input {
+    background: var(--zz-bg-surface-secondary);
+    border-color: var(--zz-border-light);
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] .zz-blog-search-input:focus {
+    background: var(--zz-bg-surface-tertiary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="dark"] .zz-blog-search-results {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-blog-search-results__item:hover {
+    background: var(--zz-bg-surface-tertiary);
+}
+
+[data-theme="dark"] .zz-category-pill {
+    background: var(--zz-bg-surface-secondary);
+    border-color: var(--zz-border-light);
+    color: var(--zz-text-secondary);
+}
+
+[data-theme="dark"] .zz-category-pill:hover {
+    background: var(--zz-color-primary);
+    color: #fff;
+}
+
+[data-theme="dark"] .zz-widget-title {
+    color: var(--zz-text-primary);
+    border-bottom-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-popular-post-info h5 {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] .zz-blog-card__author {
+    border-top-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-no-results__icon {
+    background: var(--zz-bg-surface-tertiary);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .zz-blog-layout {
+        grid-template-columns: 1fr 300px;
+        gap: var(--zz-space-8);
+    }
+}
+
+@media (max-width: 1024px) {
+    .zz-blog-section .zz-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .zz-blog-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .zz-blog-sidebar {
+        position: static;
+        margin-top: var(--zz-space-10);
+    }
+    
+    /* Convert sidebar to horizontal layout on tablet */
+    .zz-blog-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--zz-space-6);
+    }
+}
+
+@media (max-width: 768px) {
+    .zz-blog-hero {
+        padding: var(--zz-space-10) var(--zz-space-4) var(--zz-space-8);
+    }
+    
+    .zz-blog-hero__title {
+        font-size: 2rem;
+    }
+    
+    .zz-blog-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .zz-blog-section .zz-blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .zz-blog-hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .zz-blog-card__image-wrapper {
+        height: 160px;
+    }
+}

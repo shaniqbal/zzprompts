@@ -260,9 +260,9 @@ function zzprompts_enqueue_assets() {
     
     // Blog Archive
     if ((is_home() && !is_front_page()) || is_category() || is_tag() || is_author() || is_date()) {
-        $file = $dir . '/assets/css/pages/blog.css';
+        $file = $dir . '/assets/css/pages/blog-archive.css';
         if (file_exists($file)) {
-            wp_enqueue_style('zz-blog', $uri . '/assets/css/pages/blog.css', array('zz-skin'), $ver);
+            wp_enqueue_style('zz-blog-archive', $uri . '/assets/css/pages/blog-archive.css', array('zz-skin'), $ver);
         }
     }
     
@@ -684,19 +684,21 @@ function zzprompts_search_blog() {
         while ($search_query->have_posts()) {
             $search_query->the_post();
             
-            // Get category for V1 classic layout
+            // Get category for the card
             $categories = get_the_category();
             $category_name = !empty($categories) ? $categories[0]->name : '';
+            $category_url  = !empty($categories) ? get_category_link($categories[0]->term_id) : '';
             
             $results[] = array(
                 'title'        => get_the_title(),
                 'url'          => get_permalink(),
                 'date'         => get_the_date('M d, Y'),
-                'excerpt'      => wp_trim_words(get_the_excerpt(), 26),
+                'excerpt'      => wp_trim_words(get_the_excerpt(), 20),
                 'author'       => get_the_author(),
                 'reading_time' => zzprompts_reading_time(),
                 'image'        => get_the_post_thumbnail_url(get_the_ID(), 'medium_large'),
                 'category'     => $category_name,
+                'category_url' => $category_url,
             );
         }
         wp_reset_postdata();
