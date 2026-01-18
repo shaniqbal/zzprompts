@@ -1,4 +1,4 @@
-=== zzprompts ===
+=== ZZPrompts ===
 Contributors: Your Name
 Tags: one-column, custom-colors, translation-ready, blog, custom-post-type, threaded-comments, custom-menu, featured-images, theme-options
 Requires at least: 6.0
