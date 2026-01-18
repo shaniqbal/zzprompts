@@ -1,0 +1,191 @@
+/**
+ * =========================================
+ * DESIGN TOKENS - Single Source of Truth
+ * =========================================
+ * 
+ * Primitive design values that can be exported to JSON.
+ * Used by Figma, Storybook, and CSS.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+:root {
+    /* =========================================
+       SPACING SCALE (8px base)
+       ========================================= */
+    --token-space-0: 0;
+    --token-space-1: 0.25rem;
+    --token-space-2: 0.5rem;
+    --token-space-3: 0.75rem;
+    --token-space-4: 1rem;
+    --token-space-5: 1.25rem;
+    --token-space-6: 1.5rem;
+    --token-space-8: 2rem;
+    --token-space-10: 2.5rem;
+    --token-space-12: 3rem;
+    --token-space-16: 4rem;
+    --token-space-20: 5rem;
+    --token-space-24: 6rem;
+
+    /* =========================================
+       COLOR PRIMITIVES - Blue Scale
+       ========================================= */
+    --token-color-blue-50: #EEF2FF;
+    --token-color-blue-100: #E0E7FF;
+    --token-color-blue-200: #C7D2FE;
+    --token-color-blue-300: #A5B4FC;
+    --token-color-blue-400: #818CF8;
+    --token-color-blue-500: #6366F1;
+    --token-color-blue-600: #4F46E5;
+    --token-color-blue-700: #4338CA;
+    --token-color-blue-800: #3730A3;
+    --token-color-blue-900: #312E81;
+
+    /* =========================================
+       COLOR PRIMITIVES - Purple Scale
+       ========================================= */
+    --token-color-purple-50: #F5F3FF;
+    --token-color-purple-100: #EDE9FE;
+    --token-color-purple-200: #DDD6FE;
+    --token-color-purple-300: #C4B5FD;
+    --token-color-purple-400: #A78BFA;
+    --token-color-purple-500: #8B5CF6;
+    --token-color-purple-600: #7C3AED;
+    --token-color-purple-700: #6D28D9;
+    --token-color-purple-800: #5B21B6;
+    --token-color-purple-900: #4C1D95;
+
+    /* =========================================
+       COLOR PRIMITIVES - Gray Scale
+       ========================================= */
+    --token-color-gray-50: #F9FAFB;
+    --token-color-gray-100: #F3F4F6;
+    --token-color-gray-200: #E5E7EB;
+    --token-color-gray-300: #D1D5DB;
+    --token-color-gray-400: #9CA3AF;
+    --token-color-gray-500: #6B7280;
+    --token-color-gray-600: #4B5563;
+    --token-color-gray-700: #374151;
+    --token-color-gray-800: #1F2937;
+    --token-color-gray-900: #111827;
+
+    /* =========================================
+       COLOR PRIMITIVES - Green Scale (Success)
+       ========================================= */
+    --token-color-green-50: #ECFDF5;
+    --token-color-green-100: #D1FAE5;
+    --token-color-green-500: #10B981;
+    --token-color-green-600: #059669;
+    --token-color-green-700: #047857;
+
+    /* =========================================
+       COLOR PRIMITIVES - Red Scale (Error)
+       ========================================= */
+    --token-color-red-50: #FEF2F2;
+    --token-color-red-100: #FEE2E2;
+    --token-color-red-500: #EF4444;
+    --token-color-red-600: #DC2626;
+    --token-color-red-700: #B91C1C;
+
+    /* =========================================
+       COLOR PRIMITIVES - Yellow/Orange Scale (Warning)
+       ========================================= */
+    --token-color-yellow-50: #FFFBEB;
+    --token-color-yellow-100: #FEF3C7;
+    --token-color-yellow-500: #F59E0B;
+    --token-color-yellow-600: #D97706;
+    --token-color-orange-500: #F97316;
+    --token-color-orange-600: #EA580C;
+
+    /* =========================================
+       COLOR PRIMITIVES - Sky/Cyan Scale
+       ========================================= */
+    --token-color-sky-50: #F0F9FF;
+    --token-color-sky-100: #E0F2FE;
+    --token-color-sky-500: #0EA5E9;
+    --token-color-sky-600: #0284C7;
+
+    /* =========================================
+       TYPOGRAPHY SCALE (1.250 ratio)
+       ========================================= */
+    --token-font-size-xs: 0.75rem;
+    --token-font-size-sm: 0.875rem;
+    --token-font-size-base: 1rem;
+    --token-font-size-lg: 1.125rem;
+    --token-font-size-xl: 1.25rem;
+    --token-font-size-2xl: 1.5rem;
+    --token-font-size-3xl: 1.875rem;
+    --token-font-size-4xl: 2.25rem;
+    --token-font-size-5xl: 3rem;
+    --token-font-size-6xl: 3.75rem;
+
+    /* =========================================
+       FONT WEIGHTS
+       ========================================= */
+    --token-font-weight-regular: 400;
+    --token-font-weight-medium: 500;
+    --token-font-weight-semibold: 600;
+    --token-font-weight-bold: 700;
+    --token-font-weight-extrabold: 800;
+
+    /* =========================================
+       LINE HEIGHTS
+       ========================================= */
+    --token-line-height-tight: 1.1;
+    --token-line-height-snug: 1.25;
+    --token-line-height-normal: 1.5;
+    --token-line-height-relaxed: 1.75;
+
+    /* =========================================
+       BORDER RADIUS
+       ========================================= */
+    --token-radius-none: 0;
+    --token-radius-sm: 0.375rem;
+    --token-radius-md: 0.75rem;
+    --token-radius-lg: 1rem;
+    --token-radius-xl: 1.5rem;
+    --token-radius-2xl: 2rem;
+    --token-radius-full: 9999px;
+
+    /* =========================================
+       SHADOWS
+       ========================================= */
+    --token-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --token-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --token-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --token-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --token-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --token-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    /* =========================================
+       TRANSITIONS
+       ========================================= */
+    --token-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --token-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --token-transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --token-transition-bounce: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* =========================================
+       Z-INDEX SCALE
+       ========================================= */
+    --token-z-base: 0;
+    --token-z-dropdown: 100;
+    --token-z-sticky: 200;
+    --token-z-header: 300;
+    --token-z-overlay: 400;
+    --token-z-modal: 500;
+    --token-z-popover: 600;
+    --token-z-toast: 700;
+
+    /* =========================================
+       CONTAINER WIDTHS
+       ========================================= */
+    --token-container-sm: 640px;
+    --token-container-md: 768px;
+    --token-container-lg: 1024px;
+    --token-container-xl: 1200px;
+    --token-container-2xl: 1400px;
+}

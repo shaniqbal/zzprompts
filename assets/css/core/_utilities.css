@@ -1,0 +1,754 @@
+/**
+ * =========================================
+ * ZZ PROMPTS - UTILITIES (Modern V1)
+ * =========================================
+ * 
+ * Utility classes for rapid development.
+ * Prefixed with .u- for utilities.
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. CONTAINER
+   ========================================= */
+
+.zz-container {
+    width: 100%;
+    max-width: var(--zz-container-xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--zz-space-6);
+    padding-right: var(--zz-space-6);
+}
+
+.zz-container--sm {
+    max-width: var(--zz-container-sm);
+}
+
+.zz-container--md {
+    max-width: var(--zz-container-md);
+}
+
+.zz-container--lg {
+    max-width: var(--zz-container-lg);
+}
+
+.zz-container--xl {
+    max-width: var(--zz-container-xl);
+}
+
+.zz-container--2xl {
+    max-width: var(--zz-container-2xl);
+}
+
+.zz-container--full {
+    max-width: 100%;
+}
+
+/* =========================================
+   2. DISPLAY
+   ========================================= */
+
+.u-hidden {
+    display: none !important;
+}
+
+.u-block {
+    display: block;
+}
+
+.u-inline {
+    display: inline;
+}
+
+.u-inline-block {
+    display: inline-block;
+}
+
+.u-flex {
+    display: flex;
+}
+
+.u-inline-flex {
+    display: inline-flex;
+}
+
+.u-grid {
+    display: grid;
+}
+
+/* =========================================
+   3. FLEXBOX UTILITIES
+   ========================================= */
+
+.u-flex-row {
+    flex-direction: row;
+}
+
+.u-flex-col {
+    flex-direction: column;
+}
+
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.u-justify-start {
+    justify-content: flex-start;
+}
+
+.u-justify-center {
+    justify-content: center;
+}
+
+.u-justify-end {
+    justify-content: flex-end;
+}
+
+.u-justify-between {
+    justify-content: space-between;
+}
+
+.u-justify-around {
+    justify-content: space-around;
+}
+
+.u-items-start {
+    align-items: flex-start;
+}
+
+.u-items-center {
+    align-items: center;
+}
+
+.u-items-end {
+    align-items: flex-end;
+}
+
+.u-items-stretch {
+    align-items: stretch;
+}
+
+.u-gap-1 {
+    gap: var(--zz-space-1);
+}
+
+.u-gap-2 {
+    gap: var(--zz-space-2);
+}
+
+.u-gap-3 {
+    gap: var(--zz-space-3);
+}
+
+.u-gap-4 {
+    gap: var(--zz-space-4);
+}
+
+.u-gap-6 {
+    gap: var(--zz-space-6);
+}
+
+.u-gap-8 {
+    gap: var(--zz-space-8);
+}
+
+.u-flex-1 {
+    flex: 1 1 0%;
+}
+
+.u-flex-auto {
+    flex: 1 1 auto;
+}
+
+.u-flex-none {
+    flex: none;
+}
+
+.u-flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+/* =========================================
+   4. GRID UTILITIES
+   ========================================= */
+
+.u-grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.u-grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.u-grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* =========================================
+   5. SPACING - MARGIN
+   ========================================= */
+
+.u-m-0 {
+    margin: 0;
+}
+
+.u-m-auto {
+    margin: auto;
+}
+
+.u-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.u-mt-1 {
+    margin-top: var(--zz-space-1);
+}
+
+.u-mt-2 {
+    margin-top: var(--zz-space-2);
+}
+
+.u-mt-4 {
+    margin-top: var(--zz-space-4);
+}
+
+.u-mt-6 {
+    margin-top: var(--zz-space-6);
+}
+
+.u-mt-8 {
+    margin-top: var(--zz-space-8);
+}
+
+.u-mt-10 {
+    margin-top: var(--zz-space-10);
+}
+
+.u-mb-1 {
+    margin-bottom: var(--zz-space-1);
+}
+
+.u-mb-2 {
+    margin-bottom: var(--zz-space-2);
+}
+
+.u-mb-4 {
+    margin-bottom: var(--zz-space-4);
+}
+
+.u-mb-6 {
+    margin-bottom: var(--zz-space-6);
+}
+
+.u-mb-8 {
+    margin-bottom: var(--zz-space-8);
+}
+
+.u-mb-10 {
+    margin-bottom: var(--zz-space-10);
+}
+
+/* =========================================
+   6. SPACING - PADDING
+   ========================================= */
+
+.u-p-0 {
+    padding: 0;
+}
+
+.u-p-2 {
+    padding: var(--zz-space-2);
+}
+
+.u-p-4 {
+    padding: var(--zz-space-4);
+}
+
+.u-p-6 {
+    padding: var(--zz-space-6);
+}
+
+.u-p-8 {
+    padding: var(--zz-space-8);
+}
+
+.u-py-4 {
+    padding-top: var(--zz-space-4);
+    padding-bottom: var(--zz-space-4);
+}
+
+.u-py-6 {
+    padding-top: var(--zz-space-6);
+    padding-bottom: var(--zz-space-6);
+}
+
+.u-py-8 {
+    padding-top: var(--zz-space-8);
+    padding-bottom: var(--zz-space-8);
+}
+
+.u-py-10 {
+    padding-top: var(--zz-space-10);
+    padding-bottom: var(--zz-space-10);
+}
+
+.u-py-16 {
+    padding-top: var(--zz-space-16);
+    padding-bottom: var(--zz-space-16);
+}
+
+.u-py-20 {
+    padding-top: var(--zz-space-20);
+    padding-bottom: var(--zz-space-20);
+}
+
+.u-px-4 {
+    padding-left: var(--zz-space-4);
+    padding-right: var(--zz-space-4);
+}
+
+.u-px-6 {
+    padding-left: var(--zz-space-6);
+    padding-right: var(--zz-space-6);
+}
+
+/* =========================================
+   7. WIDTH & HEIGHT
+   ========================================= */
+
+.u-w-full {
+    width: 100%;
+}
+
+.u-h-full {
+    height: 100%;
+}
+
+.u-min-h-screen {
+    min-height: 100vh;
+}
+
+/* =========================================
+   8. POSITIONING
+   ========================================= */
+
+.u-relative {
+    position: relative;
+}
+
+.u-absolute {
+    position: absolute;
+}
+
+.u-fixed {
+    position: fixed;
+}
+
+.u-sticky {
+    position: sticky;
+}
+
+.u-top-0 {
+    top: 0;
+}
+
+.u-right-0 {
+    right: 0;
+}
+
+.u-bottom-0 {
+    bottom: 0;
+}
+
+.u-left-0 {
+    left: 0;
+}
+
+.u-inset-0 {
+    inset: 0;
+}
+
+/* =========================================
+   9. OVERFLOW
+   ========================================= */
+
+.u-overflow-hidden {
+    overflow: hidden;
+}
+
+.u-overflow-auto {
+    overflow: auto;
+}
+
+.u-overflow-x-auto {
+    overflow-x: auto;
+}
+
+/* =========================================
+   10. BORDER RADIUS
+   ========================================= */
+
+.u-rounded-none {
+    border-radius: 0;
+}
+
+.u-rounded-sm {
+    border-radius: var(--zz-radius-sm);
+}
+
+.u-rounded-md {
+    border-radius: var(--zz-radius-md);
+}
+
+.u-rounded-lg {
+    border-radius: var(--zz-radius-lg);
+}
+
+.u-rounded-xl {
+    border-radius: var(--zz-radius-xl);
+}
+
+.u-rounded-full {
+    border-radius: var(--zz-radius-full);
+}
+
+.u-rounded-pill {
+    border-radius: var(--zz-radius-pill);
+}
+
+/* =========================================
+   11. SHADOWS
+   ========================================= */
+
+.u-shadow-none {
+    box-shadow: none;
+}
+
+.u-shadow-sm {
+    box-shadow: var(--zz-shadow-sm);
+}
+
+.u-shadow-md {
+    box-shadow: var(--zz-shadow-md);
+}
+
+.u-shadow-lg {
+    box-shadow: var(--zz-shadow-lg);
+}
+
+.u-shadow-xl {
+    box-shadow: var(--zz-shadow-xl);
+}
+
+/* =========================================
+   12. BACKGROUNDS
+   ========================================= */
+
+.u-bg-transparent {
+    background-color: transparent;
+}
+
+.u-bg-white {
+    background-color: #fff;
+}
+
+.u-bg-body {
+    background-color: var(--zz-bg-body);
+}
+
+.u-bg-card {
+    background-color: var(--zz-bg-card);
+}
+
+.u-bg-muted {
+    background-color: var(--zz-bg-muted);
+}
+
+.u-bg-primary {
+    background-color: var(--zz-color-primary);
+}
+
+.u-bg-dark {
+    background-color: var(--zz-bg-dark);
+}
+
+/* Glass Effect */
+.u-bg-glass {
+    background: var(--zz-glass-bg);
+    backdrop-filter: var(--zz-glass-blur);
+    -webkit-backdrop-filter: var(--zz-glass-blur);
+    border: 1px solid var(--zz-glass-border);
+}
+
+/* =========================================
+   13. BORDERS
+   ========================================= */
+
+.u-border {
+    border: 1px solid var(--zz-border-default);
+}
+
+.u-border-0 {
+    border: 0;
+}
+
+.u-border-t {
+    border-top: 1px solid var(--zz-border-default);
+}
+
+.u-border-b {
+    border-bottom: 1px solid var(--zz-border-default);
+}
+
+.u-border-light {
+    border-color: var(--zz-border-light);
+}
+
+/* =========================================
+   14. CURSOR
+   ========================================= */
+
+.u-cursor-pointer {
+    cursor: pointer;
+}
+
+.u-cursor-default {
+    cursor: default;
+}
+
+/* =========================================
+   15. TRANSITIONS
+   ========================================= */
+
+.u-transition {
+    transition: all var(--zz-transition-normal);
+}
+
+.u-transition-fast {
+    transition: all var(--zz-transition-fast);
+}
+
+.u-transition-slow {
+    transition: all var(--zz-transition-slow);
+}
+
+/* =========================================
+   16. OPACITY
+   ========================================= */
+
+.u-opacity-0 {
+    opacity: 0;
+}
+
+.u-opacity-50 {
+    opacity: 0.5;
+}
+
+.u-opacity-75 {
+    opacity: 0.75;
+}
+
+.u-opacity-100 {
+    opacity: 1;
+}
+
+/* =========================================
+   17. TRUNCATE
+   ========================================= */
+
+.u-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================
+   18. RESPONSIVE UTILITIES
+   ========================================= */
+
+/* Hidden on Mobile (show on tablet+) */
+@media (max-width: 767px) {
+    .u-hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Hidden on Desktop (show on mobile only) */
+@media (min-width: 768px) {
+    .u-hide-desktop {
+        display: none !important;
+    }
+}
+
+/* =========================================
+   19. THEME TOGGLE (Dark/Light)
+   ========================================= */
+
+.zz-theme-toggle {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background: var(--zz-bg-surface-secondary, #F3F4F6);
+    border: 1px solid var(--zz-border-default, #E5E7EB);
+    border-radius: var(--zz-radius-full, 50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.zz-theme-toggle:hover {
+    background: var(--zz-bg-surface-tertiary, #E5E7EB);
+    transform: rotate(15deg);
+}
+
+.zz-theme-toggle__icon {
+    font-size: 18px;
+    color: var(--zz-text-primary);
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.zz-theme-toggle__sun {
+    display: block;
+}
+
+.zz-theme-toggle__moon {
+    display: none;
+}
+
+/* Dark Mode: Manual via data-theme attribute */
+[data-theme="dark"] .zz-theme-toggle__sun {
+    display: none !important;
+}
+
+[data-theme="dark"] .zz-theme-toggle__moon {
+    display: block !important;
+}
+
+/* Light Mode: Manual via data-theme attribute */
+[data-theme="light"] .zz-theme-toggle__sun {
+    display: block !important;
+}
+
+[data-theme="light"] .zz-theme-toggle__moon {
+    display: none !important;
+}
+
+/* =========================================
+   20. BACK TO TOP BUTTON
+   ========================================= */
+
+.zz-back-to-top {
+    position: fixed;
+    bottom: 80px;
+    /* Moved up to avoid overlap */
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    border: none;
+    border-radius: var(--zz-radius-full, 50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: var(--zz-z-sticky, 200);
+}
+
+.zz-back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.zz-back-to-top:hover {
+    background: var(--zz-color-primary-hover, #4F46E5);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.zz-back-to-top__icon {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.zz-back-to-top:hover .zz-back-to-top__icon {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+    .zz-back-to-top {
+        bottom: 90px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* =========================================
+   20. TOAST NOTIFICATIONS
+   ========================================= */
+
+.zz-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #111827;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+    opacity: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zz-toast-show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.zz-toast-success {
+    border-left: 3px solid #10b981;
+}
+
+.zz-toast-error {
+    border-left: 3px solid #ef4444;
+}
+
+.zz-toast-info {
+    border-left: 3px solid #3b82f6;
+}
+
+@media (max-width: 600px) {
+    .zz-toast {
+        bottom: 100px;
+        /* Stay above mobile action bar */
+        width: calc(100% - 40px);
+        justify-content: center;
+    }
+}

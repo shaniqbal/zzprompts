@@ -1,0 +1,236 @@
+/**
+ * =========================================
+ * COMPONENT: BUTTONS (Modern V1)
+ * =========================================
+ * 
+ * Button system with variants.
+ * BEM Naming: .zz-btn, .zz-btn--*
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. BASE BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: var(--zz-font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+body.zz-layout-modern .zz-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   2. PRIMARY BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--primary {
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+body.zz-layout-modern .zz-btn--primary:hover {
+    background: var(--zz-color-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* =========================================
+   3. SECONDARY BUTTON (Outline)
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--secondary {
+    background: transparent;
+    color: var(--zz-text-primary);
+    border: 1px solid var(--zz-border-default);
+}
+
+body.zz-layout-modern .zz-btn--secondary:hover {
+    border-color: var(--zz-color-primary);
+    color: var(--zz-color-primary);
+}
+
+/* =========================================
+   4. DARK BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--dark {
+    background: var(--zz-text-primary);
+    color: var(--zz-text-inverse);
+}
+
+body.zz-layout-modern .zz-btn--dark:hover {
+    background: #000;
+}
+
+/* =========================================
+   5. WHITE BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--white {
+    background: var(--zz-bg-card);
+    color: var(--zz-text-primary);
+    border: 1px solid var(--zz-border-default);
+}
+
+body.zz-layout-modern .zz-btn--white:hover {
+    border-color: var(--zz-text-primary);
+}
+
+/* =========================================
+   6. GHOST BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--ghost {
+    background: transparent;
+    color: var(--zz-color-primary);
+    padding: var(--zz-space-2) var(--zz-space-3);
+}
+
+body.zz-layout-modern .zz-btn--ghost:hover {
+    background: var(--zz-color-primary-light);
+}
+
+/* =========================================
+   7. SIZE VARIANTS
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--sm {
+    padding: var(--zz-space-2) var(--zz-space-4);
+    font-size: var(--zz-fs-xs);
+}
+
+body.zz-layout-modern .zz-btn--lg {
+    padding: var(--zz-space-4) var(--zz-space-8);
+    font-size: var(--zz-fs-body);
+}
+
+body.zz-layout-modern .zz-btn--xl {
+    padding: var(--zz-space-5) var(--zz-space-10);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   8. SHAPE VARIANTS
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--pill {
+    border-radius: 50px;
+}
+
+body.zz-layout-modern .zz-btn--rounded {
+    border-radius: var(--zz-radius-md);
+}
+
+body.zz-layout-modern .zz-btn--square {
+    border-radius: 0;
+}
+
+/* =========================================
+   9. ICON BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: var(--zz-radius-md);
+}
+
+body.zz-layout-modern .zz-btn--icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* =========================================
+   10. BLOCK BUTTON (Full Width)
+   ========================================= */
+
+body.zz-layout-modern .zz-btn--block {
+    width: 100%;
+}
+
+/* =========================================
+   11. COPY BUTTON (Specific)
+   ========================================= */
+
+body.zz-layout-modern .zz-btn-copy {
+    background: #111827;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+body.zz-layout-modern .zz-btn-copy:hover {
+    background: #000;
+    color: #fff;
+}
+
+body.zz-layout-modern .zz-btn-copy--copied {
+    background: #059669;
+}
+
+/* =========================================
+   12. BROWSE ALL BUTTON
+   ========================================= */
+
+body.zz-layout-modern .zz-btn-browse {
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.zz-layout-modern .zz-btn-browse:hover {
+    background: var(--zz-color-primary-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   13. BUTTON GROUP
+   ========================================= */
+
+body.zz-layout-modern .zz-btn-group {
+    display: flex;
+    gap: var(--zz-space-4);
+    flex-wrap: wrap;
+}
+
+body.zz-layout-modern .zz-btn-group--center {
+    justify-content: center;
+}

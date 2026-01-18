@@ -1,0 +1,981 @@
+/**
+ * =========================================
+ * PROMPTS - Single & Archive Pages
+ * =========================================
+ * 
+ * Glassmorphism design for prompt pages.
+ * BEM naming: .zz-prompt-*
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   1. PAGE BACKGROUND
+   ========================================= */
+
+body.single-prompt,
+body.post-type-archive-prompt {
+    background: #F0F4F8;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.1) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. SINGLE PROMPT - CONTAINER
+   ========================================= */
+
+.zz-prompt-container {
+    max-width: 1320px;
+    /* CLAUDE.md standard */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.zz-prompt-content {
+    min-width: 0;
+}
+
+.zz-prompt-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+/* =========================================
+   3. HEADER SECTION (Badge, Title, Meta)
+   ========================================= */
+
+.zz-prompt-header {
+    margin-bottom: var(--zz-space-8);
+}
+
+.zz-prompt-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: var(--zz-radius-pill);
+    margin-bottom: var(--zz-space-4);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.zz-prompt-title {
+    font-family: var(--zz-font-heading);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: var(--zz-fw-extrabold);
+    line-height: 1.15;
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-5);
+    letter-spacing: -0.02em;
+}
+
+.zz-prompt-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--zz-space-5);
+    font-size: 0.9rem;
+    color: var(--zz-text-muted);
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    width: fit-content;
+}
+
+.zz-prompt-meta__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.zz-prompt-meta__item i {
+    color: var(--zz-color-primary);
+    font-size: 1rem;
+}
+
+/* =========================================
+   4. SEPARATOR
+   ========================================= */
+
+.zz-prompt-separator {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.2), transparent);
+    margin: var(--zz-space-10) 0;
+}
+
+/* =========================================
+   5. FEATURED IMAGE
+   ========================================= */
+
+.zz-prompt-featured {
+    position: relative;
+    border-radius: var(--zz-radius-xl);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--zz-space-8);
+    max-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.05);
+}
+
+.zz-prompt-featured__img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    display: block;
+}
+
+.zz-prompt-featured__badge {
+    position: absolute;
+    bottom: 20px;
+    inset-inline-end: 20px;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 8px 16px;
+    border-radius: var(--zz-radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.zz-prompt-featured__badge i {
+    color: #F472B6;
+    text-shadow: 0 0 10px #F472B6;
+}
+
+/* =========================================
+   6. TERMINAL BOX (Prompt Display)
+   ========================================= */
+
+.zz-terminal {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--zz-radius-xl);
+    overflow: hidden;
+    margin-bottom: var(--zz-space-8);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.3);
+}
+
+.zz-terminal__header {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Traffic Light Dots */
+.zz-terminal__dots {
+    display: flex;
+    gap: 8px;
+}
+
+.zz-terminal__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.zz-terminal__dot--red {
+    background: #EF4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.zz-terminal__dot--yellow {
+    background: #F59E0B;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.zz-terminal__dot--green {
+    background: #10B981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Action Buttons */
+.zz-terminal__actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.zz-terminal__btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #E2E8F0;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-family: var(--zz-font-body);
+}
+
+.zz-terminal__btn:hover {
+    background: var(--zz-color-primary);
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Copy Success */
+.zz-terminal__btn.copied {
+    background: #10B981;
+    border-color: #10B981;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+/* Like Active - Synced with Copy Button */
+.zz-terminal__btn--like {
+    padding: 8px 12px;
+    min-width: 40px;
+    justify-content: center;
+}
+
+.zz-terminal__btn--like.liked {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.zz-terminal__btn--like.liked i {
+    color: #EF4444;
+}
+
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Terminal Body */
+.zz-terminal__body {
+    position: relative;
+    padding: 25px;
+    padding-bottom: 80px;
+    color: #E2E8F0;
+    font-family: var(--zz-font-mono);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.zz-terminal__body.is-short {
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 25px;
+}
+
+.zz-terminal__body.is-short .zz-terminal__fade {
+    display: none;
+}
+
+.zz-terminal__body.is-expanded {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-bottom: 60px;
+}
+
+/* Code Content */
+.zz-terminal__code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    /* Force break long strings to prevent scroll */
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    font-family: var(--zz-font-mono);
+    background: transparent;
+    color: #E2E8F0;
+    line-height: 1.8;
+    border: none;
+}
+
+/* 1. Terminal Fade (Collapsed) */
+.zz-terminal__fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 1));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Toggle Button */
+.zz-terminal__expand {
+    pointer-events: auto;
+    position: relative;
+    z-index: 11;
+    background: var(--zz-color-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--zz-font-body);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.zz-terminal__expand:hover {
+    background: var(--zz-color-primary-hover, #4F46E5);
+    transform: translateY(-2px);
+}
+
+/* 2. Expanded State (Professional Sticky) */
+.zz-terminal__body.is-expanded .zz-terminal__fade {
+    position: sticky;
+    bottom: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(15, 23, 42, 1) 70%, transparent);
+    padding-bottom: 10px;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none;
+}
+
+.zz-terminal__body.is-expanded .zz-terminal__expand {
+    pointer-events: auto;
+    margin-bottom: 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Body Spacing */
+.zz-terminal__body.is-expanded {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    transition: none !important;
+}
+
+@media (max-width: 768px) {
+    .zz-terminal__body.is-expanded .zz-terminal__fade {
+        bottom: 0;
+        height: 100px;
+        padding-bottom: 20px;
+    }
+
+    .zz-terminal__body.is-expanded {
+        padding-bottom: 40px;
+    }
+}
+
+/* =========================================
+   7. AD SLOT
+   ========================================= */
+
+.zz-ad-slot {
+    position: relative;
+    margin-bottom: var(--zz-space-8);
+    text-align: center;
+}
+
+.zz-ad-slot__label {
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 15px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--zz-color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--zz-color-primary-light);
+    padding: 3px 10px;
+    border-radius: 4px;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   8. RELATED PROMPTS
+   ========================================= */
+
+.zz-prompt-related {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    /* Reference style */
+    position: relative;
+}
+
+/* Separator - Hidden as per reference using border-top on container */
+.zz-prompt-related::before {
+    display: none;
+}
+
+.zz-prompt-related__title {
+    font-family: var(--zz-font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--zz-text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zz-prompt-related__title i {
+    color: #F59E0B;
+}
+
+.zz-prompt-related__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+}
+
+/* Related Card - Force no padding to match demo */
+body.single-prompt .zz-prompt-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 0 !important;
+    /* This kills the "pressed" look */
+}
+
+
+.zz-prompt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.15);
+    border-color: var(--zz-color-primary, #6366F1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Media Area (Image Wrapper) */
+.zz-prompt-card__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    display: block;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.zz-prompt-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.zz-prompt-card:hover .zz-prompt-card__img {
+    transform: scale(1.1);
+}
+
+/* Badge */
+.zz-prompt-card__badge {
+    position: absolute;
+    top: 10px;
+    inset-inline-start: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 2;
+    text-decoration: none !important;
+}
+
+/* Placeholder (No Image) */
+.zz-prompt-card__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.zz-prompt-card__placeholder-text {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none !important;
+}
+
+/* Content */
+.zz-prompt-card__content {
+    padding: 12px 16px 8px !important;
+    /* Reduced bottom padding to 8px to lift icons up */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Increased specificity to override global card styles */
+body.single-prompt .zz-prompt-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: -15px 0 12px 0 !important;
+    /* Reduced bottom gap from 25px to 12px */
+    color: var(--zz-text-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.zz-prompt-card__title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.zz-prompt-card:hover .zz-prompt-card__title a {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+/* Meta */
+.zz-prompt-card__meta {
+    margin-top: auto;
+    /* Pushes icons to bottom so they stay aligned across all cards */
+    font-size: 0.8rem;
+    color: var(--zz-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.zz-prompt-card__meta i {
+    margin-inline-end: 4px;
+}
+
+.zz-prompt-card__meta i.fa-heart {
+    color: #EF4444;
+}
+
+.zz-prompt-card__meta .zz-icon-folder {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+/* =========================================
+   9. ARCHIVE GRID
+   ========================================= */
+
+.zz-prompt-archive {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--zz-space-10) var(--zz-space-5);
+}
+
+.zz-prompt-archive__header {
+    text-align: center;
+    margin-bottom: var(--zz-space-10);
+}
+
+.zz-prompt-archive__title {
+    font-family: var(--zz-font-heading);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-4);
+}
+
+.zz-prompt-archive__desc {
+    font-size: 1.1rem;
+    color: var(--zz-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.zz-prompt-archive__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* =========================================
+   10. MOBILE STICKY ACTIONS
+   ========================================= */
+
+.zz-prompt-mobile-actions {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    background: var(--zz-bg-card);
+    border-top: 1px solid var(--zz-border-light);
+    padding: 12px 20px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.zz-prompt-mobile-actions__inner {
+    display: flex;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.zz-prompt-mobile-actions__btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: var(--zz-radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.zz-prompt-mobile-actions__btn--like {
+    background: var(--zz-bg-surface-secondary);
+    color: var(--zz-text-primary);
+}
+
+.zz-prompt-mobile-actions__btn--copy {
+    background: var(--zz-color-primary);
+    color: #fff;
+}
+
+/* =========================================
+   11. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .zz-prompt-container {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .zz-prompt-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.25rem;
+        gap: 3rem;
+    }
+
+    .zz-prompt-sidebar {
+        position: static;
+        top: 0;
+        margin-top: 1rem;
+        /* Sidebar follows content naturally */
+    }
+
+    .zz-prompt-content {
+        width: 100%;
+    }
+}
+
+/* Handled in 992px */
+
+@media (max-width: 768px) {
+
+    /* Mobile Performance: Disable fixed background */
+    body.single-prompt,
+    body.post-type-archive-prompt {
+        background-attachment: scroll !important;
+    }
+
+    .zz-prompt-related__grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .zz-prompt-mobile-actions {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.05);
+        /* Ultra transparent */
+        backdrop-filter: blur(10px);
+        /* Reduced from 20px for performance */
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        padding: 8px 10px;
+        border-radius: 20px;
+        animation: slideUp 0.4s ease-out;
+    }
+
+    .zz-prompt-mobile-actions__inner {
+        display: flex;
+        gap: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .zz-prompt-mobile-actions__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    /* Like Button (Transparent + Red Glow) */
+    .zz-prompt-mobile-actions__btn--like {
+        flex: 0.4;
+        background: rgba(239, 68, 68, 0.1);
+        color: #EF4444;
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        min-width: 70px;
+    }
+
+    .zz-prompt-mobile-actions__btn--like i {
+        font-size: 1.1rem;
+    }
+
+    .zz-prompt-mobile-actions__btn--like:active i,
+    .zz-prompt-mobile-actions__btn--like.liked i {
+        animation: heartPulse 0.4s ease-in-out;
+    }
+
+    /* Copy Button (Gradient) */
+    .zz-prompt-mobile-actions__btn--copy {
+        flex: 1;
+        background: linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+    }
+
+    .zz-prompt-mobile-actions__btn--copy.copied {
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+    }
+
+    .zz-prompt-mobile-actions__btn--copy.copied i {
+        display: none;
+    }
+
+    .zz-prompt-mobile-actions__btn--copy.copied::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-right: 5px;
+    }
+
+    .zz-prompt-content {
+        padding-bottom: 2rem;
+    }
+
+    .zz-prompt-meta {
+        width: 100%;
+        border-radius: 16px;
+        padding: 15px;
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .zz-prompt-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .zz-prompt-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+
+
+    .zz-prompt-meta__item {
+        width: 100%;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .zz-prompt-meta__item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .zz-prompt-featured__badge {
+        bottom: 10px;
+        inset-inline-end: 10px;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+
+    .zz-terminal__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 15px;
+    }
+
+    .zz-terminal__actions {
+        display: none !important;
+        /* Hide to prevent horizontal scroll */
+    }
+
+    .zz-terminal {
+        backdrop-filter: none;
+        background: rgba(15, 23, 42, 0.98);
+        border-radius: 12px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .zz-prompt-related__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zz-prompt-container {
+        padding: 1rem 0.75rem;
+        gap: 2rem;
+    }
+}
+
+/* =========================================
+   12. DARK MODE
+   ========================================= */
+
+[data-theme="dark"] body.single-prompt,
+[data-theme="dark"] body.post-type-archive-prompt {
+    background: #0F172A;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+}
+
+[data-theme="dark"] .zz-prompt-meta {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .zz-prompt-meta__item {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .zz-prompt-meta__item i {
+    color: #A5B4FC;
+}
+
+[data-theme="dark"] .zz-prompt-card {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .zz-prompt-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .zz-prompt-card__title {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .zz-prompt-card__meta {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .zz-prompt-related__title {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .zz-prompt-related {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Ad Label Dark Mode */
+[data-theme="dark"] .zz-ad-slot__label {
+    background: rgba(99, 102, 241, 0.2);
+    color: #A5B4FC;
+}

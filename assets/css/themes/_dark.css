@@ -1,0 +1,156 @@
+/**
+ * =========================================
+ * DARK MODE - Manual Toggle Only
+ * =========================================
+ * 
+ * Activates via [data-theme="dark"] on <html>.
+ * JS handles system preference detection and localStorage.
+ * 
+ * @package zzprompts
+ * @version 2.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   1. DARK MODE CSS VARIABLES
+   ========================================= */
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --zz-color-primary: #818CF8;
+    --zz-color-primary-hover: #A5B4FC;
+    --zz-color-primary-light: rgba(99, 102, 241, 0.15);
+    --zz-color-primary-glow: rgba(129, 140, 248, 0.3);
+
+    --zz-text-primary: #F9FAFB;
+    --zz-text-secondary: #E5E7EB;
+    --zz-text-tertiary: #9CA3AF;
+    --zz-text-muted: #6B7280;
+    --zz-text-inverse: #111827;
+
+    --zz-bg-body: #0A0E1A;
+    --zz-bg-card: #1A1F2E;
+    --zz-bg-surface: #1A1F2E;
+    --zz-bg-surface-secondary: #222938;
+    --zz-bg-surface-tertiary: #2A3142;
+    --zz-bg-input: #222938;
+
+    --zz-border-light: #2A3142;
+    --zz-border-default: #374151;
+    --zz-border-strong: #4B5563;
+
+    --zz-glass-bg: rgba(26, 31, 46, 0.85);
+    --zz-glass-border: rgba(74, 85, 104, 0.3);
+    --zz-glass-blur: blur(12px);
+
+    --zz-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    --zz-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --zz-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --zz-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   2. DARK MODE COMPONENT OVERRIDES
+   ========================================= */
+
+[data-theme="dark"] body {
+    background-color: var(--zz-bg-body);
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] .zz-header {
+    background: var(--zz-glass-bg);
+    border-bottom-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-prompt-card {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-prompt-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .zz-blog-card {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-footer {
+    background: var(--zz-bg-surface);
+    border-top-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-hero-search__input {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-default);
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] .zz-hero-search__input::placeholder {
+    color: var(--zz-text-muted);
+}
+
+[data-theme="dark"] .zz-filter-pill {
+    background: var(--zz-bg-surface-secondary);
+    color: var(--zz-text-secondary);
+    border-color: var(--zz-border-default);
+}
+
+[data-theme="dark"] .zz-filter-pill--active,
+[data-theme="dark"] .zz-filter-pill:hover {
+    background: var(--zz-color-primary);
+    color: #fff;
+}
+
+[data-theme="dark"] .zz-stat-card {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-step-card {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="dark"] .zz-home-cta {
+    background: linear-gradient(135deg, #1A1F2E 0%, #111827 100%);
+}
+
+[data-theme="dark"] .zz-btn--white {
+    background: var(--zz-bg-card);
+    color: var(--zz-text-primary);
+    border-color: var(--zz-border-default);
+}
+
+[data-theme="dark"] .zz-btn-copy {
+    background: #374151;
+}
+
+[data-theme="dark"] .zz-btn-copy:hover {
+    background: #4B5563;
+}
+
+[data-theme="dark"] .zz-sidebar {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+/* =========================================
+   3. DARK MODE IMAGES
+   ========================================= */
+
+[data-theme="dark"] img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+[data-theme="dark"] .zz-logo--dark {
+    display: block;
+}
+
+[data-theme="dark"] .zz-logo--light {
+    display: none;
+}

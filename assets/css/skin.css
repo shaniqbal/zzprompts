@@ -1,0 +1,24 @@
+/**
+ * =========================================
+ * ZZ PROMPTS - MODERN SKIN
+ * =========================================
+ * 
+ * Modern V1 Layout Skin.
+ * Glass morphism, rounded corners, soft shadows.
+ * Scoped with: body.zz-layout-modern
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   MODERN SKIN IMPORTS
+   ========================================= */
+
+@import url('skins/modern/header.css');
+@import url('skins/modern/footer.css');
+@import url('skins/modern/sidebar.css');
+@import url('skins/modern/buttons.css');
+@import url('skins/modern/cards.css');

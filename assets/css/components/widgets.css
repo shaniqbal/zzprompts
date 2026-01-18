@@ -1,0 +1,1449 @@
+/**
+ * ZZ Widgets CSS - Modern V1
+ * 
+ * Styles for all custom ZZ widgets matching Modern V1 design.
+ * Glassmorphism, design tokens, and BEM naming.
+ * Matches HTML design: final v1.html
+ *
+ * @package zzprompts
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   HEADER AD WRAPPER
+   ========================================================================== */
+
+.zz-header-ad-wrap {
+    max-width: var(--zz-container-xl, 1320px);
+    margin: var(--zz-space-6, 24px) auto var(--zz-space-4, 16px) auto;
+    padding: 0 var(--zz-space-5, 20px);
+    width: 100%;
+}
+
+.zz-header-ad-wrap .zz-ad-slot {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SIDEBAR WIDGET CONTAINER (Glass Card Style - Matching HTML)
+   ========================================================================== */
+
+.zz-sidebar-widget {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.zz-sidebar-widget__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+}
+
+.zz-footer-widget {
+    margin-bottom: var(--zz-space-6, 24px);
+}
+
+.zz-footer-widget__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--zz-space-4, 16px);
+    padding-bottom: var(--zz-space-2, 8px);
+    border-bottom: 2px solid var(--zz-color-primary, #6366F1);
+    display: inline-block;
+}
+
+
+/* ==========================================================================
+   1. BRAND & SOCIAL WIDGET
+   ========================================================================== */
+
+.zz-widget--brand {
+    text-align: left;
+}
+
+.zz-widget__logo {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.zz-widget__logo img {
+    max-height: 40px;
+    width: auto;
+}
+
+.zz-widget__site-name {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.zz-widget__desc {
+    font-size: 0.9rem;
+    color: var(--zz-text-muted, #64748B);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.zz-widget__socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Social Icons - Light Mode Visible */
+.zz-widget__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 50%;
+    color: #6366F1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.zz-widget__social:hover {
+    background: #6366F1;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    border-color: #6366F1;
+}
+
+
+/* ==========================================================================
+   2. PROMPT SEARCH WIDGET (Matching HTML Design)
+   ========================================================================== */
+
+.zz-widget--search {
+    margin-bottom: 0;
+}
+
+.zz-widget__search-form {
+    position: relative;
+}
+
+.zz-widget__search-wrap {
+    position: relative;
+}
+
+.zz-widget__search-input {
+    width: 100%;
+    padding: 12px 50px 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(100, 116, 139, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    color: #1E293B;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.zz-widget__search-input::placeholder {
+    color: #94A3B8;
+}
+
+.zz-widget__search-input:focus {
+    background: #fff;
+    border-color: rgba(100, 116, 139, 0.4);
+    box-shadow: none;
+}
+
+.zz-widget__search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6366F1;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.zz-widget__search-btn:hover {
+    color: #4F46E5;
+}
+
+
+/* ==========================================================================
+   3. POPULAR PROMPTS WIDGET (Matching HTML Design)
+   ========================================================================== */
+
+.zz-widget--popular {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.zz-widget__popular-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.zz-widget__popular-item:last-child {
+    margin-bottom: 0;
+}
+
+.zz-widget__popular-item:hover {
+    background: rgba(255, 255, 255, 0.65);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+
+.zz-widget__popular-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366F1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.zz-widget__popular-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.zz-widget__popular-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1E293B;
+    margin: 0 0 2px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.zz-widget__popular-meta {
+    font-size: 0.75rem;
+    color: #64748B;
+}
+
+
+/* ==========================================================================
+   4. CATEGORY TAGS WIDGET (AI Tools - Light Mode Fix)
+   ========================================================================== */
+
+.zz-widget--tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Tags - Light Mode Visible (White bg with border) */
+.zz-widget__tag {
+    display: inline-block;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #1E293B;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+}
+
+.zz-widget__tag:hover {
+    background: #6366F1;
+    color: #fff;
+    border-color: #6366F1;
+}
+
+
+/* ==========================================================================
+   5. NEWSLETTER WIDGET (Light Mode Improved)
+   ========================================================================== */
+
+.zz-widget--newsletter {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.zz-widget__newsletter-desc {
+    font-size: 0.9rem;
+    color: #64748B;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.zz-widget__newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zz-widget__newsletter-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 0.9rem;
+    color: #1E293B;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-shadow: none;
+    /* Remove default browser shadows */
+}
+
+/* Force Neutral Border - Aggressive Reset */
+.zz-widget__newsletter-input,
+.zz-widget__newsletter-input:hover,
+.zz-widget__newsletter-input:focus,
+.zz-widget__newsletter-input:active,
+.zz-widget__newsletter-input:valid,
+.zz-widget__newsletter-input:invalid,
+.zz-widget__newsletter-input:required {
+    border: 1px solid rgba(99, 102, 241, 0.25) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Restoring Focus State */
+.zz-widget__newsletter-input:focus {
+    border-color: #6366F1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+.zz-widget__newsletter-input::placeholder {
+    color: #94A3B8;
+}
+
+.zz-widget__newsletter-input:focus {
+    border-color: #6366F1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Subscribe Button - Light Mode Hover Fixed */
+.zz-widget__newsletter-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: #6366F1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.zz-widget__newsletter-btn:hover {
+    background: #4F46E5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+
+/* ==========================================================================
+   6. AD BANNER WIDGET (Matching HTML Design)
+   ========================================================================== */
+
+.zz-widget--ad {
+    position: relative;
+}
+
+.zz-widget__ad-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.6rem;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+.zz-widget__ad-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px dashed rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.zz-widget__ad-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+
+/* ==========================================================================
+   7. AUTHOR BIO WIDGET
+   ========================================================================== */
+
+.zz-widget--author {
+    text-align: center;
+}
+
+.zz-widget__author-avatar {
+    margin-bottom: 16px;
+}
+
+.zz-widget__author-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6366F1;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+
+.zz-widget__author-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0 0 4px 0;
+}
+
+.zz-widget__author-role {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #6366F1;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.zz-widget__author-bio {
+    font-size: 0.9rem;
+    color: #64748B;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.zz-widget__author-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.zz-widget__author-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 50%;
+    color: #6366F1;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.zz-widget__author-social a:hover {
+    background: #6366F1;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   WORDPRESS DEFAULT MENU WIDGET STYLING
+   ========================================================================== */
+
+body.zz-layout-modern .widget_nav_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.zz-layout-modern .widget_nav_menu li {
+    margin-bottom: 8px;
+}
+
+body.zz-layout-modern .widget_nav_menu a {
+    display: block;
+    padding: 8px 0;
+    color: #64748B;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.zz-layout-modern .widget_nav_menu a:hover {
+    color: #6366F1;
+    padding-left: 8px;
+}
+
+body.zz-layout-modern .widget_nav_menu .sub-menu {
+    padding-left: 16px;
+    margin-top: 8px;
+}
+
+
+/* ==========================================================================
+   FOOTER SPECIFIC WIDGET STYLES (Light Footer Background)
+   ========================================================================== */
+
+.zz-footer .zz-sidebar-widget {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Footer Widget Title */
+.zz-footer .zz-footer-widget__title,
+.zz-footer .zz-sidebar-widget__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--zz-text-muted, #64748B);
+    margin-bottom: 16px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Footer Text - Dark for light bg */
+.zz-footer .zz-widget__desc {
+    color: var(--zz-text-muted, #64748B);
+}
+
+.zz-footer .zz-widget__site-name {
+    color: var(--zz-text-primary, #1E293B);
+}
+
+/* Footer Social Icons - Visible on light bg */
+.zz-footer .zz-widget__social {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366F1;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.zz-footer .zz-widget__social:hover {
+    background: #6366F1;
+    color: #fff;
+    border-color: #6366F1;
+}
+
+/* Footer Tags - Visible on light bg */
+.zz-footer .zz-widget__tag {
+    background: #fff;
+    color: #1E293B;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.zz-footer .zz-widget__tag:hover {
+    background: #6366F1;
+    border-color: #6366F1;
+    color: #fff;
+}
+
+/* Footer Nav Menu */
+.zz-footer .widget_nav_menu a {
+    color: var(--zz-text-primary, #1E293B);
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+.zz-footer .widget_nav_menu a:hover {
+    color: #6366F1;
+}
+
+/* Footer Popular Prompts */
+.zz-footer .zz-widget__popular-title {
+    color: var(--zz-text-primary, #1E293B);
+}
+
+.zz-footer .zz-widget__popular-meta {
+    color: var(--zz-text-muted, #64748B);
+}
+
+
+/* ==========================================================================
+   DARK MODE ADJUSTMENTS (For users who prefer dark)
+   ========================================================================== */
+
+[data-theme="dark"] .zz-sidebar-widget {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="dark"] .zz-sidebar-widget__title {
+    color: #E2E8F0;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .zz-widget__search-input {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-widget__popular-item:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+[data-theme="dark"] .zz-widget__popular-title {
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-widget__tag {
+    background: rgba(99, 102, 241, 0.2);
+    color: #E2E8F0;
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+[data-theme="dark"] .zz-widget__newsletter-input {
+    background: rgba(30, 41, 59, 0.8);
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-widget__author-name {
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-widget__ad-content {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+
+/* ==========================================================================
+   8. WP DEFAULT WIDGETS REDESIGN (Premium discovery-focused)
+   ========================================================================== */
+
+/* Target all default list-based widgets (Legacy + Blocks) */
+.zz-blog-sidebar .widget_recent_entries,
+.zz-blog-sidebar .widget_categories,
+.zz-blog-sidebar .widget_archive,
+.zz-blog-sidebar .widget_pages,
+.zz-blog-sidebar .widget_meta,
+.zz-blog-sidebar .widget_recent_comments,
+.zz-blog-sidebar .widget_nav_menu,
+.zz-blog-sidebar .widget {
+    background: var(--zz-glass-bg, rgba(255, 255, 255, 0.85));
+    backdrop-filter: var(--zz-glass-blur, blur(12px));
+    -webkit-backdrop-filter: var(--zz-glass-blur, blur(12px));
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl, 16px);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--zz-shadow-md, 0 4px 6px rgba(0, 0, 0, 0.05));
+    transition: all 0.3s ease;
+}
+
+/* Prevent double boxes for Nested Gutenberg Blocks, Custom Widgets, and Nested Widgets */
+.zz-blog-sidebar .widget .wp-block-group,
+.zz-blog-sidebar .widget .wp-block-columns,
+.zz-blog-sidebar .widget .wp-block-column,
+.zz-blog-sidebar .widget .zz-widget,
+.zz-blog-sidebar .widget .widget,
+.zz-blog-sidebar .widget .widget_block,
+.zz-blog-sidebar .widget .zz-popular-list,
+.zz-blog-sidebar .widget .widget_zz_popular_posts {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Aggressive Dark Mode Transparent Shield for Popular Posts */
+[data-theme="dark"] .zz-blog-sidebar .widget .widget_zz_popular_posts,
+[data-theme="dark"] .zz-blog-sidebar .widget .zz-popular-list {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_recent_entries,
+[data-theme="dark"] .zz-blog-sidebar .widget_categories,
+[data-theme="dark"] .zz-blog-sidebar .widget_archive,
+[data-theme="dark"] .zz-blog-sidebar .widget_pages,
+[data-theme="dark"] .zz-blog-sidebar .widget_meta,
+[data-theme="dark"] .zz-blog-sidebar .widget_recent_comments,
+[data-theme="dark"] .zz-blog-sidebar .widget_nav_menu,
+[data-theme="dark"] .zz-blog-sidebar .widget {
+    background: rgba(30, 41, 59, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.zz-blog-sidebar .widget .widget-title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--zz-text-primary, #1E293B);
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--zz-color-primary, #6366F1);
+    display: inline-block;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget .widget-title {
+    color: #F9FAFB;
+}
+
+/* Remove default bullets and style lists */
+.zz-blog-sidebar .widget ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.zz-blog-sidebar .widget li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget li {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.zz-blog-sidebar .widget li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.zz-blog-sidebar .widget li a {
+    color: var(--zz-text-muted, #64748B);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget li a {
+    color: #94A3B8;
+}
+
+.zz-blog-sidebar .widget li a:hover {
+    color: var(--zz-color-primary, #6366F1);
+    padding-left: 5px;
+}
+
+/* Specific styling for Recent Posts and Categories with count */
+.zz-blog-sidebar .widget_categories li,
+.zz-blog-sidebar .widget_archive li,
+.zz-blog-sidebar .wp-block-categories li,
+.zz-blog-sidebar .wp-block-archives li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid transparent !important;
+    /* Force all 4 sides */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    min-height: 48px;
+}
+
+.zz-blog-sidebar .widget_categories li:last-child,
+.zz-blog-sidebar .widget_archive li:last-child,
+.zz-blog-sidebar .wp-block-categories li:last-child,
+.zz-blog-sidebar .wp-block-archives li:last-child {
+    margin-bottom: 10px;
+    border-bottom: 1px solid transparent !important;
+    /* Forces the missing bottom border to show */
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_categories li,
+[data-theme="dark"] .zz-blog-sidebar .widget_archive li,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-categories li,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-archives li {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.zz-blog-sidebar .widget_categories li:hover,
+.zz-blog-sidebar .widget_archive li:hover,
+.zz-blog-sidebar .wp-block-categories li:hover,
+.zz-blog-sidebar .wp-block-archives li:hover {
+    background: var(--zz-color-primary-glow, rgba(99, 102, 241, 0.1));
+    border-color: var(--zz-color-primary, #6366F1) !important;
+    transform: translateY(-2px);
+}
+
+/* Category Link Wrapper & Arrow */
+.zz-blog-sidebar .widget_categories li a,
+.zz-blog-sidebar .widget_archive li a,
+.zz-blog-sidebar .wp-block-categories li a,
+.zz-blog-sidebar .wp-block-archives li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--zz-text-primary, #1E293B);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-right: auto;
+    /* Push count to right */
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_categories li a,
+[data-theme="dark"] .zz-blog-sidebar .widget_archive li a,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-categories li a,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-archives li a {
+    color: #F8FAFC;
+}
+
+/* Hover Arrow Icon */
+.zz-blog-sidebar .widget_categories li a::before,
+.zz-blog-sidebar .widget_archive li a::before,
+.zz-blog-sidebar .wp-block-categories li a::before {
+    content: "\f105";
+    /* FontAwesome Angle-Right */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: var(--zz-color-primary, #6366F1);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.zz-blog-sidebar .widget_categories li:hover a::before,
+.zz-blog-sidebar .widget_archive li:hover a::before,
+.zz-blog-sidebar .wp-block-categories li:hover a::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Categories/Archive Count Label */
+.zz-blog-sidebar .widget li span,
+.zz-blog-sidebar .widget li .count,
+.zz-blog-sidebar .wp-block-categories-list .wp-block-categories-list__post-count {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--zz-text-muted, #64748B);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget li span,
+[data-theme="dark"] .zz-blog-sidebar .widget li .count {
+    background: rgba(255, 255, 255, 0.05);
+    color: #94A3B8;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Count Pill Hover State */
+.zz-blog-sidebar .widget li:hover span,
+.zz-blog-sidebar .widget li:hover .count,
+.zz-blog-sidebar .wp-block-categories-list li:hover .wp-block-categories-list__post-count {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff !important;
+    border-color: var(--zz-color-primary, #6366F1);
+}
+
+/* Recent Posts Dates */
+.zz-blog-sidebar .widget_recent_entries .post-date {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--zz-text-light, #94A3B8);
+    margin-top: 4px;
+}
+
+/* Tag Cloud Widget */
+.zz-blog-sidebar .widget_tag_cloud .tagcloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.zz-blog-sidebar .widget_tag_cloud a {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem !important;
+    color: var(--zz-text-primary, #1E293B);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_tag_cloud a {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #E2E8F0;
+}
+
+.zz-blog-sidebar .widget_tag_cloud a:hover {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff !important;
+    border-color: var(--zz-color-primary, #6366F1);
+    transform: translateY(-2px);
+}
+
+/* WP Block Widgets (Gutenberg) handled by the main .widget selector above */
+
+/* ==========================================================================
+   9. WP BLOCK EXTRA SETTINGS (Dropdowns, Labels, etc.)
+   ========================================================================== */
+
+/* Dropdowns Style (Categories, Archives as dropdown) */
+.zz-blog-sidebar .widget select,
+.zz-blog-sidebar .wp-block-categories select,
+.zz-blog-sidebar .wp-block-archives select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--zz-border-default, rgba(0, 0, 0, 0.1));
+    background: var(--zz-bg-card, #fff);
+    color: var(--zz-text-primary, #1E293B);
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236366F1' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget select {
+    background-color: rgba(15, 23, 42, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #F3F4F6;
+}
+
+.zz-blog-sidebar .widget select:focus {
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 0 0 4px var(--zz-color-primary-glow, rgba(99, 102, 241, 0.1));
+}
+
+/* Labels Style */
+.zz-blog-sidebar .widget label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--zz-text-muted, #64748B);
+    margin-bottom: 8px;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget label {
+    color: #94A3B8;
+}
+
+/* WP Block Search (Gutenberg Variant) */
+.zz-blog-sidebar .wp-block-search__label {
+    font-family: var(--zz-font-heading, inherit);
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.zz-blog-sidebar .wp-block-search__input {
+    border-radius: 12px !important;
+    border: 1px solid var(--zz-border-default, rgba(0, 0, 0, 0.1)) !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+    background: var(--zz-bg-card, #fff) !important;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .wp-block-search__input {
+    background: rgba(15, 23, 42, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}
+
+.zz-blog-sidebar .wp-block-search__button {
+    background: var(--zz-color-primary, #6366F1) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    margin-left: 8px !important;
+    transition: all 0.2s !important;
+}
+
+.zz-blog-sidebar .wp-block-search__button:hover {
+    background: var(--zz-color-primary-dark, #4F46E5) !important;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   10. WP LATEST POSTS BLOCK (Discovery Style)
+   ========================================================================== */
+
+.zz-blog-sidebar .wp-block-latest-posts {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.zz-blog-sidebar .wp-block-latest-posts li {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* SIDE-BY-SIDE LAYOUT (When image is present) */
+.zz-blog-sidebar .wp-block-latest-posts:not(.is-grid) li:has(.wp-block-latest-posts__featured-image) {
+    display: grid !important;
+    grid-template-columns: 70px 1fr;
+    column-gap: 15px;
+    align-items: flex-start;
+}
+
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__featured-image {
+    grid-column: 1;
+    grid-row: 1 / span 10;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Stack (Column 2) */
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__post-title,
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__post-author,
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__post-date,
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__post-excerpt {
+    grid-column: 2;
+    margin-left: 0;
+    width: 100%;
+}
+
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__post-title {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 2px;
+}
+
+.zz-blog-sidebar li:has(.wp-block-latest-posts__featured-image) .wp-block-latest-posts__post-date {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .wp-block-latest-posts li {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.zz-blog-sidebar .wp-block-latest-posts li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Featured Image in Latest Posts (Legacy/Non-compact) */
+.zz-blog-sidebar .wp-block-latest-posts:not(.is-grid) li:not(:has(.wp-block-latest-posts__featured-image)) .wp-block-latest-posts__featured-image {
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.zz-blog-sidebar .wp-block-latest-posts__featured-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.zz-blog-sidebar .wp-block-latest-posts li:hover .wp-block-latest-posts__featured-image img {
+    transform: scale(1.05);
+}
+
+/* Alignments Support */
+.zz-blog-sidebar .wp-block-latest-posts.alignleft li {
+    display: block;
+}
+
+.zz-blog-sidebar .wp-block-latest-posts.is-grid li {
+    border: none;
+    padding: 0;
+}
+
+/* In Grid Mode */
+.zz-blog-sidebar .wp-block-latest-posts.is-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Post Title Styling */
+.zz-blog-sidebar .wp-block-latest-posts__post-title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--zz-text-primary, #1E293B);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2px;
+    transition: color 0.2s;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .wp-block-latest-posts__post-title {
+    color: #F8FAFC;
+}
+
+.zz-blog-sidebar .wp-block-latest-posts__post-title:hover {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+/* Post Meta (Author/Date) */
+.zz-blog-sidebar .wp-block-latest-posts__post-author,
+.zz-blog-sidebar .wp-block-latest-posts__post-date {
+    font-size: 0.75rem;
+    color: var(--zz-text-muted, #64748B);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .wp-block-latest-posts__post-author,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-latest-posts__post-date {
+    color: #94A3B8;
+}
+
+/* Removed the duplicate "by" ::before as requested */
+
+/* Excerpt Style */
+.zz-blog-sidebar .wp-block-latest-posts__post-excerpt {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--zz-text-body, #475569);
+    margin-top: 6px;
+    /* Professional gap from title/meta */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .wp-block-latest-posts__post-excerpt {
+    color: #CBD5E1;
+}
+
+/* ==========================================================================
+   11. ZZ POPULAR POSTS WIDGET (Premium Discovery)
+   ========================================================================== */
+
+/* Neutral List Container */
+.zz-popular-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 0 24px 0 !important;
+    /* Force separation from next widget */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Style 1: Numbered Index Bubbles */
+.style-1-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+[data-theme="dark"] .style-1-item {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.style-1-item:hover {
+    background: var(--zz-color-primary-glow, rgba(99, 102, 241, 0.1));
+    border-color: var(--zz-color-primary, #6366F1);
+}
+
+.s1-index {
+    width: 28px;
+    height: 28px;
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+}
+
+.s1-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--zz-text-primary, #1e293b);
+}
+
+[data-theme="dark"] .s1-title {
+    color: #f1f5f9;
+}
+
+/* Style 2: Iconic Discovery */
+.style-2-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+[data-theme="dark"] .style-2-item {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.style-2-item:last-child {
+    border-bottom: none;
+}
+
+.s2-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--zz-color-primary, #6366F1);
+    border-radius: 50%;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.s2-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--zz-text-primary, #1e293b);
+}
+
+[data-theme="dark"] .s2-title {
+    color: #e2e8f0;
+}
+
+.style-2-item:hover .s2-title {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+.style-2-item:hover .s2-icon {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+}
+
+/* Style 4: Glass Strips (Integrated from Demo) */
+.style-4-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 10px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+[data-theme="dark"] .style-4-item {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.style-4-item:hover {
+    background: var(--zz-color-primary-glow, rgba(99, 102, 241, 0.15));
+    border-color: var(--zz-color-primary, #6366F1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.s4-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.s4-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    color: var(--zz-text-primary, #1E293B);
+    transition: color 0.2s;
+}
+
+[data-theme="dark"] .s4-title {
+    color: #E2E8F0;
+}
+
+.style-4-item:hover .s4-title {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+[data-theme="dark"] .style-4-item:hover .s4-title {
+    color: #fff;
+}
+
+.style-4-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Premium Views Pill */
+.s-views-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--zz-text-muted, #64748B);
+    background: rgba(0, 0, 0, 0.08);
+    /* Slightly darker for Expert visibility */
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+[data-theme="dark"] .s-views-pill {
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+}
+
+.style-1-item:hover .s-views-pill,
+.style-2-item:hover .s-views-pill,
+.style-4-item:hover .s-views-pill {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+}
+
+.s1-content,
+.s2-content,
+.s4-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    /* CRITICAL: Prevents pill stretching */
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .zz-sidebar-widget,
+    .zz-blog-sidebar .widget {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .zz-widget__author-avatar img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .zz-widget__newsletter-form {
+        flex-direction: column;
+    }
+
+    .zz-footer-widgets {
+        gap: 2rem;
+    }
+
+    .zz-widget__site-name {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .zz-sidebar-widget,
+    .zz-blog-sidebar .widget {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .zz-widget__popular-item {
+        padding: 8px;
+        gap: 10px;
+    }
+
+    .zz-widget__popular-title {
+        font-size: 0.85rem;
+    }
+}

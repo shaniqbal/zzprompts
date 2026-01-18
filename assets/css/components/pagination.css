@@ -1,0 +1,101 @@
+/**
+ * =========================================
+ * COMPONENT: PAGINATION (Modern V1)
+ * =========================================
+ * 
+ * Pagination for archives.
+ * BEM Naming: .zz-pagination
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. PAGINATION CONTAINER
+   ========================================= */
+
+body.zz-layout-modern .zz-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--zz-space-3);
+    margin-top: var(--zz-space-16);
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   2. PAGE NUMBERS
+   ========================================= */
+
+body.zz-layout-modern .zz-pagination__item {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--zz-space-2);
+    background: var(--zz-bg-card);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-sm);
+    font-size: var(--zz-fs-small);
+    font-weight: var(--zz-fw-semibold);
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-pagination__item:hover,
+body.zz-layout-modern .zz-pagination__item--active {
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+    border-color: var(--zz-color-primary);
+}
+
+/* =========================================
+   3. PREV/NEXT BUTTONS
+   ========================================= */
+
+body.zz-layout-modern .zz-pagination__prev,
+body.zz-layout-modern .zz-pagination__next {
+    display: flex;
+    align-items: center;
+    gap: var(--zz-space-2);
+    padding: 0 var(--zz-space-4);
+    min-width: auto;
+}
+
+body.zz-layout-modern .zz-pagination__prev svg,
+body.zz-layout-modern .zz-pagination__next svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* =========================================
+   4. DOTS (Ellipsis)
+   ========================================= */
+
+body.zz-layout-modern .zz-pagination__dots {
+    color: var(--zz-text-muted);
+    padding: 0 var(--zz-space-2);
+}
+
+/* =========================================
+   5. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    body.zz-layout-modern .zz-pagination {
+        gap: var(--zz-space-2);
+    }
+
+    body.zz-layout-modern .zz-pagination__item {
+        min-width: 36px;
+        height: 36px;
+    }
+
+    body.zz-layout-modern .zz-pagination__prev span,
+    body.zz-layout-modern .zz-pagination__next span {
+        display: none;
+    }
+}

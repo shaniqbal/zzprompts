@@ -1,0 +1,17 @@
+/*
+Theme Name: zzprompts
+Theme URI: https://zzprompts.com
+Author: Shan Iqbal
+Author URI: https://shaniqbal.com
+Description: A high-performance AI Prompt Library theme, Translation-ready, secure, and optimized for copy/paste AI prompts with integrated blog section.
+Version: 1.2.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: zzprompts
+Tags: one-column, custom-colors, translation-ready, blog, custom-post-type, threaded-comments, custom-menu, featured-images, theme-options
+*/
+
+/* Theme intentionally minimal - all custom styles in assets/css/main.css */

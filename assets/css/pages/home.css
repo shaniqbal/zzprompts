@@ -1,0 +1,235 @@
+/**
+ * =========================================
+ * PAGE: HOMEPAGE (Modern V1)
+ * =========================================
+ * 
+ * Homepage specific styles.
+ * Uses base components - adds page-specific layouts.
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. HERO SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-hero {
+    text-align: center;
+    padding: var(--zz-space-20) 0 var(--zz-space-10);
+}
+
+body.zz-layout-modern .zz-hero__title {
+    font-family: var(--zz-font-heading);
+    font-size: var(--zz-fs-hero);
+    font-weight: var(--zz-fw-extrabold);
+    line-height: var(--zz-lh-tight);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-5);
+    letter-spacing: -0.02em;
+}
+
+body.zz-layout-modern .zz-hero__title span {
+    background: var(--zz-gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.zz-layout-modern .zz-hero__subtitle {
+    font-size: var(--zz-fs-lead);
+    color: var(--zz-text-muted);
+    max-width: 600px;
+    margin: 0 auto var(--zz-space-10);
+    line-height: var(--zz-lh-relaxed);
+}
+
+/* Hero Search */
+body.zz-layout-modern .zz-hero__search {
+    margin-bottom: var(--zz-space-10);
+}
+
+/* Hero Pills */
+body.zz-layout-modern .zz-hero__pills {
+    display: flex;
+    justify-content: center;
+    gap: var(--zz-space-3);
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   2. PROMPTS SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-home-prompts {
+    padding: var(--zz-space-6) 0;
+}
+
+body.zz-layout-modern .zz-home-prompts__cta {
+    text-align: center;
+    margin-top: var(--zz-space-10);
+}
+
+/* =========================================
+   3. SECTION HEADER (Title + Subtitle)
+   ========================================= */
+
+body.zz-layout-modern .zz-section-header {
+    text-align: center;
+    margin-bottom: var(--zz-space-12);
+}
+
+body.zz-layout-modern .zz-section-title {
+    font-family: var(--zz-font-heading);
+    font-size: var(--zz-fs-h1);
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-text-primary);
+    text-align: center;
+    margin-bottom: var(--zz-space-3);
+}
+
+body.zz-layout-modern .zz-section-subtitle {
+    font-size: var(--zz-fs-lead);
+    color: var(--zz-text-muted);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   4. HOW IT WORKS SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-home-how {
+    padding: var(--zz-space-16) 0;
+}
+
+/* =========================================
+   5. FEATURES SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-home-features {
+    padding: var(--zz-space-16) 0;
+}
+
+/* =========================================
+   4. FEATURES SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-home-features {
+    padding: var(--zz-space-16) 0;
+}
+
+body.zz-layout-modern .zz-home-features__content {
+    padding-right: var(--zz-space-8);
+}
+
+body.zz-layout-modern .zz-home-features__title {
+    font-family: var(--zz-font-heading);
+    font-size: var(--zz-fs-h2);
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-6);
+}
+
+body.zz-layout-modern .zz-home-features__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zz-space-5);
+}
+
+body.zz-layout-modern .zz-home-features__item {
+    display: flex;
+    gap: var(--zz-space-4);
+}
+
+body.zz-layout-modern .zz-home-features__check {
+    width: 24px;
+    height: 24px;
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+    border-radius: var(--zz-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+body.zz-layout-modern .zz-home-features__item-title {
+    font-weight: var(--zz-fw-bold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-1);
+}
+
+body.zz-layout-modern .zz-home-features__item-desc {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+}
+
+/* =========================================
+   5. BLOG/ARTICLES SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-home-blog {
+    padding: var(--zz-space-16) 0;
+}
+
+body.zz-layout-modern .zz-home-blog__cta {
+    text-align: center;
+    margin-top: var(--zz-space-8);
+}
+
+/* =========================================
+   6. BOTTOM CTA SECTION
+   ========================================= */
+
+body.zz-layout-modern .zz-home-cta {
+    background: var(--zz-bg-surface-tertiary, #F3F4F6);
+    padding: var(--zz-space-20) var(--zz-space-5);
+    text-align: center;
+    margin: var(--zz-space-16) 0;
+    border-radius: var(--zz-radius-xl);
+}
+
+body.zz-layout-modern .zz-home-cta__title {
+    font-family: var(--zz-font-heading);
+    font-size: var(--zz-fs-h1);
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-3);
+}
+
+body.zz-layout-modern .zz-home-cta__desc {
+    font-size: var(--zz-fs-lead);
+    color: var(--zz-text-muted);
+    max-width: 600px;
+    margin: 0 auto var(--zz-space-8);
+}
+
+body.zz-layout-modern .zz-home-cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--zz-space-4);
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   7. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    body.zz-layout-modern .zz-hero {
+        padding: var(--zz-space-12) 0 var(--zz-space-10);
+    }
+
+    body.zz-layout-modern .zz-hero__pills {
+        display: none;
+    }
+
+    body.zz-layout-modern .zz-home-cta {
+        margin: var(--zz-space-10) 0;
+        padding: var(--zz-space-12) var(--zz-space-4);
+    }
+}

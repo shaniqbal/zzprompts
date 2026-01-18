@@ -1,0 +1,216 @@
+/**
+ * =========================================
+ * ZZ PROMPTS - CSS VARIABLES (Modern V1)
+ * =========================================
+ * 
+ * The "Theming Engine" - All colors, fonts, spacing defined here.
+ * RULE: Never hardcode values. Always use var(--zz-*).
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * @since 2026-01-15
+ * 
+ * FUTURE: Dark Mode will simply override these variables.
+ * =========================================
+ */
+
+:root {
+    /* =========================================
+       1. COLOR PALETTE
+       ========================================= */
+    
+    /* Primary Brand Colors */
+    --zz-color-primary: #6366F1;
+    --zz-color-primary-hover: #4F46E5;
+    --zz-color-primary-light: #EEF2FF;
+    --zz-color-primary-glow: rgba(99, 102, 241, 0.3);
+    
+    /* Secondary / Accent */
+    --zz-color-secondary: #9333EA;
+    --zz-color-accent: #EC4899;
+    
+    /* Gradients */
+    --zz-gradient-primary: linear-gradient(135deg, #6366F1 0%, #9333EA 100%);
+    --zz-gradient-text: linear-gradient(135deg, #4F46E5 0%, #9333EA 100%);
+    --zz-gradient-glow: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
+    
+    /* =========================================
+       2. TEXT COLORS (Visual Hierarchy)
+       ========================================= */
+    
+    --zz-text-primary: #111827;      /* Headings - Dark Navy */
+    --zz-text-body: #374151;         /* Body text - Gray 700 */
+    --zz-text-muted: #6B7280;        /* Meta, small text - Gray 500 */
+    --zz-text-light: #9CA3AF;        /* Placeholders - Gray 400 */
+    --zz-text-inverse: #FFFFFF;      /* White text on dark */
+    
+    /* =========================================
+       3. BACKGROUND COLORS
+       ========================================= */
+    
+    --zz-bg-body: #F8F9FF;           /* Page background - Light purple tint */
+    --zz-bg-card: #FFFFFF;           /* Card backgrounds */
+    --zz-bg-input: #F3F4F6;          /* Input fields */
+    --zz-bg-muted: #F9FAFB;          /* Muted sections */
+    --zz-bg-dark: #111827;           /* Dark sections */
+    
+    /* Glass Morphism */
+    --zz-glass-bg: rgba(255, 255, 255, 0.85);
+    --zz-glass-border: rgba(255, 255, 255, 0.6);
+    --zz-glass-blur: blur(12px);
+    
+    /* =========================================
+       4. BORDER & DIVIDER COLORS
+       ========================================= */
+    
+    --zz-border-light: #F3F4F6;      /* Very light borders */
+    --zz-border-default: #E5E7EB;    /* Default borders */
+    --zz-border-dark: #D1D5DB;       /* Darker borders */
+    
+    /* =========================================
+       5. TYPOGRAPHY - FONT FAMILIES
+       ========================================= */
+    
+    --zz-font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --zz-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --zz-font-mono: 'Fira Code', 'Consolas', monospace;
+    
+    /* =========================================
+       6. TYPOGRAPHY - FONT SIZES (Fluid)
+       ========================================= */
+    
+    /* Headings (Desktop → Mobile with clamp) */
+    --zz-fs-hero: clamp(2.5rem, 5vw, 3.5rem);     /* 40px → 56px */
+    --zz-fs-h1: clamp(2rem, 4vw, 3rem);           /* 32px → 48px */
+    --zz-fs-h2: clamp(1.5rem, 3vw, 2rem);         /* 24px → 32px */
+    --zz-fs-h3: clamp(1.1rem, 2vw, 1.25rem);      /* 17.6px → 20px */
+    --zz-fs-h4: 1.1rem;                            /* 17.6px */
+    
+    /* Body Text */
+    --zz-fs-lead: clamp(1rem, 1.5vw, 1.1rem);     /* 16px → 17.6px */
+    --zz-fs-body: 1rem;                            /* 16px */
+    --zz-fs-small: 0.875rem;                       /* 14px */
+    --zz-fs-xs: 0.75rem;                           /* 12px */
+    
+    /* =========================================
+       7. TYPOGRAPHY - FONT WEIGHTS
+       ========================================= */
+    
+    --zz-fw-regular: 400;
+    --zz-fw-medium: 500;
+    --zz-fw-semibold: 600;
+    --zz-fw-bold: 700;
+    --zz-fw-extrabold: 800;
+    
+    /* =========================================
+       8. TYPOGRAPHY - LINE HEIGHTS
+       ========================================= */
+    
+    --zz-lh-tight: 1.1;    /* Hero titles */
+    --zz-lh-snug: 1.25;    /* Headings */
+    --zz-lh-normal: 1.5;   /* Body text */
+    --zz-lh-relaxed: 1.7;  /* Lead paragraphs */
+    
+    /* =========================================
+       9. SPACING SYSTEM (8px base)
+       ========================================= */
+    
+    --zz-space-1: 0.25rem;   /* 4px */
+    --zz-space-2: 0.5rem;    /* 8px */
+    --zz-space-3: 0.75rem;   /* 12px */
+    --zz-space-4: 1rem;      /* 16px */
+    --zz-space-5: 1.25rem;   /* 20px */
+    --zz-space-6: 1.5rem;    /* 24px */
+    --zz-space-8: 2rem;      /* 32px */
+    --zz-space-10: 2.5rem;   /* 40px */
+    --zz-space-12: 3rem;     /* 48px */
+    --zz-space-16: 4rem;     /* 64px */
+    --zz-space-20: 5rem;     /* 80px */
+    
+    /* =========================================
+       10. BORDER RADIUS
+       ========================================= */
+    
+    --zz-radius-sm: 6px;
+    --zz-radius-md: 12px;
+    --zz-radius-lg: 16px;
+    --zz-radius-xl: 24px;
+    --zz-radius-pill: 50px;
+    --zz-radius-full: 9999px;
+    
+    /* =========================================
+       11. SHADOWS
+       ========================================= */
+    
+    --zz-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --zz-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --zz-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08);
+    --zz-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --zz-shadow-glow: 0 4px 20px rgba(99, 102, 241, 0.25);
+    --zz-shadow-card-hover: 0 10px 25px rgba(99, 102, 241, 0.15);
+    
+    /* =========================================
+       12. TRANSITIONS
+       ========================================= */
+    
+    --zz-transition-fast: 0.15s ease;
+    --zz-transition-normal: 0.2s ease;
+    --zz-transition-slow: 0.3s ease;
+    --zz-transition-bounce: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* =========================================
+       13. Z-INDEX SCALE
+       ========================================= */
+    
+    --zz-z-dropdown: 100;
+    --zz-z-sticky: 200;
+    --zz-z-header: 300;
+    --zz-z-overlay: 400;
+    --zz-z-modal: 500;
+    --zz-z-toast: 600;
+    
+    /* =========================================
+       14. CONTAINER WIDTHS
+       ========================================= */
+    
+    --zz-container-sm: 640px;
+    --zz-container-md: 768px;
+    --zz-container-lg: 1024px;
+    --zz-container-xl: 1200px;
+    --zz-container-2xl: 1400px;
+    
+    /* =========================================
+       15. GRID GAPS
+       ========================================= */
+    
+    --zz-gap-cards: 24px;
+    --zz-gap-layout: 40px;
+    --zz-gap-section: 80px;
+}
+
+/* =========================================
+   DARK MODE PREPARATION
+   =========================================
+   When Dark Mode is enabled, these variables
+   will be overridden. No CSS rules need to change.
+   ========================================= */
+
+[data-theme="dark"],
+.dark-mode {
+    --zz-text-primary: #F9FAFB;
+    --zz-text-body: #E5E7EB;
+    --zz-text-muted: #9CA3AF;
+    --zz-text-light: #6B7280;
+    
+    --zz-bg-body: #0F172A;
+    --zz-bg-card: #1E293B;
+    --zz-bg-input: #334155;
+    --zz-bg-muted: #1E293B;
+    
+    --zz-border-light: #334155;
+    --zz-border-default: #475569;
+    --zz-border-dark: #64748B;
+    
+    --zz-glass-bg: rgba(30, 41, 59, 0.85);
+    --zz-glass-border: rgba(51, 65, 85, 0.6);
+}

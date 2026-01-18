@@ -1,0 +1,87 @@
+/**
+ * =========================================
+ * LIGHT MODE - Default Theme
+ * =========================================
+ * 
+ * Light mode variables (default).
+ * These are already defined in _variables.css but
+ * this file allows explicit light mode toggle.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   1. EXPLICIT LIGHT MODE (Manual Toggle)
+   ========================================= */
+
+[data-theme="light"] {
+    color-scheme: light;
+
+    --zz-color-primary: #6366F1;
+    --zz-color-primary-hover: #4F46E5;
+    --zz-color-primary-light: #EEF2FF;
+    --zz-color-primary-glow: rgba(99, 102, 241, 0.25);
+
+    --zz-text-primary: #111827;
+    --zz-text-secondary: #374151;
+    --zz-text-tertiary: #6B7280;
+    --zz-text-muted: #9CA3AF;
+    --zz-text-inverse: #FFFFFF;
+
+    --zz-bg-body: #F8F9FF;
+    --zz-bg-card: #FFFFFF;
+    --zz-bg-surface: #FFFFFF;
+    --zz-bg-surface-secondary: #F9FAFB;
+    --zz-bg-surface-tertiary: #F3F4F6;
+    --zz-bg-input: #F3F4F6;
+
+    --zz-border-light: #F3F4F6;
+    --zz-border-default: #E5E7EB;
+    --zz-border-strong: #D1D5DB;
+
+    --zz-glass-bg: rgba(255, 255, 255, 0.85);
+    --zz-glass-border: rgba(255, 255, 255, 0.6);
+    --zz-glass-blur: blur(12px);
+
+    --zz-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --zz-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --zz-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --zz-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   2. LIGHT MODE EXPLICIT OVERRIDES
+   ========================================= */
+
+[data-theme="light"] body {
+    background-color: var(--zz-bg-body);
+    color: var(--zz-text-primary);
+}
+
+[data-theme="light"] .zz-header {
+    background: var(--zz-glass-bg);
+}
+
+[data-theme="light"] .zz-prompt-card {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-border-light);
+}
+
+[data-theme="light"] .zz-footer {
+    background: var(--zz-bg-surface);
+}
+
+/* =========================================
+   3. LIGHT MODE LOGOS
+   ========================================= */
+
+[data-theme="light"] .zz-logo--dark {
+    display: none;
+}
+
+[data-theme="light"] .zz-logo--light {
+    display: block;
+}

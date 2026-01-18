@@ -1,0 +1,245 @@
+/**
+ * =========================================
+ * WORDPRESS CORE OVERRIDES
+ * =========================================
+ * 
+ * Overrides for WordPress core elements like
+ * admin bar, block editor, comments, etc.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   1. ADMIN BAR ADJUSTMENTS
+   ========================================= */
+
+.admin-bar .zz-header {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar .zz-header {
+        top: 46px;
+    }
+}
+
+/* =========================================
+   2. BLOCK EDITOR COMPATIBILITY
+   ========================================= */
+
+.wp-block-image img {
+    height: auto;
+    max-width: 100%;
+}
+
+.wp-block-gallery {
+    margin-bottom: var(--zz-space-6);
+}
+
+.wp-block-quote {
+    border-left: 4px solid var(--zz-color-primary);
+    padding-left: var(--zz-space-4);
+    margin: var(--zz-space-6) 0;
+    font-style: italic;
+    color: var(--zz-text-secondary);
+}
+
+.wp-block-code {
+    background: var(--zz-bg-surface-tertiary);
+    padding: var(--zz-space-4);
+    border-radius: var(--zz-radius-md);
+    overflow-x: auto;
+}
+
+.wp-block-button__link {
+    padding: var(--zz-space-3) var(--zz-space-6);
+    border-radius: var(--zz-radius-md);
+    font-weight: 600;
+}
+
+/* =========================================
+   3. COMMENTS SECTION
+   ========================================= */
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-body {
+    padding: var(--zz-space-4);
+    background: var(--zz-bg-card);
+    border-radius: var(--zz-radius-md);
+    margin-bottom: var(--zz-space-4);
+    border: 1px solid var(--zz-border-light);
+}
+
+.comment-author {
+    font-weight: 600;
+    color: var(--zz-text-primary);
+}
+
+.comment-metadata {
+    font-size: var(--zz-fs-sm);
+    color: var(--zz-text-muted);
+}
+
+.comment-content {
+    margin-top: var(--zz-space-3);
+    color: var(--zz-text-secondary);
+}
+
+.comment-reply-link {
+    font-size: var(--zz-fs-sm);
+    color: var(--zz-color-primary);
+    text-decoration: none;
+}
+
+.comment-reply-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   4. COMMENT FORM
+   ========================================= */
+
+.comment-form label {
+    display: block;
+    margin-bottom: var(--zz-space-2);
+    font-weight: 500;
+    color: var(--zz-text-primary);
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    width: 100%;
+    padding: var(--zz-space-3) var(--zz-space-4);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-md);
+    background: var(--zz-bg-input);
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-base);
+    transition: border-color 0.2s ease;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: var(--zz-color-primary);
+    outline: none;
+}
+
+.comment-form .submit {
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+    padding: var(--zz-space-3) var(--zz-space-6);
+    border: none;
+    border-radius: var(--zz-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.comment-form .submit:hover {
+    background: var(--zz-color-primary-hover);
+}
+
+/* =========================================
+   5. PAGINATION (WordPress Default)
+   ========================================= */
+
+.pagination,
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--zz-space-2);
+    margin: var(--zz-space-8) 0;
+}
+
+.page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 var(--zz-space-3);
+    background: var(--zz-bg-card);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-md);
+    color: var(--zz-text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.page-numbers:hover {
+    border-color: var(--zz-color-primary);
+    color: var(--zz-color-primary);
+}
+
+.page-numbers.current {
+    background: var(--zz-color-primary);
+    border-color: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+}
+
+/* =========================================
+   6. SEARCH FORM WIDGET
+   ========================================= */
+
+.search-form {
+    display: flex;
+    gap: var(--zz-space-2);
+}
+
+.search-form .search-field {
+    flex: 1;
+    padding: var(--zz-space-3) var(--zz-space-4);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-md);
+    background: var(--zz-bg-input);
+}
+
+.search-form .search-submit {
+    padding: var(--zz-space-3) var(--zz-space-4);
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+    border: none;
+    border-radius: var(--zz-radius-md);
+    cursor: pointer;
+}
+
+/* =========================================
+   7. SCREEN READER TEXT (WordPress)
+   ========================================= */
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal;
+}
+
+.screen-reader-text:focus {
+    background-color: var(--zz-bg-card);
+    border-radius: var(--zz-radius-sm);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+    clip: auto;
+    color: var(--zz-text-primary);
+    display: block;
+    font-size: var(--zz-fs-sm);
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: var(--zz-space-3) var(--zz-space-4);
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}

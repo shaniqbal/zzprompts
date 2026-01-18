@@ -1,0 +1,25 @@
+/**
+ * =========================================
+ * CLASSIC SKIN: CARDS (Placeholder)
+ * =========================================
+ * 
+ * Classic card styles.
+ * Sharp corners, borders instead of shadows.
+ * Scoped with: body.layout-classic
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Classic V1
+ * @status PLACEHOLDER
+ * =========================================
+ */
+
+/* 
+ * TODO: Implement Classic cards
+ * 
+ * body.layout-classic .zz-card {
+ *     border-radius: 4px;
+ *     border: 1px solid #e5e7eb;
+ *     box-shadow: none;
+ * }
+ */

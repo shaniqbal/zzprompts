@@ -1,0 +1,302 @@
+/**
+ * =========================================
+ * LAYOUT: HEADER (Modern V1)
+ * =========================================
+ * 
+ * Glass morphism header with sticky behavior.
+ * BEM Naming: .zz-header, .zz-header__*, .zz-header--*
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. HEADER CONTAINER
+   ========================================= */
+
+body.zz-layout-modern .zz-header {
+    background: var(--zz-glass-bg);
+    backdrop-filter: var(--zz-glass-blur);
+    -webkit-backdrop-filter: var(--zz-glass-blur);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: var(--zz-z-header);
+    padding: 0 var(--zz-space-5);
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   2. HEADER INNER (Container)
+   ========================================= */
+
+body.zz-layout-modern .zz-header__inner {
+    width: 100%;
+    max-width: var(--zz-container-2xl);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--zz-space-6);
+}
+
+/* =========================================
+   3. LOGO
+   ========================================= */
+
+body.zz-layout-modern .zz-header__logo {
+    font-family: var(--zz-font-heading);
+    font-size: 1.3rem;
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-text-primary);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+body.zz-layout-modern .zz-header__logo:hover {
+    color: var(--zz-color-primary);
+}
+
+body.zz-layout-modern .zz-header__logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* =========================================
+   4. NAVIGATION
+   ========================================= */
+
+body.zz-layout-modern .zz-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* WordPress Menu Structure (ul > li > a) */
+body.zz-layout-modern .zz-header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body.zz-layout-modern .zz-header__nav-list li {
+    margin: 0;
+    padding: 0;
+}
+
+body.zz-layout-modern .zz-header__nav-list li a,
+body.zz-layout-modern .zz-header__nav-link {
+    font-size: 0.95rem;
+    font-weight: var(--zz-fw-semibold);
+    color: var(--zz-text-primary);
+    text-decoration: none;
+    transition: color var(--zz-transition-fast);
+    position: relative;
+}
+
+body.zz-layout-modern .zz-header__nav-list li a:hover,
+body.zz-layout-modern .zz-header__nav-link:hover,
+body.zz-layout-modern .zz-header__nav-link--active {
+    color: var(--zz-color-primary);
+}
+
+/* Optional: Underline on active */
+body.zz-layout-modern .zz-header__nav-list li.current-menu-item a::after,
+body.zz-layout-modern .zz-header__nav-link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--zz-color-primary);
+    border-radius: 2px;
+}
+
+/* =========================================
+   5. SEARCH BAR
+   ========================================= */
+
+body.zz-layout-modern .zz-header__search {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+body.zz-layout-modern .zz-header__search-icon {
+    position: absolute;
+    left: var(--zz-space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--zz-text-muted);
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+body.zz-layout-modern .zz-header__search-input {
+    width: 100%;
+    background: var(--zz-bg-input);
+    border: 1px solid transparent;
+    padding: var(--zz-space-3) var(--zz-space-4) var(--zz-space-3) 42px;
+    border-radius: var(--zz-radius-pill);
+    font-size: 0.9rem;
+    font-family: var(--zz-font-body);
+    color: var(--zz-text-primary);
+    outline: none;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-header__search-input::placeholder {
+    color: var(--zz-text-light);
+}
+
+body.zz-layout-modern .zz-header__search-input:focus {
+    background: var(--zz-bg-card);
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 0 0 3px var(--zz-color-primary-light);
+}
+
+/* =========================================
+   6. ACTIONS (CTA Buttons, etc.)
+   ========================================= */
+
+body.zz-layout-modern .zz-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--zz-space-3);
+}
+
+/* =========================================
+   7. MOBILE MENU TOGGLE
+   ========================================= */
+
+body.zz-layout-modern .zz-header__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--zz-space-2);
+    color: var(--zz-text-primary);
+}
+
+body.zz-layout-modern .zz-header__toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* =========================================
+   8. RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+    body.zz-layout-modern .zz-header__nav {
+        display: none;
+    }
+
+    body.zz-layout-modern .zz-header__search {
+        display: none;
+    }
+
+    body.zz-layout-modern .zz-header__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   9. RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+    body.zz-layout-modern .zz-header {
+        height: 70px;
+        padding: 0 var(--zz-space-4);
+    }
+
+    body.zz-layout-modern .zz-header__logo {
+        font-size: 1.1rem;
+    }
+}
+
+/* =========================================
+   10. MOBILE MENU OVERLAY
+   ========================================= */
+
+body.zz-layout-modern .zz-mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--zz-bg-card);
+    z-index: var(--zz-z-modal);
+    padding: var(--zz-space-6);
+    display: none;
+    flex-direction: column;
+}
+
+body.zz-layout-modern .zz-mobile-menu.is-open {
+    display: flex;
+}
+
+body.zz-layout-modern .zz-mobile-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--zz-space-8);
+}
+
+body.zz-layout-modern .zz-mobile-menu__close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--zz-text-primary);
+}
+
+body.zz-layout-modern .zz-mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zz-space-4);
+}
+
+body.zz-layout-modern .zz-mobile-menu__nav-link {
+    font-size: 1.25rem;
+    font-weight: var(--zz-fw-semibold);
+    color: var(--zz-text-primary);
+    text-decoration: none;
+    padding: var(--zz-space-3) 0;
+    border-bottom: 1px solid var(--zz-border-light);
+}
+
+body.zz-layout-modern .zz-mobile-menu__nav-link:hover {
+    color: var(--zz-color-primary);
+}
+
+/* =========================================
+   11. DARK MODE POLISH
+   ========================================= */
+
+[data-theme="dark"] body.zz-layout-modern .zz-header__nav-list li a:hover,
+[data-theme="dark"] body.zz-layout-modern .zz-header__nav-link:hover,
+[data-theme="dark"] body.zz-layout-modern .zz-header__nav-link--active {
+    color: #A5B4FC;
+    /* Brighter Indigo for Dark Mode */
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-header__nav-list li.current-menu-item a::after,
+[data-theme="dark"] body.zz-layout-modern .zz-header__nav-link--active::after {
+    background: #818CF8;
+    box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+}

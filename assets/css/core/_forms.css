@@ -1,0 +1,244 @@
+/**
+ * =========================================
+ * COMPONENT: FORMS (Modern V1)
+ * =========================================
+ * 
+ * Form elements - inputs, textareas, search bars.
+ * BEM Naming: .zz-form, .zz-input, etc.
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. FORM CONTAINER
+   ========================================= */
+
+body.zz-layout-modern .zz-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zz-space-5);
+}
+
+/* =========================================
+   2. FORM GROUP
+   ========================================= */
+
+body.zz-layout-modern .zz-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zz-space-2);
+}
+
+body.zz-layout-modern .zz-form-label {
+    font-size: var(--zz-fs-small);
+    font-weight: var(--zz-fw-semibold);
+    color: var(--zz-text-primary);
+}
+
+/* =========================================
+   3. TEXT INPUT
+   ========================================= */
+
+body.zz-layout-modern .zz-input {
+    width: 100%;
+    padding: var(--zz-space-3) var(--zz-space-4);
+    background: var(--zz-bg-card);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-md);
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-body);
+    color: var(--zz-text-primary);
+    outline: none;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-input::placeholder {
+    color: var(--zz-text-light);
+}
+
+body.zz-layout-modern .zz-input:focus {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 0 0 3px var(--zz-color-primary-light);
+}
+
+body.zz-layout-modern .zz-input--error {
+    border-color: #EF4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* =========================================
+   4. TEXTAREA
+   ========================================= */
+
+body.zz-layout-modern .zz-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: var(--zz-space-4);
+    background: var(--zz-bg-card);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-md);
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-body);
+    color: var(--zz-text-primary);
+    outline: none;
+    resize: vertical;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-textarea:focus {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 0 0 3px var(--zz-color-primary-light);
+}
+
+/* =========================================
+   5. HERO SEARCH BAR
+   ========================================= */
+
+body.zz-layout-modern .zz-hero-search {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body.zz-layout-modern .zz-hero-search__icon {
+    position: absolute;
+    left: var(--zz-space-5);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--zz-text-light);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+body.zz-layout-modern .zz-hero-search__input {
+    width: 100%;
+    padding: var(--zz-space-5) var(--zz-space-6) var(--zz-space-5) 50px;
+    background: var(--zz-bg-card);
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-pill);
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-body);
+    color: var(--zz-text-primary);
+    outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all var(--zz-transition-normal);
+}
+
+body.zz-layout-modern .zz-hero-search__input::placeholder {
+    color: var(--zz-text-light);
+}
+
+body.zz-layout-modern .zz-hero-search__input:focus {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 4px 25px rgba(99, 102, 241, 0.15);
+}
+
+/* =========================================
+   6. FILTER PILLS
+   ========================================= */
+
+body.zz-layout-modern .zz-filter-pills {
+    display: flex;
+    justify-content: center;
+    gap: var(--zz-space-3);
+    flex-wrap: wrap;
+}
+
+body.zz-layout-modern .zz-filter-pill {
+    background: var(--zz-bg-card);
+    border: 1px solid var(--zz-border-default);
+    padding: var(--zz-space-3) var(--zz-space-6);
+    border-radius: var(--zz-radius-pill);
+    font-weight: var(--zz-fw-semibold);
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-filter-pill:hover {
+    border-color: var(--zz-color-primary);
+    color: var(--zz-color-primary);
+    transform: translateY(-2px);
+}
+
+body.zz-layout-modern .zz-filter-pill--active {
+    background: var(--zz-text-primary);
+    color: var(--zz-text-inverse);
+    border-color: var(--zz-text-primary);
+}
+
+/* =========================================
+   7. SELECT DROPDOWN
+   ========================================= */
+
+body.zz-layout-modern .zz-select {
+    appearance: none;
+    width: 100%;
+    padding: var(--zz-space-3) var(--zz-space-10) var(--zz-space-3) var(--zz-space-4);
+    background: var(--zz-bg-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 16px center;
+    border: 1px solid var(--zz-border-default);
+    border-radius: var(--zz-radius-md);
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-body);
+    color: var(--zz-text-primary);
+    cursor: pointer;
+    outline: none;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-select:focus {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 0 0 3px var(--zz-color-primary-light);
+}
+
+/* =========================================
+   8. CHECKBOX & RADIO
+   ========================================= */
+
+body.zz-layout-modern .zz-checkbox,
+body.zz-layout-modern .zz-radio {
+    display: flex;
+    align-items: center;
+    gap: var(--zz-space-3);
+    cursor: pointer;
+}
+
+body.zz-layout-modern .zz-checkbox input,
+body.zz-layout-modern .zz-radio input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--zz-color-primary);
+    cursor: pointer;
+}
+
+body.zz-layout-modern .zz-checkbox span,
+body.zz-layout-modern .zz-radio span {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-body);
+}
+
+/* =========================================
+   9. FORM ERROR MESSAGE
+   ========================================= */
+
+body.zz-layout-modern .zz-form-error {
+    font-size: var(--zz-fs-xs);
+    color: #EF4444;
+    margin-top: var(--zz-space-1);
+}
+
+/* =========================================
+   10. FORM SUCCESS MESSAGE
+   ========================================= */
+
+body.zz-layout-modern .zz-form-success {
+    font-size: var(--zz-fs-small);
+    color: #059669;
+    background: #ECFDF5;
+    padding: var(--zz-space-4);
+    border-radius: var(--zz-radius-md);
+}

@@ -1,0 +1,23 @@
+/**
+ * =========================================
+ * ZZ PROMPTS - SHARED CORE
+ * =========================================
+ * 
+ * Foundation layer - SHARED across ALL layouts (Modern, Classic, Neon).
+ * Contains: Variables, Reset, Typography, Utilities, Grid, Basic Forms.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * =========================================
+ */
+
+/* =========================================
+   CORE IMPORTS (Shared Foundation)
+   ========================================= */
+
+@import url('core/_variables.css');
+@import url('core/_reset.css');
+@import url('core/_typography.css');
+@import url('core/_utilities.css');
+@import url('core/_grid.css');
+@import url('core/_forms.css');

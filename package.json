@@ -1,0 +1,13 @@
+{
+  "name": "zzprompts-theme",
+  "version": "1.0.0",
+  "description": "WordPress Theme Development",
+  "scripts": {
+    "sync": "browser-sync start --proxy http://zzprompts.test --files \"**/*.php, **/*.css, **/*.js\" --no-open",
+    "sync-open": "browser-sync start --proxy http://zzprompts.test --files \"**/*.php, **/*.css, **/*.js\""
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  }
+}
+

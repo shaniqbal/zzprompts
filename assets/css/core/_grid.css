@@ -1,0 +1,203 @@
+/**
+ * =========================================
+ * LAYOUT: GRID SYSTEM (Modern V1)
+ * =========================================
+ * 
+ * Responsive grid layouts for pages.
+ * BEM Naming: .zz-grid, .zz-grid__*, .zz-grid--*
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. BASE GRID
+   ========================================= */
+
+body.zz-layout-modern .zz-grid {
+    display: grid;
+    gap: var(--zz-gap-cards);
+}
+
+/* =========================================
+   2. COLUMN VARIATIONS
+   ========================================= */
+
+body.zz-layout-modern .zz-grid--cols-1 {
+    grid-template-columns: 1fr;
+}
+
+body.zz-layout-modern .zz-grid--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+body.zz-layout-modern .zz-grid--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+body.zz-layout-modern .zz-grid--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto-fill (Responsive) */
+body.zz-layout-modern .zz-grid--auto {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+body.zz-layout-modern .zz-grid--auto-lg {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* =========================================
+   3. PROMPT GRID (4 Columns)
+   ========================================= */
+
+body.zz-layout-modern .zz-prompt-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--zz-gap-cards);
+    padding: var(--zz-space-8) 0;
+    align-items: stretch;
+}
+
+
+
+/* =========================================
+   4. BLOG GRID (4 Columns)
+   ========================================= */
+
+body.zz-layout-modern .zz-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--zz-gap-cards);
+    margin-bottom: var(--zz-space-10);
+    align-items: stretch;
+}
+
+/* =========================================
+   5. STEPS GRID (3 Columns)
+   ========================================= */
+
+body.zz-layout-modern .zz-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--zz-space-8);
+    margin-bottom: var(--zz-space-20);
+}
+
+/* =========================================
+   6. FEATURES GRID (2 Columns)
+   ========================================= */
+
+body.zz-layout-modern .zz-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--zz-space-16);
+    align-items: center;
+    margin-bottom: var(--zz-space-20);
+}
+
+/* =========================================
+   7. STATS GRID (2x2)
+   ========================================= */
+
+body.zz-layout-modern .zz-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--zz-space-5);
+}
+
+/* =========================================
+   8. ARCHIVE LAYOUT (Sidebar + Grid)
+   ========================================= */
+
+body.zz-layout-modern .zz-archive-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--zz-gap-layout);
+    align-items: start;
+}
+
+body.zz-layout-modern .zz-archive-layout--no-sidebar {
+    grid-template-columns: 1fr;
+}
+
+/* =========================================
+   9. SINGLE PAGE LAYOUT (Content + Sidebar)
+   ========================================= */
+
+body.zz-layout-modern .zz-single-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--zz-gap-layout);
+    align-items: start;
+}
+
+body.zz-layout-modern .zz-single-layout--full {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   10. RESPONSIVE - LARGE DESKTOP
+   ========================================= */
+
+@media (max-width: 1280px) {
+
+    body.zz-layout-modern .zz-prompt-grid,
+    body.zz-layout-modern .zz-blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================
+   11. RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    body.zz-layout-modern .zz-prompt-grid,
+    body.zz-layout-modern .zz-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body.zz-layout-modern .zz-archive-layout {
+        grid-template-columns: 240px 1fr;
+    }
+
+    body.zz-layout-modern .zz-single-layout {
+        grid-template-columns: 1fr;
+    }
+
+    body.zz-layout-modern .zz-features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--zz-space-10);
+    }
+}
+
+/* =========================================
+   12. RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    body.zz-layout-modern .zz-prompt-grid,
+    body.zz-layout-modern .zz-blog-grid,
+    body.zz-layout-modern .zz-steps-grid,
+    body.zz-layout-modern .zz-stats-grid,
+    body.zz-layout-modern .zz-grid--cols-2,
+    body.zz-layout-modern .zz-grid--cols-3,
+    body.zz-layout-modern .zz-grid--cols-4 {
+        grid-template-columns: 1fr;
+    }
+
+    body.zz-layout-modern .zz-archive-layout {
+        grid-template-columns: 1fr;
+    }
+
+    body.zz-layout-modern .zz-archive-layout .zz-sidebar {
+        display: none;
+    }
+}

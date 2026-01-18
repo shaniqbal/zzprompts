@@ -1,0 +1,74 @@
+/**
+ * Admin Dashboard Styles
+ * Backend administration area styling
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ */
+
+/* ==================================================
+   5. Components - Admin Dashboard
+   ================================================== */
+
+/* ----------------------------------------------
+   Admin Section Container
+   Main wrapper for admin content blocks
+---------------------------------------------- */
+.zz-admin-section {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.zz-admin-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ----------------------------------------------
+   Admin Form Fields
+   Input and textarea field styling
+---------------------------------------------- */
+.zz-admin-field {
+    margin: 15px 0;
+}
+
+.zz-admin-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.zz-admin-field input[type="text"],
+.zz-admin-field textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.zz-admin-field textarea {
+    min-height: 120px;
+}
+
+/* ----------------------------------------------
+   Statistics Display Box
+   Shows metrics and counts in dashboard
+---------------------------------------------- */
+.zz-stats-box {
+    display: inline-block;
+    background: #f9f9f9;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    border-left: 3px solid #6366f1;
+}
+
+.zz-stats-box strong {
+    display: block;
+    font-size: 24px;
+    color: #6366f1;
+}

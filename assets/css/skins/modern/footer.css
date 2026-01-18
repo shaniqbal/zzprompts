@@ -1,0 +1,204 @@
+/**
+ * =========================================
+ * LAYOUT: FOOTER (Modern V1)
+ * =========================================
+ * 
+ * Clean footer with multiple columns.
+ * BEM Naming: .zz-footer, .zz-footer__*, .zz-footer--*
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. FOOTER CONTAINER
+   ========================================= */
+
+body.zz-layout-modern .zz-footer {
+    background: var(--zz-bg-card);
+    border-top: 1px solid var(--zz-border-default);
+    padding-top: var(--zz-space-16);
+    padding-bottom: var(--zz-space-5);
+}
+
+/* =========================================
+   2. FOOTER GRID
+   ========================================= */
+
+body.zz-layout-modern .zz-footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--zz-gap-layout);
+    margin-bottom: var(--zz-space-10);
+}
+
+/* =========================================
+   3. FOOTER BRAND COLUMN
+   ========================================= */
+
+body.zz-layout-modern .zz-footer__brand {
+    padding-right: var(--zz-space-6);
+}
+
+body.zz-layout-modern .zz-footer__logo {
+    font-family: var(--zz-font-heading);
+    font-size: 1.5rem;
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-color-primary);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: var(--zz-space-4);
+}
+
+body.zz-layout-modern .zz-footer__logo img {
+    height: 40px;
+    width: auto;
+}
+
+body.zz-layout-modern .zz-footer__desc {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+    line-height: var(--zz-lh-relaxed);
+    margin-bottom: var(--zz-space-5);
+}
+
+/* =========================================
+   4. FOOTER SOCIAL LINKS
+   ========================================= */
+
+body.zz-layout-modern .zz-footer__socials {
+    display: flex;
+    gap: var(--zz-space-3);
+}
+
+body.zz-layout-modern .zz-footer__social-link {
+    width: 36px;
+    height: 36px;
+    background: var(--zz-bg-input);
+    border-radius: var(--zz-radius-full);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--zz-text-primary);
+    text-decoration: none;
+    transition: all var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-footer__social-link:hover {
+    background: var(--zz-color-primary);
+    color: var(--zz-text-inverse);
+}
+
+body.zz-layout-modern .zz-footer__social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================================
+   5. FOOTER COLUMNS (Links)
+   ========================================= */
+
+body.zz-layout-modern .zz-footer__col {
+    padding-left: var(--zz-space-2);
+}
+
+body.zz-layout-modern .zz-footer__title {
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-small);
+    font-weight: var(--zz-fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--zz-text-muted);
+    margin-bottom: var(--zz-space-5);
+}
+
+body.zz-layout-modern .zz-footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zz-space-2);
+}
+
+body.zz-layout-modern .zz-footer__link {
+    font-size: var(--zz-fs-small);
+    font-weight: var(--zz-fw-medium);
+    color: var(--zz-text-primary);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+body.zz-layout-modern .zz-footer__link:hover {
+    color: var(--zz-color-primary);
+    transform: translateX(5px);
+}
+
+/* =========================================
+   6. FOOTER BOTTOM (Copyright)
+   ========================================= */
+
+body.zz-layout-modern .zz-footer__bottom {
+    border-top: 1px solid var(--zz-border-light);
+    padding-top: var(--zz-space-5);
+    text-align: center;
+}
+
+body.zz-layout-modern .zz-footer__copyright {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+}
+
+body.zz-layout-modern .zz-footer__copyright a {
+    color: var(--zz-color-primary);
+    text-decoration: none;
+}
+
+body.zz-layout-modern .zz-footer__copyright a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   7. RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+    body.zz-layout-modern .zz-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--zz-space-8);
+    }
+
+    body.zz-layout-modern .zz-footer__brand {
+        grid-column: 1 / -1;
+    }
+}
+
+/* =========================================
+   8. RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+    body.zz-layout-modern .zz-footer {
+        padding-top: var(--zz-space-10);
+    }
+
+    body.zz-layout-modern .zz-footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--zz-space-8);
+    }
+
+    body.zz-layout-modern .zz-footer__col {
+        text-align: center;
+    }
+
+    body.zz-layout-modern .zz-footer__links {
+        align-items: center;
+    }
+
+    body.zz-layout-modern .zz-footer__brand {
+        text-align: center;
+    }
+
+    body.zz-layout-modern .zz-footer__socials {
+        justify-content: center;
+    }
+}

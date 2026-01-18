@@ -1,0 +1,237 @@
+/**
+ * =========================================
+ * ACCESSIBILITY - WCAG 2.2 AA Compliance
+ * =========================================
+ * 
+ * Focus management, reduced motion, screen reader support,
+ * high contrast mode, and touch target sizes.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   1. FOCUS MANAGEMENT
+   ========================================= */
+
+*:focus-visible {
+    outline: 3px solid var(--zz-color-primary, #6366F1);
+    outline-offset: 3px;
+    border-radius: var(--zz-radius-sm, 6px);
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+@media (prefers-contrast: high) {
+    *:focus-visible {
+        outline-width: 4px;
+        outline-color: currentColor;
+    }
+}
+
+/* =========================================
+   2. REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* =========================================
+   3. SKIP TO CONTENT LINK
+   ========================================= */
+
+.zz-skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 9999;
+    padding: var(--zz-space-4, 1rem) var(--zz-space-6, 1.5rem);
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--zz-radius-md, 12px);
+    transition: top 0.2s ease;
+}
+
+.zz-skip-link:focus {
+    top: var(--zz-space-4, 1rem);
+    left: var(--zz-space-4, 1rem);
+}
+
+/* =========================================
+   4. SCREEN READER ONLY
+   ========================================= */
+
+.zz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.zz-sr-only-focusable:focus,
+.zz-sr-only-focusable:active {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* =========================================
+   5. HIGH CONTRAST MODE
+   ========================================= */
+
+@media (prefers-contrast: high) {
+    .zz-btn {
+        border: 2px solid currentColor;
+    }
+
+    .zz-prompt-card,
+    .zz-blog-card,
+    .zz-stat-card {
+        border: 2px solid var(--zz-border-strong, #D1D5DB);
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .zz-prompt-card__badge {
+        border: 1px solid currentColor;
+    }
+}
+
+/* =========================================
+   6. TOUCH TARGET SIZES (Min 44x44px)
+   ========================================= */
+
+.zz-btn,
+button,
+[role="button"] {
+    min-height: 44px;
+}
+
+.zz-nav__link,
+.zz-footer__link {
+    padding-block: 0.5rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* =========================================
+   7. VISIBLE FOCUS FOR INTERACTIVE ELEMENTS
+   ========================================= */
+
+.zz-btn:focus-visible,
+.zz-filter-pill:focus-visible,
+.zz-prompt-card:focus-visible,
+.zz-nav__link:focus-visible {
+    outline: 3px solid var(--zz-color-primary, #6366F1);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   8. LINK DISTINCTION
+   ========================================= */
+
+a {
+    text-decoration-skip-ink: auto;
+}
+
+/* =========================================
+   9. MOTION-SAFE ANIMATIONS
+   ========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+    .zz-prompt-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .zz-btn {
+        transition: all 0.2s ease;
+    }
+
+    .zz-footer__link {
+        transition: all 0.3s ease;
+    }
+}
+
+/* =========================================
+   10. FORM ACCESSIBILITY
+   ========================================= */
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--zz-color-primary, #6366F1);
+    outline-offset: 2px;
+    border-color: var(--zz-color-primary, #6366F1);
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: var(--token-color-red-500, #EF4444);
+}
+
+input:disabled,
+textarea:disabled,
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   11. TEXT SELECTION
+   ========================================= */
+
+::selection {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+}
+
+::-moz-selection {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+}
+
+.zz-btn--primary::selection,
+.zz-btn-browse::selection,
+[style*="background"][style*="primary"]::selection {
+    background: rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+
+.zz-btn--primary::-moz-selection,
+.zz-btn-browse::-moz-selection {
+    background: rgba(0, 0, 0, 0.3);
+    color: #000;
+}

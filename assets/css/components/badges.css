@@ -1,0 +1,133 @@
+/**
+ * =========================================
+ * COMPONENT: BADGES (Modern V1)
+ * =========================================
+ * 
+ * Badge/Label styles for AI tools, categories.
+ * BEM Naming: .zz-badge, .zz-badge--*
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. BASE BADGE
+   ========================================= */
+
+body.zz-layout-modern .zz-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--zz-space-1);
+    padding: var(--zz-space-1) var(--zz-space-2);
+    font-family: var(--zz-font-body);
+    font-size: var(--zz-fs-xs);
+    font-weight: var(--zz-fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border-radius: var(--zz-radius-sm);
+    background: var(--zz-color-primary-light);
+    color: var(--zz-color-primary);
+}
+
+/* =========================================
+   2. AI TOOL BADGES
+   ========================================= */
+
+/* ChatGPT / OpenAI */
+body.zz-layout-modern .zz-badge--chatgpt,
+body.zz-layout-modern .zz-badge--openai {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+/* DALL-E / Midjourney */
+body.zz-layout-modern .zz-badge--dalle,
+body.zz-layout-modern .zz-badge--midjourney {
+    background: #ECFDF5;
+    color: #059669;
+}
+
+/* Gemini / Google */
+body.zz-layout-modern .zz-badge--gemini,
+body.zz-layout-modern .zz-badge--google {
+    background: #F0F9FF;
+    color: #0284C7;
+}
+
+/* Claude / Anthropic */
+body.zz-layout-modern .zz-badge--claude,
+body.zz-layout-modern .zz-badge--anthropic {
+    background: #F5F3FF;
+    color: #7C3AED;
+}
+
+/* Stable Diffusion */
+body.zz-layout-modern .zz-badge--stable-diffusion {
+    background: #FFF7ED;
+    color: #EA580C;
+}
+
+/* Grok / xAI */
+body.zz-layout-modern .zz-badge--grok {
+    background: #1F2937;
+    color: #F9FAFB;
+}
+
+/* =========================================
+   3. STATUS BADGES
+   ========================================= */
+
+body.zz-layout-modern .zz-badge--success {
+    background: #ECFDF5;
+    color: #059669;
+}
+
+body.zz-layout-modern .zz-badge--warning {
+    background: #FFFBEB;
+    color: #D97706;
+}
+
+body.zz-layout-modern .zz-badge--danger,
+body.zz-layout-modern .zz-badge--error {
+    background: #FEF2F2;
+    color: #DC2626;
+}
+
+body.zz-layout-modern .zz-badge--info {
+    background: #F0F9FF;
+    color: #0284C7;
+}
+
+/* =========================================
+   4. CATEGORY BADGES
+   ========================================= */
+
+body.zz-layout-modern .zz-badge--category {
+    background: var(--zz-bg-muted);
+    color: var(--zz-text-body);
+}
+
+/* =========================================
+   5. SIZE VARIANTS
+   ========================================= */
+
+body.zz-layout-modern .zz-badge--sm {
+    padding: 2px var(--zz-space-1);
+    font-size: 0.65rem;
+}
+
+body.zz-layout-modern .zz-badge--lg {
+    padding: var(--zz-space-2) var(--zz-space-3);
+    font-size: var(--zz-fs-small);
+}
+
+/* =========================================
+   6. BADGE WITH ICON
+   ========================================= */
+
+body.zz-layout-modern .zz-badge svg,
+body.zz-layout-modern .zz-badge i {
+    width: 12px;
+    height: 12px;
+}

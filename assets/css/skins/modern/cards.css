@@ -1,0 +1,396 @@
+/**
+ * =========================================
+ * COMPONENT: CARDS (Modern V1)
+ * =========================================
+ * 
+ * Card components for prompts and blogs.
+ * BEM Naming: .zz-card, .zz-card__*, .zz-card--*
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. BASE CARD
+   ========================================= */
+
+body.zz-layout-modern .zz-card {
+    background: var(--zz-bg-card);
+    border-radius: var(--zz-radius-lg);
+    padding: var(--zz-space-6);
+    border: 1px solid var(--zz-border-light);
+    box-shadow: var(--zz-shadow-md);
+    transition: all var(--zz-transition-bounce);
+    display: flex;
+    flex-direction: column;
+}
+
+body.zz-layout-modern .zz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--zz-shadow-card-hover);
+    border-color: var(--zz-color-primary);
+}
+
+/* =========================================
+   2. PROMPT CARD
+   ========================================= */
+
+body.zz-layout-modern .zz-prompt-card {
+    background: var(--zz-bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #F3F4F6;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: 0.3s;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(32px, auto) minmax(50px, auto) 1fr auto;
+    align-items: start;
+    row-gap: 16px;
+}
+
+body.zz-layout-modern .zz-prompt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.zz-layout-modern .zz-prompt-card__badge {
+    grid-row: 1;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 0;
+    align-self: start;
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+/* AI Tool Badge Colors */
+body.zz-layout-modern .zz-prompt-card__badge--chatgpt,
+body.zz-layout-modern .zz-prompt-card__badge--gpt-4,
+body.zz-layout-modern .zz-prompt-card__badge--copilot {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+body.zz-layout-modern .zz-prompt-card__badge--dalle,
+body.zz-layout-modern .zz-prompt-card__badge--dall-e,
+body.zz-layout-modern .zz-prompt-card__badge--dall-e-3,
+body.zz-layout-modern .zz-prompt-card__badge--grok {
+    background: #ECFDF5;
+    color: #059669;
+}
+
+body.zz-layout-modern .zz-prompt-card__badge--gemini,
+body.zz-layout-modern .zz-prompt-card__badge--bard {
+    background: #F0F9FF;
+    color: #0284C7;
+}
+
+body.zz-layout-modern .zz-prompt-card__badge--claude,
+body.zz-layout-modern .zz-prompt-card__badge--anthropic {
+    background: #F5F3FF;
+    color: #7C3AED;
+}
+
+body.zz-layout-modern .zz-prompt-card__badge--midjourney {
+    background: #FFF7ED;
+    color: #C2410C;
+}
+
+body.zz-layout-modern .zz-prompt-card__badge--stable-diffusion {
+    background: #FEF2F2;
+    color: #B91C1C;
+}
+
+body.zz-layout-modern .zz-prompt-card__title {
+    grid-row: 2;
+    font-family: var(--zz-font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--zz-text-primary);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0;
+    align-self: start;
+}
+
+body.zz-layout-modern .zz-prompt-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body.zz-layout-modern .zz-prompt-card__title a:hover {
+    color: var(--zz-color-primary);
+    text-decoration: none;
+}
+
+body.zz-layout-modern .zz-prompt-card__excerpt {
+    grid-row: 3;
+    font-size: 0.9rem;
+    color: var(--zz-text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0;
+    align-self: start;
+}
+
+body.zz-layout-modern .zz-prompt-card__footer {
+    grid-row: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: end;
+    width: 100%;
+}
+
+body.zz-layout-modern .zz-prompt-card__likes {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+    transition: color 0.2s ease;
+}
+
+body.zz-layout-modern .zz-prompt-card:hover .zz-prompt-card__likes {
+    color: #EF4444;
+}
+
+body.zz-layout-modern .zz-prompt-card__likes svg,
+body.zz-layout-modern .zz-prompt-card__likes i {
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+/* =========================================
+   3. PROMPT CARD WITH THUMBNAIL
+   ========================================= */
+
+body.zz-layout-modern .zz-prompt-card--with-thumb .zz-prompt-card__header {
+    display: flex;
+    gap: var(--zz-space-4);
+    margin-bottom: var(--zz-space-4);
+}
+
+body.zz-layout-modern .zz-prompt-card__thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--zz-radius-md);
+    object-fit: cover;
+    background: var(--zz-color-primary-light);
+    flex-shrink: 0;
+}
+
+/* =========================================
+   4. BLOG CARD
+   ========================================= */
+
+body.zz-layout-modern .zz-blog-card {
+    background: var(--zz-bg-card);
+    border-radius: var(--zz-radius-lg);
+    padding: var(--zz-space-4);
+    border: 1px solid var(--zz-border-light);
+    transition: all var(--zz-transition-bounce);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body.zz-layout-modern .zz-blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--zz-shadow-md);
+}
+
+body.zz-layout-modern .zz-blog-card__image-link {
+    display: block;
+    margin-bottom: var(--zz-space-4);
+    border-radius: var(--zz-radius-md);
+    overflow: hidden;
+}
+
+body.zz-layout-modern .zz-blog-card__image-link:hover .zz-blog-card__image {
+    transform: scale(1.05);
+}
+
+body.zz-layout-modern .zz-blog-card__image {
+    width: 100%;
+    height: 160px;
+    border-radius: var(--zz-radius-md);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+body.zz-layout-modern .zz-blog-card__image--placeholder {
+    background: linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 50%, #EC4899 100%);
+}
+
+body.zz-layout-modern .zz-blog-card__category {
+    font-size: var(--zz-fs-xs);
+    font-weight: var(--zz-fw-bold);
+    color: var(--zz-color-primary);
+    text-transform: uppercase;
+    margin-bottom: var(--zz-space-1);
+    display: block;
+}
+
+body.zz-layout-modern .zz-blog-card__title {
+    font-family: var(--zz-font-heading);
+    font-size: var(--zz-fs-body);
+    font-weight: var(--zz-fw-bold);
+    color: var(--zz-text-primary);
+    line-height: var(--zz-lh-snug);
+    margin-bottom: var(--zz-space-3);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+body.zz-layout-modern .zz-blog-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body.zz-layout-modern .zz-blog-card__title a:hover {
+    color: var(--zz-color-primary);
+}
+
+body.zz-layout-modern .zz-blog-card__read {
+    font-size: var(--zz-fs-small);
+    font-weight: var(--zz-fw-semibold);
+    color: var(--zz-text-primary);
+    text-decoration: none;
+}
+
+body.zz-layout-modern .zz-blog-card__read:hover {
+    color: var(--zz-color-primary);
+}
+
+/* =========================================
+   5. STEP CARD (How It Works)
+   ========================================= */
+
+body.zz-layout-modern .zz-step-card {
+    background: var(--zz-bg-card);
+    padding: var(--zz-space-10) var(--zz-space-5);
+    text-align: center;
+    border-radius: var(--zz-radius-xl);
+    box-shadow: var(--zz-shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.zz-layout-modern .zz-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.zz-layout-modern .zz-step-card__icon {
+    width: 60px;
+    height: 60px;
+    background: var(--zz-color-primary-light);
+    color: var(--zz-color-primary);
+    border-radius: var(--zz-radius-md);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--zz-space-5);
+}
+
+body.zz-layout-modern .zz-step-card__title {
+    font-family: var(--zz-font-heading);
+    font-size: var(--zz-fs-h3);
+    font-weight: var(--zz-fw-bold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-3);
+}
+
+body.zz-layout-modern .zz-step-card__desc {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+    line-height: var(--zz-lh-normal);
+}
+
+/* =========================================
+   6. STAT CARD
+   ========================================= */
+
+body.zz-layout-modern .zz-stat-card {
+    background: var(--zz-bg-card);
+    padding: var(--zz-space-8);
+    border-radius: var(--zz-radius-lg);
+    text-align: center;
+    box-shadow: var(--zz-shadow-md);
+    border: 1px solid var(--zz-border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.zz-layout-modern .zz-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.zz-layout-modern .zz-stat-card__icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--zz-space-3);
+    color: var(--zz-text-primary);
+}
+
+body.zz-layout-modern .zz-stat-card__value {
+    font-family: var(--zz-font-heading);
+    font-size: 2.5rem;
+    font-weight: var(--zz-fw-extrabold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-1);
+}
+
+body.zz-layout-modern .zz-stat-card__title {
+    font-size: var(--zz-fs-h3);
+    font-weight: var(--zz-fw-bold);
+    color: var(--zz-text-primary);
+    margin-bottom: var(--zz-space-1);
+}
+
+body.zz-layout-modern .zz-stat-card__desc {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+}
+
+/* =========================================
+   7. AD SLOT CARD
+   ========================================= */
+
+body.zz-layout-modern .zz-ad-slot {
+    background: var(--zz-bg-muted);
+    border: 2px dashed var(--zz-border-default);
+    border-radius: var(--zz-radius-lg);
+    padding: var(--zz-space-6);
+    text-align: center;
+    color: var(--zz-text-light);
+    font-size: var(--zz-fs-small);
+    font-weight: var(--zz-fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+body.zz-layout-modern .zz-ad-slot--horizontal {
+    grid-column: 1 / -1;
+}

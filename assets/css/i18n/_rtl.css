@@ -1,0 +1,232 @@
+/**
+ * =========================================
+ * RTL SUPPORT - Arabic, Hebrew, Farsi, Urdu
+ * =========================================
+ * 
+ * Uses CSS Logical Properties for automatic RTL/LTR switching.
+ * Loaded only when is_rtl() is true in WordPress.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * @layout Modern V1
+ * =========================================
+ */
+
+/* =========================================
+   1. RTL ROOT SETTINGS
+   ========================================= */
+
+[dir="rtl"] {
+    --zz-text-align: right;
+    --zz-text-align-opposite: left;
+    --zz-font-body: 'Tajawal', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    --zz-font-heading: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+}
+
+/* =========================================
+   2. HEADER RTL ADJUSTMENTS
+   ========================================= */
+
+[dir="rtl"] .zz-header__inner {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-nav {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-header__actions {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   3. NAVIGATION RTL
+   ========================================= */
+
+[dir="rtl"] .zz-nav__list {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-breadcrumbs {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-breadcrumbs__separator::before {
+    content: "←";
+}
+
+/* =========================================
+   4. CARDS RTL
+   ========================================= */
+
+[dir="rtl"] .zz-prompt-card {
+    text-align: right;
+}
+
+[dir="rtl"] .zz-prompt-card__footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-blog-card {
+    text-align: right;
+}
+
+/* =========================================
+   5. FOOTER RTL
+   ========================================= */
+
+[dir="rtl"] .zz-footer__grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .zz-footer__link:hover {
+    transform: translateX(-5px);
+}
+
+[dir="rtl"] .zz-footer__socials {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   6. SIDEBAR RTL
+   ========================================= */
+
+[dir="rtl"] .zz-sidebar {
+    border-inline-start: none;
+    border-inline-end: 1px solid var(--zz-border-default);
+}
+
+[dir="rtl"] .zz-archive-layout {
+    direction: rtl;
+}
+
+/* =========================================
+   7. FORMS RTL
+   ========================================= */
+
+[dir="rtl"] .zz-hero-search {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-hero-search__icon {
+    left: auto;
+    right: 20px;
+}
+
+[dir="rtl"] .zz-hero-search__input {
+    padding-left: 20px;
+    padding-right: 52px;
+    text-align: right;
+}
+
+[dir="rtl"] .zz-filter-pills {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   8. BUTTONS RTL
+   ========================================= */
+
+[dir="rtl"] .zz-btn {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-btn-copy {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zz-btn-browse {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   9. ICONS THAT NEED FLIPPING
+   ========================================= */
+
+[dir="rtl"] .zz-icon-arrow,
+[dir="rtl"] .zz-icon-chevron,
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-angle-right {
+    transform: scaleX(-1);
+}
+
+/* =========================================
+   10. BLOCKQUOTE & TEXT RTL
+   ========================================= */
+
+[dir="rtl"] blockquote {
+    border-right: 4px solid var(--zz-color-primary);
+    border-left: none;
+    padding-right: var(--zz-space-4);
+    padding-left: 0;
+    text-align: right;
+}
+
+[dir="rtl"] .zz-prompt-card__likes {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   11. STEPS/HOW IT WORKS RTL
+   ========================================= */
+
+[dir="rtl"] .zz-steps-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .zz-step-card {
+    text-align: right;
+}
+
+/* =========================================
+   12. STATS RTL
+   ========================================= */
+
+[dir="rtl"] .zz-stats-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .zz-stat-card {
+    text-align: right;
+}
+
+/* =========================================
+   13. CTA SECTION RTL
+   ========================================= */
+
+[dir="rtl"] .zz-home-cta {
+    text-align: right;
+}
+
+[dir="rtl"] .zz-home-cta__buttons {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   14. FEATURES SECTION RTL
+   ========================================= */
+
+[dir="rtl"] .zz-home-features__item {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .zz-home-features__check {
+    margin-left: var(--zz-space-4);
+    margin-right: 0;
+}
+
+/* =========================================
+   15. MOBILE MENU RTL
+   ========================================= */
+
+[dir="rtl"] .zz-mobile-menu {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+}
+
+[dir="rtl"] .zz-mobile-menu.is-open {
+    transform: translateX(0);
+}

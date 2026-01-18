@@ -1,0 +1,40 @@
+/**
+ * =========================================
+ * COMPONENT: BREADCRUMBS (Modern V1)
+ * =========================================
+ * 
+ * Breadcrumb navigation.
+ * BEM Naming: .zz-breadcrumbs
+ * 
+ * @package zzprompts
+ * @version 3.0.0
+ * =========================================
+ */
+
+body.zz-layout-modern .zz-breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--zz-space-2);
+    font-size: var(--zz-fs-small);
+    margin-bottom: var(--zz-space-6);
+}
+
+body.zz-layout-modern .zz-breadcrumbs__item {
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    transition: color var(--zz-transition-fast);
+}
+
+body.zz-layout-modern .zz-breadcrumbs__item:hover {
+    color: var(--zz-color-primary);
+}
+
+body.zz-layout-modern .zz-breadcrumbs__separator {
+    color: var(--zz-text-light);
+}
+
+body.zz-layout-modern .zz-breadcrumbs__current {
+    color: var(--zz-text-primary);
+    font-weight: var(--zz-fw-medium);
+}
