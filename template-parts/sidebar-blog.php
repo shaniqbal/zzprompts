@@ -63,6 +63,7 @@ if ($sidebar_sticky) {
                 id="zz-blog-search-input"
                 autocomplete="off"
             >
+            <button type="submit" class="zz-blog-search-submit" aria-label="<?php esc_attr_e('Search', 'zzprompts'); ?>"></button>
             <div class="zz-blog-search-results" id="zz-blog-search-results"></div>
         </form>
     </div>

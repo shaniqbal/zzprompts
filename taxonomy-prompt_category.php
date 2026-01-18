@@ -79,7 +79,7 @@ foreach ($prompts_in_cat as $p_id) {
 }
 ?>
 
-<main id="primary" class="zz-cat-main">
+<div class="zz-cat-main">
     <div class="zz-cat-container">
 
         <!-- Main Content Area -->
@@ -342,7 +342,7 @@ foreach ($prompts_in_cat as $p_id) {
         </aside>
 
     </div>
-</main>
+</div>
 
 
 <?php get_footer(); ?>

@@ -74,65 +74,100 @@ body.post-type-archive-prompt {
 
 /* Search Widget in Prompt Sidebar */
 .zz-prompt-sidebar .widget_search .search-form {
-    flex-direction: column;
-    gap: 0;
-}
-
-.zz-prompt-sidebar .widget_search .search-field {
+    display: flex;
+    /* Ensure horizontal alignment */
+    padding: 0;
+    background: transparent;
+    border: none;
+    position: relative;
     width: 100%;
-    padding: 14px 16px;
-    padding-inline-end: 50px;
-    border: 1px solid rgba(100, 116, 139, 0.15);
-    border-radius: var(--zz-radius-lg, 12px);
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+}
+
+/* Support both Widget and Block Search */
+.zz-prompt-sidebar .search-field,
+.zz-prompt-sidebar .wp-block-search__input {
+    width: 100%;
+    padding: 12px 16px;
+    padding-inline-end: 45px;
+    border: 1px solid rgba(100, 116, 139, 0.1);
+    border-radius: 50px !important;
+    background: var(--zz-bg-surface-secondary, #F8FAFC);
+    font-size: 0.85rem;
     color: var(--zz-text-primary);
-    transition: all 0.2s ease;
+    transition: none;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-.zz-prompt-sidebar .widget_search .search-field:focus {
-    background: #fff;
+.zz-prompt-sidebar .search-field:focus,
+.zz-prompt-sidebar .wp-block-search__input:focus,
+.zz-prompt-sidebar .search-field:active,
+.zz-prompt-sidebar .wp-block-search__input:active {
+    background: var(--zz-bg-card, #fff);
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 0 0 3px var(--zz-color-primary-light, rgba(99, 102, 241, 0.1));
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
 }
 
-.zz-prompt-sidebar .widget_search .search-submit {
+.zz-prompt-sidebar .search-submit,
+.zz-prompt-sidebar .wp-block-search__button {
     position: absolute;
-    inset-inline-end: 6px;
+    inset-inline-end: 5px;
     top: 50%;
     transform: translateY(-50%);
-    padding: 10px 14px;
+    width: 32px;
+    height: 32px;
     background: var(--zz-color-primary, #6366F1);
     color: #fff;
     border: none;
-    border-radius: var(--zz-radius-md, 8px);
+    border-radius: 50% !important;
     cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.2s ease;
+}
+
+.zz-prompt-sidebar .search-submit::before,
+.zz-prompt-sidebar .wp-block-search__button::before {
+    content: "\f002";
+    /* FA Search Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
 }
 
 .zz-prompt-sidebar .widget_search .search-submit:hover {
     background: var(--zz-color-primary-dark, #4F46E5);
+    transform: translateY(-50%) scale(1.05);
 }
 
 /* Dark Mode - Prompt Sidebar */
 [data-theme="dark"] .zz-prompt-sidebar .widget {
-    background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(148, 163, 184, 0.15);
+    background: var(--zz-glass-bg, rgba(30, 41, 59, 0.7));
+    border-color: var(--zz-glass-border, rgba(148, 163, 184, 0.1));
+    backdrop-filter: blur(16px);
 }
 
 [data-theme="dark"] .zz-prompt-sidebar .widget-title {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
 }
 
 [data-theme="dark"] .zz-prompt-sidebar .widget_search .search-field {
-    background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(148, 163, 184, 0.2);
+    background: rgba(15, 23, 42, 0.5);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: var(--zz-text-primary);
 }
 
-[data-theme="dark"] .zz-prompt-sidebar .widget_search .search-field:focus {
-    background: rgba(30, 41, 59, 0.95);
+[data-theme="dark"] .zz-prompt-sidebar .search-field:focus,
+[data-theme="dark"] .zz-prompt-sidebar .wp-block-search__input:focus {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: var(--zz-color-primary);
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* =========================================
@@ -144,17 +179,26 @@ body.post-type-archive-prompt {
 }
 
 .zz-prompt-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background: linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);
-    color: #fff;
-    font-size: 0.75rem;
+    color: #fff !important;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     padding: 6px 14px;
     border-radius: var(--zz-radius-pill);
     margin-bottom: var(--zz-space-4);
-    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zz-prompt-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+    filter: brightness(1.1);
 }
 
 .zz-prompt-title {

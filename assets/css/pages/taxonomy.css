@@ -12,9 +12,17 @@
  * =========================================
  */
 
-/* =========================================
-   1. LAYOUT CONTAINER
-   ========================================= */
+/* Global Box Sizing for Better Responsiveness */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.zz-site {
+    overflow-x: hidden;
+    /* Prevent horizontal scroll on some browsers */
+}
 
 .zz-cat-main {
     padding-block: var(--zz-space-10, 40px) var(--zz-space-16, 64px);
@@ -46,10 +54,16 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ensure contents are centered */
 }
 
 .zz-cat-hero__badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: var(--zz-color-primary-light, #EEF2FF);
     color: var(--zz-color-primary, #6366F1);
     font-size: 0.8rem;
@@ -63,18 +77,18 @@
 
 .zz-cat-hero__title {
     font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-size: 2.5rem;
     font-weight: 800;
     color: var(--zz-text-primary, #111827);
     margin-block-end: var(--zz-space-3, 12px);
     line-height: 1.1;
+    width: 100%;
 }
 
 .zz-cat-hero__desc {
     font-size: 1.1rem;
     color: var(--zz-text-muted, #6B7280);
     max-width: 600px;
-    margin-inline: auto;
     margin-block-end: var(--zz-space-5, 20px);
     line-height: 1.6;
 }
@@ -82,10 +96,12 @@
 .zz-cat-hero__stats {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: var(--zz-space-8, 32px);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-block-start: var(--zz-space-5, 20px);
     margin-block-start: var(--zz-space-5, 20px);
+    width: 100%;
 }
 
 .zz-cat-stat {
@@ -143,7 +159,16 @@
     display: none;
 }
 
-/* Individual Pill */
+/* Pagination container responsive fix */
+.zz-cat-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    /* Ensure wrapping on small screens */
+    margin-block-start: var(--zz-space-10, 40px);
+}
+
 .zz-cat-pill {
     white-space: nowrap;
     padding: 8px 16px;
@@ -524,11 +549,6 @@
    7. PAGINATION
    ========================================= */
 
-.zz-cat-pagination {
-    display: flex;
-    justify-content: center;
-    margin-block-start: var(--zz-space-10, 40px);
-}
 
 .zz-cat-load-more {
     background: #fff;
@@ -931,7 +951,10 @@
     }
 
     .zz-cat-container {
-        padding-inline: var(--zz-space-4, 16px);
+        padding-inline: 15px;
+        display: block !important;
+        width: 100%;
+        max-width: 100vw;
     }
 
     .zz-cat-grid {
@@ -940,8 +963,13 @@
     }
 
     .zz-cat-hero {
-        padding: var(--zz-space-5, 20px);
-        margin-block-end: var(--zz-space-5, 20px);
+        padding: 25px 15px;
+        margin-block-end: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .zz-cat-hero__badge {
@@ -950,41 +978,62 @@
     }
 
     .zz-cat-hero__title {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
+        text-align: center;
+        margin-inline: auto;
     }
 
     .zz-cat-hero__desc {
         font-size: 0.9rem;
+        line-height: 1.5;
+        text-align: center;
+        margin-inline: auto;
     }
 
     .zz-cat-hero__stats {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        padding-block-start: var(--zz-space-4, 16px);
-        margin-block-start: var(--zz-space-4, 16px);
+        flex-direction: column !important;
+        gap: 12px;
+        align-items: center !important;
+        padding-block-start: 15px;
+        margin-block-start: 15px;
+        width: 100%;
     }
 
     .zz-cat-stat {
+        justify-content: center !important;
         width: 100%;
-        justify-content: center;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .zz-cat-filter-bar {
-        padding: 12px;
-        margin-block-end: var(--zz-space-5, 20px);
-        border-radius: var(--zz-radius-lg, 12px);
+        position: relative;
+        top: 0 !important;
+        padding: 15px;
+        margin-block-end: 24px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px;
+        width: 100%;
     }
 
-    .zz-cat-pill {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+    .zz-cat-filter-pills {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        /* Space for scrollbar if needed */
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
     }
 
     .zz-cat-sort {
+        width: 100%;
         padding: 10px 12px;
         font-size: 0.85rem;
+        min-width: auto;
+        /* Allow full flexibility on mobile */
     }
 
     .zz-cat-card {
@@ -1055,5 +1104,26 @@
     .zz-cat-no-results .zz-btn {
         padding: 10px 20px;
         font-size: 0.85rem;
+    }
+}
+
+/* Additional Mobile Fixes for Very Small Screens */
+@media (max-width: 400px) {
+    .zz-cat-hero__desc {
+        max-width: 100%;
+    }
+
+    .zz-cat-sort {
+        min-width: auto;
+    }
+
+    .zz-cat-filter-pills {
+        gap: 8px;
+        /* Tighter gap for small screens */
+    }
+
+    .zz-cat-pill {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }

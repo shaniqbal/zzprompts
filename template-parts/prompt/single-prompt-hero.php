@@ -61,7 +61,25 @@ $likes_enabled = zzprompts_get_option('enable_likes', true);
 
             <!-- Header Area -->
             <header class="zz-prompt-header">
-                <span class="zz-prompt-badge"><?php echo esc_html($tool_name); ?></span>
+                <?php
+                $badge_link = '';
+                $badge_text = '';
+
+                if ($tools && !is_wp_error($tools)) {
+                    $badge_text = $tools[0]->name;
+                    $badge_link = get_term_link($tools[0]);
+                } elseif ($categories && !is_wp_error($categories)) {
+                    $badge_text = $categories[0]->name;
+                    $badge_link = get_term_link($categories[0]);
+                } else {
+                    $badge_text = __('General AI', 'zzprompts');
+                }
+
+                if ($badge_link && !is_wp_error($badge_link)) : ?>
+                    <a href="<?php echo esc_url($badge_link); ?>" class="zz-prompt-badge"><?php echo esc_html($badge_text); ?></a>
+                <?php else : ?>
+                    <span class="zz-prompt-badge"><?php echo esc_html($badge_text); ?></span>
+                <?php endif; ?>
                 <h1 class="zz-prompt-title"><?php the_title(); ?></h1>
                 
                 <?php if ($show_date || $show_views || $show_copies || $show_author || $likes_enabled) : ?>

@@ -79,10 +79,20 @@ $is_ai_generated = get_post_meta(get_the_ID(), '_is_ai_generated', true);
                     </div>
                 </header>
                 
-                <!-- Featured Image -->
-                <?php if (has_post_thumbnail() && $show_image) : ?>
-                <div class="zz-blog-featured">
-                    <?php the_post_thumbnail('large', array('class' => 'zz-blog-featured__img')); ?>
+                <!-- Featured Image or Placeholder -->
+                <div class="zz-blog-featured<?php echo !has_post_thumbnail() ? ' zz-blog-featured--placeholder' : ''; ?>">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('large', array('class' => 'zz-blog-featured__img')); ?>
+                    <?php else : 
+                        // Enhanced Placeholder if no image
+                        $colors = ['#EEF2FF', '#ECFDF5', '#F0F9FF', '#FEF2F2', '#F5F3FF'];
+                        $bg_color = $colors[abs(crc32($cat_name)) % count($colors)];
+                    ?>
+                        <div class="zz-blog-featured__placeholder" style="background-color: <?php echo esc_attr($bg_color); ?>;">
+                            <span class="zz-blog-featured__placeholder-text"><?php echo esc_html($cat_name); ?></span>
+                        </div>
+                    <?php endif; ?>
+
                     <?php if ($is_ai_generated) : ?>
                         <div class="zz-blog-featured__badge">
                             <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -90,7 +100,6 @@ $is_ai_generated = get_post_meta(get_the_ID(), '_is_ai_generated', true);
                         </div>
                     <?php endif; ?>
                 </div>
-                <?php endif; ?>
                 
                 <!-- Ad: Before Content -->
                 <?php zz_render_ad('blog_top'); ?>

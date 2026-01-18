@@ -211,6 +211,20 @@ body.zz-layout-modern .zz-header__toggle svg {
         align-items: center;
         justify-content: center;
     }
+
+    /* Dark Toggle Position on Mobile */
+    body.zz-layout-modern .zz-header__inner {
+        gap: var(--zz-space-3);
+    }
+
+    body.zz-layout-modern .zz-theme-toggle {
+        order: 2;
+        margin-inline-end: var(--zz-space-2);
+    }
+
+    body.zz-layout-modern .zz-header__toggle {
+        order: 3;
+    }
 }
 
 /* =========================================
@@ -229,21 +243,30 @@ body.zz-layout-modern .zz-header__toggle svg {
 }
 
 /* =========================================
-   10. MOBILE MENU OVERLAY
+   10. MOBILE MENU OVERLAY (Glassmorphism)
    ========================================= */
 
 body.zz-layout-modern .zz-mobile-menu {
     position: fixed;
     inset: 0;
-    background: var(--zz-bg-card);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95), 
+        rgba(238, 242, 255, 0.95));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: var(--zz-z-modal);
     padding: var(--zz-space-6);
     display: none;
     flex-direction: column;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.zz-layout-modern .zz-mobile-menu.is-open {
     display: flex;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 body.zz-layout-modern .zz-mobile-menu__header {
@@ -251,37 +274,106 @@ body.zz-layout-modern .zz-mobile-menu__header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--zz-space-8);
+    padding-bottom: var(--zz-space-4);
+    border-bottom: 2px solid rgba(99, 102, 241, 0.2);
 }
 
 body.zz-layout-modern .zz-mobile-menu__close {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: var(--zz-radius-full);
     cursor: pointer;
     color: var(--zz-text-primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+}
+
+body.zz-layout-modern .zz-mobile-menu__close:hover {
+    background: var(--zz-color-primary);
+    color: #fff;
+    transform: rotate(90deg);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
 }
 
 body.zz-layout-modern .zz-mobile-menu__nav {
     display: flex;
     flex-direction: column;
-    gap: var(--zz-space-4);
+    gap: 0;
+    overflow-y: auto;
 }
 
+/* WordPress Menu List (ul > li > a) */
+body.zz-layout-modern .zz-mobile-menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+body.zz-layout-modern .zz-mobile-menu__list li {
+    margin: 0;
+    padding: 0;
+}
+
+body.zz-layout-modern .zz-mobile-menu__list li a,
 body.zz-layout-modern .zz-mobile-menu__nav-link {
     font-size: 1.25rem;
     font-weight: var(--zz-fw-semibold);
     color: var(--zz-text-primary);
     text-decoration: none;
-    padding: var(--zz-space-3) 0;
-    border-bottom: 1px solid var(--zz-border-light);
+    padding: var(--zz-space-4) var(--zz-space-3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: var(--zz-radius-lg);
+    margin-bottom: var(--zz-space-2);
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-body.zz-layout-modern .zz-mobile-menu__nav-link:hover {
+body.zz-layout-modern .zz-mobile-menu__list li a::before,
+body.zz-layout-modern .zz-mobile-menu__nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--zz-color-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+body.zz-layout-modern .zz-mobile-menu__list li a:hover,
+body.zz-layout-modern .zz-mobile-menu__nav-link:hover,
+body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--zz-color-primary);
     color: var(--zz-color-primary);
+    padding-inline-start: var(--zz-space-5);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+}
+
+body.zz-layout-modern .zz-mobile-menu__list li a:hover::before,
+body.zz-layout-modern .zz-mobile-menu__nav-link:hover::before,
+body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a::before {
+    transform: scaleY(1);
+}
+
+body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
+    font-weight: var(--zz-fw-bold);
 }
 
 /* =========================================
@@ -298,6 +390,43 @@ body.zz-layout-modern .zz-mobile-menu__nav-link:hover {
 [data-theme="dark"] body.zz-layout-modern .zz-header__nav-list li.current-menu-item a::after,
 [data-theme="dark"] body.zz-layout-modern .zz-header__nav-link--active::after {
     background: #818CF8;
+}
+
+/* Mobile Menu Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu {
+    background: linear-gradient(135deg, 
+        rgba(15, 23, 42, 0.95), 
+        rgba(30, 41, 59, 0.95));
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__header {
+    border-bottom-color: rgba(99, 102, 241, 0.3);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__close {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(148, 163, 184, 0.3);
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__close:hover {
+    background: var(--zz-color-primary);
+    color: #fff;
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__list li a,
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__nav-link {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__list li a:hover,
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__nav-link:hover,
+[data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: #818CF8;
+    color: #A5B4FC;
     box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
 }
 

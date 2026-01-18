@@ -352,8 +352,12 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 
 ## 16. CATEGORY & TAXONOMY STANDARDS (DEV PRO)
 
+
 ### 📱 Responsiveness & Layout
 - **Sticky Bar:** The `.zz-cat-filter-bar` MUST be `position: relative` on mobile (< 900px). Never use sticky positioning on small screens to prevent layout breaks.
+- **Hero Centering:** The hero section (`.zz-cat-hero`) MUST use `display: flex; flex-direction: column; align-items: center;` on mobile to ensure all content (badges, titles, stats) is centered.
+- **Container Stacking:** Use `display: block !important;` on `.zz-cat-container` at mobile breakpoints to override grid behavior and ensure reliable vertical stacking.
+- **HTML Nesting:** Taxonomy templates MUST use `<div>` for wrap instead of `<main>` to avoid nested `<main>` tags (since header/footer already provide the wrapper).
 - **Hero Stats:** Stack the `.zz-cat-hero__stats` vertically on mobile to prevent horizontal overflow and improve readability.
 - **Pill Clipping:** Scrollable containers (`.zz-cat-filter-pills`) MUST use vertical padding (min `15px`) and negative margins to prevent the bottom edge of pills and shadows from being clipped.
 
@@ -516,6 +520,43 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 | `?orderby=newest` | date | DESC |
 | `?orderby=popular` | `_prompt_likes` | DESC |
 | `?orderby=copies` | `_prompt_copies` | DESC |
+
+**Responsive Breakpoints:**
+| Breakpoint | Changes |
+|------------|---------|
+| 1200px | Sidebar 280px, adjusted spacing |
+| 1024px | 2-column grid, hero/filter adjustments |
+| 900px | Single column, sidebar becomes 2-column grid |
+| 768px | Sidebar single column, filter bar stacked |
+| 600px | Full mobile: 1-column grid, compact hero, scaled fonts |
+
+### 2026-01-19: Blog Single Page - Mobile Meta Styling
+**Updated Files:**
+- `assets/css/pages/blog-single.css` - Enhanced mobile meta bar styling
+
+**Mobile Meta Improvements:**
+- **900px breakpoint:** Meta bar goes full width, 16px rounded corners, better padding
+- **600px breakpoint:** Meta items stack vertically with elegant border-bottom separators
+- **Dark mode:** Border separators adapt to dark theme with rgba white
+- Matches prompt single page premium mobile design
+
+### 2026-01-19: Mobile Header - Dark Toggle & Glassmorphism Menu
+**Updated Files:**
+- `assets/css/skins/modern/header.css` - Dark toggle positioning, mobile menu redesign
+- `assets/css/core/_utilities.css` - Added body scroll lock
+
+**Mobile Header Features:**
+- **Dark Toggle Position:** Positioned near burger menu with proper spacing (flexbox order)
+- **Glassmorphism Mobile Menu:**
+  - Gradient glass background with 20px backdrop blur
+  - Slide-in animation from right with cubic-bezier easing
+  - Glass card menu items with rounded corners
+  - Hover effects with primary color + left border indicator
+  - Close button: floating glass with rotate animation
+  - Current page auto-highlighted with bold font
+  - Body scroll lock when menu is open
+- **Dark Mode Support:** Adaptive gradients and colors for both themes
+- **Performance:** Hardware-accelerated animations, ESC key close, click-outside close
 
 ---
 
