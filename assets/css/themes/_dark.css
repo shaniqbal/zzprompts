@@ -100,10 +100,11 @@
     border-color: var(--zz-border-default);
 }
 
-[data-theme="dark"] .zz-filter-pill--active,
-[data-theme="dark"] .zz-filter-pill:hover {
-    background: var(--zz-color-primary);
-    color: #fff;
+[data-theme="dark"] body.zz-layout-modern .zz-filter-pill--active,
+[data-theme="dark"] body.zz-layout-modern .zz-filter-pill:hover {
+    background: var(--zz-color-primary) !important;
+    color: #fff !important;
+    border-color: var(--zz-color-primary) !important;
 }
 
 [data-theme="dark"] .zz-stat-card {

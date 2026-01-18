@@ -350,7 +350,26 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 
 ---
 
-## 15. CHANGELOG (Recent Updates)
+## 16. CATEGORY & TAXONOMY STANDARDS (DEV PRO)
+
+### 📱 Responsiveness & Layout
+- **Sticky Bar:** The `.zz-cat-filter-bar` MUST be `position: relative` on mobile (< 900px). Never use sticky positioning on small screens to prevent layout breaks.
+- **Hero Stats:** Stack the `.zz-cat-hero__stats` vertically on mobile to prevent horizontal overflow and improve readability.
+- **Pill Clipping:** Scrollable containers (`.zz-cat-filter-pills`) MUST use vertical padding (min `15px`) and negative margins to prevent the bottom edge of pills and shadows from being clipped.
+
+### 🔘 Filter Pill Logic
+- **Active State:** Selected pills (`.active`) MUST NOT have background hover effects to avoid user confusion.
+- **Cursor:** Always maintain `cursor: pointer` for all pills (including active ones) to preserve a "clickable" feel.
+- **Dark Mode:** Use high-specificity selectors (e.g., `[data-theme="dark"] body.zz-layout-modern .zz-filter-pill:hover`) to force `#fff !important` text color on primary backgrounds.
+
+### 🚫 No Results UI
+- **Button Style:** Use `.zz-cat-no-results .zz-btn` with a standard pill shape (`50px` radius).
+- **Sizing:** Optimize padding (`10px 20px`) and font-weight (`700`) for a balanced "dev pro" look.
+- **Icons:** Ensure icons inside buttons inherit the button's text color and do not have independent background colors.
+
+---
+
+## 17. CHANGELOG (Recent Updates)
 
 ### 2026-01-18: Final Cleanup & Namespace Standardization
 **Class Naming Standardization:**
@@ -444,7 +463,61 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 | Prompt Archive | Prompts only (existing) |
 | Search Results | Tabs for filtering by type |
 
+### 2026-01-19: Taxonomy Pages (Category & AI Tool)
+**New Files:**
+- `assets/css/pages/taxonomy.css` - Taxonomy archive styles (~850 lines)
+
+**Updated Files:**
+- `taxonomy-prompt_category.php` - Complete rewrite with Modern V1 design
+- `taxonomy-ai_tool.php` - Complete rewrite with Modern V1 design
+- `functions.php` - Added taxonomy.css conditional loading, sorting options (popular, copies)
+
+**Backed Up:**
+- `inc/_legacy_backup/taxonomy-prompt_category-old.php`
+- `inc/_legacy_backup/taxonomy-ai_tool-old.php`
+
+**Taxonomy Page Features:**
+- Glass hero section with badge, title, stats (prompts count, total likes)
+- Sticky filter bar with category/tool pills
+- Sort dropdown: Newest, Most Popular, Most Copied
+- 3-column responsive grid (3 → 2 → 1)
+- Product-style cards with likes/copies stats
+- Client-side search filtering with Escape key support
+- Sidebar: Search, Popular This Week, Related Terms, Ad slot
+- Dark mode support (20+ selectors)
+- RTL-ready logical properties
+
+**AI Tool Icons Mapping (taxonomy-ai_tool.php):**
+| Slug | Icon |
+|------|------|
+| chatgpt | fa-comment-dots |
+| midjourney | fa-paintbrush |
+| dall-e | fa-image |
+| gemini | fa-gem |
+| claude | fa-robot |
+| copilot | fa-code |
+| stable | fa-wand-magic-sparkles |
+| grok | fa-bolt |
+| default | fa-microchip |
+
+**BEM Structure:**
+- `.zz-cat-hero` - Hero section
+- `.zz-cat-filter-bar` - Sticky filter bar
+- `.zz-cat-pill` - Filter pill buttons
+- `.zz-cat-grid` - 3-column prompt grid
+- `.zz-cat-card` - Prompt card
+- `.zz-cat-sidebar` - Sidebar container
+- `.zz-cat-widget` - Sidebar widget
+- `.zz-cat-pagination` - Pagination nav
+
+**Sorting System (functions.php):**
+| Parameter | Meta Key | Order |
+|-----------|----------|-------|
+| `?orderby=newest` | date | DESC |
+| `?orderby=popular` | `_prompt_likes` | DESC |
+| `?orderby=copies` | `_prompt_copies` | DESC |
+
 ---
 
-**Last Updated:** 2026-01-18  
+**Last Updated:** 2026-01-19  
 **Theme Version:** 1.0.0

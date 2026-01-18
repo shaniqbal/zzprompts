@@ -132,7 +132,7 @@ add_action('widgets_init', 'zzprompts_widgets_init');
 // GLOBAL VERSION CONTROL (One place to bust cache)
 // ==========================================================================
 if (!defined('ZZ_THEME_VERSION')) {
-    define('ZZ_THEME_VERSION', '1.0.10');
+    define('ZZ_THEME_VERSION', '1.0.11');
 }
 
 // ==========================================================================
@@ -253,6 +253,16 @@ function zzprompts_enqueue_assets() {
         wp_enqueue_style(
             'zz-archive-prompts',
             $uri . '/assets/css/pages/archive-prompts.css',
+            array('zz-skin'),
+            $ver
+        );
+    }
+    
+    // Taxonomy Pages (Category & AI Tool)
+    if (is_tax('prompt_category') || is_tax('ai_tool')) {
+        wp_enqueue_style(
+            'zz-taxonomy',
+            $uri . '/assets/css/pages/taxonomy.css',
             array('zz-skin'),
             $ver
         );
@@ -545,8 +555,24 @@ function zzprompts_apply_archive_filters( $query ) {
         
         switch ( $orderby ) {
             case 'meta_value_num':
+            case 'views':
                 // Most Popular (by views)
                 $query->set( 'meta_key', 'zzprompts_post_views' );
+                $query->set( 'orderby', 'meta_value_num' );
+                $query->set( 'order', 'DESC' );
+                break;
+            
+            case 'popular':
+            case 'likes':
+                // Most Liked
+                $query->set( 'meta_key', '_prompt_likes' );
+                $query->set( 'orderby', 'meta_value_num' );
+                $query->set( 'order', 'DESC' );
+                break;
+            
+            case 'copies':
+                // Most Copied
+                $query->set( 'meta_key', '_prompt_copies' );
                 $query->set( 'orderby', 'meta_value_num' );
                 $query->set( 'order', 'DESC' );
                 break;
@@ -557,6 +583,7 @@ function zzprompts_apply_archive_filters( $query ) {
                 $query->set( 'order', 'ASC' );
                 break;
             
+            case 'newest':
             case 'date':
             default:
                 // Newest First (default)

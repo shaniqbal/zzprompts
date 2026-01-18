@@ -1,27 +1,42 @@
 <?php
 /**
- * The template for displaying Prompt Category pages
- * Premium V1 Classic Design - Light & Clean
- *
+ * Taxonomy Template: Prompt Category
+ * 
+ * Modern V1 Glassmorphism design for category archive pages.
+ * Based on: ZZ Designs Ready/Modern Layout/Category Page/final v1.html
+ * 
  * @package zzprompts
- * @version 3.0.0
+ * @version 2.0.0
+ * @layout Modern V1
  */
 
 defined('ABSPATH') || exit;
 
 get_header();
 
+// Current term data
 $current_term = get_queried_object();
-$term_count = $current_term->count;
+$term_id      = $current_term->term_id;
+$term_count   = $current_term->count;
+$term_desc    = term_description($term_id);
 
-// Get related categories
+// Get related categories (exclude current)
 $related_cats = get_terms(array(
     'taxonomy'   => 'prompt_category',
     'orderby'    => 'count',
     'order'      => 'DESC',
+    'number'     => 8,
+    'hide_empty' => true,
+    'exclude'    => $term_id,
+));
+
+// Get AI Tools for filter pills
+$ai_tools = get_terms(array(
+    'taxonomy'   => 'ai_tool',
+    'orderby'    => 'count',
+    'order'      => 'DESC',
     'number'     => 6,
     'hide_empty' => true,
-    'exclude'    => $current_term->term_id,
 ));
 
 // Get popular prompts in this category
@@ -32,7 +47,7 @@ $popular_args = array(
         array(
             'taxonomy' => 'prompt_category',
             'field'    => 'term_id',
-            'terms'    => $current_term->term_id,
+            'terms'    => $term_id,
         ),
     ),
     'meta_key'       => '_prompt_likes',
@@ -40,288 +55,294 @@ $popular_args = array(
     'order'          => 'DESC',
 );
 $popular_prompts = new WP_Query($popular_args);
+
+// Sorting
+$current_sort = isset($_GET['orderby']) ? sanitize_text_field($_GET['orderby']) : 'newest';
+$current_tool = isset($_GET['ai_tool']) ? sanitize_text_field($_GET['ai_tool']) : '';
+
+// Calculate total likes in this category
+$total_likes = 0;
+$prompts_in_cat = get_posts(array(
+    'post_type'      => 'prompt',
+    'posts_per_page' => -1,
+    'tax_query'      => array(
+        array(
+            'taxonomy' => 'prompt_category',
+            'field'    => 'term_id',
+            'terms'    => $term_id,
+        ),
+    ),
+    'fields' => 'ids',
+));
+foreach ($prompts_in_cat as $p_id) {
+    $total_likes += absint(get_post_meta($p_id, '_prompt_likes', true));
+}
 ?>
 
-<!-- Premium Light Header with Breadcrumbs -->
-<div class="zz-prm-header">
-    <div class="container">
-        <div class="zz-prm-header-inner">
-            <!-- Breadcrumbs -->
-            <nav class="zz-prm-breadcrumb">
-                <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'zzprompts'); ?></a>
-                <i class="fas fa-chevron-right"></i>
-                <a href="<?php echo esc_url(get_post_type_archive_link('prompt')); ?>"><?php esc_html_e('Categories', 'zzprompts'); ?></a>
-                <i class="fas fa-chevron-right"></i>
-                <span class="current"><?php single_term_title(); ?></span>
-            </nav>
-        </div>
-    </div>
-</div>
+<main id="primary" class="zz-cat-main">
+    <div class="zz-cat-container">
 
-<!-- Hero Section with Search -->
-<section class="zz-prm-hero">
-    <div class="container">
-        <h1 class="zz-prm-hero-title"><?php single_term_title(); ?></h1>
-        <p class="zz-prm-hero-desc">
-            <?php 
-            if (term_description()) {
-                echo wp_kses_post(term_description());
-            } else {
-                printf(
-                    esc_html__('Explore %s ready-to-use prompts in the %s category.', 'zzprompts'), 
-                    '<strong>' . number_format_i18n($term_count) . '</strong>',
-                    '<strong>' . esc_html(single_term_title('', false)) . '</strong>'
-                );
-            }
-            ?>
-        </p>
-
-        <!-- Category Search Bar -->
-        <div class="zz-prm-cat-search">
-            <input type="text" 
-                   class="zz-prm-cat-input" 
-                   placeholder="<?php printf(esc_attr__('Search in %s...', 'zzprompts'), single_term_title('', false)); ?>"
-                   id="zzCatSearch"
-                   autocomplete="off">
-            <i class="fas fa-search zz-prm-cat-icon"></i>
-        </div>
-    </div>
-</section>
-
-<!-- Search Functionality Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('zzCatSearch');
-    const cardGrid = document.querySelector('.zz-prm-card-grid');
-    const cards = document.querySelectorAll('.zz-prm-card');
-    
-    // Create no results message
-    const noResultsDiv = document.createElement('div');
-    noResultsDiv.className = 'zz-prm-no-search-results';
-    noResultsDiv.style.display = 'none';
-    noResultsDiv.innerHTML = `
-        <i class="fas fa-search"></i>
-        <h3>No Results Found</h3>
-        <p>Try adjusting your search terms</p>
-    `;
-    
-    if (cardGrid) {
-        cardGrid.parentNode.insertBefore(noResultsDiv, cardGrid);
-    }
-    
-    if (searchInput && cards.length > 0) {
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase().trim();
-            let visibleCount = 0;
-            
-            cards.forEach(function(card) {
-                const title = card.querySelector('.zz-prm-card-title')?.textContent.toLowerCase() || '';
-                const desc = card.querySelector('.zz-prm-card-desc')?.textContent.toLowerCase() || '';
-                const chip = card.querySelector('.zz-prm-chip')?.textContent.toLowerCase() || '';
-                
-                const matches = title.includes(searchTerm) || 
-                               desc.includes(searchTerm) || 
-                               chip.includes(searchTerm);
-                
-                if (matches || searchTerm === '') {
-                    card.style.display = '';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Show/hide no results message
-            if (visibleCount === 0 && searchTerm !== '') {
-                cardGrid.style.display = 'none';
-                noResultsDiv.style.display = 'block';
-            } else {
-                cardGrid.style.display = '';
-                noResultsDiv.style.display = 'none';
-            }
-        });
-    }
-});
-</script>
-
-<!-- Main Layout: Content + Sidebar -->
-<div class="container">
-    <div class="zz-prm-layout">
-        
         <!-- Main Content Area -->
-        <main class="zz-prm-content">
-            
-            <?php if (have_posts()) : ?>
-            
-            <!-- Prompt Cards Grid -->
-            <div class="zz-prm-card-grid">
-                <?php
-                while (have_posts()) :
-                    the_post();
-                    
-                    // Get prompt metadata
-                    $likes = get_post_meta(get_the_ID(), '_prompt_likes', true);
-                    $likes = $likes ? intval($likes) : 0;
-                    $ai_tools = get_the_terms(get_the_ID(), 'ai_tool');
-                    $ai_tool_name = (!empty($ai_tools) && !is_wp_error($ai_tools)) ? $ai_tools[0]->name : 'AI Prompt';
+        <div class="zz-cat-content">
+
+            <!-- Category Hero Section -->
+            <section class="zz-cat-hero">
+                <span class="zz-cat-hero__badge">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <?php esc_html_e('Category', 'zzprompts'); ?>
+                </span>
+                
+                <h1 class="zz-cat-hero__title"><?php single_term_title(); ?></h1>
+                
+                <p class="zz-cat-hero__desc">
+                    <?php
+                    if ($term_desc) {
+                        echo wp_kses_post($term_desc);
+                    } else {
+                        printf(
+                            /* translators: 1: prompt count, 2: category name */
+                            esc_html__('Explore our curated collection of %1$s high-quality prompts in the %2$s category.', 'zzprompts'),
+                            '<strong>' . number_format_i18n($term_count) . '</strong>',
+                            '<strong>' . esc_html(single_term_title('', false)) . '</strong>'
+                        );
+                    }
                     ?>
+                </p>
+
+                <div class="zz-cat-hero__stats">
+                    <div class="zz-cat-stat">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <?php 
+                        /* translators: %s: number of prompts */
+                        printf(esc_html__('%s Prompts', 'zzprompts'), number_format_i18n($term_count)); 
+                        ?>
+                    </div>
+                    <div class="zz-cat-stat">
+                        <i class="fa-solid fa-heart"></i>
+                        <?php 
+                        /* translators: %s: number of likes */
+                        printf(esc_html__('%s Likes', 'zzprompts'), number_format_i18n($total_likes)); 
+                        ?>
+                    </div>
+                    <?php if ($term_count > 50) : ?>
+                    <div class="zz-cat-stat">
+                        <i class="fa-solid fa-fire"></i>
+                        <?php esc_html_e('Trending', 'zzprompts'); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </section>
+
+            <!-- Sticky Filter Bar -->
+            <div class="zz-cat-filter-bar">
+                <div class="zz-cat-filter-pills">
+                    <a href="<?php echo esc_url(remove_query_arg('ai_tool')); ?>" 
+                       class="zz-cat-pill <?php echo empty($current_tool) ? 'zz-cat-pill--active' : ''; ?>">
+                        <?php esc_html_e('All', 'zzprompts'); ?>
+                    </a>
+                    <?php if (!empty($ai_tools) && !is_wp_error($ai_tools)) : ?>
+                        <?php foreach ($ai_tools as $tool) : ?>
+                            <a href="<?php echo esc_url(add_query_arg('ai_tool', $tool->slug)); ?>" 
+                               class="zz-cat-pill <?php echo ($current_tool === $tool->slug) ? 'zz-cat-pill--active' : ''; ?>">
+                                <?php echo esc_html($tool->name); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+
+                <select class="zz-cat-sort" onchange="window.location.href=this.value;">
+                    <option value="<?php echo esc_url(add_query_arg('orderby', 'newest')); ?>" <?php selected($current_sort, 'newest'); ?>>
+                        <?php esc_html_e('Sort: Newest', 'zzprompts'); ?>
+                    </option>
+                    <option value="<?php echo esc_url(add_query_arg('orderby', 'popular')); ?>" <?php selected($current_sort, 'popular'); ?>>
+                        <?php esc_html_e('Most Popular', 'zzprompts'); ?>
+                    </option>
+                    <option value="<?php echo esc_url(add_query_arg('orderby', 'copies')); ?>" <?php selected($current_sort, 'copies'); ?>>
+                        <?php esc_html_e('Most Copied', 'zzprompts'); ?>
+                    </option>
+                </select>
+            </div>
+
+            <!-- Prompt Grid -->
+            <?php if (have_posts()) : ?>
+            <div class="zz-cat-grid">
+                <?php
+                $card_count = 0;
+                while (have_posts()) : the_post();
+                    $card_count++;
                     
-                    <article class="zz-prm-card">
-                        <div class="zz-prm-card-inner">
-                            
-                            <?php if (has_post_thumbnail()) : ?>
-                            <div class="zz-prm-img-wrapper">
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('medium_large'); ?>
-                                </a>
-                            </div>
+                    // Get prompt data
+                    $prompt_id    = get_the_ID();
+                    $likes        = absint(get_post_meta($prompt_id, '_prompt_likes', true));
+                    $copies       = absint(get_post_meta($prompt_id, '_prompt_copies', true));
+                    $ai_tool      = get_the_terms($prompt_id, 'ai_tool');
+                    $tool_name    = (!empty($ai_tool) && !is_wp_error($ai_tool)) ? $ai_tool[0]->name : '';
+                    $is_featured  = get_post_meta($prompt_id, '_zz_featured', true);
+                    $excerpt      = wp_trim_words(get_the_excerpt(), 18, '...');
+                    ?>
+
+                    <article class="zz-cat-card">
+                        <div class="zz-cat-card__header">
+                            <?php if ($tool_name) : ?>
+                                <span class="zz-cat-card__tool"><?php echo esc_html($tool_name); ?></span>
+                            <?php else : ?>
+                                <span class="zz-cat-card__tool"><?php esc_html_e('AI Prompt', 'zzprompts'); ?></span>
                             <?php endif; ?>
                             
-                            <h3 class="zz-prm-card-title">
+                            <?php if ($is_featured) : ?>
+                                <i class="fa-solid fa-star zz-cat-card__featured" title="<?php esc_attr_e('Featured', 'zzprompts'); ?>"></i>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="zz-cat-card__body">
+                            <h3 class="zz-cat-card__title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
-                            
-                            <p class="zz-prm-card-desc">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                            </p>
-                            
-                            <div class="zz-prm-card-footer">
-                                <span class="zz-prm-chip"><?php echo esc_html($ai_tool_name); ?></span>
-                                <div class="zz-prm-likes">
-                                    <i class="fas fa-heart"></i>
-                                    <?php echo number_format_i18n($likes); ?>
-                                </div>
+                            <p class="zz-cat-card__preview"><?php echo esc_html($excerpt); ?></p>
+                        </div>
+
+                        <div class="zz-cat-card__footer">
+                            <div class="zz-cat-card__stats">
+                                <span><i class="fa-solid fa-heart"></i> <?php echo esc_html(zzprompts_format_number($likes)); ?></span>
+                                <span><i class="fa-regular fa-copy"></i> <?php echo esc_html(zzprompts_format_number($copies)); ?></span>
                             </div>
+                            <a href="<?php the_permalink(); ?>" class="zz-cat-card__btn">
+                                <?php esc_html_e('View', 'zzprompts'); ?>
+                            </a>
                         </div>
                     </article>
-                    
+
+                    <?php
+                    // Insert ad after 6th card
+                    if ($card_count === 6 && function_exists('zz_get_ad') && zz_get_ad('archive_content')) :
+                    ?>
+                        <div class="zz-cat-card zz-cat-ad-slot">
+                            <?php zz_render_ad('archive_content'); ?>
+                        </div>
+                    <?php endif; ?>
+
                 <?php endwhile; ?>
             </div>
 
             <!-- Pagination -->
-            <?php 
+            <?php
             $pagination = paginate_links(array(
-                'prev_text' => '<i class="fas fa-arrow-left"></i>',
-                'next_text' => '<i class="fas fa-arrow-right"></i>',
+                'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
+                'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
+                'type'      => 'array',
             ));
-            
+
             if ($pagination) : ?>
-            <div class="zz-prm-pagination">
-                <?php echo wp_kses_post($pagination); ?>
-            </div>
+            <nav class="zz-cat-pagination" aria-label="<?php esc_attr_e('Category pagination', 'zzprompts'); ?>">
+                <?php foreach ($pagination as $page_link) : ?>
+                    <?php echo wp_kses_post($page_link); ?>
+                <?php endforeach; ?>
+            </nav>
             <?php endif; ?>
 
             <?php else : ?>
 
             <!-- No Results -->
-            <div class="zz-prm-no-results">
-                <i class="fas fa-folder-open"></i>
+            <div class="zz-cat-no-results">
+                <i class="fa-solid fa-folder-open"></i>
                 <h2><?php esc_html_e('No Prompts Found', 'zzprompts'); ?></h2>
                 <p><?php esc_html_e('No prompts found in this category yet. Check back soon!', 'zzprompts'); ?></p>
-                <a href="<?php echo esc_url(get_post_type_archive_link('prompt')); ?>" class="zz-prm-browse-btn">
+                <a href="<?php echo esc_url(get_post_type_archive_link('prompt')); ?>" class="zz-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
                     <?php esc_html_e('Browse All Prompts', 'zzprompts'); ?>
                 </a>
             </div>
 
             <?php endif; ?>
-            
-        </main>
 
-        <!-- Sidebar Widgets -->
-        <aside class="zz-prm-sidebar">
-            
-            <!-- Top Categories Widget with Total Likes -->
-            <?php 
-            // Get all categories
-            $top_categories = get_terms(array(
-                'taxonomy'   => 'prompt_category',
-                'orderby'    => 'count',
-                'order'      => 'DESC',
-                'number'     => 3,
-                'hide_empty' => true,
-            ));
-            
-            if (!empty($top_categories) && !is_wp_error($top_categories)) :
-            ?>
-            <div class="zz-prm-widget">
-                <div class="zz-prm-widget-head"><?php esc_html_e('Top This Week', 'zzprompts'); ?></div>
-                <div class="zz-prm-top-list">
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="zz-cat-sidebar">
+
+            <!-- Search Widget -->
+            <div class="zz-cat-widget">
+                <h4 class="zz-cat-widget__title"><?php esc_html_e('Search Category', 'zzprompts'); ?></h4>
+                <div class="zz-cat-search-wrap">
+                    <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+                        <input type="text" 
+                               class="zz-cat-search-input" 
+                               name="s"
+                               placeholder="<?php esc_attr_e('Keywords...', 'zzprompts'); ?>"
+                               autocomplete="off">
+                        <button type="submit" class="zz-cat-search-submit" aria-label="<?php esc_attr_e('Search', 'zzprompts'); ?>">
+                            <i class="fa-solid fa-search zz-cat-search-icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Popular This Week Widget -->
+            <?php if ($popular_prompts->have_posts()) : ?>
+            <div class="zz-cat-widget">
+                <h4 class="zz-cat-widget__title"><?php esc_html_e('Popular This Week', 'zzprompts'); ?></h4>
+                <div class="zz-cat-popular-list">
                     <?php 
-                    foreach ($top_categories as $cat_term) :
-                        // Get all prompts in this category and sum their likes
-                        $cat_prompts = get_posts(array(
-                            'post_type'      => 'prompt',
-                            'posts_per_page' => -1,
-                            'tax_query'      => array(
-                                array(
-                                    'taxonomy' => 'prompt_category',
-                                    'field'    => 'term_id',
-                                    'terms'    => $cat_term->term_id,
-                                ),
-                            ),
-                            'fields'         => 'ids',
-                        ));
-                        
-                        $total_likes = 0;
-                        if (!empty($cat_prompts)) {
-                            foreach ($cat_prompts as $prompt_id) {
-                                $prompt_likes = get_post_meta($prompt_id, '_prompt_likes', true);
-                                if ($prompt_likes && is_numeric($prompt_likes)) {
-                                    $total_likes += intval($prompt_likes);
-                                }
-                            }
-                        }
-                        
-                        // Get category image (first prompt's thumbnail)
-                        $cat_thumb = '';
-                        if (!empty($cat_prompts)) {
-                            $first_prompt = $cat_prompts[0];
-                            if (has_post_thumbnail($first_prompt)) {
-                                $cat_thumb = get_the_post_thumbnail_url($first_prompt, 'thumbnail');
-                            }
-                        }
+                    $icon_classes = array('fire', 'trending', 'views');
+                    $counter = 0;
+                    while ($popular_prompts->have_posts()) : $popular_prompts->the_post();
+                        $p_likes = absint(get_post_meta(get_the_ID(), '_prompt_likes', true));
+                        $icon = $icon_classes[$counter % 3];
                     ?>
-                    <a href="<?php echo esc_url(get_term_link($cat_term)); ?>" class="zz-prm-top-item">
-                        <?php if ($cat_thumb) : ?>
-                        <img src="<?php echo esc_url($cat_thumb); ?>" 
-                             class="zz-prm-top-thumb" 
-                             alt="<?php echo esc_attr($cat_term->name); ?>">
-                        <?php else : ?>
-                        <div class="zz-prm-top-thumb zz-prm-thumb-placeholder">
-                            <i class="fas fa-folder"></i>
+                    <a href="<?php the_permalink(); ?>" class="zz-cat-popular-item">
+                        <div class="zz-cat-popular-icon zz-cat-popular-icon--<?php echo esc_attr($icon); ?>">
+                            <?php if ($icon === 'fire') : ?>
+                                <i class="fa-solid fa-fire"></i>
+                            <?php elseif ($icon === 'trending') : ?>
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            <?php else : ?>
+                                <i class="fa-solid fa-eye"></i>
+                            <?php endif; ?>
                         </div>
-                        <?php endif; ?>
-                        <div class="zz-prm-top-content">
-                            <h5><?php echo esc_html($cat_term->name); ?></h5>
-                            <span>
-                                <i class="fas fa-heart" style="color:var(--prm-heart)"></i>
-                                <?php echo number_format_i18n($total_likes); ?>
+                        <div class="zz-cat-popular-content">
+                            <h5 class="zz-cat-popular-title"><?php the_title(); ?></h5>
+                            <span class="zz-cat-popular-meta">
+                                <?php 
+                                /* translators: %s: number of likes */
+                                printf(esc_html__('%s Likes', 'zzprompts'), number_format_i18n($p_likes)); 
+                                ?>
                             </span>
                         </div>
                     </a>
-                    <?php endforeach; ?>
+                    <?php 
+                        $counter++;
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
                 </div>
             </div>
             <?php endif; ?>
 
             <!-- Related Categories Widget -->
             <?php if (!empty($related_cats) && !is_wp_error($related_cats)) : ?>
-            <div class="zz-prm-widget">
-                <div class="zz-prm-widget-head"><?php esc_html_e('Related Categories', 'zzprompts'); ?></div>
-                <div class="zz-prm-tax-cloud">
-                    <?php foreach ($related_cats as $term) : ?>
-                    <a href="<?php echo esc_url(get_term_link($term)); ?>" class="zz-prm-tag">
-                        <?php echo esc_html($term->name); ?>
-                    </a>
+            <div class="zz-cat-widget">
+                <h4 class="zz-cat-widget__title"><?php esc_html_e('Other Categories', 'zzprompts'); ?></h4>
+                <div class="zz-cat-tags">
+                    <?php foreach ($related_cats as $cat) : ?>
+                        <a href="<?php echo esc_url(get_term_link($cat)); ?>" class="zz-cat-tag">
+                            <?php echo esc_html($cat->name); ?>
+                        </a>
                     <?php endforeach; ?>
                 </div>
+            </div>
+            <?php endif; ?>
+
+            <!-- Ad Widget -->
+            <?php if (function_exists('zz_get_ad') && zz_get_ad('sidebar')) : ?>
+            <div class="zz-cat-widget">
+                <?php zz_render_ad('sidebar'); ?>
             </div>
             <?php endif; ?>
 
         </aside>
 
     </div>
-</div>
+</main>
 
-<?php
-get_footer();
+
+<?php get_footer(); ?>
