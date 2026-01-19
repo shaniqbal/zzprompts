@@ -1,0 +1,465 @@
+/**
+ * =========================================
+ * CONTACT US PAGE - Modern V1
+ * =========================================
+ * 
+ * Glassmorphism Contact page with form and info cards.
+ * BEM Naming: .zz-contact-*
+ * Based on: ZZ Designs Ready/Modern Layout/Contact Us/final v1.html
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. CONTAINER
+   ========================================= */
+
+.zz-contact-container {
+    max-width: 1000px;
+    margin-inline: auto;
+    padding: var(--zz-space-12, 48px) var(--zz-space-5, 20px);
+}
+
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
+
+.zz-contact-hero {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: 24px;
+    padding: var(--zz-space-12, 48px) var(--zz-space-10, 40px);
+    text-align: center;
+    margin-block-end: 60px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+}
+
+.zz-contact-hero__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--zz-color-primary, #6366F1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-block-end: 15px;
+}
+
+.zz-contact-hero__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--zz-text-primary, #111827);
+    line-height: 1.1;
+    margin-block-end: 15px;
+}
+
+.zz-contact-hero__desc {
+    font-size: 1.1rem;
+    color: var(--zz-text-muted, #6B7280);
+    max-width: 550px;
+    margin-inline: auto;
+    line-height: 1.6;
+}
+
+/* =========================================
+   3. CONTACT OPTIONS GRID
+   ========================================= */
+
+.zz-contact-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--zz-space-6, 24px);
+    margin-block-end: 60px;
+}
+
+.zz-contact-option {
+    background: #fff;
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-lg, 16px);
+    padding: var(--zz-space-8, 32px) var(--zz-space-6, 24px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.zz-contact-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    border-color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-contact-option__icon {
+    width: 60px;
+    height: 60px;
+    background: var(--zz-color-primary-light, #EEF2FF);
+    color: var(--zz-color-primary, #6366F1);
+    border-radius: var(--zz-radius-lg, 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--zz-space-5, 20px);
+    font-size: 1.5rem;
+}
+
+.zz-contact-option__title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-block-end: 8px;
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-contact-option__text {
+    font-size: 0.9rem;
+    color: var(--zz-text-muted, #6B7280);
+    margin-block-end: 15px;
+    line-height: 1.5;
+}
+
+.zz-contact-option__link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--zz-color-primary, #6366F1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.zz-contact-option__link:hover {
+    gap: 10px;
+}
+
+/* =========================================
+   4. CONTACT FORM CARD
+   ========================================= */
+
+.zz-contact-form-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: 24px;
+    padding: var(--zz-space-12, 48px) var(--zz-space-10, 40px);
+    margin-block-end: 60px;
+}
+
+.zz-contact-form-card__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-block-end: var(--zz-space-8, 32px);
+    color: var(--zz-text-primary, #111827);
+    text-align: center;
+}
+
+/* Form Fields */
+.zz-contact-form {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.zz-contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--zz-space-5, 20px);
+    margin-block-end: var(--zz-space-5, 20px);
+}
+
+.zz-contact-field {
+    margin-block-end: var(--zz-space-5, 20px);
+}
+
+.zz-contact-field__label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--zz-text-primary, #111827);
+    margin-block-end: 8px;
+}
+
+.zz-contact-field__input,
+.zz-contact-field__textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--zz-radius-md, 12px);
+    font-size: 1rem;
+    background: #fff;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.zz-contact-field__input:focus,
+.zz-contact-field__textarea:focus {
+    outline: none;
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.zz-contact-field__textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.zz-contact-form__submit {
+    width: 100%;
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: var(--zz-radius-pill, 50px);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.zz-contact-form__submit:hover {
+    background: var(--zz-color-primary-dark, #4F46E5);
+    transform: translateY(-2px);
+}
+
+/* Contact Form 7 Overrides */
+.zz-contact-form .wpcf7-form-control-wrap {
+    display: block;
+}
+
+.zz-contact-form .wpcf7-text,
+.zz-contact-form .wpcf7-email,
+.zz-contact-form .wpcf7-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--zz-radius-md, 12px);
+    font-size: 1rem;
+    background: #fff;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.zz-contact-form .wpcf7-text:focus,
+.zz-contact-form .wpcf7-email:focus,
+.zz-contact-form .wpcf7-textarea:focus {
+    outline: none;
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.zz-contact-form .wpcf7-submit {
+    width: 100%;
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: var(--zz-radius-pill, 50px);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.zz-contact-form .wpcf7-submit:hover {
+    background: var(--zz-color-primary-dark, #4F46E5);
+    transform: translateY(-2px);
+}
+
+.zz-contact-form .wpcf7-response-output {
+    margin-block-start: var(--zz-space-5, 20px);
+    padding: 15px 20px;
+    border-radius: var(--zz-radius-md, 12px);
+    font-size: 0.9rem;
+}
+
+.zz-contact-form .wpcf7-validation-errors,
+.zz-contact-form .wpcf7-mail-sent-ng {
+    border-color: #EF4444;
+    background: #FEF2F2;
+    color: #B91C1C;
+}
+
+.zz-contact-form .wpcf7-mail-sent-ok {
+    border-color: var(--zz-color-success, #10B981);
+    background: #ECFDF5;
+    color: #047857;
+}
+
+/* =========================================
+   5. FAQ SECTION
+   ========================================= */
+
+.zz-contact-faq {
+    margin-block-end: 60px;
+}
+
+.zz-contact-faq__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-block-end: var(--zz-space-8, 32px);
+    color: var(--zz-text-primary, #111827);
+    text-align: center;
+}
+
+.zz-contact-faq__list {
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.zz-contact-faq-item {
+    background: #fff;
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-lg, 16px);
+    margin-block-end: var(--zz-space-4, 16px);
+    overflow: hidden;
+}
+
+.zz-contact-faq-item__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--zz-space-5, 20px) var(--zz-space-6, 24px);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--zz-text-primary, #111827);
+    transition: all 0.2s ease;
+}
+
+.zz-contact-faq-item__q:hover {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-contact-faq-item__q i {
+    transition: transform 0.3s ease;
+    color: var(--zz-text-muted, #6B7280);
+}
+
+.zz-contact-faq-item.is-open .zz-contact-faq-item__q i {
+    transform: rotate(180deg);
+}
+
+.zz-contact-faq-item__a {
+    display: none;
+    padding: 0 var(--zz-space-6, 24px) var(--zz-space-5, 20px);
+    color: var(--zz-text-muted, #6B7280);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.zz-contact-faq-item.is-open .zz-contact-faq-item__a {
+    display: block;
+}
+
+/* =========================================
+   6. DARK MODE
+   ========================================= */
+
+[data-theme="dark"] .zz-contact-hero,
+[data-theme="dark"] .zz-contact-form-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-contact-hero__title,
+[data-theme="dark"] .zz-contact-form-card__title,
+[data-theme="dark"] .zz-contact-option__title,
+[data-theme="dark"] .zz-contact-faq__title {
+    color: #F9FAFB;
+}
+
+[data-theme="dark"] .zz-contact-hero__desc,
+[data-theme="dark"] .zz-contact-option__text {
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-contact-option,
+[data-theme="dark"] .zz-contact-faq-item {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-contact-option__icon {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="dark"] .zz-contact-field__label {
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-contact-field__input,
+[data-theme="dark"] .zz-contact-field__textarea,
+[data-theme="dark"] .zz-contact-form .wpcf7-text,
+[data-theme="dark"] .zz-contact-form .wpcf7-email,
+[data-theme="dark"] .zz-contact-form .wpcf7-textarea {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #F9FAFB;
+}
+
+[data-theme="dark"] .zz-contact-field__input::placeholder,
+[data-theme="dark"] .zz-contact-field__textarea::placeholder,
+[data-theme="dark"] .zz-contact-form .wpcf7-text::placeholder,
+[data-theme="dark"] .zz-contact-form .wpcf7-email::placeholder,
+[data-theme="dark"] .zz-contact-form .wpcf7-textarea::placeholder {
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-contact-faq-item__q {
+    color: #F9FAFB;
+}
+
+[data-theme="dark"] .zz-contact-faq-item__q:hover {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+[data-theme="dark"] .zz-contact-faq-item__a {
+    color: #9CA3AF;
+}
+
+/* =========================================
+   7. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .zz-contact-hero,
+    .zz-contact-form-card {
+        padding: var(--zz-space-8, 32px) var(--zz-space-5, 20px);
+    }
+
+    .zz-contact-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .zz-contact-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .zz-contact-container {
+        padding: var(--zz-space-8, 32px) var(--zz-space-4, 16px);
+    }
+
+    .zz-contact-hero__title,
+    .zz-contact-form-card__title,
+    .zz-contact-faq__title {
+        font-size: 1.5rem;
+    }
+
+    .zz-contact-form__submit,
+    .zz-contact-form .wpcf7-submit {
+        padding: 14px 24px;
+    }
+}

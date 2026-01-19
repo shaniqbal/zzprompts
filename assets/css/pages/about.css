@@ -1,0 +1,617 @@
+/**
+ * =========================================
+ * ABOUT US PAGE - Modern V1
+ * =========================================
+ * 
+ * Glassmorphism About page with hero, features, team, stats.
+ * BEM Naming: .zz-about-*
+ * Based on: ZZ Designs Ready/Modern Layout/About Us/final v1.html
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. CONTAINER
+   ========================================= */
+
+.zz-about-container {
+    max-width: 1000px;
+    margin-inline: auto;
+    padding: var(--zz-space-12, 48px) var(--zz-space-5, 20px);
+}
+
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
+
+.zz-about-hero {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: 24px;
+    padding: var(--zz-space-12, 48px) var(--zz-space-10, 40px);
+    text-align: center;
+    margin-block-end: 80px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+}
+
+.zz-about-hero__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--zz-color-primary, #6366F1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-block-end: 15px;
+}
+
+.zz-about-hero__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--zz-text-primary, #111827);
+    line-height: 1.1;
+    margin-block-end: 15px;
+}
+
+.zz-about-hero__desc {
+    font-size: 1.1rem;
+    color: var(--zz-text-muted, #6B7280);
+    max-width: 600px;
+    margin-inline: auto;
+    line-height: 1.6;
+}
+
+/* =========================================
+   3. SPLIT SECTION (What Is This)
+   ========================================= */
+
+.zz-about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--zz-space-12, 48px);
+    align-items: center;
+    margin-block-end: 100px;
+}
+
+.zz-about-split__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-block-end: var(--zz-space-5, 20px);
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-split__text {
+    margin-block-end: var(--zz-space-5, 20px);
+    color: var(--zz-text-secondary, #374151);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Bullet List */
+.zz-about-bullets {
+    list-style: none;
+    margin-block-start: var(--zz-space-5, 20px);
+    padding: 0;
+}
+
+.zz-about-bullet {
+    display: flex;
+    gap: 12px;
+    margin-block-end: 15px;
+    align-items: flex-start;
+}
+
+.zz-about-bullet__icon {
+    width: 24px;
+    height: 24px;
+    background: var(--zz-color-primary-light, #EEF2FF);
+    color: var(--zz-color-primary, #6366F1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+.zz-about-bullet__text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--zz-text-primary, #111827);
+}
+
+/* Info Card */
+.zz-about-info-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl, 20px);
+    padding: var(--zz-space-8, 32px);
+}
+
+.zz-about-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.zz-about-info-row:last-child {
+    border-bottom: none;
+}
+
+.zz-about-info-label {
+    font-weight: 600;
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-info-val {
+    color: var(--zz-text-muted, #6B7280);
+    text-align: end;
+}
+
+/* =========================================
+   4. VISION SECTION
+   ========================================= */
+
+.zz-about-vision {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(238, 242, 255, 0.7));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    padding: var(--zz-space-12, 48px) var(--zz-space-10, 40px);
+    text-align: center;
+    margin-block-end: 100px;
+}
+
+.zz-about-vision__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-block-end: var(--zz-space-5, 20px);
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-vision__text {
+    max-width: 700px;
+    margin-inline: auto;
+    font-size: 1.1rem;
+    color: var(--zz-text-secondary, #374151);
+    line-height: 1.7;
+}
+
+/* =========================================
+   5. STEPS SECTION (How It Works)
+   ========================================= */
+
+.zz-about-steps {
+    margin-block-end: 100px;
+}
+
+.zz-about-section-head {
+    text-align: center;
+    margin-block-end: var(--zz-space-10, 40px);
+}
+
+.zz-about-section-head__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-section-head__desc {
+    color: var(--zz-text-muted, #6B7280);
+    margin-block-start: var(--zz-space-2, 8px);
+}
+
+.zz-about-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--zz-space-8, 32px);
+}
+
+.zz-about-step {
+    text-align: center;
+    padding: var(--zz-space-5, 20px);
+}
+
+.zz-about-step__icon {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-lg, 16px);
+    margin: 0 auto var(--zz-space-5, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.zz-about-step__title {
+    font-weight: 700;
+    margin-block-end: 8px;
+    font-size: 1.1rem;
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-step__desc {
+    font-size: 0.9rem;
+    color: var(--zz-text-muted, #6B7280);
+    line-height: 1.5;
+}
+
+/* =========================================
+   6. VALUES GRID
+   ========================================= */
+
+.zz-about-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-block-end: 100px;
+}
+
+.zz-about-value {
+    background: #fff;
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-lg, 16px);
+    padding: var(--zz-space-8, 32px);
+    transition: all 0.3s ease;
+}
+
+.zz-about-value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    border-color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-about-value__icon {
+    font-size: 1.2rem;
+    color: var(--zz-color-primary, #6366F1);
+    margin-block-end: 15px;
+}
+
+.zz-about-value__title {
+    font-weight: 700;
+    margin-block-end: 10px;
+    font-size: 1.1rem;
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-value__text {
+    font-size: 0.9rem;
+    color: var(--zz-text-muted, #6B7280);
+    line-height: 1.5;
+}
+
+/* =========================================
+   7. STATS GRID
+   ========================================= */
+
+.zz-about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-block-end: 100px;
+}
+
+.zz-about-stat {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-lg, 16px);
+    padding: var(--zz-space-8, 32px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.zz-about-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+    border-color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-about-stat__num {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--zz-color-primary, #6366F1);
+    margin-block-end: 5px;
+}
+
+.zz-about-stat__label {
+    font-size: 0.9rem;
+    color: var(--zz-text-muted, #6B7280);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   8. TEAM SECTION
+   ========================================= */
+
+.zz-about-team {
+    text-align: center;
+    margin-block-end: 100px;
+}
+
+.zz-about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--zz-space-8, 32px);
+}
+
+.zz-about-team-card {
+    background: #fff;
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-lg, 16px);
+    padding: var(--zz-space-8, 32px) var(--zz-space-5, 20px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.zz-about-team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+}
+
+.zz-about-team-card__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto var(--zz-space-5, 20px);
+    border: 3px solid var(--zz-color-primary-light, #EEF2FF);
+}
+
+.zz-about-team-card__name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--zz-text-primary, #111827);
+    margin-block-end: 5px;
+}
+
+.zz-about-team-card__role {
+    font-size: 0.85rem;
+    color: var(--zz-color-primary, #6366F1);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-block-end: 15px;
+    display: block;
+}
+
+.zz-about-team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.zz-about-team-socials__link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F3F4F6;
+    color: var(--zz-text-muted, #6B7280);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.zz-about-team-socials__link:hover {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+}
+
+/* =========================================
+   9. CTA SECTION
+   ========================================= */
+
+.zz-about-cta {
+    text-align: center;
+    margin-block-end: var(--zz-space-10, 40px);
+}
+
+.zz-about-cta__card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: 24px;
+    padding: var(--zz-space-12, 48px);
+}
+
+.zz-about-cta__title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-weight: 800;
+    font-size: 2rem;
+    margin-block-end: var(--zz-space-5, 20px);
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-about-cta__btn {
+    background: var(--zz-text-primary, #111827);
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: var(--zz-radius-pill, 50px);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.zz-about-cta__btn:hover {
+    background: var(--zz-color-primary, #6366F1);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   10. DARK MODE
+   ========================================= */
+
+[data-theme="dark"] .zz-about-hero,
+[data-theme="dark"] .zz-about-cta__card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-hero__title,
+[data-theme="dark"] .zz-about-split__title,
+[data-theme="dark"] .zz-about-vision__title,
+[data-theme="dark"] .zz-about-section-head__title,
+[data-theme="dark"] .zz-about-step__title,
+[data-theme="dark"] .zz-about-value__title,
+[data-theme="dark"] .zz-about-team-card__name,
+[data-theme="dark"] .zz-about-cta__title {
+    color: #F9FAFB;
+}
+
+[data-theme="dark"] .zz-about-hero__desc,
+[data-theme="dark"] .zz-about-section-head__desc,
+[data-theme="dark"] .zz-about-step__desc,
+[data-theme="dark"] .zz-about-value__text,
+[data-theme="dark"] .zz-about-stat__label {
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-about-split__text,
+[data-theme="dark"] .zz-about-vision__text {
+    color: #D1D5DB;
+}
+
+[data-theme="dark"] .zz-about-info-card {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-info-label,
+[data-theme="dark"] .zz-about-bullet__text {
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-about-info-val {
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-about-info-row {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .zz-about-vision {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(49, 46, 129, 0.3));
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-step__icon {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-value,
+[data-theme="dark"] .zz-about-team-card {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-stat {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-team-socials__link {
+    background: rgba(30, 41, 59, 0.6);
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-about-cta__btn {
+    background: #E2E8F0;
+    color: #111827;
+}
+
+[data-theme="dark"] .zz-about-cta__btn:hover {
+    background: var(--zz-color-primary);
+    color: #fff;
+}
+
+/* =========================================
+   11. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+    .zz-about-split {
+        grid-template-columns: 1fr;
+        gap: var(--zz-space-10, 40px);
+    }
+
+    .zz-about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .zz-about-hero {
+        padding: var(--zz-space-10, 40px) var(--zz-space-6, 24px);
+    }
+
+    .zz-about-vision {
+        padding: var(--zz-space-10, 40px) var(--zz-space-6, 24px);
+    }
+}
+
+@media (max-width: 600px) {
+    .zz-about-container {
+        padding: var(--zz-space-8, 32px) var(--zz-space-4, 16px);
+    }
+
+    .zz-about-hero,
+    .zz-about-vision,
+    .zz-about-cta__card {
+        padding: var(--zz-space-8, 32px) var(--zz-space-5, 20px);
+    }
+
+    .zz-about-hero__title,
+    .zz-about-split__title,
+    .zz-about-vision__title,
+    .zz-about-section-head__title,
+    .zz-about-cta__title {
+        font-size: 1.75rem;
+    }
+
+    .zz-about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .zz-about-stat {
+        padding: var(--zz-space-5, 20px);
+    }
+
+    .zz-about-stat__num {
+        font-size: 2rem;
+    }
+
+    .zz-about-values,
+    .zz-about-steps,
+    .zz-about-team,
+    .zz-about-split {
+        margin-block-end: 60px;
+    }
+}

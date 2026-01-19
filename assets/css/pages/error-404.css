@@ -1,0 +1,328 @@
+/**
+ * =========================================
+ * 404 ERROR PAGE - Modern V1
+ * =========================================
+ * 
+ * Glassmorphism error page with search & shortcuts.
+ * BEM Naming: .zz-error-*
+ * Based on: ZZ Designs Ready/Modern Layout/404 Error Page/final v1.html
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ * =========================================
+ */
+
+/* =========================================
+   1. CONTAINER
+   ========================================= */
+
+.zz-error-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--zz-space-12, 48px) var(--zz-space-5, 20px);
+    min-height: calc(100vh - 160px);
+}
+
+/* =========================================
+   2. ERROR CARD (Glassmorphism)
+   ========================================= */
+
+.zz-error-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+    max-width: 600px;
+    width: 100%;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+/* =========================================
+   3. BADGE
+   ========================================= */
+
+.zz-error-badge {
+    display: inline-block;
+    background: #FEF2F2;
+    color: #DC2626;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: var(--zz-radius-pill, 50px);
+    margin-block-end: var(--zz-space-5, 20px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   4. TITLE & DESCRIPTION
+   ========================================= */
+
+.zz-error-title {
+    font-family: var(--zz-font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--zz-text-primary, #111827);
+    margin-block-end: 15px;
+    line-height: 1.1;
+}
+
+.zz-error-desc {
+    font-size: 1.1rem;
+    color: var(--zz-text-muted, #6B7280);
+    margin-block-end: var(--zz-space-8, 32px);
+    line-height: 1.6;
+}
+
+/* =========================================
+   5. SEARCH BAR
+   ========================================= */
+
+.zz-error-search {
+    position: relative;
+    margin-block-end: var(--zz-space-8, 32px);
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+.zz-error-search__input {
+    width: 100%;
+    padding: 14px 20px 14px 45px;
+    border-radius: var(--zz-radius-lg, 12px);
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    background: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    color: var(--zz-text-primary, #111827);
+}
+
+.zz-error-search__input::placeholder {
+    color: var(--zz-text-muted, #6B7280);
+}
+
+.zz-error-search__input:focus {
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 0 0 4px var(--zz-color-primary-light, #EEF2FF);
+}
+
+.zz-error-search__icon {
+    position: absolute;
+    inset-inline-start: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--zz-text-muted, #6B7280);
+    pointer-events: none;
+}
+
+/* =========================================
+   6. ACTION BUTTONS
+   ========================================= */
+
+.zz-error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-block-end: var(--zz-space-10, 40px);
+    flex-wrap: wrap;
+}
+
+.zz-error-btn {
+    padding: 12px 28px;
+    border-radius: var(--zz-radius-pill, 50px);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.zz-error-btn--primary {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+}
+
+.zz-error-btn--primary:hover {
+    background: var(--zz-color-primary-dark, #4F46E5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.zz-error-btn--outline {
+    background: transparent;
+    color: var(--zz-text-primary, #111827);
+    border: 1px solid #D1D5DB;
+}
+
+.zz-error-btn--outline:hover {
+    border-color: var(--zz-color-primary, #6366F1);
+    color: var(--zz-color-primary, #6366F1);
+    background: #fff;
+}
+
+/* =========================================
+   7. SHORTCUT GRID
+   ========================================= */
+
+.zz-error-shortcuts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-block-start: var(--zz-space-8, 32px);
+}
+
+.zz-error-shortcut {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: var(--zz-radius-lg, 12px);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.zz-error-shortcut:hover {
+    background: #fff;
+    border-color: var(--zz-color-primary, #6366F1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.zz-error-shortcut__icon {
+    font-size: 1.2rem;
+    color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-error-shortcut__text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--zz-text-primary, #111827);
+}
+
+/* =========================================
+   8. DARK MODE
+   ========================================= */
+
+[data-theme="dark"] .zz-error-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-error-badge {
+    background: rgba(220, 38, 38, 0.15);
+    color: #F87171;
+}
+
+[data-theme="dark"] .zz-error-title {
+    color: #F9FAFB;
+}
+
+[data-theme="dark"] .zz-error-desc {
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-error-search__input {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(148, 163, 184, 0.3);
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-error-search__input::placeholder {
+    color: #9CA3AF;
+}
+
+[data-theme="dark"] .zz-error-btn--outline {
+    border-color: rgba(148, 163, 184, 0.3);
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .zz-error-btn--outline:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--zz-color-primary);
+    color: #A5B4FC;
+}
+
+[data-theme="dark"] .zz-error-shortcuts {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .zz-error-shortcut {
+    background: rgba(30, 41, 59, 0.4);
+}
+
+[data-theme="dark"] .zz-error-shortcut:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--zz-color-primary);
+}
+
+[data-theme="dark"] .zz-error-shortcut__text {
+    color: #E2E8F0;
+}
+
+/* =========================================
+   9. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .zz-error-card {
+        padding: 40px 24px;
+    }
+
+    .zz-error-shortcuts {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .zz-error-shortcut {
+        padding: 12px 8px;
+    }
+
+    .zz-error-shortcut__text {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .zz-error-container {
+        padding: var(--zz-space-8, 32px) var(--zz-space-4, 16px);
+    }
+
+    .zz-error-card {
+        padding: 32px 20px;
+    }
+
+    .zz-error-title {
+        font-size: 2rem;
+    }
+
+    .zz-error-desc {
+        font-size: 1rem;
+    }
+
+    .zz-error-actions {
+        flex-direction: column;
+    }
+
+    .zz-error-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .zz-error-shortcuts {
+        grid-template-columns: 1fr;
+    }
+}

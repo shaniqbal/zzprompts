@@ -286,12 +286,24 @@ function zzprompts_enqueue_assets() {
         wp_enqueue_style('zz-search-results', $uri . '/assets/css/pages/search-results.css', array('zz-skin'), $ver);
     }
     
-    // Static Pages (About, Contact, Legal)
-    if (is_page()) {
-        $file = $dir . '/assets/css/pages/static.css';
-        if (file_exists($file)) {
-            wp_enqueue_style('zz-static', $uri . '/assets/css/pages/static.css', array('zz-skin'), $ver);
-        }
+    // 404 Error Page
+    if (is_404()) {
+        wp_enqueue_style('zz-error-404', $uri . '/assets/css/pages/error-404.css', array('zz-skin'), $ver);
+    }
+    
+    // About Us Page Template
+    if (is_page_template('page-templates/about.php')) {
+        wp_enqueue_style('zz-about', $uri . '/assets/css/pages/about.css', array('zz-skin'), $ver);
+    }
+    
+    // Contact Us Page Template
+    if (is_page_template('page-templates/contact.php')) {
+        wp_enqueue_style('zz-contact', $uri . '/assets/css/pages/contact.css', array('zz-skin'), $ver);
+    }
+    
+    // Auth Pages (Login, Forgot Password)
+    if (is_page_template('page-templates/login.php') || is_page_template('page-templates/forgot-password.php')) {
+        wp_enqueue_style('zz-auth', $uri . '/assets/css/pages/auth.css', array('zz-skin'), $ver);
     }
     
     // =========================================

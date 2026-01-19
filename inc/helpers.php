@@ -362,3 +362,53 @@ function zzprompts_refine_blog_content($content) {
     return $content;
 }
 add_filter('the_content', 'zzprompts_refine_blog_content', 20);
+
+// ==========================================================================
+// CONTACT FORM HANDLER (Fallback when no CF7)
+// ==========================================================================
+/**
+ * Handle the contact form submission.
+ * Sends email to admin and redirects back with status.
+ */
+function zzprompts_handle_contact_form() {
+    // Verify nonce
+    if (!isset($_POST['zz_contact_nonce']) || !wp_verify_nonce($_POST['zz_contact_nonce'], 'zz_contact_form')) {
+        wp_die(esc_html__('Security check failed.', 'zzprompts'));
+    }
+
+    // Sanitize input
+    $name    = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
+    $email   = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $subject = isset($_POST['subject']) ? sanitize_text_field($_POST['subject']) : '';
+    $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        wp_safe_redirect(add_query_arg('contact', 'error', wp_get_referer()));
+        exit;
+    }
+
+    // Prepare email
+    $to = get_option('admin_email');
+    $email_subject = sprintf('[%s] %s', get_bloginfo('name'), $subject);
+    $email_body = sprintf(
+        "Name: %s\nEmail: %s\n\nMessage:\n%s",
+        $name,
+        $email,
+        $message
+    );
+    $headers = array(
+        'Content-Type: text/plain; charset=UTF-8',
+        sprintf('Reply-To: %s <%s>', $name, $email),
+    );
+
+    // Send email
+    $sent = wp_mail($to, $email_subject, $email_body, $headers);
+
+    // Redirect with status
+    $status = $sent ? 'success' : 'error';
+    wp_safe_redirect(add_query_arg('contact', $status, wp_get_referer()));
+    exit;
+}
+add_action('admin_post_nopriv_zz_contact_form', 'zzprompts_handle_contact_form');
+add_action('admin_post_zz_contact_form', 'zzprompts_handle_contact_form');
