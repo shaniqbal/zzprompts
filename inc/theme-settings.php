@@ -12,13 +12,13 @@
  * 3. Blog Archive – Content settings
  * 4. Blog Single – Single post settings
  * 5. Blog Comments – Comment settings
- * 6. Ad Management – Ad slots (separate file)
- * 7. Footer – Copyright
+ * 6. Footer – Copyright
+ * 7. Contact Page – CF7 shortcode
  * 8. Colors & Branding – Theme colors
  * 9. Social Media – Social links
  *
  * @package zzprompts
- * @version 4.0.0 - Modern V1 Clean Launch
+ * @version 4.1.0 - Audit Cleanup
  */
 
 defined('ABSPATH') || exit;
@@ -117,110 +117,6 @@ function zzprompts_customize_register($wp_customize) {
         'section'     => 'zzprompts_hero_section',
         'type'        => 'text',
         'priority'    => 30,
-    ));
-
-    // Tags Label
-    $wp_customize->add_setting('hero_tags_title', array(
-        'default'           => esc_html__('Popular:', 'zzprompts'),
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('hero_tags_title', array(
-        'label'       => esc_html__('Popular Tags Label', 'zzprompts'),
-        'section'     => 'zzprompts_hero_section',
-        'type'        => 'text',
-        'priority'    => 40,
-    ));
-
-    // Latest Prompts Section Title
-    $wp_customize->add_setting('home_latest_title', array(
-        'default'           => esc_html__('Latest Prompts', 'zzprompts'),
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('home_latest_title', array(
-        'label'       => esc_html__('Latest Section Title', 'zzprompts'),
-        'section'     => 'zzprompts_hero_section',
-        'type'        => 'text',
-        'priority'    => 50,
-    ));
-
-    // Why This Library Section
-    $wp_customize->add_setting('why_section_heading', array(
-        'default'           => 'Why This Library?',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('why_section_heading', array(
-        'label'    => esc_html__('Why This Library: Section Heading', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'text',
-        'priority' => 61,
-    ));
-
-    // Feature 1
-    $wp_customize->add_setting('why_feature1_title', array(
-        'default'           => 'Curated Prompts',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('why_feature1_title', array(
-        'label'    => esc_html__('Feature 1 Title', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'text',
-        'priority' => 62,
-    ));
-    $wp_customize->add_setting('why_feature1_desc', array(
-        'default'           => 'Handpicked, high-quality prompts for every use case.',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('why_feature1_desc', array(
-        'label'    => esc_html__('Feature 1 Description', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'textarea',
-        'priority' => 63,
-    ));
-
-    // Feature 2
-    $wp_customize->add_setting('why_feature2_title', array(
-        'default'           => 'Easy to Use',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('why_feature2_title', array(
-        'label'    => esc_html__('Feature 2 Title', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'text',
-        'priority' => 64,
-    ));
-    $wp_customize->add_setting('why_feature2_desc', array(
-        'default'           => 'Copy, paste, and get results instantly with any AI.',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('why_feature2_desc', array(
-        'label'    => esc_html__('Feature 2 Description', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'textarea',
-        'priority' => 65,
-    ));
-
-    // Feature 3
-    $wp_customize->add_setting('why_feature3_title', array(
-        'default'           => 'Regular Updates',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('why_feature3_title', array(
-        'label'    => esc_html__('Feature 3 Title', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'text',
-        'priority' => 66,
-    ));
-    $wp_customize->add_setting('why_feature3_desc', array(
-        'default'           => 'New prompts and features added frequently.',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('why_feature3_desc', array(
-        'label'    => esc_html__('Feature 3 Description', 'zzprompts'),
-        'section'  => 'zzprompts_hero_section',
-        'type'     => 'textarea',
-        'priority' => 67,
     ));
 
 
@@ -335,18 +231,6 @@ function zzprompts_customize_register($wp_customize) {
         'priority'    => 80,
     ));
 
-    // --- SIDEBAR OPTIONS (Modern V1) ---
-    $wp_customize->add_setting('sidebar_contributor_show_icon', array(
-        'default'           => true,
-        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('sidebar_contributor_show_icon', array(
-        'label'       => esc_html__('Show Contributor Icon in Sidebar', 'zzprompts'),
-        'section'     => 'zzprompts_prompt_settings',
-        'type'        => 'checkbox',
-        'priority'    => 90,
-    ));
 
     /* ========================================================
        SECTION 2.5: PROMPT ARCHIVE SEO
@@ -381,30 +265,7 @@ function zzprompts_customize_register($wp_customize) {
         'priority'    => 96,
     ));
 
-    $wp_customize->add_setting('sidebar_contributor_show_name', array(
-        'default'           => true,
-        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('sidebar_contributor_show_name', array(
-        'label'       => esc_html__('Show Contributor Name in Sidebar', 'zzprompts'),
-        'section'     => 'zzprompts_prompt_settings',
-        'type'        => 'checkbox',
-        'priority'    => 100,
-    ));
-
-    $wp_customize->add_setting('sidebar_contributor_show_total', array(
-        'default'           => true,
-        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('sidebar_contributor_show_total', array(
-        'label'       => esc_html__('Show Total Prompts Count in Sidebar', 'zzprompts'),
-        'section'     => 'zzprompts_prompt_settings',
-        'type'        => 'checkbox',
-        'priority'    => 110,
-    ));
-
+    // --- ARCHIVE SIDEBAR OPTIONS ---
     $wp_customize->add_setting('sidebar_filter_show_counts', array(
         'default'           => false,
         'sanitize_callback' => 'zzprompts_sanitize_checkbox',
@@ -686,6 +547,32 @@ function zzprompts_customize_register($wp_customize) {
         'description' => esc_html__('Supports basic HTML like links.', 'zzprompts'),
         'section'     => 'zzprompts_footer_section',
         'type'        => 'textarea',
+        'priority'    => 10,
+    ));
+
+
+    /* ========================================================
+       SECTION 6.5: CONTACT PAGE
+       Purpose: Contact Form 7 integration
+       ======================================================== */
+    $wp_customize->add_section('zzprompts_contact_section', array(
+        'title'       => esc_html__('Contact Page', 'zzprompts'),
+        'description' => esc_html__('Settings for Contact Us page template.', 'zzprompts'),
+        'panel'       => 'zzprompts_options',
+        'priority'    => 52,
+    ));
+
+    // Contact Form 7 Shortcode
+    $wp_customize->add_setting('zz_contact_form_shortcode', array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_kses_post',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('zz_contact_form_shortcode', array(
+        'label'       => esc_html__('Contact Form 7 Shortcode', 'zzprompts'),
+        'description' => esc_html__('Paste your CF7 shortcode here. Example: [contact-form-7 id="123" title="Contact"]', 'zzprompts'),
+        'section'     => 'zzprompts_contact_section',
+        'type'        => 'text',
         'priority'    => 10,
     ));
 

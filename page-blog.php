@@ -40,11 +40,20 @@ $blog_query = new WP_Query(array(
 <div class="zz-container u-py-10">
     <div class="zz-blog-layout">
         <div class="zz-blog-main-content">
-            <?php if ($blog_query->have_posts()) : ?>
+            <?php 
+            // Get Customizer settings
+            $show_image    = zzprompts_get_option('blog_show_image', true);
+            $show_date     = zzprompts_get_option('blog_show_date', true);
+            $show_category = zzprompts_get_option('blog_show_category', true);
+            $excerpt_length = zzprompts_get_option('blog_excerpt_length', 20);
+            $read_more_text = zzprompts_get_option('blog_read_more_text', __('Read Article', 'zzprompts'));
+            
+            if ($blog_query->have_posts()) : ?>
                 <div class="zz-blog-section">
                     <div class="zz-blog-grid">
                         <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
                             <article class="zz-blog-card">
+                                <?php if ($show_image) : ?>
                                 <div class="zz-blog-card__image-wrapper">
                                     <a href="<?php the_permalink(); ?>" class="zz-blog-card__image">
                                         <?php if (has_post_thumbnail()) : ?>
@@ -53,8 +62,11 @@ $blog_query = new WP_Query(array(
                                             <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);"></div>
                                         <?php endif; ?>
                                     </a>
+                                    <?php if ($show_date) : ?>
                                     <span class="zz-blog-card__date-badge"><?php echo esc_html(get_the_date('M d, Y')); ?></span>
+                                    <?php endif; ?>
                                 </div>
+                                <?php endif; ?>
 
                                 <div class="zz-blog-card__content">
                                     <div class="zz-blog-card__meta">
@@ -63,7 +75,7 @@ $blog_query = new WP_Query(array(
                                         </span>
                                         <?php 
                                         $categories = get_the_category();
-                                        if (!empty($categories)) : ?>
+                                        if (!empty($categories) && $show_category) : ?>
                                             &bull; <span class="zz-blog-card__category"><?php echo esc_html($categories[0]->name); ?></span>
                                         <?php endif; ?>
                                     </div>
@@ -73,11 +85,11 @@ $blog_query = new WP_Query(array(
                                     </h3>
 
                                     <div class="zz-blog-card__excerpt">
-                                        <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                        <?php echo wp_trim_words(get_the_excerpt(), $excerpt_length, '...'); ?>
                                     </div>
 
                                     <a href="<?php the_permalink(); ?>" class="zz-blog-card__read-link">
-                                        <?php esc_html_e('Read Article', 'zzprompts'); ?> <i class="fas fa-arrow-right"></i>
+                                        <?php echo esc_html($read_more_text); ?> <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </article>

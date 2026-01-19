@@ -19,14 +19,19 @@ defined('ABSPATH') || exit;
 <section class="zz-hero">
     <div class="zz-container">
         
+        <?php
+        // Get Customizer settings
+        $hero_title = zzprompts_get_option('hero_title', __('Instant AI Prompts for ChatGPT, Midjourney & More', 'zzprompts'));
+        $hero_subtitle = zzprompts_get_option('hero_subtitle', __('Copy & paste production-ready prompts to speed up your workflow.', 'zzprompts'));
+        $search_placeholder = zzprompts_get_option('hero_search_placeholder', __('Search prompts...', 'zzprompts'));
+        ?>
+        
         <h1 class="zz-hero__title">
-            <?php esc_html_e('Curated Intelligence', 'zzprompts'); ?>
-            <br>
-            <span><?php esc_html_e('for the Modern Mind.', 'zzprompts'); ?></span>
+            <?php echo esc_html($hero_title); ?>
         </h1>
         
         <p class="zz-hero__subtitle">
-            <?php esc_html_e('Access an elite collection of verified prompts. Engineered for clarity, optimized for output, and designed for professionals.', 'zzprompts'); ?>
+            <?php echo esc_html($hero_subtitle); ?>
         </p>
         
         <!-- Hero Search -->
@@ -41,7 +46,7 @@ defined('ABSPATH') || exit;
                     <input 
                         type="search" 
                         class="zz-hero-search__input" 
-                        placeholder="<?php esc_attr_e('Search prompts for logo, marketing, code, AI effects...', 'zzprompts'); ?>" 
+                        placeholder="<?php echo esc_attr($search_placeholder); ?>" 
                         name="s"
                     >
                 </form>

@@ -65,7 +65,15 @@ defined( 'ABSPATH' ) || exit;
 <div class="zz-footer-bottom">
     <div class="container">
         <p>
-            &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'zzprompts' ); ?>
+            <?php 
+            $footer_copyright = zzprompts_get_option('footer_copyright', '');
+            if (!empty($footer_copyright)) {
+                echo wp_kses_post($footer_copyright);
+            } else {
+                // Default copyright
+                echo '&copy; ' . esc_html(date('Y')) . ' ' . esc_html(get_bloginfo('name')) . '. ' . esc_html__('All rights reserved.', 'zzprompts');
+            }
+            ?>
         </p>
     </div>
 </div>

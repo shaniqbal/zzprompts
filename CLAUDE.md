@@ -650,6 +650,57 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
    - Forgot Password → Template: "Forgot Password"
 2. For Contact Form 7: Add shortcode in Customizer → Contact section
 
+### 2026-01-19: Customizer Audit & Integration Fix
+**Updated Files:**
+- `inc/theme-settings.php` - Removed unused settings, added Contact Page section
+- `template-parts/home/hero-home.php` - Now uses Customizer settings
+- `page-blog.php` - Now respects Blog Archive Customizer settings
+- `template-parts/footer/footer-main.php` - Now uses `footer_copyright` setting
+
+**Removed Unused Customizer Settings:**
+- `hero_tags_title` - No "Popular:" label in modern design
+- `home_latest_title` - Prompts grid has no section title
+- `why_section_heading` - Old "Why This Library?" section (not in modern design)
+- `why_feature1_title`, `why_feature1_desc` - Old feature 1
+- `why_feature2_title`, `why_feature2_desc` - Old feature 2
+- `why_feature3_title`, `why_feature3_desc` - Old feature 3
+- `sidebar_contributor_show_icon` - Contributors feature removed
+- `sidebar_contributor_show_name` - Contributors feature removed
+- `sidebar_contributor_show_total` - Contributors feature removed
+
+**Added Customizer Section:**
+- **Contact Page** (`zzprompts_contact_section`)
+  - `zz_contact_form_shortcode` - Contact Form 7 shortcode input
+
+**Homepage Customizer Integration (hero-home.php):**
+- `hero_title` - Now editable (default: "Instant AI Prompts for ChatGPT, Midjourney & More")
+- `hero_subtitle` - Now editable
+- `hero_search_placeholder` - Now editable (default: "Search prompts...")
+
+**Blog Archive Customizer Integration (page-blog.php):**
+- `blog_show_image` - Toggle featured images
+- `blog_show_date` - Toggle date badge
+- `blog_show_category` - Toggle category display
+- `blog_excerpt_length` - Control excerpt word count
+- `blog_read_more_text` - Customize "Read Article" text
+
+**Footer Customizer Integration (footer-main.php):**
+- `footer_copyright` - Now uses setting with HTML support
+- Falls back to: `© {year} {site_name}. All rights reserved.`
+
+**Verified Working Customizer Sections:**
+| Section | Status | Templates Using |
+|---------|--------|-----------------|
+| Homepage | ✅ Fixed | `hero-home.php` |
+| Prompts | ✅ Working | `content-single.php`, `single-prompt-hero.php`, `sidebar-prompt-single.php` |
+| Blog Archive | ✅ Fixed | `page-blog.php`, `content.php` |
+| Blog Single | ✅ Working | `single-blog.php` |
+| Blog Comments | ✅ Working | `comments.php`, `single-blog.php` |
+| Footer | ✅ Fixed | `footer-main.php` |
+| Contact Page | ✅ Added | `page-templates/contact.php` |
+| Colors | ✅ Working | `customizer-css.php` |
+| Social Media | ✅ Working | `widgets.php` (Brand & Social widgets) |
+
 ---
 
 **Last Updated:** 2026-01-19  
