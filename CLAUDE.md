@@ -47,7 +47,12 @@ assets/css/
 │   ├── archive-prompts.css
 │   ├── blog-archive.css
 │   ├── blog-single.css
-│   └── search-results.css
+│   ├── search-results.css
+│   ├── taxonomy.css
+│   ├── error-404.css
+│   ├── about.css
+│   ├── contact.css
+│   └── auth.css
 ├── i18n/               # RTL overrides
 │   └── _rtl.css
 ├── shared-core.css     # Loader for core files
@@ -72,6 +77,11 @@ assets/css/
 │   ├── sidebar-prompts.php           # Prompt archive sidebar
 │   ├── sidebar-blog.php              # Blog sidebar
 │   └── sidebar-prompt-single.php     # Single prompt sidebar
+├── page-templates/
+│   ├── about.php             # About Us page template
+│   ├── contact.php           # Contact Us page template
+│   ├── login.php             # Login page template
+│   └── forgot-password.php   # Forgot Password page template
 ├── inc/
 │   ├── widgets.php         # Custom widgets
 │   ├── theme-settings.php  # Customizer settings
@@ -95,6 +105,11 @@ assets/css/
 | Blog Single | `Modern Layout/Blog Single Page/` |
 | Prompt Archive | `Modern Layout/Prompt Archive/` |
 | Search Results | `Modern Layout/Search Results/final ready v1.html` |
+| 404 Error | `Modern Layout/404 Error Page/final v1.html` |
+| About Us | `Modern Layout/About Us/final v1.html` |
+| Contact Us | `Modern Layout/Contact Us/final v1.html` |
+| Login | `Modern Layout/Login Forgot Register/login.html` |
+| Forgot Password | `Modern Layout/Login Forgot Register/forgot-password.html` |
 
 **Rule:** When unsure about design, ALWAYS check these HTML files first.
 
@@ -193,6 +208,10 @@ assets/css/
 | `blog-archive.css` | `is_home()` or `is_category()` or `is_tag()` or `is_author()` |
 | `blog-single.css` | `is_singular('post')` |
 | `search-results.css` | `is_search()` |
+| `error-404.css` | `is_404()` |
+| `about.css` | `is_page_template('page-templates/about.php')` |
+| `contact.css` | `is_page_template('page-templates/contact.php')` |
+| `auth.css` | `is_page_template('page-templates/login.php')` or `is_page_template('page-templates/forgot-password.php')` |
 | `pagination.css` | `is_archive()` or `is_search()` or `is_home()` |
 | `widgets.css` | Always (global - footer needs it) |
 
@@ -557,6 +576,79 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
   - Body scroll lock when menu is open
 - **Dark Mode Support:** Adaptive gradients and colors for both themes
 - **Performance:** Hardware-accelerated animations, ESC key close, click-outside close
+
+### 2026-01-19: Static Pages (404, About, Contact, Auth)
+**New Files:**
+- `assets/css/pages/error-404.css` - 404 error page styles (~270 lines)
+- `assets/css/pages/about.css` - About Us page styles (~480 lines)
+- `assets/css/pages/contact.css` - Contact Us page styles (~400 lines)
+- `assets/css/pages/auth.css` - Login/Forgot Password styles (~350 lines)
+- `page-templates/about.php` - About Us page template
+- `page-templates/contact.php` - Contact Us page template
+- `page-templates/login.php` - Login page template
+- `page-templates/forgot-password.php` - Forgot Password page template
+
+**Updated Files:**
+- `404.php` - Complete rewrite with Modern V1 glassmorphism design
+- `functions.php` - Added conditional CSS loading for all new pages
+- `inc/helpers.php` - Added `zzprompts_handle_contact_form()` fallback handler
+
+**404 Error Page Features:**
+- Glassmorphism card with error badge ("404")
+- Search form (prompts only)
+- Action buttons: Go Homepage, Browse Prompts
+- Shortcut grid: Popular Prompts, Categories, Latest Blog
+- Full dark mode + 3 responsive breakpoints
+
+**About Us Page Features:**
+- Hero section with label/title/description
+- Split section: "What Is This" + Info Card (stats: Founded, Total Prompts, Users, AI Tools)
+- Vision statement section
+- How It Works: 4-step process grid (Browse → Copy → Get Results → Save)
+- Our Values: 4-card grid (Quality, Community, Evolving, Privacy)
+- Stats row: Dynamic prompt count via `wp_count_posts('prompt')`
+- Optional Team section (commented out)
+- CTA section with Browse Prompts button
+
+**Contact Us Page Features:**
+- Hero section
+- Contact options: Email, Discord Community, Partnerships (3-card grid)
+- Contact Form 7 integration via Customizer shortcode
+- Fallback form with `wp_mail()` when no CF7
+- Success/error message display
+- FAQ accordion (4 questions with toggle)
+
+**Auth Pages Features:**
+- Centered glassmorphism card
+- Logo from Customizer (`custom_logo`)
+- Form fields with icons (user, lock, envelope)
+- Password visibility toggle
+- Remember me checkbox + Forgot password link
+- WordPress native login integration (`wp_login_url()`)
+- Redirect if already logged in
+- Error handling via URL parameters
+
+**BEM Structure:**
+| Page | Block Prefix |
+|------|-------------|
+| 404 | `.zz-error-*` |
+| About | `.zz-about-*` |
+| Contact | `.zz-contact-*` |
+| Auth | `.zz-auth-*` |
+
+**Contact Form Handler (inc/helpers.php):**
+- Action: `admin_post_zz_contact_form` / `admin_post_nopriv_zz_contact_form`
+- Nonce: `zz_contact_nonce` / `zz_contact_form`
+- Sends to: `get_option('admin_email')`
+- Redirect: `?contact=success` or `?contact=error`
+
+**How to Use:**
+1. Create WordPress pages with these templates:
+   - About Us → Template: "About Us"
+   - Contact → Template: "Contact Us"
+   - Login → Template: "Login"
+   - Forgot Password → Template: "Forgot Password"
+2. For Contact Form 7: Add shortcode in Customizer → Contact section
 
 ---
 
