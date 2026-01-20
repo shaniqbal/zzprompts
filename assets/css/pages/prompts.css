@@ -1054,12 +1054,10 @@ body.single-prompt .zz-prompt-card__title {
    12. DARK MODE
    ========================================= */
 
+/* Clean solid background - no gradient (matches blog, about, contact pages) */
 [data-theme="dark"] body.single-prompt,
 [data-theme="dark"] body.post-type-archive-prompt {
-    background: #0F172A;
-    background-image:
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+    background: var(--zz-bg-body);
 }
 
 [data-theme="dark"] .zz-prompt-meta {
