@@ -15,7 +15,7 @@
 
 .zz-header-ad-wrap {
     max-width: var(--zz-container-xl, 1320px);
-    margin: var(--zz-space-6, 24px) auto var(--zz-space-4, 16px) auto;
+    margin: var(--zz-space-6, 24px) auto 0 auto;
     padding: 0 var(--zz-space-5, 20px);
     width: 100%;
 }

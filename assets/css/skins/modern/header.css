@@ -454,7 +454,7 @@ body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
 
 body.zz-layout-modern .zz-header-ad-wrap {
     background-color: transparent;
-    padding-block: var(--zz-space-6, 24px) var(--zz-space-4, 16px);
+    padding-block: var(--zz-space-8, 32px) 0;
     width: 100%;
 }
 
