@@ -1,0 +1,485 @@
+/**
+ * Block Patterns Styles
+ * 
+ * Styles for Gutenberg block patterns.
+ * Uses glassmorphism design consistent with theme.
+ * 
+ * @package zzprompts
+ * @version 1.0.0
+ */
+
+/* =========================================
+   PAGE CONTENT SECTION (the_content() output)
+   ========================================= */
+.zz-page-content {
+    padding: var(--zz-space-12, 48px) 0;
+}
+
+.zz-page-content > .zz-container {
+    max-width: var(--zz-container-lg, 1024px);
+    margin-inline: auto;
+    padding-inline: var(--zz-space-4, 16px);
+}
+
+/* Ensure blocks have proper spacing */
+.zz-page-content .wp-block-group,
+.zz-page-content .wp-block-columns {
+    margin-block-end: var(--zz-space-8, 32px);
+}
+
+.zz-page-content .wp-block-group:last-child,
+.zz-page-content .wp-block-columns:last-child {
+    margin-block-end: 0;
+}
+
+
+/* =========================================
+   PRICING TABLE PATTERN
+   ========================================= */
+.zz-pricing-section {
+    padding: var(--zz-space-12, 48px) var(--zz-space-4, 16px);
+}
+
+.zz-pricing-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-block-end: var(--zz-space-2, 8px);
+}
+
+.zz-pricing-subtitle {
+    color: var(--zz-text-muted, #64748B);
+    font-size: 1.125rem;
+    margin-block-end: var(--zz-space-10, 40px);
+}
+
+.zz-pricing-grid {
+    gap: var(--zz-space-6, 24px) !important;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.zz-pricing-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--zz-radius-xl, 20px);
+    padding: var(--zz-space-8, 32px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zz-pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--zz-shadow-lg, 0 20px 40px rgba(0, 0, 0, 0.1));
+}
+
+.zz-pricing-card--featured {
+    background: linear-gradient(135deg, var(--zz-color-primary, #6366F1) 0%, #8B5CF6 100%);
+    color: #fff;
+    position: relative;
+    transform: scale(1.02);
+}
+
+.zz-pricing-card--featured:hover {
+    transform: scale(1.02) translateY(-4px);
+}
+
+.zz-pricing-card--featured .zz-pricing-card__name,
+.zz-pricing-card--featured .zz-pricing-card__price,
+.zz-pricing-card--featured .zz-pricing-card__features {
+    color: #fff;
+}
+
+.zz-pricing-card__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: var(--zz-space-1, 4px) var(--zz-space-3, 12px);
+    border-radius: var(--zz-radius-pill, 50px);
+    margin-block-end: var(--zz-space-4, 16px);
+}
+
+.zz-pricing-card__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-block-end: var(--zz-space-2, 8px);
+}
+
+.zz-pricing-card__price {
+    font-size: 1rem;
+    color: var(--zz-text-muted, #64748B);
+    margin-block-end: var(--zz-space-6, 24px);
+}
+
+.zz-pricing-card__price strong {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-pricing-card--featured .zz-pricing-card__price strong {
+    color: #fff;
+}
+
+.zz-pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--zz-space-6, 24px) 0;
+    text-align: start;
+}
+
+.zz-pricing-card__features li {
+    padding: var(--zz-space-2, 8px) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--zz-text-secondary, #475569);
+}
+
+.zz-pricing-card--featured .zz-pricing-card__features li {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.zz-pricing-card__features li:last-child {
+    border-bottom: none;
+}
+
+.zz-pricing-card__features li::before {
+    content: "✓";
+    color: var(--zz-color-accent, #10b981);
+    font-weight: 700;
+    margin-inline-end: var(--zz-space-2, 8px);
+}
+
+.zz-pricing-card--featured .zz-pricing-card__features li::before {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.zz-pricing-card__btn .wp-block-button__link {
+    width: 100%;
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    border: none;
+    border-radius: var(--zz-radius-pill, 50px);
+    padding: var(--zz-space-3, 12px) var(--zz-space-6, 24px);
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.zz-pricing-card__btn .wp-block-button__link:hover {
+    background: var(--zz-color-primary-dark, #4F46E5);
+    transform: translateY(-2px);
+}
+
+.zz-pricing-card--featured .zz-pricing-card__btn .wp-block-button__link {
+    background: #fff;
+    color: var(--zz-color-primary, #6366F1);
+}
+
+.zz-pricing-card--featured .zz-pricing-card__btn .wp-block-button__link:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   FEATURES GRID PATTERN
+   ========================================= */
+.zz-features-section {
+    padding: var(--zz-space-12, 48px) var(--zz-space-4, 16px);
+}
+
+.zz-features-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-block-end: var(--zz-space-10, 40px);
+}
+
+.zz-features-grid {
+    gap: var(--zz-space-6, 24px) !important;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.zz-feature-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--zz-radius-xl, 20px);
+    padding: var(--zz-space-8, 32px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zz-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--zz-shadow-lg, 0 20px 40px rgba(0, 0, 0, 0.1));
+}
+
+.zz-feature-card__icon {
+    font-size: 2.5rem;
+    margin-block-end: var(--zz-space-4, 16px);
+}
+
+.zz-feature-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-block-end: var(--zz-space-2, 8px);
+}
+
+.zz-feature-card__desc {
+    color: var(--zz-text-muted, #64748B);
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FAQ ACCORDION PATTERN
+   ========================================= */
+.zz-faq-section {
+    padding: var(--zz-space-12, 48px) var(--zz-space-4, 16px);
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.zz-faq-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-block-end: var(--zz-space-8, 32px);
+}
+
+.zz-faq-item {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--zz-radius-lg, 16px);
+    margin-block-end: var(--zz-space-3, 12px);
+    overflow: hidden;
+}
+
+.zz-faq-item summary {
+    padding: var(--zz-space-5, 20px);
+    font-weight: 600;
+    color: var(--zz-text-primary, #1E293B);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zz-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.zz-faq-item summary::after {
+    content: "+";
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--zz-color-primary, #6366F1);
+    transition: transform 0.2s ease;
+}
+
+.zz-faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.zz-faq-item > p {
+    padding: 0 var(--zz-space-5, 20px) var(--zz-space-5, 20px);
+    color: var(--zz-text-muted, #64748B);
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================
+   CTA BANNER PATTERN
+   ========================================= */
+.zz-cta-banner {
+    background: linear-gradient(135deg, var(--zz-color-primary, #6366F1) 0%, #8B5CF6 100%);
+    border-radius: var(--zz-radius-xl, 20px);
+    padding: var(--zz-space-12, 48px) var(--zz-space-8, 32px);
+    text-align: center;
+    margin: var(--zz-space-8, 32px) auto;
+    max-width: 900px;
+}
+
+.zz-cta-banner__title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-block-end: var(--zz-space-3, 12px);
+}
+
+.zz-cta-banner__desc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+    margin-block-end: var(--zz-space-6, 24px);
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.zz-cta-banner__btn .wp-block-button__link {
+    background: #fff;
+    color: var(--zz-color-primary, #6366F1);
+    border: none;
+    border-radius: var(--zz-radius-pill, 50px);
+    padding: var(--zz-space-3, 12px) var(--zz-space-8, 32px);
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zz-cta-banner__btn .wp-block-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.zz-cta-banner__btn--secondary .wp-block-button__link {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.zz-cta-banner__btn--secondary .wp-block-button__link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+
+/* =========================================
+   TESTIMONIALS PATTERN
+   ========================================= */
+.zz-testimonials-section {
+    padding: var(--zz-space-12, 48px) var(--zz-space-4, 16px);
+}
+
+.zz-testimonials-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--zz-text-primary, #1E293B);
+    margin-block-end: var(--zz-space-10, 40px);
+}
+
+.zz-testimonials-grid {
+    gap: var(--zz-space-6, 24px) !important;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.zz-testimonial-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--zz-radius-xl, 20px);
+    padding: var(--zz-space-8, 32px);
+    text-align: center;
+}
+
+.zz-testimonial-card__stars {
+    font-size: 1.25rem;
+    margin-block-end: var(--zz-space-4, 16px);
+}
+
+.zz-testimonial-card__quote {
+    font-size: 1rem;
+    color: var(--zz-text-secondary, #475569);
+    line-height: 1.7;
+    font-style: italic;
+    margin-block-end: var(--zz-space-4, 16px);
+}
+
+.zz-testimonial-card__author {
+    color: var(--zz-text-muted, #64748B);
+    font-size: 0.875rem;
+}
+
+.zz-testimonial-card__author strong {
+    color: var(--zz-text-primary, #1E293B);
+}
+
+
+/* =========================================
+   DARK MODE SUPPORT
+   ========================================= */
+[data-theme="dark"] .zz-pricing-card,
+[data-theme="dark"] .zz-feature-card,
+[data-theme="dark"] .zz-faq-item,
+[data-theme="dark"] .zz-testimonial-card {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .zz-pricing-title,
+[data-theme="dark"] .zz-features-title,
+[data-theme="dark"] .zz-faq-title,
+[data-theme="dark"] .zz-testimonials-title,
+[data-theme="dark"] .zz-pricing-card__name,
+[data-theme="dark"] .zz-feature-card__title,
+[data-theme="dark"] .zz-faq-item summary,
+[data-theme="dark"] .zz-testimonial-card__author strong {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .zz-pricing-subtitle,
+[data-theme="dark"] .zz-pricing-card__features li,
+[data-theme="dark"] .zz-feature-card__desc,
+[data-theme="dark"] .zz-faq-item > p,
+[data-theme="dark"] .zz-testimonial-card__quote,
+[data-theme="dark"] .zz-testimonial-card__author {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .zz-pricing-card__features li {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+@media (max-width: 900px) {
+    .zz-pricing-grid,
+    .zz-features-grid,
+    .zz-testimonials-grid {
+        flex-direction: column !important;
+    }
+    
+    .zz-pricing-card--featured {
+        transform: none;
+        order: -1;
+    }
+    
+    .zz-pricing-card--featured:hover {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 600px) {
+    .zz-pricing-section,
+    .zz-features-section,
+    .zz-faq-section,
+    .zz-testimonials-section {
+        padding: var(--zz-space-8, 32px) var(--zz-space-3, 12px);
+    }
+    
+    .zz-pricing-card,
+    .zz-feature-card,
+    .zz-testimonial-card {
+        padding: var(--zz-space-6, 24px);
+    }
+    
+    .zz-cta-banner {
+        padding: var(--zz-space-8, 32px) var(--zz-space-4, 16px);
+        margin-inline: var(--zz-space-3, 12px);
+    }
+}

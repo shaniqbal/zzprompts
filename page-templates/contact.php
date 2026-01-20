@@ -180,6 +180,22 @@ get_header();
         </div>
     </section>
 
+    <?php
+    // Buyer Custom Content Area (Gutenberg Blocks)
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            $content = get_the_content();
+            if (!empty(trim($content))) : ?>
+                <section class="zz-page-content">
+                    <div class="zz-container">
+                        <?php the_content(); ?>
+                    </div>
+                </section>
+            <?php endif;
+        endwhile;
+    endif;
+    ?>
+
 </main>
 
 <script>

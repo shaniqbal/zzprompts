@@ -40,7 +40,8 @@ body.zz-layout-modern .zz-header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--zz-space-6);
+    gap: var(--zz-space-4);
+    /* Reduced gap to allow more flex space */
 }
 
 /* =========================================
@@ -73,17 +74,27 @@ body.zz-layout-modern .zz-header__logo img {
 body.zz-layout-modern .zz-header__nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    flex: 1;
+    /* Take up all available remaining space */
+    justify-content: center;
+    /* Center the menu in that space */
+    min-width: 0;
+    /* Allow flex shrinking */
 }
 
 /* WordPress Menu Structure (ul > li > a) */
 body.zz-layout-modern .zz-header__nav-list {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 24px;
+    /* Slightly tighter default gap */
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
+    /* Allow wrapping if space is critically low */
+    justify-content: center;
 }
 
 body.zz-layout-modern .zz-header__nav-list li {
@@ -126,8 +137,13 @@ body.zz-layout-modern .zz-header__nav-link--active::after {
 
 body.zz-layout-modern .zz-header__search {
     position: relative;
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    /* Allow auto scaling */
+    min-width: 200px;
+    /* Minimum width to stay usable */
+    max-width: 260px;
+    flex-shrink: 0;
+    /* Prevent search from collapsing */
 }
 
 body.zz-layout-modern .zz-header__search-icon {
@@ -219,7 +235,9 @@ body.zz-layout-modern .zz-header__toggle svg {
 
     body.zz-layout-modern .zz-theme-toggle {
         order: 2;
-        margin-inline-end: var(--zz-space-2);
+        margin-inline-end: 0;
+        margin-inline-start: auto;
+        /* Pushes toggle and burger to the far right */
     }
 
     body.zz-layout-modern .zz-header__toggle {
@@ -249,9 +267,9 @@ body.zz-layout-modern .zz-header__toggle svg {
 body.zz-layout-modern .zz-mobile-menu {
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.95), 
-        rgba(238, 242, 255, 0.95));
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(238, 242, 255, 0.95));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: var(--zz-z-modal);
@@ -394,9 +412,9 @@ body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
 
 /* Mobile Menu Dark Mode */
 [data-theme="dark"] body.zz-layout-modern .zz-mobile-menu {
-    background: linear-gradient(135deg, 
-        rgba(15, 23, 42, 0.95), 
-        rgba(30, 41, 59, 0.95));
+    background: linear-gradient(135deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(30, 41, 59, 0.95));
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__header {
@@ -459,7 +477,7 @@ body.zz-layout-modern .zz-header-ad-wrap .zz-ad-slot__label {
 }
 
 /* Ad content centering with CLS protection */
-body.zz-layout-modern .zz-header-ad-wrap .zz-ad-slot > *:not(.zz-ad-slot__label) {
+body.zz-layout-modern .zz-header-ad-wrap .zz-ad-slot>*:not(.zz-ad-slot__label) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -468,6 +486,7 @@ body.zz-layout-modern .zz-header-ad-wrap .zz-ad-slot > *:not(.zz-ad-slot__label)
 
 @media (max-width: 768px) {
     body.zz-layout-modern .zz-header-ad-wrap {
-        display: none; /* Hide header ad on mobile for UX */
+        display: none;
+        /* Hide header ad on mobile for UX */
     }
 }

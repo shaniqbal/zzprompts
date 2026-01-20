@@ -132,7 +132,7 @@ add_action('widgets_init', 'zzprompts_widgets_init');
 // GLOBAL VERSION CONTROL (One place to bust cache)
 // ==========================================================================
 if (!defined('ZZ_THEME_VERSION')) {
-    define('ZZ_THEME_VERSION', '1.0.17');
+    define('ZZ_THEME_VERSION', '1.0.22');
 }
 
 // ==========================================================================
@@ -224,6 +224,14 @@ function zzprompts_enqueue_assets() {
         $ver
     );
     
+    // Block Patterns - Global (used on any page via Gutenberg)
+    wp_enqueue_style(
+        'zz-block-patterns',
+        $uri . '/assets/css/components/block-patterns.css',
+        array('zz-core'),
+        $ver
+    );
+    
     // =========================================
     // 4. PAGE SPECIFIC CSS
     // =========================================
@@ -304,6 +312,12 @@ function zzprompts_enqueue_assets() {
     // Auth Pages (Login, Forgot Password)
     if (is_page_template('page-templates/login.php') || is_page_template('page-templates/forgot-password.php')) {
         wp_enqueue_style('zz-auth', $uri . '/assets/css/pages/auth.css', array('zz-skin'), $ver);
+    }
+    
+    // Default Pages (Terms, Privacy, Pricing, etc.)
+    // Load for any page that doesn't use a specific template
+    if (is_page() && !is_front_page() && !is_page_template()) {
+        wp_enqueue_style('zz-page', $uri . '/assets/css/pages/page.css', array('zz-skin'), $ver);
     }
     
     // =========================================
@@ -459,6 +473,11 @@ if (file_exists(get_template_directory() . '/inc/class-tgm-plugin-activation.php
  */
 require get_template_directory() . '/inc/theme-settings.php';
 require get_template_directory() . '/inc/customizer-css.php';
+
+/**
+ * Block Patterns
+ */
+require get_template_directory() . '/inc/block-patterns.php';
 
 // Content Width
 if (!isset($content_width)) {

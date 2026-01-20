@@ -451,6 +451,20 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 - Dark mode support
 - RTL-ready logical properties
 
+### 2026-01-20: Blog Archive Card Meta Row Fix
+**Updated Files:**
+- `assets/css/pages/blog-archive.css` - Fixed category name overflow issue
+
+**CSS Fixes (blog-archive.css):**
+- `.zz-blog-card__meta` - Added `flex-wrap: nowrap` and `overflow: hidden` to prevent meta row from wrapping to multiple lines
+- `.zz-blog-card__read-time` - Added `flex-shrink: 0` to protect reading time element from being squashed by long category names
+- `.zz-blog-card__category` - Added `white-space: nowrap`, `overflow: hidden`, `text-overflow: ellipsis` to truncate long category names with "..." instead of breaking layout
+- `.zz-blog-card__category` - Added `padding-left: 2px` for slightly more spacing after the dot separator
+
+**Problem Solved:**
+- Before: Long category names (e.g., "Artificial Intelligence") would push content to a new line, breaking card layout
+- After: Category names stay on one line and gracefully truncate with "..." if too long, with improved spacing
+
 **Card BEM Structure:**
 - `.zz-blog-card` - Block
 - `.zz-blog-card__image-wrapper` - Clickable image container
@@ -700,6 +714,49 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 | Contact Page | ✅ Added | `page-templates/contact.php` |
 | Colors | ✅ Working | `customizer-css.php` |
 | Social Media | ✅ Working | `widgets.php` (Brand & Social widgets) |
+
+### 2026-01-19: ThemeForest Buyer Flexibility & Block Patterns
+**New Files:**
+- `inc/block-patterns.php` - Gutenberg block patterns registration
+- `assets/css/components/block-patterns.css` - Block pattern styles (~450 lines)
+
+**Updated Files:**
+- `front-page.php` - Added `the_content()` for buyer custom blocks
+- `page-templates/about.php` - Added `the_content()` section after CTA
+- `page-templates/contact.php` - Added `the_content()` section after FAQ
+- `functions.php` - Included block-patterns.php, enqueued CSS
+
+**Block Patterns Registered:**
+| Pattern | Description | Usage |
+|---------|-------------|-------|
+| `zzprompts/pricing-table` | 3-column pricing (Free/Pro/Enterprise) | Pricing pages, homepage |
+| `zzprompts/features-grid` | 3-column features with emoji icons | Homepage, about page |
+| `zzprompts/faq-accordion` | Expandable FAQ using `<details>` | Contact, support pages |
+| `zzprompts/cta-banner` | Gradient CTA with dual buttons | Any page bottom |
+| `zzprompts/testimonials` | 3-column customer quotes | Homepage, about page |
+
+**ThemeForest Compliance:**
+- All page templates now call `the_content()` for buyer flexibility
+- Patterns use **core blocks only** (no custom blocks)
+- CSS classes follow BEM: `.zz-pricing-*`, `.zz-feature-*`, `.zz-faq-*`
+- Glassmorphism styling consistent with theme design
+- Dark mode support included
+- Responsive breakpoints: 900px, 600px
+
+**How to Use Block Patterns:**
+1. Edit any page in Gutenberg
+2. Click "+" to add block → Patterns → ZZ Prompts
+3. Insert desired pattern (Pricing, Features, FAQ, CTA, Testimonials)
+4. Customize text/links as needed
+
+**Page Template Structure (Updated):**
+```
+[Structural Sections - PHP Template]
+↓
+[the_content() - Buyer's Gutenberg Blocks]
+↓
+[Footer]
+```
 
 ---
 
