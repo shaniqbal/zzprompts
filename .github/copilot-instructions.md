@@ -843,6 +843,7 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 - Added `padding: 0`, `line-height: 1` to prevent distortion
 - Icon size: `0.8rem` → `0.85rem`
 
+ok
 ---
 
 **Last Updated:** 2026-01-21  
