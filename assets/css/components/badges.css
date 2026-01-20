@@ -34,11 +34,11 @@ body.zz-layout-modern .zz-badge {
    2. AI TOOL BADGES
    ========================================= */
 
-/* ChatGPT / OpenAI */
+/* ChatGPT / OpenAI - Uses primary color */
 body.zz-layout-modern .zz-badge--chatgpt,
 body.zz-layout-modern .zz-badge--openai {
-    background: #EEF2FF;
-    color: #4F46E5;
+    background: var(--zz-color-primary-light, #EEF2FF);
+    color: var(--zz-color-primary, #6366F1);
 }
 
 /* DALL-E / Midjourney */

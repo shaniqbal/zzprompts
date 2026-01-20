@@ -345,6 +345,11 @@
     margin-block-end: var(--zz-space-3, 12px);
 }
 
+.zz-cta-banner__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .zz-cta-banner__desc {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.125rem;
@@ -353,30 +358,42 @@
     margin-inline: auto;
 }
 
+.zz-cta-banner .wp-block-buttons {
+    justify-content: center;
+    gap: var(--zz-space-4, 16px);
+}
+
 .zz-cta-banner__btn .wp-block-button__link {
     background: #fff;
-    color: var(--zz-color-primary, #6366F1);
+    color: var(--zz-color-primary, #6366F1) !important;
     border: none;
     border-radius: var(--zz-radius-pill, 50px);
     padding: var(--zz-space-3, 12px) var(--zz-space-8, 32px);
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    text-decoration: none !important;
 }
 
 .zz-cta-banner__btn .wp-block-button__link:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: #f0f0ff;
+    color: var(--zz-color-primary, #6366F1) !important;
+    text-decoration: none !important;
 }
 
 .zz-cta-banner__btn--secondary .wp-block-button__link {
     background: transparent;
-    color: #fff;
+    color: #fff !important;
     border: 2px solid rgba(255, 255, 255, 0.5);
+    text-decoration: none !important;
 }
 
 .zz-cta-banner__btn--secondary .wp-block-button__link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-color: #fff;
+    color: #fff !important;
+    text-decoration: none !important;
 }
 
 

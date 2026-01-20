@@ -80,6 +80,7 @@ $is_ai_generated = get_post_meta(get_the_ID(), '_is_ai_generated', true);
                 </header>
                 
                 <!-- Featured Image or Placeholder -->
+                <?php if ($show_image) : ?>
                 <div class="zz-blog-featured<?php echo !has_post_thumbnail() ? ' zz-blog-featured--placeholder' : ''; ?>">
                     <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('large', array('class' => 'zz-blog-featured__img')); ?>
@@ -100,6 +101,7 @@ $is_ai_generated = get_post_meta(get_the_ID(), '_is_ai_generated', true);
                         </div>
                     <?php endif; ?>
                 </div>
+                <?php endif; ?>
                 
                 <!-- Ad: Before Content -->
                 <?php zz_render_ad('blog_top'); ?>

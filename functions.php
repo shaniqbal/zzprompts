@@ -132,7 +132,7 @@ add_action('widgets_init', 'zzprompts_widgets_init');
 // GLOBAL VERSION CONTROL (One place to bust cache)
 // ==========================================================================
 if (!defined('ZZ_THEME_VERSION')) {
-    define('ZZ_THEME_VERSION', '1.0.26');
+    define('ZZ_THEME_VERSION', '1.0.100');
 }
 
 // ==========================================================================

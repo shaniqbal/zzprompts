@@ -38,16 +38,17 @@ $blog_query = new WP_Query(array(
 </section>
 
 <div class="zz-container u-py-10">
-    <div class="zz-blog-layout">
+    <?php 
+    // Get Customizer settings (cast to bool for proper comparison)
+    $show_image     = (bool) zzprompts_get_option('blog_show_image', true);
+    $show_category  = (bool) zzprompts_get_option('blog_show_category', true);
+    $excerpt_length = (int) zzprompts_get_option('blog_excerpt_length', 20);
+    $read_more_text = zzprompts_get_option('blog_read_more_text', __('Read Article', 'zzprompts'));
+    $show_sidebar   = (bool) zzprompts_get_option('blog_show_sidebar', true);
+    ?>
+    <div class="zz-blog-layout<?php echo !$show_sidebar ? ' zz-blog-layout--full-width' : ''; ?>">
         <div class="zz-blog-main-content">
             <?php 
-            // Get Customizer settings
-            $show_image    = zzprompts_get_option('blog_show_image', true);
-            $show_date     = zzprompts_get_option('blog_show_date', true);
-            $show_category = zzprompts_get_option('blog_show_category', true);
-            $excerpt_length = zzprompts_get_option('blog_excerpt_length', 20);
-            $read_more_text = zzprompts_get_option('blog_read_more_text', __('Read Article', 'zzprompts'));
-            
             if ($blog_query->have_posts()) : ?>
                 <div class="zz-blog-section">
                     <div class="zz-blog-grid">
@@ -62,9 +63,7 @@ $blog_query = new WP_Query(array(
                                             <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);"></div>
                                         <?php endif; ?>
                                     </a>
-                                    <?php if ($show_date) : ?>
                                     <span class="zz-blog-card__date-badge"><?php echo esc_html(get_the_date('M d, Y')); ?></span>
-                                    <?php endif; ?>
                                 </div>
                                 <?php endif; ?>
 
@@ -126,7 +125,9 @@ $blog_query = new WP_Query(array(
             <?php wp_reset_postdata(); ?>
         </div>
 
-        <?php get_template_part('template-parts/sidebar', 'blog'); ?>
+        <?php if ($show_sidebar) : ?>
+            <?php get_template_part('template-parts/sidebar', 'blog'); ?>
+        <?php endif; ?>
     </div>
 </div>
 

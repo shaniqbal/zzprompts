@@ -170,7 +170,7 @@ body.zz-layout-modern .zz-btn--block {
 }
 
 /* =========================================
-   11. COPY BUTTON (Specific)
+   11. COPY BUTTON (Premium Style)
    ========================================= */
 
 body.zz-layout-modern .zz-btn-copy {
@@ -185,17 +185,18 @@ body.zz-layout-modern .zz-btn-copy {
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s ease;
     text-decoration: none;
 }
 
 body.zz-layout-modern .zz-btn-copy:hover {
-    background: #000;
+    background: var(--zz-color-primary, #6366F1);
     color: #fff;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 body.zz-layout-modern .zz-btn-copy--copied {
-    background: #059669;
+    background: var(--zz-color-accent, #059669);
 }
 
 /* =========================================

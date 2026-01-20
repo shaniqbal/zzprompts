@@ -81,6 +81,15 @@
     width: 100%;
 }
 
+/* Full Width (No Sidebar) */
+.zz-blog-layout--full-width {
+    grid-template-columns: 1fr;
+}
+
+.zz-blog-layout--full-width .zz-blog-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
 .zz-blog-main-content {
     min-width: 0;
     /* Prevent grid blowout */
@@ -602,31 +611,6 @@ body.zz-layout-modern .zz-blog-full .zz-blog-grid {
     color: var(--zz-text-muted);
 }
 
-/* Fix Explore Topics Pills to look like the image (clean, light, colored on hover) */
-.zz-categories-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--zz-space-2);
-}
-
-.zz-category-pill {
-    background: #fff;
-    border: 1px solid var(--zz-border-light);
-    padding: 6px 14px;
-    border-radius: var(--zz-radius-pill);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--zz-text-muted);
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.zz-category-pill:hover {
-    border-color: var(--zz-color-primary);
-    color: var(--zz-color-primary);
-    transform: translateY(-1px);
-}
-
 /* ==========================================================================
    6. PAGINATION
    ========================================================================== */
@@ -807,12 +791,20 @@ body.zz-layout-modern .zz-blog-full .zz-blog-grid {
         grid-template-columns: 1fr 300px;
         gap: var(--zz-space-8);
     }
+
+    .zz-blog-layout--full-width .zz-blog-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 @media (max-width: 1024px) {
     body.zz-layout-modern .zz-blog-layout .zz-blog-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+
+    .zz-blog-layout--full-width .zz-blog-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
     }
 
     .zz-blog-layout {
@@ -864,8 +856,9 @@ body.zz-layout-modern .zz-blog-full .zz-blog-grid {
         display: block;
     }
 
-    body.zz-layout-modern .zz-blog-layout .zz-blog-grid {
-        grid-template-columns: 1fr;
+    body.zz-layout-modern .zz-blog-layout .zz-blog-grid,
+    .zz-blog-layout--full-width .zz-blog-grid {
+        grid-template-columns: 1fr !important;
         gap: 20px;
     }
 

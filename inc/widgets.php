@@ -831,18 +831,92 @@ class ZZ_Widget_Popular_Posts extends WP_Widget {
 
 
 // ==========================================================================
+// 8. ZZ: FOOTER CONTACT INFO WIDGET
+// ==========================================================================
+// Purpose: Display email and location from Customizer settings
+// ==========================================================================
+
+class ZZ_Widget_Footer_Contact extends WP_Widget {
+    
+    public function __construct() {
+        parent::__construct(
+            'zz_footer_contact',
+            esc_html__('ZZ: Footer Contact Info', 'zzprompts'),
+            array('description' => esc_html__('Displays email and location from Theme Settings.', 'zzprompts'))
+        );
+    }
+
+    public function widget($args, $instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : esc_html__('Contact Us', 'zzprompts');
+        $email = get_theme_mod('footer_email', '');
+        $location = get_theme_mod('footer_location', '');
+        
+        // Don't display if no contact info
+        if (empty($email) && empty($location)) {
+            return;
+        }
+        
+        echo $args['before_widget'];
+        ?>
+        <div class="zz-widget zz-widget--contact">
+            <?php if ($title) : ?>
+            <h4 class="zz-widget__title"><?php echo esc_html($title); ?></h4>
+            <?php endif; ?>
+            
+            <ul class="zz-widget__contact-list">
+                <?php if ($email) : ?>
+                <li class="zz-widget__contact-item">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
+                </li>
+                <?php endif; ?>
+                
+                <?php if ($location) : ?>
+                <li class="zz-widget__contact-item">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span><?php echo esc_html($location); ?></span>
+                </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <?php
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $title = isset($instance['title']) ? $instance['title'] : esc_html__('Contact Us', 'zzprompts');
+        ?>
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'zzprompts'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+        </p>
+        <p class="description">
+            <?php esc_html_e('Email and Location are configured in Customizer → ZZ Theme Options → Footer.', 'zzprompts'); ?>
+        </p>
+        <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = sanitize_text_field($new_instance['title']);
+        return $instance;
+    }
+}
+
+
+// ==========================================================================
 // REGISTER ALL WIDGETS
 // ==========================================================================
 
 function zzprompts_register_widgets() {
     register_widget('ZZ_Widget_Brand');
-    // ZZ_Widget_Prompt_Search removed - use searchform.php instead
     register_widget('ZZ_Widget_Popular_Prompts');
     register_widget('ZZ_Widget_Category_Tags');
     register_widget('ZZ_Widget_Newsletter');
     register_widget('ZZ_Widget_Ad_Banner');
     register_widget('ZZ_Widget_Author_Bio');
     register_widget('ZZ_Widget_Popular_Posts');
+    register_widget('ZZ_Widget_Footer_Contact');
 }
 add_action('widgets_init', 'zzprompts_register_widgets');
 

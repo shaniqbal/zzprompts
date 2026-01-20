@@ -193,6 +193,21 @@
     font-family: inherit;
 }
 
+/* Placeholder Styling */
+.zz-contact-field__input::placeholder,
+.zz-contact-field__textarea::placeholder {
+    color: #9CA3AF;
+    opacity: 1;
+}
+
+/* Remove Browser Red Line on Invalid */
+.zz-contact-field__input:invalid,
+.zz-contact-field__textarea:invalid {
+    border-color: #E5E7EB !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 .zz-contact-field__input:focus,
 .zz-contact-field__textarea:focus {
     outline: none;
@@ -245,12 +260,47 @@
     font-family: inherit;
 }
 
+/* CF7 Placeholder Styling */
+.zz-contact-form .wpcf7-text::placeholder,
+.zz-contact-form .wpcf7-email::placeholder,
+.zz-contact-form .wpcf7-textarea::placeholder {
+    color: #9CA3AF;
+    opacity: 1;
+}
+
+/* CF7 Remove Browser Invalid State */
+.zz-contact-form .wpcf7-text:invalid,
+.zz-contact-form .wpcf7-email:invalid,
+.zz-contact-form .wpcf7-textarea:invalid {
+    border-color: #E5E7EB;
+    box-shadow: none;
+    outline: none;
+}
+
 .zz-contact-form .wpcf7-text:focus,
 .zz-contact-form .wpcf7-email:focus,
 .zz-contact-form .wpcf7-textarea:focus {
     outline: none;
     border-color: var(--zz-color-primary, #6366F1);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* CF7 Validation Error - Remove Red Lines */
+.zz-contact-form .wpcf7-not-valid {
+    border-color: #E5E7EB !important;
+    box-shadow: none !important;
+}
+
+.zz-contact-form .wpcf7-not-valid-tip {
+    color: #EF4444;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    display: block;
+}
+
+/* CF7 Form Control Wrap - Reset Red Border */
+.zz-contact-form .wpcf7-form-control-wrap[data-name] .wpcf7-not-valid {
+    border-color: #E5E7EB !important;
 }
 
 .zz-contact-form .wpcf7-submit {
@@ -406,6 +456,17 @@
     background: rgba(30, 41, 59, 0.6);
     border-color: rgba(148, 163, 184, 0.2);
     color: #F9FAFB;
+}
+
+/* Dark Mode - Remove Invalid Red Line */
+[data-theme="dark"] .zz-contact-field__input:invalid,
+[data-theme="dark"] .zz-contact-field__textarea:invalid,
+[data-theme="dark"] .zz-contact-form .wpcf7-text:invalid,
+[data-theme="dark"] .zz-contact-form .wpcf7-email:invalid,
+[data-theme="dark"] .zz-contact-form .wpcf7-textarea:invalid,
+[data-theme="dark"] .zz-contact-form .wpcf7-not-valid {
+    border-color: rgba(148, 163, 184, 0.2) !important;
+    box-shadow: none !important;
 }
 
 [data-theme="dark"] .zz-contact-field__input::placeholder,

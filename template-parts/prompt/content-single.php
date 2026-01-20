@@ -198,7 +198,7 @@ if (empty($prompt_text)) {
                                     data-prompt-text="<?php echo esc_attr($prompt_text); ?>"
                                     aria-label="<?php esc_attr_e('Copy prompt to clipboard', 'zzprompts'); ?>">
                                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                                <span class="btn-text"><?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy', 'zzprompts'))); ?></span>
+                                <span class="btn-text"><?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?></span>
                             </button>
                         </div>
                     </div>
@@ -252,7 +252,7 @@ if (empty($prompt_text)) {
                                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                             </svg>
-                            <span class="btn-text"><?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy', 'zzprompts'))); ?></span>
+                            <span class="btn-text"><?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?></span>
                         </button>
                     </div>
                 </div>

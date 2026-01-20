@@ -378,6 +378,66 @@
 
 
 /* ==========================================================================
+   5.5 FOOTER CONTACT WIDGET
+   ========================================================================== */
+
+.zz-widget--contact {
+    padding: 0;
+}
+
+.zz-widget__contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.zz-widget__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--zz-text-secondary, #64748B);
+}
+
+.zz-widget__contact-item i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--zz-color-primary, #6366F1);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.zz-widget__contact-item a {
+    color: var(--zz-text-secondary, #64748B);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.zz-widget__contact-item a:hover {
+    color: var(--zz-color-primary, #6366F1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .zz-widget__contact-item {
+    color: var(--zz-text-secondary);
+}
+
+[data-theme="dark"] .zz-widget__contact-item a {
+    color: var(--zz-text-secondary);
+}
+
+[data-theme="dark"] .zz-widget__contact-item a:hover {
+    color: var(--zz-color-primary);
+}
+
+
+/* ==========================================================================
    6. AD BANNER WIDGET (Matching HTML Design)
    ========================================================================== */
 

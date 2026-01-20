@@ -40,7 +40,7 @@ function zzprompts_register_block_patterns() {
             'description' => esc_html__('A 3-column pricing table with Free, Pro, and Enterprise plans.', 'zzprompts'),
             'categories'  => array('zzprompts'),
             'keywords'    => array('pricing', 'plans', 'table', 'subscription'),
-            'content'     => '<!-- wp:group {"className":"zz-pricing-section","layout":{"type":"constrained"}} -->
+            'content'     => '<!-- wp:group {"className":"zz-pricing-section","layout":{"type":"default"}} -->
 <div class="wp-block-group zz-pricing-section">
 
 <!-- wp:heading {"textAlign":"center","level":2,"className":"zz-pricing-title"} -->
@@ -169,7 +169,7 @@ function zzprompts_register_block_patterns() {
             'description' => esc_html__('A 3-column grid showcasing key features with icons.', 'zzprompts'),
             'categories'  => array('zzprompts'),
             'keywords'    => array('features', 'grid', 'icons', 'benefits'),
-            'content'     => '<!-- wp:group {"className":"zz-features-section","layout":{"type":"constrained"}} -->
+            'content'     => '<!-- wp:group {"className":"zz-features-section","layout":{"type":"default"}} -->
 <div class="wp-block-group zz-features-section">
 
 <!-- wp:heading {"textAlign":"center","level":2,"className":"zz-features-title"} -->
@@ -239,7 +239,7 @@ function zzprompts_register_block_patterns() {
             'description' => esc_html__('Frequently asked questions in an expandable accordion format.', 'zzprompts'),
             'categories'  => array('zzprompts'),
             'keywords'    => array('faq', 'accordion', 'questions', 'answers'),
-            'content'     => '<!-- wp:group {"className":"zz-faq-section","layout":{"type":"constrained"}} -->
+            'content'     => '<!-- wp:group {"className":"zz-faq-section","layout":{"type":"default"}} -->
 <div class="wp-block-group zz-faq-section">
 
 <!-- wp:heading {"textAlign":"center","level":2,"className":"zz-faq-title"} -->
@@ -297,7 +297,7 @@ function zzprompts_register_block_patterns() {
             'description' => esc_html__('A prominent call-to-action section with heading and button.', 'zzprompts'),
             'categories'  => array('zzprompts'),
             'keywords'    => array('cta', 'banner', 'action', 'button'),
-            'content'     => '<!-- wp:group {"className":"zz-cta-banner","layout":{"type":"constrained"}} -->
+            'content'     => '<!-- wp:group {"className":"zz-cta-banner","layout":{"type":"default"}} -->
 <div class="wp-block-group zz-cta-banner">
 
 <!-- wp:heading {"textAlign":"center","level":2,"className":"zz-cta-banner__title"} -->
@@ -334,7 +334,7 @@ function zzprompts_register_block_patterns() {
             'description' => esc_html__('Customer testimonials in a 3-column grid layout.', 'zzprompts'),
             'categories'  => array('zzprompts'),
             'keywords'    => array('testimonials', 'reviews', 'quotes', 'customers'),
-            'content'     => '<!-- wp:group {"className":"zz-testimonials-section","layout":{"type":"constrained"}} -->
+            'content'     => '<!-- wp:group {"className":"zz-testimonials-section","layout":{"type":"default"}} -->
 <div class="wp-block-group zz-testimonials-section">
 
 <!-- wp:heading {"textAlign":"center","level":2,"className":"zz-testimonials-title"} -->

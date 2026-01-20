@@ -63,8 +63,12 @@ function zzprompts_customize_register($wp_customize) {
        PANEL: THEME OPTIONS (Container for all sections)
        -------------------------------------------------------- */
     $wp_customize->add_panel('zzprompts_options', array(
-        'title'       => esc_html__('Theme Options', 'zzprompts'),
-        'description' => esc_html__('Configure all theme settings.', 'zzprompts'),
+        'title'       => esc_html__('ZZ Prompts Settings', 'zzprompts'),
+        'description' => sprintf(
+            '<p>%s</p><p><strong>%s</strong></p>',
+            esc_html__('Configure your AI Prompts Library theme. Adjust colors, content, and layout options.', 'zzprompts'),
+            esc_html__('Save changes and refresh to see updates.', 'zzprompts')
+        ),
         'priority'    => 10,
     ));
 
@@ -74,8 +78,8 @@ function zzprompts_customize_register($wp_customize) {
        Purpose: Homepage hero area content
        ======================================================== */
     $wp_customize->add_section('zzprompts_hero_section', array(
-        'title'       => esc_html__('Homepage', 'zzprompts'),
-        'description' => esc_html__('Configure homepage hero area and content.', 'zzprompts'),
+        'title'       => esc_html__('🏠 Homepage', 'zzprompts'),
+        'description' => esc_html__('Configure the homepage hero section including title, subtitle, and search placeholder.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 10,
     ));
@@ -125,8 +129,8 @@ function zzprompts_customize_register($wp_customize) {
        Purpose: Prompt CPT specific options
        ======================================================== */
     $wp_customize->add_section('zzprompts_prompt_settings', array(
-        'title'       => esc_html__('Prompts', 'zzprompts'),
-        'description' => esc_html__('Configure prompt display, copy button, and meta options.', 'zzprompts'),
+        'title'       => esc_html__('⚡ Prompts', 'zzprompts'),
+        'description' => esc_html__('Configure prompt display, copy button, likes, and meta options.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 20,
     ));
@@ -169,14 +173,15 @@ function zzprompts_customize_register($wp_customize) {
         'priority'    => 30,
     ));
 
-    $wp_customize->add_setting('enable_copy_counter', array(
-        'default'           => true,
+    // REMOVED: enable_copy_counter (duplicate of single_prompt_meta_show_copies)
+
+    $wp_customize->add_setting('sidebar_filter_show_counts', array(
+        'default'           => false,
         'sanitize_callback' => 'zzprompts_sanitize_checkbox',
         'transport'         => 'refresh',
     ));
-    $wp_customize->add_control('enable_copy_counter', array(
-        'label'       => esc_html__('Show Copy Counter', 'zzprompts'),
-        'description' => esc_html__('Display how many times a prompt has been copied.', 'zzprompts'),
+    $wp_customize->add_control('sidebar_filter_show_counts', array(
+        'label'       => esc_html__('Show Filter Counts in Archive Sidebar', 'zzprompts'),
         'section'     => 'zzprompts_prompt_settings',
         'type'        => 'checkbox',
         'priority'    => 40,
@@ -195,17 +200,7 @@ function zzprompts_customize_register($wp_customize) {
         'priority'    => 50,
     ));
 
-    $wp_customize->add_setting('single_prompt_meta_show_views', array(
-        'default'           => false,
-        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('single_prompt_meta_show_views', array(
-        'label'       => esc_html__('Show Views in Meta', 'zzprompts'),
-        'section'     => 'zzprompts_prompt_settings',
-        'type'        => 'checkbox',
-        'priority'    => 60,
-    ));
+    // REMOVED: Show Views in Meta (not implementing views yet)
 
     $wp_customize->add_setting('single_prompt_meta_show_copies', array(
         'default'           => true,
@@ -265,19 +260,6 @@ function zzprompts_customize_register($wp_customize) {
         'priority'    => 96,
     ));
 
-    // --- ARCHIVE SIDEBAR OPTIONS ---
-    $wp_customize->add_setting('sidebar_filter_show_counts', array(
-        'default'           => false,
-        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('sidebar_filter_show_counts', array(
-        'label'       => esc_html__('Show Filter Counts in Archive Sidebar', 'zzprompts'),
-        'section'     => 'zzprompts_prompt_settings',
-        'type'        => 'checkbox',
-        'priority'    => 120,
-    ));
-
     // Related Prompts Title
     $wp_customize->add_setting('single_related_title', array(
         'default'           => esc_html__('Related Prompts', 'zzprompts'),
@@ -293,39 +275,31 @@ function zzprompts_customize_register($wp_customize) {
 
 
     /* ========================================================
-       SECTION 3: BLOG ARCHIVE - Content
+       SECTION 3: BLOG ARCHIVE
+       Purpose: Configure blog listing/archive pages
        ======================================================== */
     $wp_customize->add_section('zzprompts_blog_archive', array(
-        'title'       => esc_html__('Blog Archive', 'zzprompts'),
-        'description' => esc_html__('Controls what appears on blog listing pages.', 'zzprompts'),
+        'title'       => esc_html__('📰 Blog Archive', 'zzprompts'),
+        'description' => esc_html__('Configure blog listing pages: cards, sidebar, and pagination.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 30,
     ));
 
+    // Show Featured Image
     $wp_customize->add_setting('blog_show_image', array(
         'default'           => true,
         'sanitize_callback' => 'zzprompts_sanitize_checkbox',
         'transport'         => 'refresh',
     ));
     $wp_customize->add_control('blog_show_image', array(
-        'label'       => esc_html__('Show Featured Images', 'zzprompts'),
+        'label'       => esc_html__('Show Featured Image', 'zzprompts'),
+        'description' => esc_html__('Display featured images on blog cards.', 'zzprompts'),
         'section'     => 'zzprompts_blog_archive',
         'type'        => 'checkbox',
         'priority'    => 10,
     ));
 
-    $wp_customize->add_setting('blog_show_date', array(
-        'default'           => true,
-        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
-        'transport'         => 'refresh',
-    ));
-    $wp_customize->add_control('blog_show_date', array(
-        'label'       => esc_html__('Show Date', 'zzprompts'),
-        'section'     => 'zzprompts_blog_archive',
-        'type'        => 'checkbox',
-        'priority'    => 20,
-    ));
-
+    // Show Category Badge
     $wp_customize->add_setting('blog_show_category', array(
         'default'           => true,
         'sanitize_callback' => 'zzprompts_sanitize_checkbox',
@@ -333,11 +307,27 @@ function zzprompts_customize_register($wp_customize) {
     ));
     $wp_customize->add_control('blog_show_category', array(
         'label'       => esc_html__('Show Category', 'zzprompts'),
+        'description' => esc_html__('Display category name in card meta.', 'zzprompts'),
+        'section'     => 'zzprompts_blog_archive',
+        'type'        => 'checkbox',
+        'priority'    => 20,
+    ));
+
+    // Show Sidebar
+    $wp_customize->add_setting('blog_show_sidebar', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('blog_show_sidebar', array(
+        'label'       => esc_html__('Show Sidebar', 'zzprompts'),
+        'description' => esc_html__('Display sidebar with search, categories, and popular posts.', 'zzprompts'),
         'section'     => 'zzprompts_blog_archive',
         'type'        => 'checkbox',
         'priority'    => 30,
     ));
 
+    // Excerpt Length
     $wp_customize->add_setting('blog_excerpt_length', array(
         'default'           => 20,
         'sanitize_callback' => 'absint',
@@ -347,10 +337,11 @@ function zzprompts_customize_register($wp_customize) {
         'label'       => esc_html__('Excerpt Length (Words)', 'zzprompts'),
         'section'     => 'zzprompts_blog_archive',
         'type'        => 'number',
-        'input_attrs' => array('min' => 5, 'max' => 100),
+        'input_attrs' => array('min' => 5, 'max' => 100, 'step' => 1),
         'priority'    => 40,
     ));
 
+    // Read More Text
     $wp_customize->add_setting('blog_read_more_text', array(
         'default'           => esc_html__('Read Article', 'zzprompts'),
         'sanitize_callback' => 'sanitize_text_field',
@@ -363,6 +354,7 @@ function zzprompts_customize_register($wp_customize) {
         'priority'    => 50,
     ));
 
+    // Posts Per Page
     $wp_customize->add_setting('zzprompts_blog_posts_per_page', array(
         'default'           => 10,
         'type'              => 'option',
@@ -371,10 +363,10 @@ function zzprompts_customize_register($wp_customize) {
     ));
     $wp_customize->add_control('zzprompts_blog_posts_per_page', array(
         'label'       => esc_html__('Posts Per Page', 'zzprompts'),
-        'description' => esc_html__('Number of posts to display on archive pages.', 'zzprompts'),
+        'description' => esc_html__('Number of posts per archive page.', 'zzprompts'),
         'section'     => 'zzprompts_blog_archive',
         'type'        => 'number',
-        'input_attrs' => array('min' => 1, 'max' => 50),
+        'input_attrs' => array('min' => 1, 'max' => 50, 'step' => 1),
         'priority'    => 60,
     ));
 
@@ -383,8 +375,8 @@ function zzprompts_customize_register($wp_customize) {
        SECTION 4: BLOG SINGLE POST
        ======================================================== */
     $wp_customize->add_section('zzprompts_blog_single', array(
-        'title'       => esc_html__('Blog Single Post', 'zzprompts'),
-        'description' => esc_html__('Controls for individual blog post pages.', 'zzprompts'),
+        'title'       => esc_html__('📝 Blog Single Post', 'zzprompts'),
+        'description' => esc_html__('Configure individual blog post pages: image, author, date, and share buttons.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 32,
     ));
@@ -466,8 +458,8 @@ function zzprompts_customize_register($wp_customize) {
        SECTION 5: BLOG COMMENTS
        ======================================================== */
     $wp_customize->add_section('zzprompts_blog_comments', array(
-        'title'       => esc_html__('Blog Comments', 'zzprompts'),
-        'description' => esc_html__('Native WordPress comment settings for blog posts.', 'zzprompts'),
+        'title'       => esc_html__('💬 Comments', 'zzprompts'),
+        'description' => esc_html__('Control comment display and functionality on blog posts.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 33,
     ));
@@ -529,25 +521,55 @@ function zzprompts_customize_register($wp_customize) {
 
     /* ========================================================
        SECTION 6: FOOTER SETTINGS
+       Purpose: Footer copyright, contact info for widgets
        ======================================================== */
     $wp_customize->add_section('zzprompts_footer_section', array(
-        'title'       => esc_html__('Footer', 'zzprompts'),
-        'description' => esc_html__('Configure footer content.', 'zzprompts'),
+        'title'       => esc_html__('🔻 Footer', 'zzprompts'),
+        'description' => esc_html__('Configure footer copyright and contact information.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 50,
     ));
 
+    // Copyright Text
     $wp_customize->add_setting('footer_copyright', array(
         'default'           => sprintf(esc_html__('© %s Prompts Library. All rights reserved.', 'zzprompts'), date('Y')),
         'sanitize_callback' => 'wp_kses_post',
-        'transport'         => 'postMessage',
+        'transport'         => 'refresh',
     ));
     $wp_customize->add_control('footer_copyright', array(
         'label'       => esc_html__('Copyright Text', 'zzprompts'),
-        'description' => esc_html__('Supports basic HTML like links.', 'zzprompts'),
+        'description' => esc_html__('Supports HTML links. Save & refresh to see changes.', 'zzprompts'),
         'section'     => 'zzprompts_footer_section',
         'type'        => 'textarea',
         'priority'    => 10,
+    ));
+
+    // Contact Email
+    $wp_customize->add_setting('footer_email', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_email',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('footer_email', array(
+        'label'       => esc_html__('Contact Email', 'zzprompts'),
+        'description' => esc_html__('Displayed in footer widgets with envelope icon.', 'zzprompts'),
+        'section'     => 'zzprompts_footer_section',
+        'type'        => 'email',
+        'priority'    => 20,
+    ));
+
+    // Contact Location
+    $wp_customize->add_setting('footer_location', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('footer_location', array(
+        'label'       => esc_html__('Location / Address', 'zzprompts'),
+        'description' => esc_html__('Displayed in footer widgets with location icon.', 'zzprompts'),
+        'section'     => 'zzprompts_footer_section',
+        'type'        => 'text',
+        'priority'    => 30,
     ));
 
 
@@ -556,8 +578,8 @@ function zzprompts_customize_register($wp_customize) {
        Purpose: Contact Form 7 integration
        ======================================================== */
     $wp_customize->add_section('zzprompts_contact_section', array(
-        'title'       => esc_html__('Contact Page', 'zzprompts'),
-        'description' => esc_html__('Settings for Contact Us page template.', 'zzprompts'),
+        'title'       => esc_html__('📧 Contact Page', 'zzprompts'),
+        'description' => esc_html__('Integrate Contact Form 7 with your contact page.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 52,
     ));
@@ -581,21 +603,21 @@ function zzprompts_customize_register($wp_customize) {
        SECTION 7: COLORS & BRANDING
        ======================================================== */
     $wp_customize->add_section('zzprompts_colors_section', array(
-        'title'       => esc_html__('Colors & Branding', 'zzprompts'),
-        'description' => esc_html__('Customize the theme color scheme.', 'zzprompts'),
+        'title'       => esc_html__('🎨 Colors & Branding', 'zzprompts'),
+        'description' => esc_html__('Customize the theme color scheme. Changes apply to buttons, links, badges, and UI elements.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
-        'priority'    => 60,
+        'priority'    => 55,
     ));
 
     // Primary Color
     $wp_customize->add_setting('primary_color', array(
         'default'           => '#6366F1',
         'sanitize_callback' => 'sanitize_hex_color',
-        'transport'         => 'postMessage',
+        'transport'         => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'primary_color', array(
         'label'       => esc_html__('Primary Color', 'zzprompts'),
-        'description' => esc_html__('Main brand color for buttons, links, and active states.', 'zzprompts'),
+        'description' => esc_html__('Main brand color for buttons, links, active states, and hover effects.', 'zzprompts'),
         'section'     => 'zzprompts_colors_section',
         'priority'    => 10,
     )));
@@ -604,37 +626,27 @@ function zzprompts_customize_register($wp_customize) {
     $wp_customize->add_setting('accent_color', array(
         'default'           => '#10b981',
         'sanitize_callback' => 'sanitize_hex_color',
-        'transport'         => 'postMessage',
+        'transport'         => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'accent_color', array(
-        'label'       => esc_html__('Accent Color', 'zzprompts'),
-        'description' => esc_html__('Secondary color for badges, tags, and meta highlights.', 'zzprompts'),
+        'label'       => esc_html__('Accent / Success Color', 'zzprompts'),
+        'description' => esc_html__('Used for success states, copy confirmations, and secondary highlights.', 'zzprompts'),
         'section'     => 'zzprompts_colors_section',
         'priority'    => 20,
     )));
 
-    // Text Color
-    $wp_customize->add_setting('text_color', array(
-        'default'           => '#1f2937',
-        'sanitize_callback' => 'sanitize_hex_color',
-        'transport'         => 'postMessage',
-    ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'text_color', array(
-        'label'       => esc_html__('Text Color', 'zzprompts'),
-        'description' => esc_html__('Global body and heading text color.', 'zzprompts'),
-        'section'     => 'zzprompts_colors_section',
-        'priority'    => 30,
-    )));
+    // NOTE: Text Color removed - breaks light/dark mode switching.
+    // Text colors are controlled by CSS variables in _variables.css, _light.css, _dark.css
 
 
     /* ========================================================
        SECTION 8: SOCIAL MEDIA LINKS
        ======================================================== */
     $wp_customize->add_section('zzprompts_social_section', array(
-        'title'       => esc_html__('Social Media', 'zzprompts'),
-        'description' => esc_html__('Add your social profile URLs. Icons appear in Footer and Brand widgets.', 'zzprompts'),
+        'title'       => esc_html__('🔗 Social Media', 'zzprompts'),
+        'description' => esc_html__('Add your social profile URLs. Icons appear in footer and Brand widgets.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
-        'priority'    => 55,
+        'priority'    => 60,
     ));
 
     // Facebook
@@ -737,7 +749,7 @@ add_action('customize_register', 'zzprompts_customize_register');
  * @return int|string
  */
 function zzprompts_sanitize_checkbox($checked) {
-    return (!empty($checked) && $checked !== 'false') ? 1 : '';
+    return ((isset($checked) && true == $checked) ? true : false);
 }
 
 

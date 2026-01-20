@@ -66,13 +66,14 @@ defined( 'ABSPATH' ) || exit;
     <div class="container">
         <p>
             <?php 
-            $footer_copyright = zzprompts_get_option('footer_copyright', '');
-            if (!empty($footer_copyright)) {
-                echo wp_kses_post($footer_copyright);
-            } else {
-                // Default copyright
-                echo '&copy; ' . esc_html(date('Y')) . ' ' . esc_html(get_bloginfo('name')) . '. ' . esc_html__('All rights reserved.', 'zzprompts');
-            }
+            // Get footer copyright with proper default
+            $default_copyright = sprintf(
+                /* translators: %s: current year */
+                esc_html__('© %s Prompts Library. All rights reserved.', 'zzprompts'), 
+                date('Y')
+            );
+            $footer_copyright = get_theme_mod('footer_copyright', $default_copyright);
+            echo wp_kses_post($footer_copyright);
             ?>
         </p>
     </div>

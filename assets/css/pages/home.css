@@ -233,3 +233,20 @@ body.zz-layout-modern .zz-home-cta__buttons {
         padding: var(--zz-space-12) var(--zz-space-4);
     }
 }
+
+/* =========================================
+   8. DARK MODE
+   ========================================= */
+
+[data-theme="dark"] body.zz-layout-modern .zz-home-cta {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-home-cta__title {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-home-cta__desc {
+    color: var(--zz-text-secondary);
+}

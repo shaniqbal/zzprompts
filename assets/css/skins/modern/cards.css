@@ -12,37 +12,41 @@
  */
 
 /* =========================================
-   1. BASE CARD
+   1. BASE CARD (Premium Glassmorphism)
    ========================================= */
 
 body.zz-layout-modern .zz-card {
-    background: var(--zz-bg-card);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: var(--zz-radius-lg);
     padding: var(--zz-space-6);
-    border: 1px solid var(--zz-border-light);
-    box-shadow: var(--zz-shadow-md);
-    transition: all var(--zz-transition-bounce);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 body.zz-layout-modern .zz-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--zz-shadow-card-hover);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
     border-color: var(--zz-color-primary);
 }
 
 /* =========================================
-   2. PROMPT CARD
+   2. PROMPT CARD (Premium Glassmorphism)
    ========================================= */
 
 body.zz-layout-modern .zz-prompt-card {
-    background: var(--zz-bg-card);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
     padding: 24px;
-    border: 1px solid #F3F4F6;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    transition: 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
@@ -53,7 +57,8 @@ body.zz-layout-modern .zz-prompt-card {
 
 body.zz-layout-modern .zz-prompt-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    border-color: var(--zz-color-primary, #6366F1);
 }
 
 body.zz-layout-modern .zz-prompt-card__badge {
@@ -67,16 +72,16 @@ body.zz-layout-modern .zz-prompt-card__badge {
     width: fit-content;
     margin-bottom: 0;
     align-self: start;
-    background: #EEF2FF;
-    color: #4F46E5;
+    background: var(--zz-color-primary-light, #EEF2FF);
+    color: var(--zz-color-primary, #6366F1);
 }
 
 /* AI Tool Badge Colors */
 body.zz-layout-modern .zz-prompt-card__badge--chatgpt,
 body.zz-layout-modern .zz-prompt-card__badge--gpt-4,
 body.zz-layout-modern .zz-prompt-card__badge--copilot {
-    background: #EEF2FF;
-    color: #4F46E5;
+    background: var(--zz-color-primary-light, #EEF2FF);
+    color: var(--zz-color-primary, #6366F1);
 }
 
 body.zz-layout-modern .zz-prompt-card__badge--dalle,
@@ -199,15 +204,18 @@ body.zz-layout-modern .zz-prompt-card__thumb {
 }
 
 /* =========================================
-   4. BLOG CARD
+   4. BLOG CARD (Premium)
    ========================================= */
 
 body.zz-layout-modern .zz-blog-card {
-    background: var(--zz-bg-card);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: var(--zz-radius-lg);
     padding: var(--zz-space-4);
-    border: 1px solid var(--zz-border-light);
-    transition: all var(--zz-transition-bounce);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -215,7 +223,8 @@ body.zz-layout-modern .zz-blog-card {
 
 body.zz-layout-modern .zz-blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--zz-shadow-md);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    border-color: var(--zz-color-primary, #6366F1);
 }
 
 body.zz-layout-modern .zz-blog-card__image-link {
@@ -285,21 +294,25 @@ body.zz-layout-modern .zz-blog-card__read:hover {
 }
 
 /* =========================================
-   5. STEP CARD (How It Works)
+   5. STEP CARD (How It Works - Premium)
    ========================================= */
 
 body.zz-layout-modern .zz-step-card {
-    background: var(--zz-bg-card);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: var(--zz-space-10) var(--zz-space-5);
     text-align: center;
     border-radius: var(--zz-radius-xl);
-    box-shadow: var(--zz-shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 body.zz-layout-modern .zz-step-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    border-color: var(--zz-color-primary, #6366F1);
 }
 
 body.zz-layout-modern .zz-step-card__icon {
@@ -330,22 +343,25 @@ body.zz-layout-modern .zz-step-card__desc {
 }
 
 /* =========================================
-   6. STAT CARD
+   6. STAT CARD (Premium)
    ========================================= */
 
 body.zz-layout-modern .zz-stat-card {
-    background: var(--zz-bg-card);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: var(--zz-space-8);
     border-radius: var(--zz-radius-lg);
     text-align: center;
-    box-shadow: var(--zz-shadow-md);
-    border: 1px solid var(--zz-border-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 body.zz-layout-modern .zz-stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    border-color: var(--zz-color-primary, #6366F1);
 }
 
 body.zz-layout-modern .zz-stat-card__icon {
@@ -393,4 +409,120 @@ body.zz-layout-modern .zz-ad-slot {
 
 body.zz-layout-modern .zz-ad-slot--horizontal {
     grid-column: 1 / -1;
+}
+
+/* =========================================
+   8. DARK MODE - ALL CARDS
+   ========================================= */
+
+/* Prompt Card - Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card:hover {
+    border-color: var(--zz-color-primary, #818CF8);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card__title {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card__title a {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card:hover .zz-prompt-card__title a {
+    color: var(--zz-color-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card__excerpt {
+    color: var(--zz-text-secondary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-prompt-card__badge {
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--zz-color-primary);
+}
+
+/* Step Card - Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-step-card {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-step-card:hover {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-step-card__title {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-step-card__desc {
+    color: var(--zz-text-secondary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-step-card__icon {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+/* Stat Card - Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-stat-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-stat-card:hover {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-stat-card__value,
+[data-theme="dark"] body.zz-layout-modern .zz-stat-card__title,
+[data-theme="dark"] body.zz-layout-modern .zz-stat-card__icon {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-stat-card__desc {
+    color: var(--zz-text-secondary);
+}
+
+/* Blog Card - Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-blog-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-blog-card:hover {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-blog-card__title {
+    color: var(--zz-text-primary);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-blog-card__title a {
+    color: var(--zz-text-primary);
+}
+
+/* Base Card - Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-card {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] body.zz-layout-modern .zz-card:hover {
+    border-color: var(--zz-color-primary);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+}
+
+/* Ad Slot - Dark Mode */
+[data-theme="dark"] body.zz-layout-modern .zz-ad-slot {
+    background: var(--zz-bg-surface-secondary);
+    border-color: var(--zz-border-light);
 }
