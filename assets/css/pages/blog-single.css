@@ -676,8 +676,8 @@
 [data-theme="dark"] .zz-blog-single-container .comment-form textarea,
 [data-theme="dark"] .zz-blog-single-container .zz-comment-form input,
 [data-theme="dark"] .zz-blog-single-container .comment-form input {
-    background: rgba(15, 23, 42, 0.4) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(30, 41, 59, 0.5) !important;
+    border-color: rgba(148, 163, 184, 0.2) !important;
     color: #F9FAFB !important;
 }
 
@@ -692,8 +692,8 @@
 
 [data-theme="dark"] .zz-blog-single-container .zz-comment-form textarea:focus,
 [data-theme="dark"] .zz-blog-single-container .zz-comment-form input:focus {
-    background: rgba(15, 23, 42, 0.6) !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: var(--zz-color-primary) !important;
 }
 
 .zz-blog-single-container .zz-comment-form button[type="submit"],

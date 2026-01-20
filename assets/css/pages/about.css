@@ -27,15 +27,19 @@
    ========================================= */
 
 .zz-about-hero {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
-    border-radius: 24px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--zz-radius-lg, 16px);
     padding: var(--zz-space-12, 48px) var(--zz-space-10, 40px);
     text-align: center;
     margin-block-end: 80px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zz-about-hero:hover {
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.08);
 }
 
 .zz-about-hero__label {
@@ -473,6 +477,11 @@
 [data-theme="dark"] .zz-about-cta__card {
     background: rgba(30, 41, 59, 0.85);
     border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-about-hero:hover {
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
 }
 
 [data-theme="dark"] .zz-about-hero__title,

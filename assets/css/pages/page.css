@@ -68,6 +68,7 @@
     color: var(--zz-text-primary, #1E293B);
     line-height: 1.2;
     margin: 0;
+    margin-block-end: var(--zz-space-4, 16px);
 }
 
 /* Hero Description (from excerpt) */
@@ -91,6 +92,22 @@
     max-width: var(--zz-container-md, 800px);
     margin-inline: auto;
     padding-inline: var(--zz-space-4, 16px);
+}
+
+/* Wide container for pages with pricing/features patterns */
+.zz-page-content:has(.zz-pricing-section) > .zz-container,
+.zz-page-content:has(.zz-features-section) > .zz-container {
+    max-width: var(--zz-container-xl, 1320px);
+}
+
+/* Remove article background when page has pricing (cleaner look) */
+.zz-page-content:has(.zz-pricing-section) .zz-page-article {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 

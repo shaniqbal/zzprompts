@@ -758,7 +758,92 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 [Footer]
 ```
 
+### 2026-01-21: Dark Mode Color Standardization
+**Updated Files:**
+- `assets/css/themes/_dark.css` - Unified dark mode color palette
+- `assets/css/pages/archive-prompts.css` - Consistent dark mode
+- `assets/css/pages/blog-archive.css` - Consistent dark mode
+- `assets/css/pages/blog-single.css` - Consistent dark mode
+- `assets/css/pages/taxonomy.css` - Consistent dark mode
+- `assets/css/components/widgets.css` - Consistent dark mode
+- `assets/css/skins/modern/header.css` - Mobile menu + header ad fixes
+
+**New Dark Mode Color Palette (_dark.css):**
+| Variable | Old Value | New Value |
+|----------|-----------|-----------|
+| `--zz-bg-body` | `#0A0E1A` | `#0F172A` |
+| `--zz-bg-card` | `#1A1F2E` | `#1E293B` |
+| `--zz-bg-surface` | `#1A1F2E` | `#1E293B` |
+| `--zz-bg-surface-secondary` | `#222938` | `#334155` |
+| `--zz-bg-surface-tertiary` | `#2A3142` | `#475569` |
+| `--zz-bg-input` | `#222938` | `#334155` |
+| `--zz-border-light` | `#2A3142` | `#475569` |
+| `--zz-border-default` | `#374151` | `#64748B` |
+| `--zz-glass-bg` | `rgba(26, 31, 46, 0.85)` | `rgba(30, 41, 59, 0.85)` |
+| `--zz-glass-border` | `rgba(74, 85, 104, 0.3)` | `rgba(148, 163, 184, 0.2)` |
+
+**Removed Old Colors (Search & Replace):**
+- `#1A1F2E` → Use `var(--zz-bg-card)` or `#1E293B`
+- `#0A0E1A` → Use `var(--zz-bg-body)` or `#0F172A`
+- `#222938` → Use `var(--zz-bg-surface-secondary)` or `#334155`
+- `#2A3142` → Use `var(--zz-border-light)` or `#475569`
+- `rgba(26, 31, 46, ...)` → Use `rgba(30, 41, 59, ...)`
+- `rgba(15, 23, 42, ...)` → Use `rgba(30, 41, 59, ...)` (except terminal/code blocks)
+
+**Exception - Terminal/Code Blocks (Keep Dark):**
+- `.zz-terminal` - Intentionally uses `rgba(15, 23, 42, 0.95)` for code editor effect
+- `.zz-blog-terminal` - Same dark terminal style
+- `.zz-blog-content pre` - Code blocks in blog posts
+
+### 2026-01-21: Header Ad Standardization
+**Updated Files:**
+- `assets/css/skins/modern/header.css` - Header ad styling
+- `assets/css/components/widgets.css` - Header ad wrapper
+
+**Header Ad Changes:**
+- Advertisement label now uses badge style (purple background, right-aligned)
+- Consistent across all pages including prompt archive
+- Reduced top padding from `32px` to `20px`
+
+**Header Ad Label Style (Matching All Pages):**
+```css
+.zz-header-ad-wrap .zz-ad-slot__label {
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 25px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--zz-color-primary);
+    background: var(--zz-color-primary-light);
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+```
+
+### 2026-01-21: Spacing Adjustments
+**Updated Files:**
+- `assets/css/pages/archive-prompts.css` - Reduced archive spacing
+- `assets/css/pages/blog-archive.css` - Reduced hero spacing, search button fix
+
+**Archive Prompts Spacing:**
+| Element | Before | After |
+|---------|--------|-------|
+| `.zz-archive-main` padding-top | `40px` | `24px` |
+| `.zz-archive-header` margin-bottom | `30px` | `20px` |
+| `.zz-archive-header` padding-bottom | `25px` | `20px` |
+
+**Blog Archive Spacing:**
+| Element | Before | After |
+|---------|--------|-------|
+| `.zz-blog-hero` padding-top | `64px` | `32px` |
+
+**Blog Archive Search Button Fix:**
+- Size increased: `32px` → `36px`
+- Added `min-width`, `min-height`, `aspect-ratio: 1/1` for perfect circle
+- Added `padding: 0`, `line-height: 1` to prevent distortion
+- Icon size: `0.8rem` → `0.85rem`
+
 ---
 
-**Last Updated:** 2026-01-19  
+**Last Updated:** 2026-01-21  
 **Theme Version:** 1.0.0

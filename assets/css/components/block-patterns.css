@@ -38,16 +38,17 @@
 /* =========================================
    PRICING TABLE PATTERN
    ========================================= */
+
 .zz-pricing-section {
-    padding: var(--zz-space-12, 48px) var(--zz-space-4, 16px);
-    max-width: 1536px;
-    /* Allow section to be wider */
+    padding: var(--zz-space-6, 24px) var(--zz-space-4, 16px) var(--zz-space-12, 48px);
+    max-width: 1320px;
     margin-inline: auto;
     width: 100%;
+    text-align: center;
 }
 
 .zz-pricing-title {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
     font-weight: 700;
     color: var(--zz-text-primary, #1E293B);
     margin-block-end: var(--zz-space-2, 8px);
@@ -55,54 +56,54 @@
 
 .zz-pricing-subtitle {
     color: var(--zz-text-muted, #64748B);
-    font-size: 1.125rem;
-    margin-block-end: var(--zz-space-10, 40px);
+    font-size: 1.05rem;
+    margin-block-end: var(--zz-space-8, 32px);
 }
 
 .zz-pricing-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: var(--zz-space-8, 32px) !important;
-    max-width: 1536px;
-    /* Optimized for large 27-inch 1920x1080 displays */
+    max-width: 1100px;
     margin-inline: auto;
     align-items: stretch;
 }
 
 .zz-pricing-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 24px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--zz-radius-lg, 16px);
     padding: var(--zz-space-8, 32px);
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    min-height: 380px;
-    /* Much more horizontal and optimized for PC */
+    min-height: 420px;
 }
 
 .zz-pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--zz-shadow-lg, 0 20px 40px rgba(0, 0, 0, 0.1));
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.12);
+    border-color: var(--zz-color-primary, #6366F1);
 }
 
 .zz-pricing-card--featured {
     background: linear-gradient(135deg, var(--zz-color-primary, #6366F1) 0%, #8B5CF6 100%);
-    color: #fff;
+    border-color: transparent;
     position: relative;
     transform: scale(1.02);
 }
 
 .zz-pricing-card--featured:hover {
-    transform: scale(1.02) translateY(-4px);
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
 }
 
 .zz-pricing-card--featured .zz-pricing-card__name,
 .zz-pricing-card--featured .zz-pricing-card__price,
-.zz-pricing-card--featured .zz-pricing-card__features {
+.zz-pricing-card--featured .zz-pricing-card__price strong,
+.zz-pricing-card--featured .zz-pricing-card__features,
+.zz-pricing-card--featured .zz-pricing-card__features li {
     color: #fff;
 }
 
@@ -180,28 +181,33 @@
 }
 
 .zz-pricing-card__btn .wp-block-button__link {
+    display: block;
     width: 100%;
     background: var(--zz-color-primary, #6366F1);
-    color: #fff;
+    color: #fff !important;
     border: none;
     border-radius: var(--zz-radius-pill, 50px);
     padding: var(--zz-space-3, 12px) var(--zz-space-6, 24px);
     font-weight: 600;
+    text-decoration: none !important;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .zz-pricing-card__btn .wp-block-button__link:hover {
     background: var(--zz-color-primary-dark, #4F46E5);
+    color: #fff !important;
+    text-decoration: none !important;
     transform: translateY(-2px);
 }
 
 .zz-pricing-card--featured .zz-pricing-card__btn .wp-block-button__link {
     background: #fff;
-    color: var(--zz-color-primary, #6366F1);
+    color: var(--zz-color-primary, #6366F1) !important;
 }
 
 .zz-pricing-card--featured .zz-pricing-card__btn .wp-block-button__link:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: #F1F5F9;
+    color: var(--zz-color-primary-dark, #4F46E5) !important;
 }
 
 
@@ -434,8 +440,14 @@
 [data-theme="dark"] .zz-feature-card,
 [data-theme="dark"] .zz-faq-item,
 [data-theme="dark"] .zz-testimonial-card {
-    background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .zz-pricing-card:hover,
+[data-theme="dark"] .zz-feature-card:hover {
+    border-color: var(--zz-color-primary, #6366F1);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
 }
 
 [data-theme="dark"] .zz-pricing-title,
@@ -450,6 +462,7 @@
 }
 
 [data-theme="dark"] .zz-pricing-subtitle,
+[data-theme="dark"] .zz-pricing-card__price,
 [data-theme="dark"] .zz-pricing-card__features li,
 [data-theme="dark"] .zz-feature-card__desc,
 [data-theme="dark"] .zz-faq-item>p,
@@ -467,6 +480,11 @@
    RESPONSIVE BREAKPOINTS
    ========================================= */
 @media (max-width: 1024px) {
+    .zz-page-article .zz-pricing-section,
+    .zz-page-article__content .zz-pricing-section {
+        padding-inline: var(--zz-space-4, 16px);
+    }
+    
     .zz-pricing-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: var(--zz-space-4, 16px) !important;
@@ -487,6 +505,7 @@
     .zz-pricing-grid {
         grid-template-columns: 1fr !important;
         max-width: 450px;
+        margin-inline: auto;
     }
 
     .zz-pricing-card {

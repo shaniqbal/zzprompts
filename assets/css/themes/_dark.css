@@ -30,19 +30,19 @@
     --zz-text-muted: #6B7280;
     --zz-text-inverse: #111827;
 
-    --zz-bg-body: #0A0E1A;
-    --zz-bg-card: #1A1F2E;
-    --zz-bg-surface: #1A1F2E;
-    --zz-bg-surface-secondary: #222938;
-    --zz-bg-surface-tertiary: #2A3142;
-    --zz-bg-input: #222938;
+    --zz-bg-body: #0F172A;
+    --zz-bg-card: #1E293B;
+    --zz-bg-surface: #1E293B;
+    --zz-bg-surface-secondary: #334155;
+    --zz-bg-surface-tertiary: #475569;
+    --zz-bg-input: #334155;
 
-    --zz-border-light: #2A3142;
-    --zz-border-default: #374151;
-    --zz-border-strong: #4B5563;
+    --zz-border-light: #475569;
+    --zz-border-default: #64748B;
+    --zz-border-strong: #94A3B8;
 
-    --zz-glass-bg: rgba(26, 31, 46, 0.85);
-    --zz-glass-border: rgba(74, 85, 104, 0.3);
+    --zz-glass-bg: rgba(30, 41, 59, 0.85);
+    --zz-glass-border: rgba(148, 163, 184, 0.2);
     --zz-glass-blur: blur(12px);
 
     --zz-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
@@ -118,7 +118,7 @@
 }
 
 [data-theme="dark"] .zz-home-cta {
-    background: linear-gradient(135deg, #1A1F2E 0%, #111827 100%);
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
 }
 
 [data-theme="dark"] .zz-btn--white {

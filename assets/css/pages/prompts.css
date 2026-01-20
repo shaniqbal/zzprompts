@@ -16,14 +16,10 @@
    1. PAGE BACKGROUND
    ========================================= */
 
+/* Clean solid background - consistent with all other pages */
 body.single-prompt,
 body.post-type-archive-prompt {
-    background: #F0F4F8;
-    background-image:
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.1) 0px, transparent 50%),
-        radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.08) 0px, transparent 50%);
-    background-attachment: fixed;
+    background: var(--zz-bg-body, #F8F9FF);
     min-height: 100vh;
 }
 
@@ -157,14 +153,14 @@ body.post-type-archive-prompt {
 }
 
 [data-theme="dark"] .zz-prompt-sidebar .widget_search .search-field {
-    background: rgba(15, 23, 42, 0.5);
-    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(148, 163, 184, 0.2);
     color: var(--zz-text-primary);
 }
 
 [data-theme="dark"] .zz-prompt-sidebar .search-field:focus,
 [data-theme="dark"] .zz-prompt-sidebar .wp-block-search__input:focus {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(30, 41, 59, 0.8);
     border-color: var(--zz-color-primary);
     outline: none !important;
     box-shadow: none !important;
@@ -265,7 +261,7 @@ body.post-type-archive-prompt {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(15, 23, 42, 0.05);
+    background: rgba(0, 0, 0, 0.03);
 }
 
 .zz-prompt-featured__img {
@@ -673,7 +669,7 @@ body.single-prompt .zz-prompt-card {
     position: absolute;
     top: 10px;
     inset-inline-start: 10px;
-    background: rgba(15, 23, 42, 0.85);
+    background: rgba(30, 41, 59, 0.85);
     backdrop-filter: blur(4px);
     color: #fff;
     font-size: 0.65rem;

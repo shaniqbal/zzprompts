@@ -412,9 +412,7 @@ body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
 
 /* Mobile Menu Dark Mode */
 [data-theme="dark"] body.zz-layout-modern .zz-mobile-menu {
-    background: linear-gradient(135deg,
-            rgba(15, 23, 42, 0.95),
-            rgba(30, 41, 59, 0.95));
+    background: rgba(30, 41, 59, 0.98);
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-mobile-menu__header {
@@ -454,7 +452,7 @@ body.zz-layout-modern .zz-mobile-menu__list li.current-menu-item a {
 
 body.zz-layout-modern .zz-header-ad-wrap {
     background-color: transparent;
-    padding-block: var(--zz-space-8, 32px) 0;
+    padding-block: var(--zz-space-5, 20px) 0;
     width: 100%;
 }
 
@@ -463,17 +461,24 @@ body.zz-layout-modern .zz-header-ad-wrap .zz-ad-slot {
     margin-inline: auto;
     padding-inline: var(--zz-space-5, 20px);
     text-align: center;
+    position: relative;
 }
 
 body.zz-layout-modern .zz-header-ad-wrap .zz-ad-slot__label {
-    display: block;
-    font-size: 0.7rem;
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 25px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--zz-color-primary);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--zz-text-muted);
-    margin-block-end: var(--zz-space-2, 8px);
-    text-align: center;
-    opacity: 0.8;
+    letter-spacing: 0.5px;
+    background: var(--zz-color-primary-light);
+    padding: 3px 10px;
+    border-radius: 4px;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Ad content centering with CLS protection */
