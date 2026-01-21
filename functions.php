@@ -34,6 +34,9 @@ if (!function_exists('zzprompts_setup')) {
         // Responsive Embeds
         add_theme_support('responsive-embeds');
         
+        // Automatic Feed Links (Required by ThemeForest)
+        add_theme_support('automatic-feed-links');
+        
         // Custom Logo
         add_theme_support('custom-logo', array(
             'height'      => 100,
@@ -41,6 +44,27 @@ if (!function_exists('zzprompts_setup')) {
             'flex-height' => true,
             'flex-width'  => true,
         ));
+        
+        // Custom Background
+        add_theme_support('custom-background', array(
+            'default-color' => 'ffffff',
+        ));
+        
+        // Custom Header
+        add_theme_support('custom-header', array(
+            'default-image' => '',
+            'width'         => 1920,
+            'height'        => 400,
+            'flex-width'    => true,
+            'flex-height'   => true,
+        ));
+        
+        // Gutenberg Editor Styles
+        add_theme_support('editor-styles');
+        add_editor_style('assets/css/editor-style.css');
+        
+        // Gutenberg Wide Alignment
+        add_theme_support('align-wide');
         
         // Register Navigation Menus
         register_nav_menus(array(
@@ -449,10 +473,10 @@ function zzprompts_admin_enqueue_assets($hook) {
 add_action('admin_enqueue_scripts', 'zzprompts_admin_enqueue_assets');
 
 // Load Theme Files
-require_once get_template_directory() . '/inc/cpt-prompts.php';
+// NOTE: CPT (cpt-prompts.php) and Features (features.php) moved to zzprompts-core plugin
+// This follows ThemeForest "Plugin Territory" guidelines - functionality must be in a plugin
 require_once get_template_directory() . '/inc/meta-boxes.php';
 require_once get_template_directory() . '/inc/widgets.php';
-require_once get_template_directory() . '/inc/features.php';
 require_once get_template_directory() . '/inc/helpers.php';
 require_once get_template_directory() . '/inc/seo-schema.php';
 require_once get_template_directory() . '/inc/ad-settings.php';

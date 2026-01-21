@@ -16,6 +16,16 @@ function zzprompts_register_required_plugins() {
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
+        // REQUIRED: Core functionality plugin (CPT, Taxonomies, Likes, Copies)
+        array(
+            'name'               => 'ZZ Prompts Core',
+            'slug'               => 'zzprompts-core',
+            'source'             => get_template_directory() . '/plugins/zzprompts-core.zip',
+            'required'           => true,
+            'version'            => '1.0.0',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
         array(
             'name'      => 'Contact Form 7',
             'slug'      => 'contact-form-7',

@@ -1,0 +1,608 @@
+# Copyright (C) 2026 Shan Iqbal
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ZZ Prompts 1.2.0\n"
+"Report-Msgid-Bugs-To: https://zzprompts.com\n"
+"POT-Creation-Date: 2026-01-22 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: zzprompts\n"
+
+#. Theme Name of the theme
+msgid "zzprompts"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://zzprompts.com"
+msgstr ""
+
+#. Description of the theme
+msgid "A high-performance AI Prompt Library theme, Translation-ready, secure, and optimized for copy/paste AI prompts with integrated blog section."
+msgstr ""
+
+#. Author of the theme
+msgid "Shan Iqbal"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://shaniqbal.com"
+msgstr ""
+
+#: functions.php
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php
+msgid "Widgets for blog posts and blog archive pages."
+msgstr ""
+
+#: functions.php
+msgid "Prompt Sidebar"
+msgstr ""
+
+#: functions.php
+msgid "Footer: Column 1"
+msgstr ""
+
+#: functions.php
+msgid "Footer: Column 2"
+msgstr ""
+
+#: functions.php
+msgid "Footer: Column 3"
+msgstr ""
+
+#: functions.php
+msgid "Footer: Column 4"
+msgstr ""
+
+#: header.php
+msgid "Skip to content"
+msgstr ""
+
+#: header.php
+msgid "Home"
+msgstr ""
+
+#: header.php
+msgid "Browse Prompts"
+msgstr ""
+
+#: header.php
+msgid "Blog"
+msgstr ""
+
+#: header.php
+msgid "About Us"
+msgstr ""
+
+#: header.php
+msgid "Contact"
+msgstr ""
+
+#: header.php
+msgid "Toggle dark mode"
+msgstr ""
+
+#: header.php
+msgid "Toggle navigation menu"
+msgstr ""
+
+#: header.php
+msgid "Close menu"
+msgstr ""
+
+#: header.php
+msgid "Search AI Prompts..."
+msgstr ""
+
+#: footer.php
+msgid "Back to top"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Prompts"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Share:"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Share on Twitter"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Share on Facebook"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: inc/helpers.php
+#, php-format
+msgid "%d min read"
+msgid_plural "%d mins read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/helpers.php
+msgid "Premium Content"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Premium"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "ZZ Prompts Settings"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Welcome to ZZ Prompts!"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Homepage"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Hero Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable Hero Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Hero Title"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Hero Subtitle"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Search Placeholder Text"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Latest Prompts Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable Prompts Grid"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Number of Prompts to Show"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "How It Works Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable How It Works"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Section Title"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Section Subtitle"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Why Choose Us Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable Features Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Latest Articles Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable Blog Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Bottom CTA Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable CTA Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "CTA Title"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "CTA Subtitle"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Layout & Spacing"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Prompts"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Copy Button Text"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Copy Success Message"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Like Button"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Blog Archive"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Featured Image"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Category"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Sidebar"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Excerpt Length (Words)"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Read More Button Text"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Posts Per Page"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Blog Single Post"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Author"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Date"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Reading Time"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Share Buttons"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Tags"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Comments"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Enable Comments Section"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Comment Count"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Show Avatars"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Footer"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Colors & Branding"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Primary Color"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Accent Color"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Social Media"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "X (Twitter) URL"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "LinkedIn URL"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "GitHub URL"
+msgstr ""
+
+#: inc/theme-settings.php
+msgid "Discord URL"
+msgstr ""
+
+#: inc/widgets.php
+msgid "ZZ: Brand & Social"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Logo, brand description, and social icons."
+msgstr ""
+
+#: inc/widgets.php
+msgid "ZZ: Popular Prompts"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Display popular prompts by likes or views."
+msgstr ""
+
+#: inc/widgets.php
+msgid "Popular Prompts"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Likes"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Most Likes"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Most Views"
+msgstr ""
+
+#: inc/widgets.php
+msgid "ZZ: Category Tags"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Display categories or AI tools as tags."
+msgstr ""
+
+#: inc/widgets.php
+msgid "Categories"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Prompt Categories"
+msgstr ""
+
+#: inc/widgets.php
+msgid "AI Tools"
+msgstr ""
+
+#: inc/widgets.php
+msgid "ZZ: Newsletter"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Email newsletter signup form."
+msgstr ""
+
+#: inc/widgets.php
+msgid "Newsletter"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Subscribe"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Enter your email"
+msgstr ""
+
+#: inc/widgets.php
+msgid "ZZ: Ad Banner"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Display advertisement or custom banner."
+msgstr ""
+
+#: inc/widgets.php
+msgid "Advertisement"
+msgstr ""
+
+#: inc/widgets.php
+msgid "ZZ: Author Bio"
+msgstr ""
+
+#: inc/widgets.php
+msgid "Display author/editor profile with avatar."
+msgstr ""
+
+#: comments.php
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php
+msgid "Required fields are marked"
+msgstr ""
+
+#: comments.php
+msgid "Name"
+msgstr ""
+
+#: comments.php
+msgid "Email"
+msgstr ""
+
+#: comments.php
+msgid "Website"
+msgstr ""
+
+#: comments.php
+msgid "Comment"
+msgstr ""
+
+#: comments.php
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php
+msgid "Reply"
+msgstr ""
+
+#: comments.php
+msgid "Edit"
+msgstr ""
+
+#: 404.php
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php
+msgid "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+msgstr ""
+
+#: 404.php
+msgid "Go Homepage"
+msgstr ""
+
+#: search.php
+msgid "Search Results"
+msgstr ""
+
+#: search.php
+msgid "Search results for:"
+msgstr ""
+
+#: search.php
+msgid "No results found"
+msgstr ""
+
+#: search.php
+msgid "Try different keywords or browse our categories."
+msgstr ""
+
+#: various
+msgid "Read Article"
+msgstr ""
+
+#: various
+msgid "View All"
+msgstr ""
+
+#: various
+msgid "Load More"
+msgstr ""
+
+#: various
+msgid "Loading..."
+msgstr ""
+
+#: various
+msgid "Copy Prompt"
+msgstr ""
+
+#: various
+msgid "Copied!"
+msgstr ""
+
+#: various
+msgid "Like this prompt"
+msgstr ""
+
+#: various
+msgid "Thank you for liking!"
+msgstr ""
+
+#: various
+msgid "You already liked this prompt!"
+msgstr ""
+
+#: various
+msgid "Related Prompts"
+msgstr ""
+
+#: various
+msgid "Latest Articles"
+msgstr ""
+
+#: various
+msgid "How It Works"
+msgstr ""
+
+#: various
+msgid "Why Choose Our Prompts?"
+msgstr ""
+
+#: various
+msgid "Ready to Supercharge Your AI Workflow?"
+msgstr ""
