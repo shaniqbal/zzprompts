@@ -125,6 +125,78 @@ function zzprompts_customize_register($wp_customize) {
 
 
     /* ========================================================
+       SECTION 1.5: LAYOUT & SPACING
+       Purpose: Header gap and Hero internal padding
+       ======================================================== */
+    $wp_customize->add_section('zzprompts_layout_section', array(
+        'title'       => esc_html__('📐 Layout & Spacing', 'zzprompts'),
+        'description' => esc_html__('Manage gaps between sections and internal padding for a professional look.', 'zzprompts'),
+        'panel'       => 'zzprompts_options',
+        'priority'    => 15,
+    ));
+
+    // Header Bottom Margin (Gap to Hero)
+    $wp_customize->add_setting('header_margin_bottom', array(
+        'default'           => '0',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('header_margin_bottom', array(
+        'label'       => esc_html__('Header Bottom Gap (px)', 'zzprompts'),
+        'description' => esc_html__('Distance between header and hero. Modern standard is 0px.', 'zzprompts'),
+        'section'     => 'zzprompts_layout_section',
+        'type'        => 'number',
+        'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1),
+        'priority'    => 10,
+    ));
+
+    // Hero Top Padding (Internal)
+    $wp_customize->add_setting('hero_padding_top', array(
+        'default'           => '48',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hero_padding_top', array(
+        'label'       => esc_html__('Hero Internal Top Padding (px)', 'zzprompts'),
+        'description' => esc_html__('Space inside the hero top. Recommended: 40px - 80px.', 'zzprompts'),
+        'section'     => 'zzprompts_layout_section',
+        'type'        => 'number',
+        'input_attrs' => array('min' => 0, 'max' => 200, 'step' => 1),
+        'priority'    => 20,
+    ));
+
+    // Hero Bottom Padding (Internal)
+    $wp_customize->add_setting('hero_padding_bottom', array(
+        'default'           => '48',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hero_padding_bottom', array(
+        'label'       => esc_html__('Hero Internal Bottom Padding (px)', 'zzprompts'),
+        'description' => esc_html__('Space inside the hero bottom.', 'zzprompts'),
+        'section'     => 'zzprompts_layout_section',
+        'type'        => 'number',
+        'input_attrs' => array('min' => 0, 'max' => 200, 'step' => 1),
+        'priority'    => 30,
+    ));
+
+    // Home Prompts Top Padding (Gap between Hero and Cards)
+    $wp_customize->add_setting('home_prompts_padding_top', array(
+        'default'           => '24',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_prompts_padding_top', array(
+        'label'       => esc_html__('Gap below Hero (Desktop)', 'zzprompts'),
+        'description' => esc_html__('Space between category pills and prompt cards on desktop.', 'zzprompts'),
+        'section'     => 'zzprompts_layout_section',
+        'type'        => 'number',
+        'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1),
+        'priority'    => 40,
+    ));
+
+
+    /* ========================================================
        SECTION 2: PROMPT SETTINGS
        Purpose: Prompt CPT specific options
        ======================================================== */

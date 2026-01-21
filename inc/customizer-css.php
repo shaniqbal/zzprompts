@@ -43,6 +43,12 @@ function zzprompts_customizer_css() {
             
             /* Gradient with primary color */
             --zz-gradient-text: linear-gradient(135deg, <?php echo esc_attr($primary_color); ?> 0%, #8B5CF6 50%, #EC4899 100%);
+
+            /* Layout & Spacing - Dynamic Overrides */
+            --zz-header-margin-bottom: <?php echo esc_attr(zzprompts_get_option('header_margin_bottom', '0')); ?>px;
+            --zz-hero-padding-top: <?php echo esc_attr(zzprompts_get_option('hero_padding_top', '48')); ?>px;
+            --zz-hero-padding-bottom: <?php echo esc_attr(zzprompts_get_option('hero_padding_bottom', '48')); ?>px;
+            --zz-home-prompts-padding-top: <?php echo esc_attr(zzprompts_get_option('home_prompts_padding_top', '24')); ?>px;
         }
     </style>
     <?php

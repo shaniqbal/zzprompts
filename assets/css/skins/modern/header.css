@@ -27,6 +27,7 @@ body.zz-layout-modern .zz-header {
     height: 80px;
     display: flex;
     align-items: center;
+    margin-bottom: var(--zz-header-margin-bottom);
 }
 
 /* =========================================
@@ -253,6 +254,7 @@ body.zz-layout-modern .zz-header__toggle svg {
     body.zz-layout-modern .zz-header {
         height: 70px;
         padding: 0 var(--zz-space-4);
+        margin-bottom: 0 !important;
     }
 
     body.zz-layout-modern .zz-header__logo {

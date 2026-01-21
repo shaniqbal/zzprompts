@@ -237,6 +237,17 @@
    --zz-gap-cards: 24px;
    --zz-gap-layout: 40px;
    --zz-gap-section: 80px;
+
+   /* =========================================
+      16. LAYOUT SPACING (ThemeForest Standard)
+      ========================================= */
+   --zz-header-margin-bottom: 0px;
+   --zz-hero-padding-top: var(--zz-space-12);
+   /* 48px - Internal Breathing Room */
+   --zz-hero-padding-bottom: var(--zz-space-12);
+   /* 48px */
+   --zz-home-prompts-padding-top: var(--zz-space-6);
+   /* 24px */
 }
 
 /* =========================================

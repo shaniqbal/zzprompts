@@ -17,7 +17,7 @@
 
 body.zz-layout-modern .zz-hero {
     text-align: center;
-    padding: var(--zz-space-24) 0 var(--zz-space-16);
+    padding: var(--zz-hero-padding-top) 0 var(--zz-hero-padding-bottom);
     position: relative;
     overflow: hidden;
     min-height: 480px;
@@ -122,7 +122,7 @@ body.zz-layout-modern .zz-hero__pills {
    ========================================= */
 
 body.zz-layout-modern .zz-home-prompts {
-    padding: var(--zz-space-6) 0;
+    padding: var(--zz-home-prompts-padding-top) 0 var(--zz-space-6);
 }
 
 body.zz-layout-modern .zz-home-prompts__cta {
