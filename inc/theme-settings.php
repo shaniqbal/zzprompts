@@ -65,9 +65,15 @@ function zzprompts_customize_register($wp_customize) {
     $wp_customize->add_panel('zzprompts_options', array(
         'title'       => esc_html__('ZZ Prompts Settings', 'zzprompts'),
         'description' => sprintf(
-            '<p>%s</p><p><strong>%s</strong></p>',
-            esc_html__('Configure your AI Prompts Library theme. Adjust colors, content, and layout options.', 'zzprompts'),
-            esc_html__('Save changes and refresh to see updates.', 'zzprompts')
+            '<div style="padding: 15px; background: #fff; border: 1px solid #ddd; border-left: 4px solid #6366F1; border-radius: 4px;">' .
+            '<p style="margin-top:0;"><strong>🚀 %s</strong></p>' .
+            '<p>%s</p>' .
+            '<p style="margin-bottom:0;"><strong>💡 %s:</strong> %s</p>' .
+            '</div>',
+            esc_html__('Welcome to ZZ Prompts!', 'zzprompts'),
+            esc_html__('Use these settings to customize your AI library. Most changes will show up instantly in the preview on the right.', 'zzprompts'),
+            esc_html__('Beginner Tip', 'zzprompts'),
+            esc_html__('You can turn off any homepage section below if you want a simpler, faster site.', 'zzprompts')
         ),
         'priority'    => 10,
     ));
@@ -75,13 +81,33 @@ function zzprompts_customize_register($wp_customize) {
 
     /* ========================================================
        SECTION 1: HOMEPAGE SETTINGS
-       Purpose: Homepage hero area content
+       Purpose: Homepage hero area and section management
        ======================================================== */
     $wp_customize->add_section('zzprompts_hero_section', array(
         'title'       => esc_html__('🏠 Homepage', 'zzprompts'),
-        'description' => esc_html__('Configure the homepage hero section including title, subtitle, and search placeholder.', 'zzprompts'),
+        'description' => esc_html__('Manage homepage content and section visibility. Tip: You can turn off sections you don\'t need for a cleaner look.', 'zzprompts'),
         'panel'       => 'zzprompts_options',
         'priority'    => 10,
+    ));
+
+    // --- HERO SUB-SECTION ---
+    $wp_customize->add_setting('zz_hr_hero', array('sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control(new ZZ_Customize_Header_Control($wp_customize, 'zz_hr_hero', array(
+        'label'    => esc_html__('Hero Section', 'zzprompts'),
+        'section'  => 'zzprompts_hero_section',
+        'priority' => 5,
+    )));
+
+    $wp_customize->add_setting('show_hero_section', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('show_hero_section', array(
+        'label'       => esc_html__('Enable Hero Section', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'checkbox',
+        'priority'    => 6,
     ));
 
     // Hero Title
@@ -121,6 +147,203 @@ function zzprompts_customize_register($wp_customize) {
         'section'     => 'zzprompts_hero_section',
         'type'        => 'text',
         'priority'    => 30,
+    ));
+
+    // --- PROMPTS SECTION ---
+    $wp_customize->add_setting('zz_hr_prompts', array('sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control(new ZZ_Customize_Header_Control($wp_customize, 'zz_hr_prompts', array(
+        'label'    => esc_html__('Latest Prompts Section', 'zzprompts'),
+        'section'  => 'zzprompts_hero_section',
+        'priority' => 40,
+    )));
+
+    $wp_customize->add_setting('show_home_prompts', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('show_home_prompts', array(
+        'label'       => esc_html__('Enable Prompts Grid', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'checkbox',
+        'priority'    => 41,
+    ));
+
+    $wp_customize->add_setting('home_prompts_count', array(
+        'default'           => 8,
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_prompts_count', array(
+        'label'       => esc_html__('Number of Prompts to Show', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'number',
+        'input_attrs' => array('min' => 4, 'max' => 24, 'step' => 4),
+        'priority'    => 42,
+    ));
+
+    // --- HOW IT WORKS SECTION ---
+    $wp_customize->add_setting('zz_hr_how', array('sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control(new ZZ_Customize_Header_Control($wp_customize, 'zz_hr_how', array(
+        'label'    => esc_html__('How It Works Section', 'zzprompts'),
+        'section'  => 'zzprompts_hero_section',
+        'priority' => 50,
+    )));
+
+    $wp_customize->add_setting('show_home_how', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('show_home_how', array(
+        'label'       => esc_html__('Enable How It Works', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'checkbox',
+        'priority'    => 51,
+    ));
+
+    $wp_customize->add_setting('home_how_title', array(
+        'default'           => esc_html__('How It Works', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_how_title', array(
+        'label'       => esc_html__('Section Title', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'text',
+        'priority'    => 52,
+    ));
+
+    $wp_customize->add_setting('home_how_subtitle', array(
+        'default'           => esc_html__('Get started in three simple steps', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_how_subtitle', array(
+        'label'       => esc_html__('Section Subtitle', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'text',
+        'priority'    => 53,
+    ));
+
+    // --- FEATURES SECTION ---
+    $wp_customize->add_setting('zz_hr_features', array('sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control(new ZZ_Customize_Header_Control($wp_customize, 'zz_hr_features', array(
+        'label'    => esc_html__('Why Choose Us Section', 'zzprompts'),
+        'section'  => 'zzprompts_hero_section',
+        'priority' => 60,
+    )));
+
+    $wp_customize->add_setting('show_home_features', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('show_home_features', array(
+        'label'       => esc_html__('Enable Features Section', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'checkbox',
+        'priority'    => 61,
+    ));
+
+    $wp_customize->add_setting('home_features_title', array(
+        'default'           => esc_html__('Why Choose Our Prompts?', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_features_title', array(
+        'label'       => esc_html__('Section Title', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'text',
+        'priority'    => 62,
+    ));
+
+    // --- BLOG SECTION ---
+    $wp_customize->add_setting('zz_hr_blog', array('sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control(new ZZ_Customize_Header_Control($wp_customize, 'zz_hr_blog', array(
+        'label'    => esc_html__('Latest Articles Section', 'zzprompts'),
+        'section'  => 'zzprompts_hero_section',
+        'priority' => 70,
+    )));
+
+    $wp_customize->add_setting('show_home_blog', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('show_home_blog', array(
+        'label'       => esc_html__('Enable Blog Section', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'checkbox',
+        'priority'    => 71,
+    ));
+
+    $wp_customize->add_setting('home_blog_title', array(
+        'default'           => esc_html__('Latest Articles', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_blog_title', array(
+        'label'       => esc_html__('Section Title', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'text',
+        'priority'    => 72,
+    ));
+
+    $wp_customize->add_setting('home_blog_subtitle', array(
+        'default'           => esc_html__('Tips, tutorials, and AI insights', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_blog_subtitle', array(
+        'label'       => esc_html__('Section Subtitle', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'text',
+        'priority'    => 73,
+    ));
+
+    // --- CTA SECTION ---
+    $wp_customize->add_setting('zz_hr_cta', array('sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control(new ZZ_Customize_Header_Control($wp_customize, 'zz_hr_cta', array(
+        'label'    => esc_html__('Bottom CTA Section', 'zzprompts'),
+        'section'  => 'zzprompts_hero_section',
+        'priority' => 80,
+    )));
+
+    $wp_customize->add_setting('show_home_cta', array(
+        'default'           => true,
+        'sanitize_callback' => 'zzprompts_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('show_home_cta', array(
+        'label'       => esc_html__('Enable CTA Section', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'checkbox',
+        'priority'    => 81,
+    ));
+
+    $wp_customize->add_setting('home_cta_title', array(
+        'default'           => esc_html__('Ready to Supercharge Your AI Workflow?', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_cta_title', array(
+        'label'       => esc_html__('CTA Title', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'text',
+        'priority'    => 82,
+    ));
+
+    $wp_customize->add_setting('home_cta_subtitle', array(
+        'default'           => esc_html__('Join thousands of professionals using our curated prompts to save time and boost productivity.', 'zzprompts'),
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('home_cta_subtitle', array(
+        'label'       => esc_html__('CTA Subtitle', 'zzprompts'),
+        'section'     => 'zzprompts_hero_section',
+        'type'        => 'textarea',
+        'priority'    => 83,
     ));
 
 
@@ -807,6 +1030,30 @@ function zzprompts_customize_register($wp_customize) {
 
 }
 add_action('customize_register', 'zzprompts_customize_register');
+
+
+/**
+ * Custom Header Control for Customizer
+ * Creates a bold title to separate sections within a panel.
+ */
+if (class_exists('WP_Customize_Control')) {
+    class ZZ_Customize_Header_Control extends WP_Customize_Control {
+        public $type = 'zz_header';
+
+        public function render_content() {
+            if (!empty($this->label)) : ?>
+                <span class="customize-control-title" style="margin-top: 30px; margin-bottom: 10px; padding: 12px; background: #f0f0f1; border-left: 4px solid #6366F1; font-weight: 800; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; color: #1e293b; display: block;">
+                    <?php echo esc_html($this->label); ?>
+                </span>
+            <?php endif;
+            if (!empty($this->description)) : ?>
+                <span class="description customize-control-description" style="margin-bottom: 15px; display: block; font-style: italic;">
+                    <?php echo esc_html($this->description); ?>
+                </span>
+            <?php endif;
+        }
+    }
+}
 
 
 /* ============================================================

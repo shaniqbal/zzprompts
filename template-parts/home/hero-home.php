@@ -16,6 +16,7 @@ defined('ABSPATH') || exit;
 <!-- =========================================
      HERO SECTION
      ========================================= -->
+<?php if (zzprompts_get_option('show_hero_section', true)) : ?>
 <section class="zz-hero">
     <div class="zz-container">
         
@@ -105,18 +106,21 @@ defined('ABSPATH') || exit;
         
     </div>
 </section>
+<?php endif; ?>
 
 <!-- =========================================
      PROMPTS GRID SECTION
      ========================================= -->
+<?php if (zzprompts_get_option('show_home_prompts', true)) : ?>
 <section class="zz-home-prompts">
     <div class="zz-container">
         
         <div class="zz-prompt-grid">
             <?php
+            $prompts_count = zzprompts_get_option('home_prompts_count', 8);
             $prompts = new WP_Query(array(
                 'post_type'      => 'prompt',
-                'posts_per_page' => 8,
+                'posts_per_page' => $prompts_count,
                 'orderby'        => 'date',
                 'order'          => 'DESC',
             ));
@@ -183,16 +187,18 @@ defined('ABSPATH') || exit;
         
     </div>
 </section>
+<?php endif; ?>
 
 <!-- =========================================
      HOW IT WORKS SECTION
      ========================================= -->
+<?php if (zzprompts_get_option('show_home_how', true)) : ?>
 <section class="zz-home-how zz-section">
     <div class="zz-container">
         
         <div class="zz-section-header">
-            <h2 class="zz-section-title"><?php esc_html_e('How It Works', 'zzprompts'); ?></h2>
-            <p class="zz-section-subtitle"><?php esc_html_e('Get started in three simple steps', 'zzprompts'); ?></p>
+            <h2 class="zz-section-title"><?php echo esc_html(zzprompts_get_option('home_how_title', __('How It Works', 'zzprompts'))); ?></h2>
+            <p class="zz-section-subtitle"><?php echo esc_html(zzprompts_get_option('home_how_subtitle', __('Get started in three simple steps', 'zzprompts'))); ?></p>
         </div>
         
         <div class="zz-steps-grid">
@@ -225,10 +231,12 @@ defined('ABSPATH') || exit;
         
     </div>
 </section>
+<?php endif; ?>
 
 <!-- =========================================
      FEATURES SECTION
      ========================================= -->
+<?php if (zzprompts_get_option('show_home_features', true)) : ?>
 <section class="zz-home-features zz-section">
     <div class="zz-container">
         
@@ -236,7 +244,7 @@ defined('ABSPATH') || exit;
             
             <!-- Content Side -->
             <div class="zz-home-features__content">
-                <h2 class="zz-home-features__title"><?php esc_html_e('Why Choose Our Prompts?', 'zzprompts'); ?></h2>
+                <h2 class="zz-home-features__title"><?php echo esc_html(zzprompts_get_option('home_features_title', __('Why Choose Our Prompts?', 'zzprompts'))); ?></h2>
                 
                 <div class="zz-home-features__list">
                     
@@ -310,16 +318,18 @@ defined('ABSPATH') || exit;
         
     </div>
 </section>
+<?php endif; ?>
 
 <!-- =========================================
      LATEST ARTICLES SECTION
      ========================================= -->
+<?php if (zzprompts_get_option('show_home_blog', true)) : ?>
 <section class="zz-home-blog zz-section">
     <div class="zz-container">
         
         <div class="zz-section-header">
-            <h2 class="zz-section-title"><?php esc_html_e('Latest Articles', 'zzprompts'); ?></h2>
-            <p class="zz-section-subtitle"><?php esc_html_e('Tips, tutorials, and AI insights', 'zzprompts'); ?></p>
+            <h2 class="zz-section-title"><?php echo esc_html(zzprompts_get_option('home_blog_title', __('Latest Articles', 'zzprompts'))); ?></h2>
+            <p class="zz-section-subtitle"><?php echo esc_html(zzprompts_get_option('home_blog_subtitle', __('Tips, tutorials, and AI insights', 'zzprompts'))); ?></p>
         </div>
         
         <div class="zz-blog-grid zz-blog-grid--home">
@@ -372,7 +382,7 @@ defined('ABSPATH') || exit;
                                 <h3 class="zz-blog-card__title">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h3>
-
+ 
                                 <div class="zz-blog-card__excerpt">
                                     <?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?>
                                 </div>
@@ -401,15 +411,17 @@ defined('ABSPATH') || exit;
         
     </div>
 </section>
+<?php endif; ?>
 
 <!-- =========================================
      BOTTOM CTA SECTION
      ========================================= -->
+<?php if (zzprompts_get_option('show_home_cta', true)) : ?>
 <section class="zz-home-cta">
     <div class="zz-container">
         
-        <h2 class="zz-home-cta__title"><?php esc_html_e('Ready to Supercharge Your AI Workflow?', 'zzprompts'); ?></h2>
-        <p class="zz-home-cta__desc"><?php esc_html_e('Join thousands of professionals using our curated prompts to save time and boost productivity.', 'zzprompts'); ?></p>
+        <h2 class="zz-home-cta__title"><?php echo esc_html(zzprompts_get_option('home_cta_title', __('Ready to Supercharge Your AI Workflow?', 'zzprompts'))); ?></h2>
+        <p class="zz-home-cta__desc"><?php echo esc_html(zzprompts_get_option('home_cta_subtitle', __('Join thousands of professionals using our curated prompts to save time and boost productivity.', 'zzprompts'))); ?></p>
         
         <div class="zz-home-cta__buttons">
             <a href="<?php echo esc_url(get_post_type_archive_link('prompt')); ?>" class="zz-btn zz-btn--primary zz-btn--pill">
@@ -422,3 +434,4 @@ defined('ABSPATH') || exit;
         
     </div>
 </section>
+<?php endif; ?>
