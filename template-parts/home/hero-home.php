@@ -20,18 +20,34 @@ defined('ABSPATH') || exit;
     <div class="zz-container">
         
         <?php
-        // Get Customizer settings
         $hero_title = zzprompts_get_option('hero_title', __('Instant AI Prompts for ChatGPT, Midjourney & More', 'zzprompts'));
         $hero_subtitle = zzprompts_get_option('hero_subtitle', __('Copy & paste production-ready prompts to speed up your workflow.', 'zzprompts'));
         $search_placeholder = zzprompts_get_option('hero_search_placeholder', __('Search prompts...', 'zzprompts'));
+
+        // Multi-keyword highlighting system
+        $keywords = ['ChatGPT', 'Gemini', 'Grok', 'Midjourney', 'AI'];
+        $temp_title = $hero_title;
+        
+        foreach ($keywords as $kw) {
+            $temp_title = str_ireplace($kw, '<span>' . $kw . '</span>', $temp_title);
+        }
+        
+        $highlighted_title = $temp_title;
+
+        // Force a line break after "For" or "for"
+        if (stripos($highlighted_title, 'for ') !== false) {
+            $highlighted_title = preg_replace('/(for\s+)/i', '$1<br>', $highlighted_title, 1);
+        }
         ?>
         
+        <div class="zz-hero__glow"></div>
+        
         <h1 class="zz-hero__title">
-            <?php echo esc_html($hero_title); ?>
+            <?php echo $highlighted_title; ?>
         </h1>
         
         <p class="zz-hero__subtitle">
-            <?php echo esc_html($hero_subtitle); ?>
+            <span class="zz-hero__subtitle-inner"><?php echo esc_html($hero_subtitle); ?></span>
         </p>
         
         <!-- Hero Search -->
@@ -53,21 +69,35 @@ defined('ABSPATH') || exit;
             </div>
         </div>
         
-        <!-- Category Pills -->
+        <!-- Category & AI Tool Pills -->
         <div class="zz-hero__pills zz-filter-pills">
             <a href="<?php echo esc_url(get_post_type_archive_link('prompt')); ?>" class="zz-filter-pill zz-filter-pill--active">
-                <?php esc_html_e('All Prompts', 'zzprompts'); ?>
+                <i class="fas fa-th-large"></i> <?php esc_html_e('All Prompts', 'zzprompts'); ?>
             </a>
             <?php
+            // Get Top AI Tools
+            $tools = get_terms(array(
+                'taxonomy'   => 'ai_tool',
+                'hide_empty' => true,
+                'number'     => 3,
+            ));
+            
+            if (!is_wp_error($tools) && !empty($tools)) {
+                foreach ($tools as $tool) {
+                    echo '<a href="' . esc_url(get_term_link($tool)) . '" class="zz-filter-pill"><i class="fas fa-robot"></i> ' . esc_html($tool->name) . '</a>';
+                }
+            }
+
+            // Get Top Categories
             $categories = get_terms(array(
                 'taxonomy'   => 'prompt_category',
                 'hide_empty' => true,
-                'number'     => 5,
+                'number'     => 3,
             ));
             
             if (!is_wp_error($categories) && !empty($categories)) {
                 foreach ($categories as $cat) {
-                    echo '<a href="' . esc_url(get_term_link($cat)) . '" class="zz-filter-pill">' . esc_html($cat->name) . '</a>';
+                    echo '<a href="' . esc_url(get_term_link($cat)) . '" class="zz-filter-pill"><i class="fas fa-tag"></i> ' . esc_html($cat->name) . '</a>';
                 }
             }
             ?>
@@ -122,7 +152,7 @@ defined('ABSPATH') || exit;
                         <div class="zz-prompt-card__footer">
                             <a href="<?php the_permalink(); ?>" class="zz-btn-copy">
                                 <i class="far fa-copy"></i>
-                                <?php esc_html_e('Copy Prompt', 'zzprompts'); ?>
+                                <?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?>
                             </a>
                             
                             <span class="zz-prompt-card__likes">
@@ -292,11 +322,12 @@ defined('ABSPATH') || exit;
             <p class="zz-section-subtitle"><?php esc_html_e('Tips, tutorials, and AI insights', 'zzprompts'); ?></p>
         </div>
         
-        <div class="zz-blog-grid">
+        <div class="zz-blog-grid zz-blog-grid--home">
             <?php
+            $show_image = zzprompts_get_option('blog_show_image', true);
             $posts = new WP_Query(array(
                 'post_type'      => 'post',
-                'posts_per_page' => 4,
+                'posts_per_page' => 3, 
                 'orderby'        => 'date',
                 'order'          => 'DESC',
             ));
@@ -304,29 +335,56 @@ defined('ABSPATH') || exit;
             if ($posts->have_posts()) :
                 while ($posts->have_posts()) : $posts->the_post();
                     $categories = get_the_category();
+                    $card_class = 'zz-blog-card zz-blog-card--home' . (!$show_image ? ' zz-blog-card--no-image' : '');
                     ?>
                     
-                    <div class="zz-blog-card">
-                        <a href="<?php the_permalink(); ?>" class="zz-blog-card__image-link">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')); ?>" alt="<?php the_title_attribute(); ?>" class="zz-blog-card__image">
-                            <?php else : ?>
-                                <div class="zz-blog-card__image zz-blog-card__image--placeholder"></div>
+                    <article class="<?php echo esc_attr($card_class); ?>">
+                        <div class="zz-blog-card__inner">
+                            <?php if ($show_image) : ?>
+                                <div class="zz-blog-card__image-wrapper">
+                                    <a href="<?php the_permalink(); ?>" class="zz-blog-card__image">
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')); ?>" alt="<?php the_title_attribute(); ?>">
+                                        <?php else : 
+                                            $cat_name = !empty($categories) ? $categories[0]->name : get_bloginfo('name');
+                                            $colors = ['#EEF2FF', '#ECFDF5', '#F0F9FF', '#FEF2F2', '#F5F3FF'];
+                                            $bg_color = $colors[abs(crc32($cat_name)) % count($colors)];
+                                        ?>
+                                            <div class="zz-blog-card__placeholder" style="background-color: <?php echo esc_attr($bg_color); ?>;">
+                                                <span><?php echo esc_html($cat_name); ?></span>
+                                            </div>
+                                        <?php endif; ?>
+                                    </a>
+                                </div>
                             <?php endif; ?>
-                        </a>
-                        
-                        <?php if ($categories) : ?>
-                            <span class="zz-blog-card__category"><?php echo esc_html($categories[0]->name); ?></span>
-                        <?php endif; ?>
-                        
-                        <h3 class="zz-blog-card__title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h3>
-                        
-                        <a href="<?php the_permalink(); ?>" class="zz-blog-card__read">
-                            <?php esc_html_e('Read More →', 'zzprompts'); ?>
-                        </a>
-                    </div>
+                            
+                            <div class="zz-blog-card__content">
+                                <div class="zz-blog-card__meta">
+                                    <span class="zz-blog-card__meta-item zz-blog-card__meta-item--date">
+                                        <i class="far fa-calendar-alt"></i> <?php echo esc_html(get_the_date('M d, Y')); ?>
+                                    </span>
+                                    <span class="zz-blog-card__meta-divider"></span>
+                                    <span class="zz-blog-card__meta-item zz-blog-card__meta-item--read">
+                                        <i class="far fa-clock"></i> <?php echo esc_html(zzprompts_reading_time()); ?>
+                                    </span>
+                                </div>
+                                
+                                <h3 class="zz-blog-card__title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h3>
+
+                                <div class="zz-blog-card__excerpt">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?>
+                                </div>
+                                
+                                <div class="zz-blog-card__footer">
+                                    <a href="<?php the_permalink(); ?>" class="zz-blog-card__read-link">
+                                        <?php echo esc_html(zzprompts_get_option('blog_read_more_text', __('Read Article', 'zzprompts'))); ?> <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                     
                     <?php
                 endwhile;
@@ -335,8 +393,8 @@ defined('ABSPATH') || exit;
             ?>
         </div>
         
-        <div class="zz-home-prompts__cta">
-            <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="zz-btn zz-btn--primary">
+        <div class="zz-home-blog__cta">
+            <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="zz-btn zz-btn--primary zz-btn--pill">
                 <?php esc_html_e('View All Articles', 'zzprompts'); ?>
             </a>
         </div>

@@ -619,15 +619,15 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 
 /* Footer Social Icons - Visible on light bg */
 .zz-footer .zz-widget__social {
-    background: rgba(99, 102, 241, 0.1);
-    color: #6366F1;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: var(--zz-color-primary-glow, rgba(99, 102, 241, 0.1));
+    color: var(--zz-color-primary, #6366F1);
+    border: 1px solid var(--zz-color-primary-glow, rgba(99, 102, 241, 0.2));
 }
 
 .zz-footer .zz-widget__social:hover {
-    background: #6366F1;
+    background: var(--zz-color-primary, #6366F1);
     color: #fff;
-    border-color: #6366F1;
+    border-color: var(--zz-color-primary, #6366F1);
 }
 
 /* Footer Tags - Visible on light bg */
@@ -638,8 +638,8 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 }
 
 .zz-footer .zz-widget__tag:hover {
-    background: #6366F1;
-    border-color: #6366F1;
+    background: var(--zz-color-primary, #6366F1);
+    border-color: var(--zz-color-primary, #6366F1);
     color: #fff;
 }
 
@@ -650,7 +650,7 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 }
 
 .zz-footer .widget_nav_menu a:hover {
-    color: #6366F1;
+    color: var(--zz-color-primary, #6366F1);
 }
 
 /* Footer Popular Prompts */

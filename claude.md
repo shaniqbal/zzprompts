@@ -754,6 +754,37 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 [Structural Sections - PHP Template]
 ↓
 [the_content() - Buyer's Gutenberg Blocks]
+### 2026-01-21: Homepage & Card Visual Consistency (Premium Theme)
+**Summary:**
+- Homepage cards now use premium glassmorphism style, matching archive and blog cards
+- Unified hover effects, drop shadows, and color logic for all cards/buttons
+- Dark/light mode support for all card types and interactive elements
+- Customizer no longer overrides text color; readability is perfect in both modes
+- Copy button styling unified across homepage, archive, and single prompt
+- All card components use BEM naming and premium design system
+
+**Files Updated:**
+- `assets/css/skins/modern/cards.css` (all card types: prompt, blog, stat, step)
+- `assets/css/components/buttons.css` (copy button, hover effects)
+- `assets/css/pages/home.css` (homepage CTA, dark mode overrides)
+- `assets/css/core/_dark.css` (dark mode color logic)
+- `inc/customizer-css.php` (removed text color variable output)
+- `inc/theme-settings.php` (removed Customizer text color option)
+
+**Design System:**
+- Glassmorphism: `rgba(255,255,255,0.75)` + `backdrop-filter: blur(12px)`
+- Drop shadows: `var(--zz-shadow-md)`
+- Hover: Smooth transitions, color logic for both modes
+- BEM classes: `.zz-prompt-card`, `.zz-blog-card`, `.zz-step-card`, `.zz-stat-card`, `.zz-btn-copy`
+
+**Customizer:**
+- Only primary/accent colors are output; text color handled by CSS theme system
+- No more text color override issues in light/dark mode
+
+**Status:**
+- All cards/buttons now visually consistent and premium across homepage, archive, blog, and single pages
+- Ready for final checklist and ThemeForest QA
+
 ↓
 [Footer]
 ```
@@ -843,6 +874,7 @@ Theme remains **plugin-agnostic** and provides fallbacks when no SEO plugin is a
 - Added `padding: 0`, `line-height: 1` to prevent distortion
 - Icon size: `0.8rem` → `0.85rem`
 
+ok
 ---
 
 **Last Updated:** 2026-01-21  

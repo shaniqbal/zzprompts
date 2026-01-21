@@ -33,8 +33,9 @@ get_header();
             <p class="zz-contact-option__text">
                 <?php esc_html_e('For general inquiries and support questions.', 'zzprompts'); ?>
             </p>
-            <a href="mailto:support@zzprompts.com" class="zz-contact-option__link">
-                support@zzprompts.com
+            <?php $contact_email = zzprompts_get_option('footer_email', 'support@zzprompts.com'); ?>
+            <a href="mailto:<?php echo esc_attr($contact_email); ?>" class="zz-contact-option__link">
+                <?php echo esc_html($contact_email); ?>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
@@ -47,7 +48,8 @@ get_header();
             <p class="zz-contact-option__text">
                 <?php esc_html_e('Chat with other users and get instant help.', 'zzprompts'); ?>
             </p>
-            <a href="https://discord.gg/zzprompts" class="zz-contact-option__link" target="_blank" rel="noopener noreferrer">
+            <?php $discord_url = zzprompts_get_option('social_discord', 'https://discord.gg/zzprompts'); ?>
+            <a href="<?php echo esc_url($discord_url); ?>" class="zz-contact-option__link" target="_blank" rel="noopener noreferrer">
                 <?php esc_html_e('Discord Server', 'zzprompts'); ?>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -61,8 +63,9 @@ get_header();
             <p class="zz-contact-option__text">
                 <?php esc_html_e('Interested in collaborating or advertising?', 'zzprompts'); ?>
             </p>
-            <a href="mailto:partners@zzprompts.com" class="zz-contact-option__link">
-                partners@zzprompts.com
+            <?php $partner_email = zzprompts_get_option('footer_email', 'partners@zzprompts.com'); ?>
+            <a href="mailto:<?php echo esc_attr($partner_email); ?>" class="zz-contact-option__link">
+                <?php echo esc_html($partner_email); ?>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>

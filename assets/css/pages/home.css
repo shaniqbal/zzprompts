@@ -17,37 +17,93 @@
 
 body.zz-layout-modern .zz-hero {
     text-align: center;
-    padding: var(--zz-space-20) 0 var(--zz-space-10);
+    padding: var(--zz-space-24) 0 var(--zz-space-16);
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Respect top padding over centering */
+}
+
+/* Ambient Hero Glow */
+body.zz-layout-modern .zz-hero__glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(circle, var(--zz-color-primary-glow) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(120px);
+    opacity: 0.4;
+    pointer-events: none;
+    animation: pulseGlow 8s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
+    }
 }
 
 body.zz-layout-modern .zz-hero__title {
     font-family: var(--zz-font-heading);
-    font-size: var(--zz-fs-hero);
-    font-weight: var(--zz-fw-extrabold);
-    line-height: var(--zz-lh-tight);
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.15;
     color: var(--zz-text-primary);
-    margin-bottom: var(--zz-space-5);
-    letter-spacing: -0.02em;
+    margin: 0 auto var(--zz-space-6);
+    letter-spacing: -0.04em;
+    max-width: 1000px;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body.zz-layout-modern .zz-hero__title span {
-    background: var(--zz-gradient-text);
+    background: var(--zz-gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
 }
 
 body.zz-layout-modern .zz-hero__subtitle {
-    font-size: var(--zz-fs-lead);
+    font-size: 1.15rem;
     color: var(--zz-text-muted);
-    max-width: 600px;
-    margin: 0 auto var(--zz-space-10);
+    max-width: 650px;
+    margin: 0 auto var(--zz-space-8);
     line-height: var(--zz-lh-relaxed);
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+body.zz-layout-modern .zz-hero__subtitle-inner {
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Hero Search */
 body.zz-layout-modern .zz-hero__search {
-    margin-bottom: var(--zz-space-10);
+    margin-bottom: var(--zz-space-8);
 }
 
 /* Hero Pills */
@@ -56,6 +112,9 @@ body.zz-layout-modern .zz-hero__pills {
     justify-content: center;
     gap: var(--zz-space-3);
     flex-wrap: wrap;
+    max-width: 850px;
+    /* Forces beautiful two-line wrap on desktop */
+    margin: 0 auto;
 }
 
 /* =========================================
@@ -172,13 +231,19 @@ body.zz-layout-modern .zz-home-features__item-desc {
    5. BLOG/ARTICLES SECTION
    ========================================= */
 
-body.zz-layout-modern .zz-home-blog {
-    padding: var(--zz-space-16) 0;
+body.zz-layout-modern .zz-home-blog .zz-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--zz-gap-cards);
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: stretch;
+    /* Force same height */
 }
 
 body.zz-layout-modern .zz-home-blog__cta {
     text-align: center;
-    margin-top: var(--zz-space-8);
+    margin-top: var(--zz-space-12);
 }
 
 /* =========================================
@@ -215,17 +280,66 @@ body.zz-layout-modern .zz-home-cta__buttons {
     flex-wrap: wrap;
 }
 
+@media (max-width: 1024px) {
+    body.zz-layout-modern .zz-home-blog .zz-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* =========================================
    7. RESPONSIVE
    ========================================= */
 
 @media (max-width: 768px) {
     body.zz-layout-modern .zz-hero {
-        padding: var(--zz-space-12) 0 var(--zz-space-10);
+        padding: var(--zz-space-10) 0 var(--zz-space-4) !important;
+        min-height: auto;
+    }
+
+    body.zz-layout-modern .zz-home-prompts {
+        padding-top: 0 !important;
+    }
+
+    body.zz-layout-modern .zz-hero__title {
+        font-size: 2.2rem;
+        margin-bottom: var(--zz-space-4);
+    }
+
+    body.zz-layout-modern .zz-hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--zz-space-8);
     }
 
     body.zz-layout-modern .zz-hero__pills {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        /* Categories now wrap instead of scroll */
+        justify-content: center;
+        padding: 0 var(--zz-space-4);
+        gap: var(--zz-space-2);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    body.zz-layout-modern .zz-filter-pill {
+        flex: 0 1 auto;
+        font-size: 0.75rem;
+        padding: var(--zz-space-2) var(--zz-space-3);
+        margin-bottom: var(--zz-space-1);
+    }
+
+    body.zz-layout-modern .zz-home-blog .zz-blog-grid {
+        grid-template-columns: 1fr;
+        gap: var(--zz-space-6);
+    }
+
+    body.zz-layout-modern .zz-prompt-grid {
+        grid-template-columns: 1fr;
+        gap: var(--zz-space-6);
+    }
+
+    body.zz-layout-modern .zz-home-features {
+        padding: var(--zz-space-2) 0 !important;
     }
 
     body.zz-layout-modern .zz-home-cta {

@@ -53,12 +53,34 @@ defined('ABSPATH') || exit;
 
             </div>
             
-            <!-- Copyright -->
+            <!-- Footer Bottom: Contact Info & Copyright -->
             <div class="zz-footer__bottom">
+                <?php 
+                $email = zzprompts_get_option('footer_email', '');
+                $location = zzprompts_get_option('footer_location', '');
+                
+                if (!empty($email) || !empty($location)) : ?>
+                    <div class="zz-footer__contact-info">
+                        <?php if ($email) : ?>
+                            <a href="mailto:<?php echo esc_attr($email); ?>" class="zz-footer__contact-item">
+                                <i class="fas fa-envelope"></i> <?php echo esc_html($email); ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php if ($location) : ?>
+                            <span class="zz-footer__contact-item">
+                                <i class="fas fa-location-dot"></i> <?php echo esc_html($location); ?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+
                 <p class="zz-footer__copyright">
-                    &copy; <?php echo esc_html(date('Y')); ?> 
-                    <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>. 
-                    <?php esc_html_e('All rights reserved.', 'zzprompts'); ?>
+                    <?php 
+                    $copyright = zzprompts_get_option('footer_copyright', sprintf(esc_html__('© %s Prompts Library. All rights reserved.', 'zzprompts'), date('Y')));
+                    // Replace {year} placeholder if user used it
+                    $copyright = str_replace('{year}', date('Y'), $copyright);
+                    echo wp_kses_post($copyright); 
+                    ?>
                 </p>
             </div>
             

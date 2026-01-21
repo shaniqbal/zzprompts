@@ -148,6 +148,33 @@ body.zz-layout-modern .zz-footer__copyright {
     color: var(--zz-text-muted);
 }
 
+body.zz-layout-modern .zz-footer__contact-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--zz-space-6);
+    margin-bottom: var(--zz-space-3);
+    flex-wrap: wrap;
+}
+
+body.zz-layout-modern .zz-footer__contact-item {
+    font-size: var(--zz-fs-small);
+    color: var(--zz-text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--zz-space-2);
+    transition: color var(--zz-transition-fast);
+}
+
+body.zz-layout-modern a.zz-footer__contact-item:hover {
+    color: var(--zz-color-primary);
+}
+
+body.zz-layout-modern .zz-footer__contact-item i {
+    color: var(--zz-color-primary);
+    font-size: 0.9em;
+}
+
 body.zz-layout-modern .zz-footer__copyright a {
     color: var(--zz-color-primary);
     text-decoration: none;

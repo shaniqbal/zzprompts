@@ -14,7 +14,12 @@ defined('ABSPATH') || exit;
     <?php if (have_posts()) : ?>
         <div class="zz-blog-grid">
             <?php while (have_posts()) : the_post(); ?>
-<article class="zz-blog-card">
+                <?php
+                $show_image = zzprompts_get_option('blog_show_image', true);
+                $card_class = 'zz-blog-card' . (!$show_image ? ' zz-blog-card--no-image' : '');
+                ?>
+                <article class="<?php echo esc_attr($card_class); ?>">
+                    <?php if ($show_image) : ?>
     <div class="zz-blog-card__image-wrapper">
         <a href="<?php the_permalink(); ?>" class="zz-blog-card__image">
             <?php if (has_post_thumbnail()) : ?>
@@ -31,18 +36,25 @@ defined('ABSPATH') || exit;
                 </div>
             <?php endif; ?>
         </a>
-        <span class="zz-blog-card__date-badge"><?php echo esc_html(get_the_date('M d, Y')); ?></span>
     </div>
+    <?php endif; ?>
 
     <div class="zz-blog-card__content">
         <div class="zz-blog-card__meta">
-            <span class="zz-blog-card__read-time">
+            <span class="zz-blog-card__meta-item zz-blog-card__meta-item--date">
+                <i class="far fa-calendar-alt"></i> <?php echo esc_html(get_the_date('M d, Y')); ?>
+            </span>
+
+            <span class="zz-blog-card__meta-item zz-blog-card__meta-item--read">
                 <i class="far fa-clock"></i> <?php echo esc_html(zzprompts_reading_time()); ?>
             </span>
+
             <?php 
             $categories = get_the_category();
-            if (!empty($categories)) : ?>
-                &bull; <span class="zz-blog-card__category"><?php echo esc_html($categories[0]->name); ?></span>
+            if (!empty($categories) && zzprompts_get_option('blog_show_category', true)) : ?>
+                <span class="zz-blog-card__meta-item zz-blog-card__meta-item--category">
+                    <i class="far fa-folder"></i> <?php echo esc_html($categories[0]->name); ?>
+                </span>
             <?php endif; ?>
         </div>
 
@@ -51,11 +63,11 @@ defined('ABSPATH') || exit;
         </h3>
 
         <div class="zz-blog-card__excerpt">
-            <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+            <?php echo wp_trim_words(get_the_excerpt(), (int) zzprompts_get_option('blog_excerpt_length', 20), '...'); ?>
         </div>
 
         <a href="<?php the_permalink(); ?>" class="zz-blog-card__read-link">
-            <?php esc_html_e('Read Article', 'zzprompts'); ?> <i class="fas fa-arrow-right"></i>
+            <?php echo esc_html(zzprompts_get_option('blog_read_more_text', __('Read Article', 'zzprompts'))); ?> <i class="fas fa-arrow-right"></i>
         </a>
     </div>
 </article>

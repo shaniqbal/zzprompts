@@ -88,7 +88,7 @@ function zzprompts_customize_register($wp_customize) {
     $wp_customize->add_setting('hero_title', array(
         'default'           => esc_html__('Instant AI Prompts for ChatGPT, Midjourney & More', 'zzprompts'),
         'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'postMessage',
+        'transport'         => 'refresh',
     ));
     $wp_customize->add_control('hero_title', array(
         'label'       => esc_html__('Hero Title', 'zzprompts'),
@@ -101,7 +101,7 @@ function zzprompts_customize_register($wp_customize) {
     $wp_customize->add_setting('hero_subtitle', array(
         'default'           => esc_html__('Copy & paste production-ready prompts to speed up your workflow.', 'zzprompts'),
         'sanitize_callback' => 'sanitize_textarea_field',
-        'transport'         => 'postMessage',
+        'transport'         => 'refresh',
     ));
     $wp_customize->add_control('hero_subtitle', array(
         'label'       => esc_html__('Hero Subtitle', 'zzprompts'),

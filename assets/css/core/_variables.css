@@ -163,6 +163,20 @@
    /* 64px */
    --zz-space-20: 5rem;
    /* 80px */
+   --zz-space-24: 6rem;
+   /* 96px */
+   --zz-space-28: 7rem;
+   /* 112px */
+   --zz-space-32: 8rem;
+   /* 128px */
+   --zz-space-36: 9rem;
+   /* 144px */
+   --zz-space-40: 10rem;
+   /* 160px */
+   --zz-space-48: 12rem;
+   /* 192px */
+   --zz-space-56: 14rem;
+   /* 224px */
 
    /* =========================================
        10. BORDER RADIUS
@@ -213,7 +227,7 @@
    --zz-container-sm: 640px;
    --zz-container-md: 768px;
    --zz-container-lg: 1024px;
-   --zz-container-xl: 1320px;
+   --zz-container-xl: 1420px;
    --zz-container-2xl: 1400px;
 
    /* =========================================

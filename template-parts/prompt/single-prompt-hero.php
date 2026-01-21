@@ -176,7 +176,7 @@ $likes_enabled = zzprompts_get_option('enable_likes', true);
                                 data-prompt-text="<?php echo esc_attr($prompt_text); ?>"
                                 aria-label="<?php esc_attr_e('Copy prompt to clipboard', 'zzprompts'); ?>">
                             <i class="fa-regular fa-copy"></i>
-                            <span class="btn-text"><?php esc_html_e('Copy Prompt', 'zzprompts'); ?></span>
+                            <span class="btn-text"><?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?></span>
                         </button>
                     </div>
                 </div>
@@ -217,7 +217,7 @@ $likes_enabled = zzprompts_get_option('enable_likes', true);
                             data-prompt-text="<?php echo esc_attr($prompt_text); ?>"
                             aria-label="<?php esc_attr_e('Copy prompt to clipboard', 'zzprompts'); ?>">
                         <i class="fa-regular fa-copy"></i>
-                        <span class="btn-text"><?php esc_html_e('Copy Prompt', 'zzprompts'); ?></span>
+                        <span class="btn-text"><?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?></span>
                     </button>
                 </div>
             </div>

@@ -20,10 +20,7 @@
 [data-theme="light"] {
     color-scheme: light;
 
-    --zz-color-primary: #6366F1;
-    --zz-color-primary-hover: #4F46E5;
-    --zz-color-primary-light: #EEF2FF;
-    --zz-color-primary-glow: rgba(99, 102, 241, 0.25);
+    /* Primary colors are defined in :root via Customizer for global control */
 
     --zz-text-primary: #111827;
     --zz-text-secondary: #374151;

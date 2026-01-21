@@ -19,10 +19,8 @@
 [data-theme="dark"] {
     color-scheme: dark;
 
-    --zz-color-primary: #818CF8;
-    --zz-color-primary-hover: #A5B4FC;
+    /* Primary colors are defined in :root via Customizer for global control */
     --zz-color-primary-light: rgba(99, 102, 241, 0.15);
-    --zz-color-primary-glow: rgba(129, 140, 248, 0.3);
 
     --zz-text-primary: #F9FAFB;
     --zz-text-secondary: #E5E7EB;

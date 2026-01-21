@@ -32,68 +32,23 @@ $layout = zzprompts_get_option('blog_layout_select', 'v1');
 </section>
 
 <div class="zz-container u-py-10">
-    <?php if ('v2' === $layout) : ?>
-        
-        <!-- V2 Layout: Magazine with Right Sidebar -->
-        <div class="zz-blog-layout">
-            <div class="zz-blog-main-content">
-                <?php get_template_part('template-parts/blog/card', 'blog'); ?>
-            </div>
-            <?php get_template_part('template-parts/sidebar', 'blog'); ?>
-        </div>
-        
-    <?php else : ?>
-        
-        <!-- V1 Layout: Standard Blog with Sidebar -->
+    <!-- Modern V1 Layout -->
+    <?php
+    $sidebar_enabled = zzprompts_get_option('blog_show_sidebar', true);
+    $layout_class = $sidebar_enabled ? 'zz-blog-layout' : 'zz-blog-layout--full-width';
+    ?>
+    
+    <div class="<?php echo esc_attr($layout_class); ?>">
+        <main id="primary" class="zz-blog-main-content">
+            <?php get_template_part('template-parts/blog/card', 'blog'); ?>
+        </main>
+
         <?php
-        $sidebar_enabled = zzprompts_get_option('blog_sidebar_enabled', true);
-        $layout_class = $sidebar_enabled ? 'zz-blog-layout' : 'zz-blog-full';
+        if ($sidebar_enabled) {
+            get_template_part('template-parts/sidebar', 'blog');
+        }
         ?>
-        
-        <div class="<?php echo esc_attr($layout_class); ?>">
-            <main id="primary" class="zz-blog-main-content">
-                <?php if (have_posts()) : ?>
-                    <div class="zz-blog-section">
-                        <div class="zz-blog-grid">
-                            <?php while (have_posts()) : the_post(); ?>
-                                <?php get_template_part('template-parts/blog/card', 'blog'); ?>
-                            <?php endwhile; ?>
-                        </div>
-                    </div>
-
-                    <?php
-                    the_posts_pagination(array(
-                        'prev_text' => '<i class="fas fa-chevron-left"></i>',
-                        'next_text' => '<i class="fas fa-chevron-right"></i>',
-                    ));
-                    ?>
-
-                <?php else : ?>
-                <div class="zz-no-results">
-                    <div class="zz-no-results__content">
-                        <div class="zz-no-results__icon">
-                            <i class="fas fa-folder-open"></i>
-                        </div>
-                        <h3><?php esc_html_e('No Posts Found', 'zzprompts'); ?></h3>
-                        <p><?php esc_html_e('We couldn\'t find any articles matching your request. Try a different search or browse all our articles.', 'zzprompts'); ?></p>
-                        <div class="zz-no-results__cta">
-                            <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="zz-btn zz-btn--primary">
-                                <?php esc_html_e('Browse All Articles', 'zzprompts'); ?>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <?php endif; ?>
-            </main>
-
-            <?php
-            if ($sidebar_enabled) {
-                get_template_part('template-parts/sidebar', 'blog');
-            }
-            ?>
-        </div>
-        
-    <?php endif; ?>
+    </div>
 </div>
 
 <?php get_footer(); ?>

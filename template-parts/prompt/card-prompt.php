@@ -68,7 +68,7 @@ $thumb_text = strtoupper(substr($tool_name ?: $cat_name, 0, 3));
     <div class="zz-archive-card__footer">
         <a href="<?php the_permalink(); ?>" class="zz-archive-card__copy-btn">
             <i class="fa-regular fa-copy"></i>
-            <?php esc_html_e('Copy', 'zzprompts'); ?>
+            <?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?>
         </a>
         <div class="zz-archive-card__stats">
             <i class="fa-solid fa-heart"></i>
