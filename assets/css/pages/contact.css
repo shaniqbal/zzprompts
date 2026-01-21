@@ -87,7 +87,7 @@
 
 .zz-contact-option:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 15px 30px var(--zz-primary-bg-subtle);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -212,7 +212,7 @@
 .zz-contact-field__textarea:focus {
     outline: none;
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px var(--zz-primary-bg-subtle);
 }
 
 .zz-contact-field__textarea {
@@ -282,7 +282,7 @@
 .zz-contact-form .wpcf7-textarea:focus {
     outline: none;
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px var(--zz-primary-bg-subtle);
 }
 
 /* CF7 Validation Error - Remove Red Lines */
@@ -441,7 +441,7 @@
 }
 
 [data-theme="dark"] .zz-contact-option__icon {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
 }
 
 [data-theme="dark"] .zz-contact-field__label {
@@ -494,6 +494,7 @@
    ========================================= */
 
 @media (max-width: 768px) {
+
     .zz-contact-hero,
     .zz-contact-form-card {
         padding: var(--zz-space-8, 32px) var(--zz-space-5, 20px);

@@ -45,13 +45,13 @@ body.zz-layout-modern .zz-btn:disabled {
 body.zz-layout-modern .zz-btn--primary {
     background: var(--zz-color-primary);
     color: var(--zz-text-inverse);
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px var(--zz-primary-shadow-md);
 }
 
 body.zz-layout-modern .zz-btn--primary:hover {
     background: var(--zz-color-primary-hover);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 20px var(--zz-primary-shadow-lg);
 }
 
 /* =========================================
@@ -192,7 +192,7 @@ body.zz-layout-modern .zz-btn-copy {
 body.zz-layout-modern .zz-btn-copy:hover {
     background: var(--zz-color-primary, #6366F1);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 12px var(--zz-primary-shadow-md);
 }
 
 body.zz-layout-modern .zz-btn-copy--copied {
@@ -210,7 +210,7 @@ body.zz-layout-modern .zz-btn-browse {
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px var(--zz-primary-shadow-md);
     text-decoration: none;
     display: inline-flex;
     align-items: center;

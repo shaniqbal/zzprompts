@@ -40,7 +40,7 @@
 
 .zz-sidebar-widget:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 10px 25px var(--zz-primary-shadow-xs);
 }
 
 .zz-sidebar-widget__title {
@@ -114,20 +114,20 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     border-radius: 50%;
     color: #6366F1;
     font-size: 1rem;
     transition: all 0.3s ease;
     text-decoration: none;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    border: 1px solid var(--zz-primary-border-light);
 }
 
 .zz-widget__social:hover {
     background: #6366F1;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 12px var(--zz-primary-shadow-md);
     border-color: #6366F1;
 }
 
@@ -218,14 +218,14 @@
 .zz-widget__popular-item:hover {
     background: rgba(255, 255, 255, 0.65);
     transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 2px 8px var(--zz-primary-shadow-xs);
 }
 
 .zz-widget__popular-icon {
     flex-shrink: 0;
     width: 36px;
     height: 36px;
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     color: #6366F1;
     border-radius: 8px;
     display: flex;
@@ -295,10 +295,10 @@
    ========================================================================== */
 
 .zz-widget--newsletter {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+    background: linear-gradient(135deg, var(--zz-primary-shadow-xs), rgba(139, 92, 246, 0.08));
     padding: 20px;
     border-radius: 16px;
-    border: 1px solid rgba(99, 102, 241, 0.15);
+    border: 1px solid var(--zz-primary-shadow-sm);
 }
 
 .zz-widget__newsletter-desc {
@@ -317,7 +317,7 @@
 .zz-widget__newsletter-input {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid rgba(99, 102, 241, 0.25);
+    border: 1px solid var(--zz-primary-bg-strong);
     border-radius: 10px;
     background: #fff;
     font-size: 0.9rem;
@@ -336,7 +336,7 @@
 .zz-widget__newsletter-input:valid,
 .zz-widget__newsletter-input:invalid,
 .zz-widget__newsletter-input:required {
-    border: 1px solid rgba(99, 102, 241, 0.25) !important;
+    border: 1px solid var(--zz-primary-bg-strong) !important;
     box-shadow: none !important;
     outline: none !important;
 }
@@ -344,7 +344,7 @@
 /* Restoring Focus State */
 .zz-widget__newsletter-input:focus {
     border-color: #6366F1 !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    box-shadow: 0 0 0 3px var(--zz-primary-bg-subtle) !important;
 }
 
 .zz-widget__newsletter-input::placeholder {
@@ -353,7 +353,7 @@
 
 .zz-widget__newsletter-input:focus {
     border-color: #6366F1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px var(--zz-primary-bg-subtle);
 }
 
 /* Subscribe Button - Light Mode Hover Fixed */
@@ -373,7 +373,7 @@
 .zz-widget__newsletter-btn:hover {
     background: #4F46E5;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px var(--zz-primary-shadow-lg);
 }
 
 
@@ -494,7 +494,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #6366F1;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 15px var(--zz-primary-bg-medium);
 }
 
 .zz-widget__author-name {
@@ -508,7 +508,7 @@
     display: inline-block;
     font-size: 0.8rem;
     color: #6366F1;
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     padding: 4px 12px;
     border-radius: 50px;
     margin-bottom: 12px;
@@ -533,7 +533,7 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     border-radius: 50%;
     color: #6366F1;
     font-size: 0.85rem;
@@ -674,7 +674,7 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 
 [data-theme="dark"] .zz-sidebar-widget:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 25px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] .zz-sidebar-widget__title {
@@ -684,12 +684,12 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 
 [data-theme="dark"] .zz-widget__search-input {
     background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: var(--zz-primary-border-medium);
     color: #E2E8F0;
 }
 
 [data-theme="dark"] .zz-widget__popular-item:hover {
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
 }
 
 [data-theme="dark"] .zz-widget__popular-title {
@@ -697,9 +697,9 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 }
 
 [data-theme="dark"] .zz-widget__tag {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
     color: #E2E8F0;
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: var(--zz-primary-border-medium);
 }
 
 [data-theme="dark"] .zz-widget__newsletter-input {
@@ -713,7 +713,7 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
 
 [data-theme="dark"] .zz-widget__ad-content {
     background: rgba(30, 41, 59, 0.5);
-    border-color: rgba(99, 102, 241, 0.2);
+    border-color: var(--zz-primary-border-light);
 }
 
 
@@ -1308,7 +1308,7 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
     justify-content: center;
     border-radius: 8px;
     flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 8px var(--zz-primary-shadow-md);
 }
 
 .s1-title {
@@ -1346,7 +1346,7 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     color: var(--zz-color-primary, #6366F1);
     border-radius: 50%;
     font-size: 0.85rem;
@@ -1394,7 +1394,7 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
     background: var(--zz-color-primary-glow, rgba(99, 102, 241, 0.15));
     border-color: var(--zz-color-primary, #6366F1);
     transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 12px var(--zz-primary-bg-medium);
 }
 
 .s4-thumb {

@@ -132,7 +132,7 @@
 
 [data-theme="dark"] .zz-btn-copy:hover {
     background: var(--zz-color-primary-hover);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 12px var(--zz-primary-shadow-lg);
 }
 
 [data-theme="dark"] .zz-sidebar {
@@ -145,17 +145,17 @@
    ========================================= */
 
 [data-theme="dark"] .zz-prompt-card__badge {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
     color: #A5B4FC;
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    border: 1px solid var(--zz-primary-border-medium);
 }
 
 [data-theme="dark"] .zz-prompt-card__badge--chatgpt,
 [data-theme="dark"] .zz-prompt-card__badge--gpt-4,
 [data-theme="dark"] .zz-prompt-card__badge--copilot {
-    background: rgba(99, 102, 241, 0.15);
+    background: var(--zz-primary-shadow-sm);
     color: #A5B4FC;
-    border: 1px solid rgba(99, 102, 241, 0.25);
+    border: 1px solid var(--zz-primary-bg-strong);
 }
 
 [data-theme="dark"] .zz-prompt-card__badge--dalle,

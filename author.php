@@ -4,7 +4,7 @@
  *
  * Supports two views:
  * - Default: Blog posts (existing V1 archive layout)
- * - Prompts: V2 prompt archive layout when ?post_type=prompt
+ * - Prompts: Modern prompt archive layout when ?post_type=prompt
  *
  * @package zzprompts
  * @version 1.0.0

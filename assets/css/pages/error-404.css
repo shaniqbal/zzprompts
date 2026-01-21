@@ -155,7 +155,7 @@
 .zz-error-btn--primary:hover {
     background: var(--zz-color-primary-dark, #4F46E5);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 8px 20px var(--zz-primary-shadow-md);
 }
 
 .zz-error-btn--outline {
@@ -251,7 +251,7 @@
 }
 
 [data-theme="dark"] .zz-error-btn--outline:hover {
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     border-color: var(--zz-color-primary);
     color: #A5B4FC;
 }
@@ -265,7 +265,7 @@
 }
 
 [data-theme="dark"] .zz-error-shortcut:hover {
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     border-color: var(--zz-color-primary);
 }
 

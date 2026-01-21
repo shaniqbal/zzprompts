@@ -255,7 +255,7 @@
      */
     function initPromptExpandSystem() {
         // Only for modern layout (v2)
-        const wrappers = document.querySelectorAll('body.style-v2 .zz-prompt-restrict');
+        const wrappers = document.querySelectorAll('body.zz-style-default .zz-prompt-restrict');
 
         wrappers.forEach(function (wrapper) {
             const overlay = wrapper.querySelector('.prompt-fade-overlay');

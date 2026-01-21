@@ -30,7 +30,7 @@ body.zz-layout-modern .zz-card {
 
 body.zz-layout-modern .zz-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary);
 }
 
@@ -57,7 +57,7 @@ body.zz-layout-modern .zz-prompt-card {
 
 body.zz-layout-modern .zz-prompt-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -223,7 +223,7 @@ body.zz-layout-modern .zz-blog-card {
 
 body.zz-layout-modern .zz-blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -311,7 +311,7 @@ body.zz-layout-modern .zz-step-card {
 
 body.zz-layout-modern .zz-step-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -360,7 +360,7 @@ body.zz-layout-modern .zz-stat-card {
 
 body.zz-layout-modern .zz-stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -423,7 +423,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 
 [data-theme="dark"] body.zz-layout-modern .zz-prompt-card:hover {
     border-color: var(--zz-color-primary, #818CF8);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 15px 30px var(--zz-primary-bg-medium);
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-prompt-card__title {
@@ -443,7 +443,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-prompt-card__badge {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
     color: var(--zz-color-primary);
 }
 
@@ -455,7 +455,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 
 [data-theme="dark"] body.zz-layout-modern .zz-step-card:hover {
     border-color: var(--zz-color-primary);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-step-card__title {
@@ -467,7 +467,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-step-card__icon {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
 }
 
 /* Stat Card - Dark Mode */
@@ -478,7 +478,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 
 [data-theme="dark"] body.zz-layout-modern .zz-stat-card:hover {
     border-color: var(--zz-color-primary);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-stat-card__value,
@@ -499,7 +499,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 
 [data-theme="dark"] body.zz-layout-modern .zz-blog-card:hover {
     border-color: var(--zz-color-primary);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] body.zz-layout-modern .zz-blog-card__title {
@@ -518,7 +518,7 @@ body.zz-layout-modern .zz-ad-slot--horizontal {
 
 [data-theme="dark"] body.zz-layout-modern .zz-card:hover {
     border-color: var(--zz-color-primary);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 /* Ad Slot - Dark Mode */
@@ -553,7 +553,7 @@ body.zz-layout-modern .zz-blog-card--home .zz-blog-card__inner {
 
 body.zz-layout-modern .zz-blog-card--home:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12);
+    box-shadow: 0 20px 40px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary);
 }
 

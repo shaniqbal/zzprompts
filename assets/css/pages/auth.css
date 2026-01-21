@@ -106,7 +106,7 @@
 .zz-auth-field__input:focus {
     outline: none;
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px var(--zz-primary-bg-subtle);
 }
 
 .zz-auth-field__input::placeholder {
@@ -256,7 +256,7 @@
 
 .zz-auth-social:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 4px 12px var(--zz-primary-bg-subtle);
 }
 
 .zz-auth-social--google i {

@@ -186,14 +186,14 @@ body.post-type-archive-prompt {
     padding: 6px 14px;
     border-radius: var(--zz-radius-pill);
     margin-bottom: var(--zz-space-4);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 12px var(--zz-primary-bg-medium);
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .zz-prompt-badge:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 6px 16px var(--zz-primary-shadow-md);
     filter: brightness(1.1);
 }
 
@@ -243,7 +243,7 @@ body.post-type-archive-prompt {
 .zz-prompt-separator {
     border: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.2), transparent);
+    background: linear-gradient(to right, transparent, var(--zz-primary-bg-medium), transparent);
     margin: var(--zz-space-10) 0;
 }
 
@@ -372,7 +372,7 @@ body.post-type-archive-prompt {
 .zz-terminal__btn:hover {
     background: var(--zz-color-primary);
     border-color: var(--zz-color-primary);
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 15px var(--zz-primary-shadow-lg);
     transform: translateY(-1px);
 }
 
@@ -637,7 +637,7 @@ body.single-prompt .zz-prompt-card {
 
 .zz-prompt-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px -5px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
     background: rgba(255, 255, 255, 0.9);
 }
@@ -953,7 +953,7 @@ body.single-prompt .zz-prompt-card__title {
         flex: 1;
         background: linear-gradient(135deg, var(--zz-color-primary) 0%, #8B5CF6 100%);
         color: #fff;
-        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+        box-shadow: 0 4px 15px var(--zz-primary-bg-strong);
     }
 
     .zz-prompt-mobile-actions__btn--copy.copied {
@@ -1058,7 +1058,7 @@ body.single-prompt .zz-prompt-card__title {
 
 [data-theme="dark"] .zz-prompt-meta {
     background: rgba(30, 41, 59, 0.85);
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: var(--zz-primary-shadow-lg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -1079,7 +1079,7 @@ body.single-prompt .zz-prompt-card__title {
 
 [data-theme="dark"] body.single-prompt .zz-prompt-card:hover {
     background: rgba(30, 41, 59, 0.95);
-    border-color: rgba(99, 102, 241, 0.5);
+    border-color: var(--zz-primary-border-strong);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -1103,6 +1103,6 @@ body.single-prompt .zz-prompt-card__title {
 
 /* Ad Label Dark Mode */
 [data-theme="dark"] .zz-ad-slot__label {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
     color: #A5B4FC;
 }

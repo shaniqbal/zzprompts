@@ -511,7 +511,7 @@ function zzprompts_is_lazyload_active() {
 
 /**
  * --------------------------------------------------------------------------
- * [V2 ENGINE] Advanced Archive Filtering Logic
+ * Advanced Archive Filtering Logic
  * --------------------------------------------------------------------------
  * Handles the sidebar checkboxes for Tools & Categories (and future taxonomies).
  * Works on: Prompt Archive, Prompt Taxonomy Archives, and Author Archive (Prompts).
@@ -538,7 +538,7 @@ function zzprompts_apply_archive_filters( $query ) {
         $query->set( 'post_type', 'prompt' );
     }
 
-    // Keep V2 grids consistent
+    // Keep modern grids consistent
     if ( $is_prompt_author_view || is_post_type_archive( 'prompt' ) || is_tax( array( 'prompt_category', 'ai_tool' ) ) ) {
         $query->set( 'posts_per_page', 12 );
     }
@@ -769,7 +769,7 @@ add_action('wp_ajax_zzprompts_search_blog', 'zzprompts_search_blog');
 add_action('wp_ajax_nopriv_zzprompts_search_blog', 'zzprompts_search_blog');
 
 /**
- * ========== V2 BLOG SIDEBAR HELPER FUNCTIONS ==========
+ * ========== BLOG SIDEBAR HELPER FUNCTIONS ==========
  */
 
 /**

@@ -39,7 +39,7 @@
 
 .zz-about-hero:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 15px 40px var(--zz-primary-shadow-xs);
 }
 
 .zz-about-hero__label {
@@ -276,7 +276,7 @@
 
 .zz-about-value:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 15px 30px var(--zz-primary-bg-subtle);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -370,7 +370,7 @@
 
 .zz-about-team-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 15px 30px var(--zz-primary-bg-subtle);
 }
 
 .zz-about-team-card__avatar {
@@ -481,7 +481,7 @@
 
 [data-theme="dark"] .zz-about-hero:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 40px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] .zz-about-hero__title,

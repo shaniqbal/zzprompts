@@ -2,7 +2,7 @@
 /**
  * The main template file (Blog Router)
  *
- * Loads blog layout variation (V1 or V2) based on Customizer settings.
+ * Loads blog layout based on Customizer settings.
  *
  * @package zzprompts
  * @version 1.0.0

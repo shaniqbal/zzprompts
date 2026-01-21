@@ -192,7 +192,7 @@
 .zz-cat-pill.active {
     background: var(--zz-color-primary, #6366F1);
     color: #fff !important;
-    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 10px var(--zz-primary-shadow-md);
     cursor: pointer;
 }
 
@@ -243,7 +243,7 @@
 
 .zz-cat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 15px 30px var(--zz-primary-bg-subtle);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -653,13 +653,13 @@
     font-size: 0.9rem;
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 10px var(--zz-primary-bg-medium);
 }
 
 .zz-cat-no-results .zz-btn:hover {
     background: var(--zz-color-primary-dark, #4F46E5);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 6px 15px var(--zz-primary-shadow-md);
 }
 
 /* =========================================
@@ -672,7 +672,7 @@
 }
 
 [data-theme="dark"] .zz-cat-hero__badge {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
 }
 
 [data-theme="dark"] .zz-cat-hero__title {
@@ -714,7 +714,7 @@
 
 [data-theme="dark"] .zz-cat-card:hover {
     border-color: var(--zz-color-primary);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] .zz-cat-card__title {

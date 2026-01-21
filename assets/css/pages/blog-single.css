@@ -38,7 +38,7 @@
     background: var(--zz-color-primary, #6366F1);
     width: 0%;
     transition: width 0.1s linear;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 10px var(--zz-primary-border-strong);
 }
 
 /* =========================================
@@ -311,7 +311,7 @@
 
 .zz-blog-single-container .zz-blog-content code {
     font-family: var(--zz-font-mono, 'Fira Code', monospace);
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 0.9em;
@@ -601,7 +601,7 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 2px 4px var(--zz-primary-bg-medium);
 }
 
 .zz-blog-single-container .zz-comment-badge--admin {
@@ -614,9 +614,9 @@
 }
 
 .zz-blog-single-container .zz-comment--official>.zz-comment-body {
-    background: rgba(99, 102, 241, 0.05) !important;
+    background: var(--zz-primary-shadow-xs) !important;
     border-inline-start: 4px solid var(--zz-color-primary, #6366F1) !important;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 4px 20px var(--zz-primary-bg-subtle);
 }
 
 [data-theme="dark"] .zz-blog-single-container .zz-comment--official>.zz-comment-body {
@@ -954,7 +954,7 @@
 
 /* Dark Mode Override for Ad Label */
 [data-theme="dark"] .zz-blog-single-container .zz-ad-slot__label {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
     color: #A5B4FC;
 }
 

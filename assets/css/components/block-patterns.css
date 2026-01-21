@@ -83,7 +83,7 @@
 
 .zz-pricing-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.12);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -96,7 +96,7 @@
 
 .zz-pricing-card--featured:hover {
     transform: scale(1.02) translateY(-5px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
+    box-shadow: 0 20px 40px var(--zz-primary-bg-strong);
 }
 
 .zz-pricing-card--featured .zz-pricing-card__name,
@@ -464,7 +464,7 @@
 [data-theme="dark"] .zz-pricing-card:hover,
 [data-theme="dark"] .zz-feature-card:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] .zz-pricing-title,
@@ -497,11 +497,12 @@
    RESPONSIVE BREAKPOINTS
    ========================================= */
 @media (max-width: 1024px) {
+
     .zz-page-article .zz-pricing-section,
     .zz-page-article__content .zz-pricing-section {
         padding-inline: var(--zz-space-4, 16px);
     }
-    
+
     .zz-pricing-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: var(--zz-space-4, 16px) !important;

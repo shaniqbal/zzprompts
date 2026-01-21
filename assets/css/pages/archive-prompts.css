@@ -78,7 +78,7 @@
 
 .zz-archive-sidebar:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 10px 30px var(--zz-primary-shadow-xs);
 }
 
 /* =========================================
@@ -126,7 +126,7 @@
 
 .zz-filter-search:focus {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px var(--zz-primary-bg-subtle);
 }
 
 .zz-search-wrapper .zz-search-icon,
@@ -199,17 +199,17 @@
 }
 
 .zz-chip.active .zz-chip__label,
-.zz-chip input:checked + .zz-chip__label {
+.zz-chip input:checked+.zz-chip__label {
     background: var(--zz-color-primary, #6366F1);
     color: #fff;
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 10px var(--zz-primary-shadow-md);
 }
 
 .zz-chip__count {
     font-size: 0.7rem;
     font-weight: 600;
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--zz-primary-bg-subtle);
     color: var(--zz-color-primary, #6366F1);
     padding: 2px 6px;
     border-radius: 10px;
@@ -218,7 +218,7 @@
 }
 
 .zz-chip.active .zz-chip__count,
-.zz-chip input:checked + .zz-chip__label .zz-chip__count {
+.zz-chip input:checked+.zz-chip__label .zz-chip__count {
     background: rgba(255, 255, 255, 0.25);
     color: #fff;
 }
@@ -327,7 +327,7 @@
 
 .zz-archive-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 25px var(--zz-primary-shadow-sm);
     border-color: var(--zz-color-primary, #6366F1);
 }
 
@@ -656,7 +656,7 @@
 
 [data-theme="dark"] .zz-archive-sidebar:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] .zz-archive-card {
@@ -666,7 +666,7 @@
 
 [data-theme="dark"] .zz-archive-card:hover {
     border-color: var(--zz-color-primary, #6366F1);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 15px 30px var(--zz-primary-shadow-sm);
 }
 
 [data-theme="dark"] .zz-filter-section {
@@ -696,7 +696,7 @@
 }
 
 [data-theme="dark"] .zz-chip__count {
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--zz-primary-bg-medium);
     color: var(--zz-color-primary);
 }
 

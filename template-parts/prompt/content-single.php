@@ -351,10 +351,9 @@ if (empty($prompt_text)) {
             </div>
     <?php endif; ?>
 
-    <!-- Prompt Footer - Related Posts (Only for V1, V2 shows in sidebar) -->
+    <!-- Prompt Footer - Related Posts -->
     <?php
-    $layout = zzprompts_get_option('prompt_single_layout_mode', 'v1');
-    $show_related = ($layout !== 'v2'); // Hide related in footer for V2, show in sidebar instead
+    $show_related = true; // Always show related prompts in modern layout
     
     if ($show_related) :
         // Smart Related Query

@@ -20,10 +20,33 @@
        ========================================= */
 
    /* Primary Brand Colors */
-   --zz-color-primary: #6366F1;
+   --zz-color-primary: #10B981;
    --zz-color-primary-hover: #4F46E5;
    --zz-color-primary-light: #EEF2FF;
    --zz-color-primary-glow: rgba(99, 102, 241, 0.3);
+
+   /* =========================================
+      PRIMARY COLOR VARIANTS
+      Used for shadows, backgrounds, and borders
+      Enables one-click theme color changes
+      ========================================= */
+
+   /* Shadows (box-shadow, hover effects) */
+   --zz-primary-shadow-xs: rgba(99, 102, 241, 0.08);
+   --zz-primary-shadow-sm: rgba(99, 102, 241, 0.15);
+   --zz-primary-shadow-md: rgba(99, 102, 241, 0.3);
+   --zz-primary-shadow-lg: rgba(99, 102, 241, 0.4);
+   --zz-primary-shadow-xl: rgba(99, 102, 241, 0.5);
+
+   /* Background tints (hover states, highlights) */
+   --zz-primary-bg-subtle: rgba(99, 102, 241, 0.1);
+   --zz-primary-bg-medium: rgba(99, 102, 241, 0.2);
+   --zz-primary-bg-strong: rgba(99, 102, 241, 0.25);
+
+   /* Border colors (focus states, active elements) */
+   --zz-primary-border-light: rgba(99, 102, 241, 0.2);
+   --zz-primary-border-medium: rgba(99, 102, 241, 0.3);
+   --zz-primary-border-strong: rgba(99, 102, 241, 0.5);
 
    /* Secondary / Accent */
    --zz-color-secondary: #9333EA;
@@ -32,7 +55,7 @@
    /* Gradients */
    --zz-gradient-primary: linear-gradient(135deg, #6366F1 0%, #9333EA 100%);
    --zz-gradient-text: linear-gradient(135deg, #4F46E5 0%, #9333EA 100%);
-   --zz-gradient-glow: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
+   --zz-gradient-glow: radial-gradient(at 0% 0%, var(--zz-primary-bg-subtle) 0px, transparent 50%);
 
    /* =========================================
        2. TEXT COLORS (Visual Hierarchy)
@@ -197,8 +220,8 @@
    --zz-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
    --zz-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08);
    --zz-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
-   --zz-shadow-glow: 0 4px 20px rgba(99, 102, 241, 0.25);
-   --zz-shadow-card-hover: 0 10px 25px rgba(99, 102, 241, 0.15);
+   --zz-shadow-glow: 0 4px 20px var(--zz-primary-bg-strong);
+   --zz-shadow-card-hover: 0 10px 25px var(--zz-primary-shadow-sm);
 
    /* =========================================
        12. TRANSITIONS

@@ -1131,7 +1131,55 @@ class ZZ_Customize_Header_Control extends WP_Customize_Control {
 - Ready for manual inclusion in `claude.md`
 - Theme version: 1.1.0
 
----
+# CSS Development Guidelines
+
+## Code Quality Standards
+
+### Comments Policy
+- Use section dividers for major components (Header, Footer, etc.)
+- Add JSDoc-style comments for complex selectors
+- Explain WHY, not WHAT (code shows what, comments explain why)
+- Never use generic comments like "styling" or "CSS code"
+- Include browser compatibility notes when using modern features
+
+### Prohibited Patterns
+❌ NEVER use:
+- Comments like "/* Button styles */" without context
+- TODO comments in production code
+- Inline comments for obvious code
+- "Fix later" or "Temporary" comments
+- AI-generated placeholder text
+
+✅ ALWAYS use:
+- Section headers with === dividers
+- JSDoc-style /** */ for component documentation
+- Inline explanations for browser hacks or complex calculations
+- Version notes (@since 1.0.0)
+
+### Comment Format Examples
+
+CORRECT:
+/**
+ * Hero section gradient overlay
+ * Creates depth without compromising image visibility
+ * Gradient stops tested for WCAG AA contrast compliance
+ */
+
+WRONG:
+/* Hero gradient */
+/* Makes background darker */
+
+## PostCSS Specific Rules
+
+- Nest selectors max 3 levels deep
+- Use CSS variables for all theme values
+- Group related properties (positioning → box model → typography → visual)
+- Add comments before @media queries explaining breakpoint choice
+
+## File Organization
+- One component per file
+- Import order: variables → base → layout → components → utilities
+- File header must include purpose and dependencies
 
 **Session End:** 2026-01-21 06:45 PKT  
 **Theme Status:** Production Ready for ThemeForest v1.0 Launch

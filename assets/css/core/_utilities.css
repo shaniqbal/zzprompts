@@ -675,7 +675,7 @@ body.menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px var(--zz-primary-shadow-lg);
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -692,7 +692,7 @@ body.menu-open {
 .zz-back-to-top:hover {
     background: var(--zz-color-primary-hover, #4F46E5);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 6px 20px var(--zz-primary-shadow-xl);
 }
 
 .zz-back-to-top__icon {

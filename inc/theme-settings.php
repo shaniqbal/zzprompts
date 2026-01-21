@@ -42,14 +42,14 @@ if (!function_exists('zzprompts_get_option')) {
 
 /**
  * Get Footer Layout Style
- * Modern V1 Launch: Always returns 'modern-v1'
+ * Modern V1 Launch: Always returns 'modern'
  * 
- * @return string Always 'modern-v1'
+ * @return string Always 'modern'
  */
 if (!function_exists('zzprompts_get_footer_layout')) {
     function zzprompts_get_footer_layout() {
         // Modern V1 Launch: Fixed to modern layout
-        return 'modern-v1';
+        return 'modern';
     }
 }
 
