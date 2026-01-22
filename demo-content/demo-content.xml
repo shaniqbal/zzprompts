@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+    ZZ Prompts Theme - Demo Content
+    WordPress eXtended RSS (WXR) format
+    
+    Instructions:
+    1. Go to Tools → Import
+    2. Install "WordPress Importer" if not installed
+    3. Click "Run Importer"
+    4. Upload this file
+    5. Assign authors and check "Download attachments"
+    6. Click "Submit"
+-->
+<rss version="2.0"
+    xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:wp="http://wordpress.org/export/1.2/">
+
+<channel>
+    <title>ZZ Prompts Demo</title>
+    <link>https://demo.zzprompts.com</link>
+    <description>AI Prompt Library Demo Content</description>
+    <pubDate>Wed, 22 Jan 2026 00:00:00 +0000</pubDate>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <wp:base_site_url>https://demo.zzprompts.com</wp:base_site_url>
+    <wp:base_blog_url>https://demo.zzprompts.com</wp:base_blog_url>
+
+    <!-- Author -->
+    <wp:author>
+        <wp:author_id>1</wp:author_id>
+        <wp:author_login>admin</wp:author_login>
+        <wp:author_email>admin@zzprompts.com</wp:author_email>
+        <wp:author_display_name>ZZ Prompts Team</wp:author_display_name>
+    </wp:author>
+
+    <!-- ============================================
+         PROMPT CATEGORIES
+         ============================================ -->
+    <wp:term>
+        <wp:term_id>1</wp:term_id>
+        <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
+        <wp:term_slug>marketing</wp:term_slug>
+        <wp:term_name><![CDATA[Marketing]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>2</wp:term_id>
+        <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
+        <wp:term_slug>writing</wp:term_slug>
+        <wp:term_name><![CDATA[Writing]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>3</wp:term_id>
+        <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
+        <wp:term_slug>coding</wp:term_slug>
+        <wp:term_name><![CDATA[Coding]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>4</wp:term_id>
+        <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
+        <wp:term_slug>business</wp:term_slug>
+        <wp:term_name><![CDATA[Business]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>5</wp:term_id>
+        <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
+        <wp:term_slug>design</wp:term_slug>
+        <wp:term_name><![CDATA[Design]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>6</wp:term_id>
+        <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
+        <wp:term_slug>productivity</wp:term_slug>
+        <wp:term_name><![CDATA[Productivity]]></wp:term_name>
+    </wp:term>
+
+    <!-- ============================================
+         AI TOOLS
+         ============================================ -->
+    <wp:term>
+        <wp:term_id>10</wp:term_id>
+        <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
+        <wp:term_slug>chatgpt</wp:term_slug>
+        <wp:term_name><![CDATA[ChatGPT]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>11</wp:term_id>
+        <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
+        <wp:term_slug>midjourney</wp:term_slug>
+        <wp:term_name><![CDATA[Midjourney]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>12</wp:term_id>
+        <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
+        <wp:term_slug>claude</wp:term_slug>
+        <wp:term_name><![CDATA[Claude]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>13</wp:term_id>
+        <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
+        <wp:term_slug>dall-e</wp:term_slug>
+        <wp:term_name><![CDATA[DALL-E]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>14</wp:term_id>
+        <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
+        <wp:term_slug>gemini</wp:term_slug>
+        <wp:term_name><![CDATA[Gemini]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>15</wp:term_id>
+        <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
+        <wp:term_slug>copilot</wp:term_slug>
+        <wp:term_name><![CDATA[GitHub Copilot]]></wp:term_name>
+    </wp:term>
+
+    <!-- ============================================
+         BLOG CATEGORIES
+         ============================================ -->
+    <wp:term>
+        <wp:term_id>20</wp:term_id>
+        <wp:term_taxonomy>category</wp:term_taxonomy>
+        <wp:term_slug>tutorials</wp:term_slug>
+        <wp:term_name><![CDATA[Tutorials]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>21</wp:term_id>
+        <wp:term_taxonomy>category</wp:term_taxonomy>
+        <wp:term_slug>ai-news</wp:term_slug>
+        <wp:term_name><![CDATA[AI News]]></wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>22</wp:term_id>
+        <wp:term_taxonomy>category</wp:term_taxonomy>
+        <wp:term_slug>tips-tricks</wp:term_slug>
+        <wp:term_name><![CDATA[Tips & Tricks]]></wp:term_name>
+    </wp:term>
+
+    <!-- ============================================
+         PROMPTS (Custom Post Type)
+         ============================================ -->
+    
+    <!-- Prompt 1: Marketing Email -->
+    <item>
+        <title>Professional Marketing Email Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>This prompt helps you create compelling marketing emails that convert. Whether you're launching a product, announcing a sale, or nurturing leads, this template ensures your emails are professional and engaging.</p>
+
+<h3>How to Use</h3>
+<ol>
+<li>Copy the prompt below</li>
+<li>Replace the placeholders with your specific details</li>
+<li>Paste into ChatGPT or your preferred AI tool</li>
+<li>Review and customize the output</li>
+</ol>
+
+<h3>Best Practices</h3>
+<ul>
+<li>Keep subject lines under 50 characters</li>
+<li>Use a clear call-to-action</li>
+<li>Personalize when possible</li>
+<li>Test different versions (A/B testing)</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Generate high-converting marketing emails with this comprehensive prompt template. Perfect for product launches, sales announcements, and lead nurturing campaigns.]]></excerpt:encoded>
+        <wp:post_id>101</wp:post_id>
+        <wp:post_date>2026-01-15 10:00:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="marketing"><![CDATA[Marketing]]></category>
+        <category domain="ai_tool" nicename="chatgpt"><![CDATA[ChatGPT]]></category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value><![CDATA[Act as an expert email marketing copywriter with 10+ years of experience. Create a compelling marketing email with the following specifications:
+
+**Product/Service:** [Your product/service name]
+**Target Audience:** [Describe your ideal customer]
+**Goal:** [Launch announcement / Sale promotion / Lead nurturing / Re-engagement]
+**Tone:** [Professional / Friendly / Urgent / Casual]
+**Key Benefits:** [List 3-5 main benefits]
+**Call to Action:** [What should the reader do?]
+
+Please provide:
+1. 3 subject line options (under 50 characters each)
+2. Preview text (under 100 characters)
+3. Email body with:
+   - Attention-grabbing opening
+   - Problem statement
+   - Solution introduction
+   - Key benefits (bullet points)
+   - Social proof or testimonial placeholder
+   - Clear CTA button text
+   - P.S. line for urgency
+4. Recommended send time based on the goal]]></wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_likes</wp:meta_key>
+            <wp:meta_value>156</wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_copy_count</wp:meta_key>
+            <wp:meta_value>342</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Prompt 2: Blog Post Outline -->
+    <item>
+        <title>SEO-Optimized Blog Post Outline Creator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>Create comprehensive, SEO-friendly blog post outlines that rank. This prompt generates detailed structures that include headers, subheaders, and content suggestions for each section.</p>
+
+<h3>Features</h3>
+<ul>
+<li>SEO-optimized header structure</li>
+<li>Keyword placement suggestions</li>
+<li>Internal linking opportunities</li>
+<li>Content length recommendations</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Generate detailed, SEO-optimized blog post outlines that rank on search engines. Includes keyword placement and content structure recommendations.]]></excerpt:encoded>
+        <wp:post_id>102</wp:post_id>
+        <wp:post_date>2026-01-14 14:30:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="writing"><![CDATA[Writing]]></category>
+        <category domain="ai_tool" nicename="chatgpt"><![CDATA[ChatGPT]]></category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value><![CDATA[Act as an SEO content strategist and blog outline specialist. Create a comprehensive blog post outline for the following topic:
+
+**Topic:** [Your blog post topic]
+**Primary Keyword:** [Main keyword to target]
+**Secondary Keywords:** [3-5 related keywords]
+**Target Word Count:** [1500 / 2000 / 3000 words]
+**Target Audience:** [Who will read this?]
+**Search Intent:** [Informational / Transactional / Navigational]
+
+Provide a detailed outline including:
+1. SEO-optimized title (with primary keyword)
+2. Meta description (155 characters max)
+3. Introduction hook and thesis
+4. H2 and H3 headers with keyword placement
+5. Key points to cover under each section
+6. FAQ section (5 questions based on "People Also Ask")
+7. Conclusion with CTA
+8. Internal linking suggestions
+9. External source recommendations
+10. Featured snippet optimization tips]]></wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_likes</wp:meta_key>
+            <wp:meta_value>234</wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_copy_count</wp:meta_key>
+            <wp:meta_value>567</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Prompt 3: Code Refactoring -->
+    <item>
+        <title>Code Refactoring Assistant</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>Transform messy, legacy code into clean, maintainable masterpieces. This prompt helps you refactor code following best practices and modern patterns.</p>
+
+<h3>What It Does</h3>
+<ul>
+<li>Identifies code smells</li>
+<li>Suggests design patterns</li>
+<li>Improves performance</li>
+<li>Adds proper documentation</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Refactor legacy code into clean, maintainable, and performant code following best practices and modern design patterns.]]></excerpt:encoded>
+        <wp:post_id>103</wp:post_id>
+        <wp:post_date>2026-01-13 09:15:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="coding"><![CDATA[Coding]]></category>
+        <category domain="ai_tool" nicename="claude"><![CDATA[Claude]]></category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value><![CDATA[Act as a senior software engineer specializing in code refactoring and clean architecture. Review and refactor the following code:
+
+```
+[PASTE YOUR CODE HERE]
+```
+
+**Language:** [JavaScript / Python / PHP / etc.]
+**Framework:** [React / Django / Laravel / etc.] (if applicable)
+**Goal:** [Improve readability / Performance / Maintainability / All]
+
+Please provide:
+1. Code smell identification (list all issues)
+2. Refactored code with:
+   - Meaningful variable/function names
+   - Single responsibility principle applied
+   - DRY (Don't Repeat Yourself) implementation
+   - Proper error handling
+   - Type hints/annotations where applicable
+3. Performance improvements (if any)
+4. Before/After comparison explanation
+5. Unit test suggestions for the refactored code
+6. Documentation comments (JSDoc / docstrings)]]></wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_likes</wp:meta_key>
+            <wp:meta_value>189</wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_copy_count</wp:meta_key>
+            <wp:meta_value>423</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Prompt 4: Midjourney Art -->
+    <item>
+        <title>Cinematic Portrait Photography Prompt</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>Create stunning cinematic portrait images with this carefully crafted Midjourney prompt. Perfect for creating professional-looking character art, headshots, and editorial photography.</p>
+
+<h3>Style Features</h3>
+<ul>
+<li>Professional lighting setup</li>
+<li>Cinematic color grading</li>
+<li>Shallow depth of field</li>
+<li>Magazine-quality results</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Generate stunning cinematic portrait photographs with professional lighting, color grading, and magazine-quality aesthetics.]]></excerpt:encoded>
+        <wp:post_id>104</wp:post_id>
+        <wp:post_date>2026-01-12 16:45:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="design"><![CDATA[Design]]></category>
+        <category domain="ai_tool" nicename="midjourney"><![CDATA[Midjourney]]></category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value><![CDATA[Cinematic portrait of [SUBJECT DESCRIPTION], professional studio lighting with key light and rim light, shallow depth of field, 85mm lens, f/1.8 aperture, magazine editorial style, muted color palette with teal and orange tones, high-end fashion photography, ultra detailed skin texture, catchlight in eyes, subtle film grain, shot on Hasselblad H6D-100c --ar 3:4 --v 6 --style raw --s 250]]></wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_likes</wp:meta_key>
+            <wp:meta_value>312</wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_copy_count</wp:meta_key>
+            <wp:meta_value>678</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Prompt 5: Business Plan -->
+    <item>
+        <title>Startup Business Plan Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>Generate a comprehensive business plan for your startup or new venture. This prompt creates investor-ready documentation covering all essential aspects of your business.</p>
+
+<h3>Sections Covered</h3>
+<ul>
+<li>Executive Summary</li>
+<li>Market Analysis</li>
+<li>Financial Projections</li>
+<li>Marketing Strategy</li>
+<li>Operations Plan</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Create a comprehensive, investor-ready business plan for your startup covering market analysis, financials, and growth strategy.]]></excerpt:encoded>
+        <wp:post_id>105</wp:post_id>
+        <wp:post_date>2026-01-11 11:00:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="business"><![CDATA[Business]]></category>
+        <category domain="ai_tool" nicename="chatgpt"><![CDATA[ChatGPT]]></category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value><![CDATA[Act as a business strategist and startup advisor with experience in venture capital. Create a comprehensive business plan for the following startup:
+
+**Business Name:** [Your business name]
+**Industry:** [e.g., SaaS, E-commerce, FinTech]
+**Problem Solved:** [What problem does it solve?]
+**Target Market:** [Who are your customers?]
+**Business Model:** [How do you make money?]
+**Funding Stage:** [Pre-seed / Seed / Series A]
+**Funding Goal:** [$XXX,XXX]
+
+Generate a complete business plan including:
+
+1. **Executive Summary** (1 page)
+2. **Company Description** (Mission, Vision, Values)
+3. **Market Analysis**
+   - TAM, SAM, SOM calculations
+   - Competitor analysis
+   - SWOT analysis
+4. **Products/Services** (Features, pricing, roadmap)
+5. **Marketing Strategy** (Customer acquisition, channels, CAC)
+6. **Operations Plan** (Team, technology, processes)
+7. **Financial Projections** (3-year P&L, break-even analysis)
+8. **Funding Requirements** (Use of funds, milestones)
+9. **Risk Analysis** (Potential risks and mitigation)
+10. **Appendix** (Supporting data suggestions)]]></wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_likes</wp:meta_key>
+            <wp:meta_value>276</wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_copy_count</wp:meta_key>
+            <wp:meta_value>534</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Prompt 6: Daily Planner -->
+    <item>
+        <title>AI-Powered Daily Productivity Planner</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>Optimize your day with this intelligent productivity planning prompt. Get a customized daily schedule based on your energy levels, priorities, and working style.</p>
+
+<h3>Features</h3>
+<ul>
+<li>Time-blocking recommendations</li>
+<li>Energy management</li>
+<li>Priority sorting</li>
+<li>Break scheduling</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Create an optimized daily schedule with time-blocking, energy management, and priority-based task organization.]]></excerpt:encoded>
+        <wp:post_id>106</wp:post_id>
+        <wp:post_date>2026-01-10 08:30:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="productivity"><![CDATA[Productivity]]></category>
+        <category domain="ai_tool" nicename="gemini"><![CDATA[Gemini]]></category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value><![CDATA[Act as a productivity coach and time management expert. Create an optimized daily schedule for me based on:
+
+**Work Start Time:** [e.g., 9:00 AM]
+**Work End Time:** [e.g., 6:00 PM]
+**Peak Energy Hours:** [e.g., 10 AM - 12 PM]
+**Meeting Obligations:** [List any fixed meetings]
+
+**Tasks for Today:**
+1. [Task 1 - estimated time]
+2. [Task 2 - estimated time]
+3. [Task 3 - estimated time]
+(Add more as needed)
+
+**Priorities:**
+- Must complete today: [list]
+- Should complete: [list]
+- Nice to have: [list]
+
+Please provide:
+1. Time-blocked schedule with specific tasks
+2. Deep work sessions during peak energy
+3. Administrative tasks during low energy
+4. Break reminders (Pomodoro-style or custom)
+5. Buffer time for unexpected tasks
+6. Evening review/planning time
+7. Energy optimization tips for the day
+8. Motivational quote to start the day]]></wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_likes</wp:meta_key>
+            <wp:meta_value>198</wp:meta_value>
+        </wp:postmeta>
+        <wp:postmeta>
+            <wp:meta_key>_prompt_copy_count</wp:meta_key>
+            <wp:meta_value>445</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- ============================================
+         BLOG POSTS
+         ============================================ -->
+
+    <!-- Blog Post 1 -->
+    <item>
+        <title>Getting Started with AI Prompts: A Beginner's Guide</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>Artificial Intelligence has revolutionized the way we work, create, and solve problems. But the key to unlocking AI's full potential lies in how we communicate with it—through prompts.</p>
+
+<h2>What is a Prompt?</h2>
+<p>A prompt is simply an instruction or question you give to an AI tool. Think of it as having a conversation with a very capable assistant who needs clear directions to help you effectively.</p>
+
+<h2>Why Prompts Matter</h2>
+<p>The difference between a mediocre AI response and an exceptional one often comes down to how well-crafted your prompt is. A vague prompt like "write me something about marketing" will yield generic results. But a specific prompt that includes context, audience, tone, and desired outcome will produce targeted, useful content.</p>
+
+<h2>Key Elements of a Great Prompt</h2>
+<h3>1. Role Assignment</h3>
+<p>Tell the AI who to be: "Act as an expert marketing strategist with 15 years of experience..."</p>
+
+<h3>2. Context</h3>
+<p>Provide background information: "For a B2B SaaS company targeting enterprise clients..."</p>
+
+<h3>3. Specific Instructions</h3>
+<p>Be clear about what you want: "Create 5 email subject lines that emphasize urgency and value..."</p>
+
+<h3>4. Format Requirements</h3>
+<p>Specify the output format: "Present this as a bulleted list with headers..."</p>
+
+<h2>Common Mistakes to Avoid</h2>
+<ul>
+<li>Being too vague</li>
+<li>Not providing context</li>
+<li>Asking too many things at once</li>
+<li>Forgetting to specify the tone</li>
+</ul>
+
+<h2>Start Experimenting</h2>
+<p>The best way to learn is by doing. Start with simple prompts and gradually add more specifications as you see how the AI responds. Remember, prompting is a skill that improves with practice.</p>
+
+<p>Browse our prompt library to find templates you can customize for your specific needs.</p>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Learn the fundamentals of AI prompting and discover how to craft effective prompts that get better results from ChatGPT, Claude, and other AI tools.]]></excerpt:encoded>
+        <wp:post_id>201</wp:post_id>
+        <wp:post_date>2026-01-18 10:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tutorials"><![CDATA[Tutorials]]></category>
+    </item>
+
+    <!-- Blog Post 2 -->
+    <item>
+        <title>10 ChatGPT Prompts That Will 10x Your Productivity</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>ChatGPT isn't just a chatbot—it's a productivity powerhouse when used correctly. Here are 10 prompts that professionals use daily to save hours of work.</p>
+
+<h2>1. The Meeting Summarizer</h2>
+<p>Paste your meeting notes and ask: "Summarize this meeting into action items, decisions made, and follow-up tasks. Format as a bulleted list organized by team member responsibility."</p>
+
+<h2>2. The Email Responder</h2>
+<p>"Draft a professional response to this email that [accepts/declines/asks for more information]. Keep the tone [formal/friendly] and limit to 100 words."</p>
+
+<h2>3. The Research Assistant</h2>
+<p>"Explain [complex topic] like I'm a [role] who needs to understand the practical implications. Include 3 real-world examples."</p>
+
+<h2>4. The Code Reviewer</h2>
+<p>"Review this code for bugs, performance issues, and best practices. Suggest improvements with explanations."</p>
+
+<h2>5. The Content Repurposer</h2>
+<p>"Transform this blog post into: 1) A LinkedIn post 2) A Twitter thread 3) An email newsletter introduction. Maintain the key message but adapt the tone for each platform."</p>
+
+<h2>6. The Devil's Advocate</h2>
+<p>"I'm considering [decision/idea]. Give me 5 reasons why this might fail and potential solutions for each risk."</p>
+
+<h2>7. The Learning Companion</h2>
+<p>"Create a 30-day learning plan for [skill]. Include daily activities, resources, and milestones to track progress."</p>
+
+<h2>8. The Presentation Builder</h2>
+<p>"Create an outline for a 10-slide presentation about [topic] for [audience]. Include suggested visuals and speaker notes for each slide."</p>
+
+<h2>9. The Process Optimizer</h2>
+<p>"Here's my current workflow for [task]. Identify inefficiencies and suggest a streamlined version that saves time."</p>
+
+<h2>10. The Creative Brainstormer</h2>
+<p>"I need ideas for [project/problem]. Give me 10 creative solutions, ranging from practical to ambitious. Include pros and cons for each."</p>
+
+<h2>Pro Tips</h2>
+<ul>
+<li>Always specify the output format you want</li>
+<li>Use follow-up prompts to refine results</li>
+<li>Save your best prompts for reuse</li>
+<li>Combine prompts for complex tasks</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Discover 10 powerful ChatGPT prompts that professionals use daily to automate tasks, save time, and boost their productivity.]]></excerpt:encoded>
+        <wp:post_id>202</wp:post_id>
+        <wp:post_date>2026-01-16 14:30:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tips-tricks"><![CDATA[Tips & Tricks]]></category>
+    </item>
+
+    <!-- Blog Post 3 -->
+    <item>
+        <title>The Future of AI: What to Expect in 2026</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<p>The AI landscape is evolving at an unprecedented pace. Here's what experts predict for the rest of 2026 and how it will impact your workflow.</p>
+
+<h2>Multimodal AI Goes Mainstream</h2>
+<p>The line between text, image, audio, and video AI is blurring. Expect tools that seamlessly combine all these capabilities in a single interface.</p>
+
+<h2>AI Agents Take Over Routine Tasks</h2>
+<p>Autonomous AI agents that can browse the web, make purchases, schedule appointments, and manage workflows will become commonplace.</p>
+
+<h2>Personalized AI Assistants</h2>
+<p>AI that learns your preferences, writing style, and work patterns to provide increasingly personalized assistance.</p>
+
+<h2>Industry-Specific Models</h2>
+<p>Expect specialized AI models trained for specific industries like healthcare, legal, finance, and education.</p>
+
+<h2>How to Prepare</h2>
+<ul>
+<li>Stay updated with the latest AI developments</li>
+<li>Experiment with new tools as they launch</li>
+<li>Build a library of effective prompts</li>
+<li>Focus on skills that complement AI, not compete with it</li>
+</ul>
+        ]]></content:encoded>
+        <excerpt:encoded><![CDATA[Explore the latest AI trends and predictions for 2026. Learn how multimodal AI, autonomous agents, and specialized models will transform work.]]></excerpt:encoded>
+        <wp:post_id>203</wp:post_id>
+        <wp:post_date>2026-01-14 09:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news"><![CDATA[AI News]]></category>
+    </item>
+
+    <!-- ============================================
+         PAGES
+         ============================================ -->
+
+    <!-- About Page -->
+    <item>
+        <title>About Us</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[]]></content:encoded>
+        <wp:post_id>301</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+        <wp:postmeta>
+            <wp:meta_key>_wp_page_template</wp:meta_key>
+            <wp:meta_value>page-templates/about.php</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Contact Page -->
+    <item>
+        <title>Contact</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[]]></content:encoded>
+        <wp:post_id>302</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+        <wp:postmeta>
+            <wp:meta_key>_wp_page_template</wp:meta_key>
+            <wp:meta_value>page-templates/contact.php</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+    <!-- Privacy Policy Page -->
+    <item>
+        <title>Privacy Policy</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<h2>Privacy Policy</h2>
+<p>Your privacy is important to us. This privacy policy explains what personal data we collect and how we use it.</p>
+
+<h3>Information We Collect</h3>
+<p>We collect information you provide directly, such as when you create an account, subscribe to our newsletter, or contact us.</p>
+
+<h3>How We Use Your Information</h3>
+<p>We use the information we collect to provide, maintain, and improve our services.</p>
+
+<h3>Cookies</h3>
+<p>We use cookies to track user preferences and improve user experience.</p>
+
+<h3>Contact Us</h3>
+<p>If you have questions about this privacy policy, please contact us.</p>
+        ]]></content:encoded>
+        <wp:post_id>303</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+    </item>
+
+    <!-- Terms Page -->
+    <item>
+        <title>Terms of Service</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[
+<h2>Terms of Service</h2>
+<p>By accessing this website, you agree to be bound by these terms of service.</p>
+
+<h3>Use of Content</h3>
+<p>The prompts and content provided are for personal and commercial use. You may not redistribute or resell the prompts as-is.</p>
+
+<h3>User Conduct</h3>
+<p>You agree to use this website only for lawful purposes and in a way that does not infringe the rights of others.</p>
+
+<h3>Disclaimer</h3>
+<p>We provide prompts as templates. Results may vary based on AI model and usage. We are not responsible for outcomes generated by AI tools.</p>
+        ]]></content:encoded>
+        <wp:post_id>304</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+    </item>
+
+    <!-- Blog Page -->
+    <item>
+        <title>Blog</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded><![CDATA[]]></content:encoded>
+        <wp:post_id>305</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+        <wp:postmeta>
+            <wp:meta_key>_wp_page_template</wp:meta_key>
+            <wp:meta_value>page-blog.php</wp:meta_value>
+        </wp:postmeta>
+    </item>
+
+</channel>
+</rss>
