@@ -22,8 +22,8 @@ class ZZ_Widget_Brand extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_brand',
-            esc_html__('ZZ: Brand & Social', 'zzprompts'),
-            array('description' => esc_html__('Logo, brand description, and social icons.', 'zzprompts'))
+            '🏷️ ' . esc_html__('ZZ: Brand & Social', 'zzprompts'),
+            array('description' => esc_html__('Display logo, site description, and social media icons.', 'zzprompts'))
         );
     }
 
@@ -128,8 +128,8 @@ class ZZ_Widget_Popular_Prompts extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_popular_prompts',
-            esc_html__('ZZ: Popular Prompts', 'zzprompts'),
-            array('description' => esc_html__('Display popular prompts by likes or views.', 'zzprompts'))
+            '🔥 ' . esc_html__('ZZ: Popular Prompts', 'zzprompts'),
+            array('description' => esc_html__('Display popular prompts by likes or views. Cached for performance.', 'zzprompts'))
         );
     }
 
@@ -257,8 +257,8 @@ class ZZ_Widget_Category_Tags extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_category_tags',
-            esc_html__('ZZ: Category Tags', 'zzprompts'),
-            array('description' => esc_html__('Display categories or AI tools as tags.', 'zzprompts'))
+            '🎯 ' . esc_html__('ZZ: Category Filter', 'zzprompts'),
+            array('description' => esc_html__('Display prompt categories or AI tools as filter buttons.', 'zzprompts'))
         );
     }
 
@@ -358,8 +358,8 @@ class ZZ_Widget_Newsletter extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_newsletter',
-            esc_html__('ZZ: Newsletter', 'zzprompts'),
-            array('description' => esc_html__('Email newsletter signup form.', 'zzprompts'))
+            '📧 ' . esc_html__('ZZ: Newsletter', 'zzprompts'),
+            array('description' => esc_html__('Email newsletter signup form. Connect to Mailchimp, MailerLite, etc.', 'zzprompts'))
         );
     }
 
@@ -442,8 +442,8 @@ class ZZ_Widget_Ad_Banner extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_ad_banner',
-            esc_html__('ZZ: Ad Banner', 'zzprompts'),
-            array('description' => esc_html__('Display advertisement or custom banner. Can use global sidebar ad or custom code.', 'zzprompts'))
+            '💰 ' . esc_html__('ZZ: Ad Banner', 'zzprompts'),
+            array('description' => esc_html__('Display advertisements. Use global sidebar ad or custom HTML/JavaScript code.', 'zzprompts'))
         );
     }
 
@@ -529,16 +529,30 @@ class ZZ_Widget_Author_Bio extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_author_bio',
-            esc_html__('ZZ: Author Bio', 'zzprompts'),
-            array('description' => esc_html__('Display author/editor profile with avatar.', 'zzprompts'))
+            '👤 ' . esc_html__('ZZ: Author Box', 'zzprompts'),
+            array('description' => esc_html__('Display author/editor profile card with avatar, bio, and social links.', 'zzprompts'))
         );
+        
+        // Enqueue media uploader on widgets page
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_media_uploader'));
+    }
+    
+    /**
+     * Enqueue media uploader scripts on widgets page
+     */
+    public function enqueue_media_uploader($hook) {
+        if ('widgets.php' !== $hook && 'customize.php' !== $hook) {
+            return;
+        }
+        wp_enqueue_media();
     }
 
     public function widget($args, $instance) {
         echo $args['before_widget'];
         
         $title = !empty($instance['title']) ? $instance['title'] : '';
-        $avatar = !empty($instance['avatar']) ? $instance['avatar'] : '';
+        $avatar_id = !empty($instance['avatar_id']) ? absint($instance['avatar_id']) : 0;
+        $avatar_url = $avatar_id ? wp_get_attachment_image_url($avatar_id, 'thumbnail') : '';
         $name = !empty($instance['name']) ? $instance['name'] : '';
         $role = !empty($instance['role']) ? $instance['role'] : '';
         $bio = !empty($instance['bio']) ? $instance['bio'] : '';
@@ -549,9 +563,9 @@ class ZZ_Widget_Author_Bio extends WP_Widget {
         }
         ?>
         <div class="zz-widget zz-widget--author">
-            <?php if ($avatar) : ?>
+            <?php if ($avatar_url) : ?>
             <div class="zz-widget__author-avatar">
-                <img src="<?php echo esc_url($avatar); ?>" alt="<?php echo esc_attr($name); ?>">
+                <img src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($name); ?>">
             </div>
             <?php endif; ?>
             
@@ -598,20 +612,45 @@ class ZZ_Widget_Author_Bio extends WP_Widget {
 
     public function form($instance) {
         $title = isset($instance['title']) ? $instance['title'] : '';
-        $avatar = isset($instance['avatar']) ? $instance['avatar'] : '';
+        $avatar_id = isset($instance['avatar_id']) ? absint($instance['avatar_id']) : 0;
+        $avatar_url = $avatar_id ? wp_get_attachment_image_url($avatar_id, 'thumbnail') : '';
         $name = isset($instance['name']) ? $instance['name'] : '';
         $role = isset($instance['role']) ? $instance['role'] : '';
         $bio = isset($instance['bio']) ? $instance['bio'] : '';
         $show_social = isset($instance['show_social']) ? (bool) $instance['show_social'] : false;
+        
+        $unique_id = uniqid('zz_author_avatar_');
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Widget Title:', 'zzprompts'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
+        
+        <!-- Media Library Avatar Picker -->
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('avatar')); ?>"><?php esc_html_e('Avatar URL:', 'zzprompts'); ?></label>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('avatar')); ?>" name="<?php echo esc_attr($this->get_field_name('avatar')); ?>" type="url" value="<?php echo esc_url($avatar); ?>">
+            <label><?php esc_html_e('Avatar Image:', 'zzprompts'); ?></label>
+            <br>
+            <span class="zz-avatar-preview" id="<?php echo esc_attr($unique_id); ?>_preview" style="display: inline-block; margin: 5px 0;">
+                <?php if ($avatar_url) : ?>
+                    <img src="<?php echo esc_url($avatar_url); ?>" style="max-width: 80px; height: auto; border-radius: 50%;">
+                <?php endif; ?>
+            </span>
+            <br>
+            <input type="hidden" 
+                   class="zz-avatar-id" 
+                   id="<?php echo esc_attr($this->get_field_id('avatar_id')); ?>" 
+                   name="<?php echo esc_attr($this->get_field_name('avatar_id')); ?>" 
+                   value="<?php echo esc_attr($avatar_id); ?>">
+            <button type="button" class="button zz-avatar-upload" data-preview="#<?php echo esc_attr($unique_id); ?>_preview" data-input="#<?php echo esc_attr($this->get_field_id('avatar_id')); ?>">
+                <?php esc_html_e('Select Image', 'zzprompts'); ?>
+            </button>
+            <?php if ($avatar_id) : ?>
+            <button type="button" class="button zz-avatar-remove" data-preview="#<?php echo esc_attr($unique_id); ?>_preview" data-input="#<?php echo esc_attr($this->get_field_id('avatar_id')); ?>">
+                <?php esc_html_e('Remove', 'zzprompts'); ?>
+            </button>
+            <?php endif; ?>
         </p>
+        
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('name')); ?>"><?php esc_html_e('Name:', 'zzprompts'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('name')); ?>" name="<?php echo esc_attr($this->get_field_name('name')); ?>" type="text" value="<?php echo esc_attr($name); ?>">
@@ -628,13 +667,54 @@ class ZZ_Widget_Author_Bio extends WP_Widget {
             <input type="checkbox" id="<?php echo esc_attr($this->get_field_id('show_social')); ?>" name="<?php echo esc_attr($this->get_field_name('show_social')); ?>" <?php checked($show_social); ?>>
             <label for="<?php echo esc_attr($this->get_field_id('show_social')); ?>"><?php esc_html_e('Show social icons', 'zzprompts'); ?></label>
         </p>
+        
+        <script>
+        jQuery(document).ready(function($) {
+            // Only bind once per widget
+            if (typeof window.zzAuthorAvatarBound === 'undefined') {
+                window.zzAuthorAvatarBound = true;
+                
+                $(document).on('click', '.zz-avatar-upload', function(e) {
+                    e.preventDefault();
+                    var button = $(this);
+                    var previewSelector = button.data('preview');
+                    var inputSelector = button.data('input');
+                    
+                    var frame = wp.media({
+                        title: '<?php echo esc_js(__('Select Avatar Image', 'zzprompts')); ?>',
+                        button: { text: '<?php echo esc_js(__('Use this image', 'zzprompts')); ?>' },
+                        multiple: false,
+                        library: { type: 'image' }
+                    });
+                    
+                    frame.on('select', function() {
+                        var attachment = frame.state().get('selection').first().toJSON();
+                        var imgUrl = attachment.sizes.thumbnail ? attachment.sizes.thumbnail.url : attachment.url;
+                        $(previewSelector).html('<img src="' + imgUrl + '" style="max-width: 80px; height: auto; border-radius: 50%;">');
+                        $(inputSelector).val(attachment.id).trigger('change');
+                    });
+                    
+                    frame.open();
+                });
+                
+                $(document).on('click', '.zz-avatar-remove', function(e) {
+                    e.preventDefault();
+                    var button = $(this);
+                    var previewSelector = button.data('preview');
+                    var inputSelector = button.data('input');
+                    $(previewSelector).html('');
+                    $(inputSelector).val('').trigger('change');
+                });
+            }
+        });
+        </script>
         <?php
     }
 
     public function update($new_instance, $old_instance) {
         $instance = array();
         $instance['title'] = sanitize_text_field($new_instance['title']);
-        $instance['avatar'] = esc_url_raw($new_instance['avatar']);
+        $instance['avatar_id'] = absint($new_instance['avatar_id']);
         $instance['name'] = sanitize_text_field($new_instance['name']);
         $instance['role'] = sanitize_text_field($new_instance['role']);
         $instance['bio'] = sanitize_textarea_field($new_instance['bio']);
@@ -655,8 +735,8 @@ class ZZ_Widget_Popular_Posts extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_popular_posts',
-            'ZZ: Popular Posts (Trending)',
-            array('description' => 'Highly optimized trending posts widget with multiple glass styles.')
+            '📰 ' . esc_html__('ZZ: Popular Posts', 'zzprompts'),
+            array('description' => esc_html__('Display trending blog posts by views. Multiple display styles available.', 'zzprompts'))
         );
 
         // Hook to clear transient cache on post update
@@ -787,30 +867,30 @@ class ZZ_Widget_Popular_Posts extends WP_Widget {
     }
 
     public function form($instance) {
-        $title = isset($instance['title']) ? $instance['title'] : 'Trending Topics';
+        $title = isset($instance['title']) ? $instance['title'] : esc_html__('Trending Topics', 'zzprompts');
         $number = isset($instance['number']) ? absint($instance['number']) : 5;
         $style = isset($instance['style']) ? $instance['style'] : 'style-4';
         $show_views = isset($instance['show_views']) ? (bool) $instance['show_views'] : false;
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'zzprompts'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('number'); ?>">Number of posts:</label>
-            <input class="tiny-text" id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3">
+            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php esc_html_e('Number of posts:', 'zzprompts'); ?></label>
+            <input class="tiny-text" id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="number" step="1" min="1" value="<?php echo esc_attr($number); ?>" size="3">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('style'); ?>">Style Layout:</label>
-            <select class="widefat" id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>">
-                <option value="style-1" <?php selected($style, 'style-1'); ?>>Style 1 (Numbered)</option>
-                <option value="style-2" <?php selected($style, 'style-2'); ?>>Style 2 (Icons)</option>
-                <option value="style-4" <?php selected($style, 'style-4'); ?>>Style 4 (Glass Strips)</option>
+            <label for="<?php echo esc_attr($this->get_field_id('style')); ?>"><?php esc_html_e('Style Layout:', 'zzprompts'); ?></label>
+            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('style')); ?>" name="<?php echo esc_attr($this->get_field_name('style')); ?>">
+                <option value="style-1" <?php selected($style, 'style-1'); ?>><?php esc_html_e('Style 1 (Numbered)', 'zzprompts'); ?></option>
+                <option value="style-2" <?php selected($style, 'style-2'); ?>><?php esc_html_e('Style 2 (Icons)', 'zzprompts'); ?></option>
+                <option value="style-4" <?php selected($style, 'style-4'); ?>><?php esc_html_e('Style 4 (Glass Strips)', 'zzprompts'); ?></option>
             </select>
         </p>
         <p>
-            <input class="checkbox" type="checkbox" <?php checked($show_views); ?> id="<?php echo $this->get_field_id('show_views'); ?>" name="<?php echo $this->get_field_name('show_views'); ?>" />
-            <label for="<?php echo $this->get_field_id('show_views'); ?>">Show post views count</label>
+            <input class="checkbox" type="checkbox" <?php checked($show_views); ?> id="<?php echo esc_attr($this->get_field_id('show_views')); ?>" name="<?php echo esc_attr($this->get_field_name('show_views')); ?>" />
+            <label for="<?php echo esc_attr($this->get_field_id('show_views')); ?>"><?php esc_html_e('Show post views count', 'zzprompts'); ?></label>
         </p>
         <?php
     }
@@ -841,8 +921,8 @@ class ZZ_Widget_Footer_Contact extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'zz_footer_contact',
-            esc_html__('ZZ: Footer Contact Info', 'zzprompts'),
-            array('description' => esc_html__('Displays email and location from Theme Settings.', 'zzprompts'))
+            '📞 ' . esc_html__('ZZ: Contact Info', 'zzprompts'),
+            array('description' => esc_html__('Display email and location from Theme Settings. Perfect for footer.', 'zzprompts'))
         );
     }
 
