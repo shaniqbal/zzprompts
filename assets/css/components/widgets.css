@@ -1516,3 +1516,134 @@ body.zz-layout-modern .widget_nav_menu .sub-menu {
         font-size: 0.85rem;
     }
 }
+
+
+/* ==========================================================================
+   WORDPRESS CALENDAR WIDGET STYLING
+   ========================================================================== */
+
+.zz-blog-sidebar .widget_calendar,
+.zz-blog-sidebar .wp-block-calendar {
+    background: var(--zz-glass-bg, rgba(255, 255, 255, 0.85));
+    backdrop-filter: var(--zz-glass-blur, blur(12px));
+    -webkit-backdrop-filter: var(--zz-glass-blur, blur(12px));
+    border: 1px solid var(--zz-glass-border, rgba(255, 255, 255, 0.6));
+    border-radius: var(--zz-radius-xl, 16px);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_calendar,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-calendar {
+    background: rgba(30, 41, 59, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.zz-blog-sidebar .widget_calendar table,
+.zz-blog-sidebar .wp-block-calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.zz-blog-sidebar .widget_calendar caption,
+.zz-blog-sidebar .wp-block-calendar table caption {
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--zz-text-primary, #1E293B);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_calendar caption,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-calendar table caption {
+    color: #F9FAFB;
+}
+
+.zz-blog-sidebar .widget_calendar th,
+.zz-blog-sidebar .wp-block-calendar th {
+    font-weight: 600;
+    color: var(--zz-text-muted, #64748B);
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_calendar th,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-calendar th {
+    color: #94A3B8;
+}
+
+.zz-blog-sidebar .widget_calendar td,
+.zz-blog-sidebar .wp-block-calendar td {
+    padding: 8px 4px;
+    text-align: center;
+    color: var(--zz-text-secondary, #475569);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_calendar td,
+[data-theme="dark"] .zz-blog-sidebar .wp-block-calendar td {
+    color: #CBD5E1;
+}
+
+/* Today's date */
+.zz-blog-sidebar .widget_calendar td#today,
+.zz-blog-sidebar .wp-block-calendar td.is-selected {
+    background: var(--zz-color-primary, #6366F1);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Days with posts */
+.zz-blog-sidebar .widget_calendar td a,
+.zz-blog-sidebar .wp-block-calendar td a {
+    display: block;
+    color: var(--zz-color-primary, #6366F1);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.zz-blog-sidebar .widget_calendar td a:hover,
+.zz-blog-sidebar .wp-block-calendar td a:hover {
+    background: var(--zz-primary-bg-subtle, rgba(99, 102, 241, 0.1));
+    transform: scale(1.1);
+}
+
+/* Navigation arrows */
+.zz-blog-sidebar .widget_calendar nav,
+.zz-blog-sidebar .widget_calendar .wp-calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .zz-blog-sidebar .widget_calendar nav,
+[data-theme="dark"] .zz-blog-sidebar .widget_calendar .wp-calendar-nav {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.zz-blog-sidebar .widget_calendar nav a,
+.zz-blog-sidebar .widget_calendar .wp-calendar-nav a {
+    color: var(--zz-color-primary, #6366F1);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.zz-blog-sidebar .widget_calendar nav a:hover,
+.zz-blog-sidebar .widget_calendar .wp-calendar-nav a:hover {
+    color: var(--zz-color-primary-dark, #4F46E5);
+}
