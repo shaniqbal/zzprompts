@@ -105,7 +105,7 @@ if ($sidebar_sticky) {
                                 <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>">
                             <?php else : 
                                 // Get first category for color
-                                $item_cats = get_the_category($post['ID']);
+                                $item_cats = get_the_category($post['id']);
                                 $item_cat_name = !empty($item_cats) ? $item_cats[0]->name : 'Blog';
                                 $colors = ['#EEF2FF', '#ECFDF5', '#F0F9FF', '#FEF2F2', '#F5F3FF'];
                                 $bg_color = $colors[abs(crc32($item_cat_name)) % count($colors)];
@@ -159,5 +159,12 @@ if ($sidebar_sticky) {
         </ul>
     </div>
     <?php endif; endif; ?>
+
+    <!-- 5️⃣ CONSTANT WP WIDGETS (Standard Sidebar) -->
+    <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+        <div class="zz-sidebar-standard-widgets">
+            <?php dynamic_sidebar( 'sidebar-1' ); ?>
+        </div>
+    <?php endif; ?>
     
 </aside>

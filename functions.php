@@ -75,75 +75,83 @@ if (!function_exists('zzprompts_setup')) {
 }
 add_action('after_setup_theme', 'zzprompts_setup');
 
-// Register Widget Areas
+// ==========================================================================
+// REGISTER WIDGET AREAS - Smart Organization
+// ==========================================================================
+// 📄 CONTENT SIDEBARS: Blog & Prompts
+// 🦶 FOOTER COLUMNS: 4 columns for footer widgets
+// ==========================================================================
+
 function zzprompts_widgets_init() {
-    // Main Sidebar (Blog)
+    
+    // =========================================================================
+    // 📄 CONTENT SIDEBARS
+    // =========================================================================
+    
+    // 📰 Blog Sidebar
     register_sidebar( array(
-        'name'          => esc_html__( 'Main Sidebar', 'zzprompts' ),
+        'name'          => '📰 ' . esc_html__( 'Blog Sidebar', 'zzprompts' ),
         'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Widgets for blog posts and blog archive pages.', 'zzprompts' ),
+        'description'   => esc_html__( 'Shows on: Blog posts & blog archives. Add Recent Posts, Categories, Tags, or custom widgets.', 'zzprompts' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
     
-    // Single Prompt Sidebar (Prompt pages - works for Modern & Classic)
+    // 💬 Prompts Sidebar
     register_sidebar( array(
-        'name'          => esc_html__( 'Prompt Sidebar', 'zzprompts' ),
+        'name'          => '💬 ' . esc_html__( 'Prompts Sidebar', 'zzprompts' ),
         'id'            => 'sidebar-prompt',
-        'description'   => esc_html__( '💡 Widgets for single prompt pages. Add: Search, Popular Prompts, Trending Categories, Ads. Works with both Modern and Classic layouts.', 'zzprompts' ),
+        'description'   => esc_html__( 'Shows on: Prompt pages & prompt archives. Add Search, Popular Prompts, Categories, or Ads.', 'zzprompts' ),
         'before_widget' => '<div id="%1$s" class="zz-sidebar-widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4 class="zz-sidebar-widget__title">',
         'after_title'   => '</h4>',
     ) );
 
-    // ==========================================================================
-    // FOOTER WIDGET AREAS (Unified - Works for Modern + Classic Layouts)
-    // ==========================================================================
-    // 💡 PRO TIP: Using 4 active widget areas creates the best balanced layout.
-    //    Same widgets work for both Modern and Classic - CSS handles the styling.
-    // ==========================================================================
+    // =========================================================================
+    // 🦶 FOOTER COLUMNS (4-column layout)
+    // =========================================================================
     
-    // Footer Column 1 - Brand / About
+    // 🦶 Footer: About
     register_sidebar(array(
-        'name'          => esc_html__('Footer: Column 1', 'zzprompts'),
+        'name'          => '🦶 ' . esc_html__('Footer: About', 'zzprompts'),
         'id'            => 'footer-1',
-        'description'   => esc_html__('💡 Recommended: Logo, brand description, about info. Works with both Modern & Classic layouts.', 'zzprompts'),
+        'description'   => esc_html__('Column 1 — Usually for: Logo, site description, about text.', 'zzprompts'),
         'before_widget' => '<div id="%1$s" class="zz-footer-widget zz-footer-col-1 %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4 class="zz-footer-widget__title">',
         'after_title'   => '</h4>',
     ));
     
-    // Footer Column 2 - Links / Navigation
+    // 🦶 Footer: Quick Links
     register_sidebar(array(
-        'name'          => esc_html__('Footer: Column 2', 'zzprompts'),
+        'name'          => '🦶 ' . esc_html__('Footer: Quick Links', 'zzprompts'),
         'id'            => 'footer-2',
-        'description'   => esc_html__('💡 Recommended: Quick links, navigation menu, or categories.', 'zzprompts'),
+        'description'   => esc_html__('Column 2 — Usually for: Navigation menu, important page links.', 'zzprompts'),
         'before_widget' => '<div id="%1$s" class="zz-footer-widget zz-footer-col-2 %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4 class="zz-footer-widget__title">',
         'after_title'   => '</h4>',
     ));
     
-    // Footer Column 3 - Resources / Tags
+    // 🦶 Footer: Categories
     register_sidebar(array(
-        'name'          => esc_html__('Footer: Column 3', 'zzprompts'),
+        'name'          => '🦶 ' . esc_html__('Footer: Categories', 'zzprompts'),
         'id'            => 'footer-3',
-        'description'   => esc_html__('💡 Recommended: Tag cloud, resources, or additional links.', 'zzprompts'),
+        'description'   => esc_html__('Column 3 — Usually for: Categories, tags, or additional links.', 'zzprompts'),
         'before_widget' => '<div id="%1$s" class="zz-footer-widget zz-footer-col-3 %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4 class="zz-footer-widget__title">',
         'after_title'   => '</h4>',
     ));
     
-    // Footer Column 4 - CTA / Newsletter
+    // 🦶 Footer: Connect
     register_sidebar(array(
-        'name'          => esc_html__('Footer: Column 4', 'zzprompts'),
+        'name'          => '🦶 ' . esc_html__('Footer: Connect', 'zzprompts'),
         'id'            => 'footer-4',
-        'description'   => esc_html__('💡 Recommended: Newsletter signup, CTA, or social links.', 'zzprompts'),
+        'description'   => esc_html__('Column 4 — Usually for: Newsletter signup, social links, contact info.', 'zzprompts'),
         'before_widget' => '<div id="%1$s" class="zz-footer-widget zz-footer-col-4 %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4 class="zz-footer-widget__title">',

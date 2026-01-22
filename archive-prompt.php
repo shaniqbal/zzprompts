@@ -12,7 +12,8 @@ defined('ABSPATH') || exit;
 get_header();
 
 // Get total prompts count
-$total_prompts = wp_count_posts('prompt')->publish;
+$counts = wp_count_posts('prompt');
+$total_prompts = isset($counts->publish) ? $counts->publish : 0;
 
 // Check if expanded view requested
 $view_mode = isset($_GET['view']) ? sanitize_text_field($_GET['view']) : '';

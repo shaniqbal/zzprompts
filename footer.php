@@ -58,6 +58,21 @@ defined('ABSPATH') || exit;
                 <?php 
                 $email = zzprompts_get_option('footer_email', '');
                 $location = zzprompts_get_option('footer_location', '');
+
+                /* Footer Menu */
+                if ( has_nav_menu( 'footer' ) ) : ?>
+                    <div class="zz-footer__menu">
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer',
+                            'menu_class'     => 'zz-footer-menu-list',
+                            'depth'          => 1,
+                            'container'      => false,
+                            'fallback_cb'    => false,
+                        ) );
+                        ?>
+                    </div>
+                <?php endif; 
                 
                 if (!empty($email) || !empty($location)) : ?>
                     <div class="zz-footer__contact-info">

@@ -239,6 +239,7 @@ body.zz-layout-modern .zz-blog-card__image-link:hover .zz-blog-card__image {
 }
 
 body.zz-layout-modern .zz-blog-card__image {
+    display: block;
     width: 100%;
     height: 160px;
     border-radius: var(--zz-radius-md);

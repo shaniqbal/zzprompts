@@ -871,7 +871,7 @@
 
         // Get current page URL
         const currentUrl = new URL(window.location.href);
-        const baseUrl = currentUrl.pathname + currentUrl.search;
+        const baseUrl = currentUrl.origin + currentUrl.pathname;
 
         // Build query string from form data
         const params = new URLSearchParams();
@@ -883,7 +883,7 @@
         params.set('paged', '1');
 
         const queryString = params.toString();
-        const requestUrl = baseUrl.split('?')[0] + (queryString ? '?' + queryString : '');
+        const requestUrl = baseUrl + (queryString ? '?' + queryString : '');
 
         // Fetch filtered results
         fetch(requestUrl, {
@@ -909,16 +909,24 @@
                     // Replace ENTIRE content
                     contentWrapper.innerHTML = newContentWrapper.innerHTML;
 
-                    // Restore opacity (Subtle effect ends)
+                    // Restore opacity
                     contentWrapper.style.opacity = '1';
 
-                    // Scroll to top of content smoothly
-                    setTimeout(() => {
-                        contentWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
-
                     // Re-attach handlers
-                    attachPaginationHandlers();
+                    if (typeof attachPaginationHandlers === 'function') {
+                        attachPaginationHandlers();
+                    }
+                    if (typeof initCopySystem === 'function') {
+                        initCopySystem();
+                    }
+                    if (typeof initLikeSystem === 'function') {
+                        initLikeSystem();
+                    }
+                } else {
+                    // Fallback: If wrapper not found, maybe we got a fragment. Try to replace innerHTML if it looks valid.
+                    // But safer to reload if structure mismatches
+                    console.warn('ZZPrompts: .zz-archive-content not found in AJAX response.');
+                    window.location.href = requestUrl;
                 }
 
                 // Update URL without reload

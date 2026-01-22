@@ -1,22 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!-- 
-    ZZ Prompts Theme - Demo Content
-    WordPress eXtended RSS (WXR) format
-    
-    Instructions:
-    1. Go to Tools → Import
-    2. Install "WordPress Importer" if not installed
-    3. Click "Run Importer"
-    4. Upload this file
-    5. Assign authors and check "Download attachments"
-    6. Click "Submit"
--->
-<rss version="2.0"
-    xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
-    xmlns:content="http://purl.org/rss/1.0/modules/content/"
-    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:wp="http://wordpress.org/export/1.2/">
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
 
 <channel>
     <title>ZZ Prompts Demo</title>
@@ -28,7 +11,7 @@
     <wp:base_site_url>https://demo.zzprompts.com</wp:base_site_url>
     <wp:base_blog_url>https://demo.zzprompts.com</wp:base_blog_url>
 
-    <!-- Author -->
+    
     <wp:author>
         <wp:author_id>1</wp:author_id>
         <wp:author_login>admin</wp:author_login>
@@ -36,145 +19,137 @@
         <wp:author_display_name>ZZ Prompts Team</wp:author_display_name>
     </wp:author>
 
-    <!-- ============================================
-         PROMPT CATEGORIES
-         ============================================ -->
+    
     <wp:term>
         <wp:term_id>1</wp:term_id>
         <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
         <wp:term_slug>marketing</wp:term_slug>
-        <wp:term_name><![CDATA[Marketing]]></wp:term_name>
+        <wp:term_name>Marketing</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>2</wp:term_id>
         <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
         <wp:term_slug>writing</wp:term_slug>
-        <wp:term_name><![CDATA[Writing]]></wp:term_name>
+        <wp:term_name>Writing</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>3</wp:term_id>
         <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
         <wp:term_slug>coding</wp:term_slug>
-        <wp:term_name><![CDATA[Coding]]></wp:term_name>
+        <wp:term_name>Coding</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>4</wp:term_id>
         <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
         <wp:term_slug>business</wp:term_slug>
-        <wp:term_name><![CDATA[Business]]></wp:term_name>
+        <wp:term_name>Business</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>5</wp:term_id>
         <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
         <wp:term_slug>design</wp:term_slug>
-        <wp:term_name><![CDATA[Design]]></wp:term_name>
+        <wp:term_name>Design</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>6</wp:term_id>
         <wp:term_taxonomy>prompt_category</wp:term_taxonomy>
         <wp:term_slug>productivity</wp:term_slug>
-        <wp:term_name><![CDATA[Productivity]]></wp:term_name>
+        <wp:term_name>Productivity</wp:term_name>
     </wp:term>
 
-    <!-- ============================================
-         AI TOOLS
-         ============================================ -->
+    
     <wp:term>
         <wp:term_id>10</wp:term_id>
         <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
         <wp:term_slug>chatgpt</wp:term_slug>
-        <wp:term_name><![CDATA[ChatGPT]]></wp:term_name>
+        <wp:term_name>ChatGPT</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>11</wp:term_id>
         <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
         <wp:term_slug>midjourney</wp:term_slug>
-        <wp:term_name><![CDATA[Midjourney]]></wp:term_name>
+        <wp:term_name>Midjourney</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>12</wp:term_id>
         <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
         <wp:term_slug>claude</wp:term_slug>
-        <wp:term_name><![CDATA[Claude]]></wp:term_name>
+        <wp:term_name>Claude</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>13</wp:term_id>
         <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
         <wp:term_slug>dall-e</wp:term_slug>
-        <wp:term_name><![CDATA[DALL-E]]></wp:term_name>
+        <wp:term_name>DALL-E</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>14</wp:term_id>
         <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
         <wp:term_slug>gemini</wp:term_slug>
-        <wp:term_name><![CDATA[Gemini]]></wp:term_name>
+        <wp:term_name>Gemini</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>15</wp:term_id>
         <wp:term_taxonomy>ai_tool</wp:term_taxonomy>
         <wp:term_slug>copilot</wp:term_slug>
-        <wp:term_name><![CDATA[GitHub Copilot]]></wp:term_name>
+        <wp:term_name>GitHub Copilot</wp:term_name>
     </wp:term>
 
-    <!-- ============================================
-         BLOG CATEGORIES
-         ============================================ -->
+    
     <wp:term>
         <wp:term_id>20</wp:term_id>
         <wp:term_taxonomy>category</wp:term_taxonomy>
         <wp:term_slug>tutorials</wp:term_slug>
-        <wp:term_name><![CDATA[Tutorials]]></wp:term_name>
+        <wp:term_name>Tutorials</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>21</wp:term_id>
         <wp:term_taxonomy>category</wp:term_taxonomy>
         <wp:term_slug>ai-news</wp:term_slug>
-        <wp:term_name><![CDATA[AI News]]></wp:term_name>
+        <wp:term_name>AI News</wp:term_name>
     </wp:term>
     <wp:term>
         <wp:term_id>22</wp:term_id>
         <wp:term_taxonomy>category</wp:term_taxonomy>
         <wp:term_slug>tips-tricks</wp:term_slug>
-        <wp:term_name><![CDATA[Tips & Tricks]]></wp:term_name>
+        <wp:term_name>Tips &amp; Tricks</wp:term_name>
     </wp:term>
 
-    <!-- ============================================
-         PROMPTS (Custom Post Type)
-         ============================================ -->
     
-    <!-- Prompt 1: Marketing Email -->
+    
+    
     <item>
         <title>Professional Marketing Email Generator</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>This prompt helps you create compelling marketing emails that convert. Whether you're launching a product, announcing a sale, or nurturing leads, this template ensures your emails are professional and engaging.</p>
+        <content:encoded>
+&lt;p&gt;This prompt helps you create compelling marketing emails that convert. Whether you're launching a product, announcing a sale, or nurturing leads, this template ensures your emails are professional and engaging.&lt;/p&gt;
 
-<h3>How to Use</h3>
-<ol>
-<li>Copy the prompt below</li>
-<li>Replace the placeholders with your specific details</li>
-<li>Paste into ChatGPT or your preferred AI tool</li>
-<li>Review and customize the output</li>
-</ol>
+&lt;h3&gt;How to Use&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Copy the prompt below&lt;/li&gt;
+&lt;li&gt;Replace the placeholders with your specific details&lt;/li&gt;
+&lt;li&gt;Paste into ChatGPT or your preferred AI tool&lt;/li&gt;
+&lt;li&gt;Review and customize the output&lt;/li&gt;
+&lt;/ol&gt;
 
-<h3>Best Practices</h3>
-<ul>
-<li>Keep subject lines under 50 characters</li>
-<li>Use a clear call-to-action</li>
-<li>Personalize when possible</li>
-<li>Test different versions (A/B testing)</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Generate high-converting marketing emails with this comprehensive prompt template. Perfect for product launches, sales announcements, and lead nurturing campaigns.]]></excerpt:encoded>
+&lt;h3&gt;Best Practices&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep subject lines under 50 characters&lt;/li&gt;
+&lt;li&gt;Use a clear call-to-action&lt;/li&gt;
+&lt;li&gt;Personalize when possible&lt;/li&gt;
+&lt;li&gt;Test different versions (A/B testing)&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Generate high-converting marketing emails with this comprehensive prompt template. Perfect for product launches, sales announcements, and lead nurturing campaigns.</excerpt:encoded>
         <wp:post_id>101</wp:post_id>
         <wp:post_date>2026-01-15 10:00:00</wp:post_date>
         <wp:post_type>prompt</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="prompt_category" nicename="marketing"><![CDATA[Marketing]]></category>
-        <category domain="ai_tool" nicename="chatgpt"><![CDATA[ChatGPT]]></category>
+        <category domain="prompt_category" nicename="marketing">Marketing</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
         <wp:postmeta>
             <wp:meta_key>_zz_prompt_text</wp:meta_key>
-            <wp:meta_value><![CDATA[Act as an expert email marketing copywriter with 10+ years of experience. Create a compelling marketing email with the following specifications:
+            <wp:meta_value>Act as an expert email marketing copywriter with 10+ years of experience. Create a compelling marketing email with the following specifications:
 
 **Product/Service:** [Your product/service name]
 **Target Audience:** [Describe your ideal customer]
@@ -194,7 +169,7 @@ Please provide:
    - Social proof or testimonial placeholder
    - Clear CTA button text
    - P.S. line for urgency
-4. Recommended send time based on the goal]]></wp:meta_value>
+4. Recommended send time based on the goal</wp:meta_value>
         </wp:postmeta>
         <wp:postmeta>
             <wp:meta_key>_prompt_likes</wp:meta_key>
@@ -204,33 +179,33 @@ Please provide:
             <wp:meta_key>_prompt_copy_count</wp:meta_key>
             <wp:meta_value>342</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=101</guid><link>https://demo.zzprompts.com/professional-marketing-email-generator/</link><pubDate>Thu, 15 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-15 10:00:00</wp:post_date_gmt><wp:post_name>professional-marketing-email-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Prompt 2: Blog Post Outline -->
+    
     <item>
         <title>SEO-Optimized Blog Post Outline Creator</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>Create comprehensive, SEO-friendly blog post outlines that rank. This prompt generates detailed structures that include headers, subheaders, and content suggestions for each section.</p>
+        <content:encoded>
+&lt;p&gt;Create comprehensive, SEO-friendly blog post outlines that rank. This prompt generates detailed structures that include headers, subheaders, and content suggestions for each section.&lt;/p&gt;
 
-<h3>Features</h3>
-<ul>
-<li>SEO-optimized header structure</li>
-<li>Keyword placement suggestions</li>
-<li>Internal linking opportunities</li>
-<li>Content length recommendations</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Generate detailed, SEO-optimized blog post outlines that rank on search engines. Includes keyword placement and content structure recommendations.]]></excerpt:encoded>
+&lt;h3&gt;Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SEO-optimized header structure&lt;/li&gt;
+&lt;li&gt;Keyword placement suggestions&lt;/li&gt;
+&lt;li&gt;Internal linking opportunities&lt;/li&gt;
+&lt;li&gt;Content length recommendations&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Generate detailed, SEO-optimized blog post outlines that rank on search engines. Includes keyword placement and content structure recommendations.</excerpt:encoded>
         <wp:post_id>102</wp:post_id>
         <wp:post_date>2026-01-14 14:30:00</wp:post_date>
         <wp:post_type>prompt</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="prompt_category" nicename="writing"><![CDATA[Writing]]></category>
-        <category domain="ai_tool" nicename="chatgpt"><![CDATA[ChatGPT]]></category>
+        <category domain="prompt_category" nicename="writing">Writing</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
         <wp:postmeta>
             <wp:meta_key>_zz_prompt_text</wp:meta_key>
-            <wp:meta_value><![CDATA[Act as an SEO content strategist and blog outline specialist. Create a comprehensive blog post outline for the following topic:
+            <wp:meta_value>Act as an SEO content strategist and blog outline specialist. Create a comprehensive blog post outline for the following topic:
 
 **Topic:** [Your blog post topic]
 **Primary Keyword:** [Main keyword to target]
@@ -249,7 +224,7 @@ Provide a detailed outline including:
 7. Conclusion with CTA
 8. Internal linking suggestions
 9. External source recommendations
-10. Featured snippet optimization tips]]></wp:meta_value>
+10. Featured snippet optimization tips</wp:meta_value>
         </wp:postmeta>
         <wp:postmeta>
             <wp:meta_key>_prompt_likes</wp:meta_key>
@@ -259,33 +234,33 @@ Provide a detailed outline including:
             <wp:meta_key>_prompt_copy_count</wp:meta_key>
             <wp:meta_value>567</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=102</guid><link>https://demo.zzprompts.com/seo-optimized-blog-post-outline-creator/</link><pubDate>Wed, 14 Jan 2026 14:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-14 14:30:00</wp:post_date_gmt><wp:post_name>seo-optimized-blog-post-outline-creator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Prompt 3: Code Refactoring -->
+    
     <item>
         <title>Code Refactoring Assistant</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>Transform messy, legacy code into clean, maintainable masterpieces. This prompt helps you refactor code following best practices and modern patterns.</p>
+        <content:encoded>
+&lt;p&gt;Transform messy, legacy code into clean, maintainable masterpieces. This prompt helps you refactor code following best practices and modern patterns.&lt;/p&gt;
 
-<h3>What It Does</h3>
-<ul>
-<li>Identifies code smells</li>
-<li>Suggests design patterns</li>
-<li>Improves performance</li>
-<li>Adds proper documentation</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Refactor legacy code into clean, maintainable, and performant code following best practices and modern design patterns.]]></excerpt:encoded>
+&lt;h3&gt;What It Does&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Identifies code smells&lt;/li&gt;
+&lt;li&gt;Suggests design patterns&lt;/li&gt;
+&lt;li&gt;Improves performance&lt;/li&gt;
+&lt;li&gt;Adds proper documentation&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Refactor legacy code into clean, maintainable, and performant code following best practices and modern design patterns.</excerpt:encoded>
         <wp:post_id>103</wp:post_id>
         <wp:post_date>2026-01-13 09:15:00</wp:post_date>
         <wp:post_type>prompt</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="prompt_category" nicename="coding"><![CDATA[Coding]]></category>
-        <category domain="ai_tool" nicename="claude"><![CDATA[Claude]]></category>
+        <category domain="prompt_category" nicename="coding">Coding</category>
+        <category domain="ai_tool" nicename="claude">Claude</category>
         <wp:postmeta>
             <wp:meta_key>_zz_prompt_text</wp:meta_key>
-            <wp:meta_value><![CDATA[Act as a senior software engineer specializing in code refactoring and clean architecture. Review and refactor the following code:
+            <wp:meta_value>Act as a senior software engineer specializing in code refactoring and clean architecture. Review and refactor the following code:
 
 ```
 [PASTE YOUR CODE HERE]
@@ -306,7 +281,7 @@ Please provide:
 3. Performance improvements (if any)
 4. Before/After comparison explanation
 5. Unit test suggestions for the refactored code
-6. Documentation comments (JSDoc / docstrings)]]></wp:meta_value>
+6. Documentation comments (JSDoc / docstrings)</wp:meta_value>
         </wp:postmeta>
         <wp:postmeta>
             <wp:meta_key>_prompt_likes</wp:meta_key>
@@ -316,33 +291,33 @@ Please provide:
             <wp:meta_key>_prompt_copy_count</wp:meta_key>
             <wp:meta_value>423</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=103</guid><link>https://demo.zzprompts.com/code-refactoring-assistant/</link><pubDate>Tue, 13 Jan 2026 09:15:00 +0000</pubDate><wp:post_date_gmt>2026-01-13 09:15:00</wp:post_date_gmt><wp:post_name>code-refactoring-assistant</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Prompt 4: Midjourney Art -->
+    
     <item>
         <title>Cinematic Portrait Photography Prompt</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>Create stunning cinematic portrait images with this carefully crafted Midjourney prompt. Perfect for creating professional-looking character art, headshots, and editorial photography.</p>
+        <content:encoded>
+&lt;p&gt;Create stunning cinematic portrait images with this carefully crafted Midjourney prompt. Perfect for creating professional-looking character art, headshots, and editorial photography.&lt;/p&gt;
 
-<h3>Style Features</h3>
-<ul>
-<li>Professional lighting setup</li>
-<li>Cinematic color grading</li>
-<li>Shallow depth of field</li>
-<li>Magazine-quality results</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Generate stunning cinematic portrait photographs with professional lighting, color grading, and magazine-quality aesthetics.]]></excerpt:encoded>
+&lt;h3&gt;Style Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Professional lighting setup&lt;/li&gt;
+&lt;li&gt;Cinematic color grading&lt;/li&gt;
+&lt;li&gt;Shallow depth of field&lt;/li&gt;
+&lt;li&gt;Magazine-quality results&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Generate stunning cinematic portrait photographs with professional lighting, color grading, and magazine-quality aesthetics.</excerpt:encoded>
         <wp:post_id>104</wp:post_id>
         <wp:post_date>2026-01-12 16:45:00</wp:post_date>
         <wp:post_type>prompt</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="prompt_category" nicename="design"><![CDATA[Design]]></category>
-        <category domain="ai_tool" nicename="midjourney"><![CDATA[Midjourney]]></category>
+        <category domain="prompt_category" nicename="design">Design</category>
+        <category domain="ai_tool" nicename="midjourney">Midjourney</category>
         <wp:postmeta>
             <wp:meta_key>_zz_prompt_text</wp:meta_key>
-            <wp:meta_value><![CDATA[Cinematic portrait of [SUBJECT DESCRIPTION], professional studio lighting with key light and rim light, shallow depth of field, 85mm lens, f/1.8 aperture, magazine editorial style, muted color palette with teal and orange tones, high-end fashion photography, ultra detailed skin texture, catchlight in eyes, subtle film grain, shot on Hasselblad H6D-100c --ar 3:4 --v 6 --style raw --s 250]]></wp:meta_value>
+            <wp:meta_value>Cinematic portrait of [SUBJECT DESCRIPTION], professional studio lighting with key light and rim light, shallow depth of field, 85mm lens, f/1.8 aperture, magazine editorial style, muted color palette with teal and orange tones, high-end fashion photography, ultra detailed skin texture, catchlight in eyes, subtle film grain, shot on Hasselblad H6D-100c --ar 3:4 --v 6 --style raw --s 250</wp:meta_value>
         </wp:postmeta>
         <wp:postmeta>
             <wp:meta_key>_prompt_likes</wp:meta_key>
@@ -352,34 +327,34 @@ Please provide:
             <wp:meta_key>_prompt_copy_count</wp:meta_key>
             <wp:meta_value>678</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=104</guid><link>https://demo.zzprompts.com/cinematic-portrait-photography-prompt/</link><pubDate>Mon, 12 Jan 2026 16:45:00 +0000</pubDate><wp:post_date_gmt>2026-01-12 16:45:00</wp:post_date_gmt><wp:post_name>cinematic-portrait-photography-prompt</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Prompt 5: Business Plan -->
+    
     <item>
         <title>Startup Business Plan Generator</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>Generate a comprehensive business plan for your startup or new venture. This prompt creates investor-ready documentation covering all essential aspects of your business.</p>
+        <content:encoded>
+&lt;p&gt;Generate a comprehensive business plan for your startup or new venture. This prompt creates investor-ready documentation covering all essential aspects of your business.&lt;/p&gt;
 
-<h3>Sections Covered</h3>
-<ul>
-<li>Executive Summary</li>
-<li>Market Analysis</li>
-<li>Financial Projections</li>
-<li>Marketing Strategy</li>
-<li>Operations Plan</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Create a comprehensive, investor-ready business plan for your startup covering market analysis, financials, and growth strategy.]]></excerpt:encoded>
+&lt;h3&gt;Sections Covered&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Executive Summary&lt;/li&gt;
+&lt;li&gt;Market Analysis&lt;/li&gt;
+&lt;li&gt;Financial Projections&lt;/li&gt;
+&lt;li&gt;Marketing Strategy&lt;/li&gt;
+&lt;li&gt;Operations Plan&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Create a comprehensive, investor-ready business plan for your startup covering market analysis, financials, and growth strategy.</excerpt:encoded>
         <wp:post_id>105</wp:post_id>
         <wp:post_date>2026-01-11 11:00:00</wp:post_date>
         <wp:post_type>prompt</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="prompt_category" nicename="business"><![CDATA[Business]]></category>
-        <category domain="ai_tool" nicename="chatgpt"><![CDATA[ChatGPT]]></category>
+        <category domain="prompt_category" nicename="business">Business</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
         <wp:postmeta>
             <wp:meta_key>_zz_prompt_text</wp:meta_key>
-            <wp:meta_value><![CDATA[Act as a business strategist and startup advisor with experience in venture capital. Create a comprehensive business plan for the following startup:
+            <wp:meta_value>Act as a business strategist and startup advisor with experience in venture capital. Create a comprehensive business plan for the following startup:
 
 **Business Name:** [Your business name]
 **Industry:** [e.g., SaaS, E-commerce, FinTech]
@@ -400,10 +375,10 @@ Generate a complete business plan including:
 4. **Products/Services** (Features, pricing, roadmap)
 5. **Marketing Strategy** (Customer acquisition, channels, CAC)
 6. **Operations Plan** (Team, technology, processes)
-7. **Financial Projections** (3-year P&L, break-even analysis)
+7. **Financial Projections** (3-year P&amp;L, break-even analysis)
 8. **Funding Requirements** (Use of funds, milestones)
 9. **Risk Analysis** (Potential risks and mitigation)
-10. **Appendix** (Supporting data suggestions)]]></wp:meta_value>
+10. **Appendix** (Supporting data suggestions)</wp:meta_value>
         </wp:postmeta>
         <wp:postmeta>
             <wp:meta_key>_prompt_likes</wp:meta_key>
@@ -413,33 +388,33 @@ Generate a complete business plan including:
             <wp:meta_key>_prompt_copy_count</wp:meta_key>
             <wp:meta_value>534</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=105</guid><link>https://demo.zzprompts.com/startup-business-plan-generator/</link><pubDate>Sun, 11 Jan 2026 11:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-11 11:00:00</wp:post_date_gmt><wp:post_name>startup-business-plan-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Prompt 6: Daily Planner -->
+    
     <item>
         <title>AI-Powered Daily Productivity Planner</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>Optimize your day with this intelligent productivity planning prompt. Get a customized daily schedule based on your energy levels, priorities, and working style.</p>
+        <content:encoded>
+&lt;p&gt;Optimize your day with this intelligent productivity planning prompt. Get a customized daily schedule based on your energy levels, priorities, and working style.&lt;/p&gt;
 
-<h3>Features</h3>
-<ul>
-<li>Time-blocking recommendations</li>
-<li>Energy management</li>
-<li>Priority sorting</li>
-<li>Break scheduling</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Create an optimized daily schedule with time-blocking, energy management, and priority-based task organization.]]></excerpt:encoded>
+&lt;h3&gt;Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Time-blocking recommendations&lt;/li&gt;
+&lt;li&gt;Energy management&lt;/li&gt;
+&lt;li&gt;Priority sorting&lt;/li&gt;
+&lt;li&gt;Break scheduling&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Create an optimized daily schedule with time-blocking, energy management, and priority-based task organization.</excerpt:encoded>
         <wp:post_id>106</wp:post_id>
         <wp:post_date>2026-01-10 08:30:00</wp:post_date>
         <wp:post_type>prompt</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="prompt_category" nicename="productivity"><![CDATA[Productivity]]></category>
-        <category domain="ai_tool" nicename="gemini"><![CDATA[Gemini]]></category>
+        <category domain="prompt_category" nicename="productivity">Productivity</category>
+        <category domain="ai_tool" nicename="gemini">Gemini</category>
         <wp:postmeta>
             <wp:meta_key>_zz_prompt_text</wp:meta_key>
-            <wp:meta_value><![CDATA[Act as a productivity coach and time management expert. Create an optimized daily schedule for me based on:
+            <wp:meta_value>Act as a productivity coach and time management expert. Create an optimized daily schedule for me based on:
 
 **Work Start Time:** [e.g., 9:00 AM]
 **Work End Time:** [e.g., 6:00 PM]
@@ -465,7 +440,7 @@ Please provide:
 5. Buffer time for unexpected tasks
 6. Evening review/planning time
 7. Energy optimization tips for the day
-8. Motivational quote to start the day]]></wp:meta_value>
+8. Motivational quote to start the day</wp:meta_value>
         </wp:postmeta>
         <wp:postmeta>
             <wp:meta_key>_prompt_likes</wp:meta_key>
@@ -475,156 +450,381 @@ Please provide:
             <wp:meta_key>_prompt_copy_count</wp:meta_key>
             <wp:meta_value>445</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=106</guid><link>https://demo.zzprompts.com/ai-powered-daily-productivity-planner/</link><pubDate>Sat, 10 Jan 2026 08:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-10 08:30:00</wp:post_date_gmt><wp:post_name>ai-powered-daily-productivity-planner</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- ============================================
-         BLOG POSTS
-         ============================================ -->
+    
 
-    <!-- Blog Post 1 -->
+    
     <item>
         <title>Getting Started with AI Prompts: A Beginner's Guide</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>Artificial Intelligence has revolutionized the way we work, create, and solve problems. But the key to unlocking AI's full potential lies in how we communicate with it—through prompts.</p>
+        <content:encoded>
+&lt;p&gt;Artificial Intelligence has revolutionized the way we work, create, and solve problems. But the key to unlocking AI's full potential lies in how we communicate with it—through prompts.&lt;/p&gt;
 
-<h2>What is a Prompt?</h2>
-<p>A prompt is simply an instruction or question you give to an AI tool. Think of it as having a conversation with a very capable assistant who needs clear directions to help you effectively.</p>
+&lt;h2&gt;What is a Prompt?&lt;/h2&gt;
+&lt;p&gt;A prompt is simply an instruction or question you give to an AI tool. Think of it as having a conversation with a very capable assistant who needs clear directions to help you effectively.&lt;/p&gt;
 
-<h2>Why Prompts Matter</h2>
-<p>The difference between a mediocre AI response and an exceptional one often comes down to how well-crafted your prompt is. A vague prompt like "write me something about marketing" will yield generic results. But a specific prompt that includes context, audience, tone, and desired outcome will produce targeted, useful content.</p>
+&lt;h2&gt;Why Prompts Matter&lt;/h2&gt;
+&lt;p&gt;The difference between a mediocre AI response and an exceptional one often comes down to how well-crafted your prompt is. A vague prompt like "write me something about marketing" will yield generic results. But a specific prompt that includes context, audience, tone, and desired outcome will produce targeted, useful content.&lt;/p&gt;
 
-<h2>Key Elements of a Great Prompt</h2>
-<h3>1. Role Assignment</h3>
-<p>Tell the AI who to be: "Act as an expert marketing strategist with 15 years of experience..."</p>
+&lt;h2&gt;Key Elements of a Great Prompt&lt;/h2&gt;
+&lt;h3&gt;1. Role Assignment&lt;/h3&gt;
+&lt;p&gt;Tell the AI who to be: "Act as an expert marketing strategist with 15 years of experience..."&lt;/p&gt;
 
-<h3>2. Context</h3>
-<p>Provide background information: "For a B2B SaaS company targeting enterprise clients..."</p>
+&lt;h3&gt;2. Context&lt;/h3&gt;
+&lt;p&gt;Provide background information: "For a B2B SaaS company targeting enterprise clients..."&lt;/p&gt;
 
-<h3>3. Specific Instructions</h3>
-<p>Be clear about what you want: "Create 5 email subject lines that emphasize urgency and value..."</p>
+&lt;h3&gt;3. Specific Instructions&lt;/h3&gt;
+&lt;p&gt;Be clear about what you want: "Create 5 email subject lines that emphasize urgency and value..."&lt;/p&gt;
 
-<h3>4. Format Requirements</h3>
-<p>Specify the output format: "Present this as a bulleted list with headers..."</p>
+&lt;h3&gt;4. Format Requirements&lt;/h3&gt;
+&lt;p&gt;Specify the output format: "Present this as a bulleted list with headers..."&lt;/p&gt;
 
-<h2>Common Mistakes to Avoid</h2>
-<ul>
-<li>Being too vague</li>
-<li>Not providing context</li>
-<li>Asking too many things at once</li>
-<li>Forgetting to specify the tone</li>
-</ul>
+&lt;h2&gt;Common Mistakes to Avoid&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Being too vague&lt;/li&gt;
+&lt;li&gt;Not providing context&lt;/li&gt;
+&lt;li&gt;Asking too many things at once&lt;/li&gt;
+&lt;li&gt;Forgetting to specify the tone&lt;/li&gt;
+&lt;/ul&gt;
 
-<h2>Start Experimenting</h2>
-<p>The best way to learn is by doing. Start with simple prompts and gradually add more specifications as you see how the AI responds. Remember, prompting is a skill that improves with practice.</p>
+&lt;h2&gt;Start Experimenting&lt;/h2&gt;
+&lt;p&gt;The best way to learn is by doing. Start with simple prompts and gradually add more specifications as you see how the AI responds. Remember, prompting is a skill that improves with practice.&lt;/p&gt;
 
-<p>Browse our prompt library to find templates you can customize for your specific needs.</p>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Learn the fundamentals of AI prompting and discover how to craft effective prompts that get better results from ChatGPT, Claude, and other AI tools.]]></excerpt:encoded>
+&lt;p&gt;Browse our prompt library to find templates you can customize for your specific needs.&lt;/p&gt;
+        </content:encoded>
+        <excerpt:encoded>Learn the fundamentals of AI prompting and discover how to craft effective prompts that get better results from ChatGPT, Claude, and other AI tools.</excerpt:encoded>
         <wp:post_id>201</wp:post_id>
         <wp:post_date>2026-01-18 10:00:00</wp:post_date>
         <wp:post_type>post</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="category" nicename="tutorials"><![CDATA[Tutorials]]></category>
-    </item>
+        <category domain="category" nicename="tutorials">Tutorials</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=201</guid><link>https://demo.zzprompts.com/getting-started-with-ai-prompts-a-beginners-guide/</link><pubDate>Sun, 18 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-18 10:00:00</wp:post_date_gmt><wp:post_name>getting-started-with-ai-prompts-a-beginners-guide</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Blog Post 2 -->
+    
     <item>
         <title>10 ChatGPT Prompts That Will 10x Your Productivity</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>ChatGPT isn't just a chatbot—it's a productivity powerhouse when used correctly. Here are 10 prompts that professionals use daily to save hours of work.</p>
+        <content:encoded>
+&lt;p&gt;ChatGPT isn't just a chatbot—it's a productivity powerhouse when used correctly. Here are 10 prompts that professionals use daily to save hours of work.&lt;/p&gt;
 
-<h2>1. The Meeting Summarizer</h2>
-<p>Paste your meeting notes and ask: "Summarize this meeting into action items, decisions made, and follow-up tasks. Format as a bulleted list organized by team member responsibility."</p>
+&lt;h2&gt;1. The Meeting Summarizer&lt;/h2&gt;
+&lt;p&gt;Paste your meeting notes and ask: "Summarize this meeting into action items, decisions made, and follow-up tasks. Format as a bulleted list organized by team member responsibility."&lt;/p&gt;
 
-<h2>2. The Email Responder</h2>
-<p>"Draft a professional response to this email that [accepts/declines/asks for more information]. Keep the tone [formal/friendly] and limit to 100 words."</p>
+&lt;h2&gt;2. The Email Responder&lt;/h2&gt;
+&lt;p&gt;"Draft a professional response to this email that [accepts/declines/asks for more information]. Keep the tone [formal/friendly] and limit to 100 words."&lt;/p&gt;
 
-<h2>3. The Research Assistant</h2>
-<p>"Explain [complex topic] like I'm a [role] who needs to understand the practical implications. Include 3 real-world examples."</p>
+&lt;h2&gt;3. The Research Assistant&lt;/h2&gt;
+&lt;p&gt;"Explain [complex topic] like I'm a [role] who needs to understand the practical implications. Include 3 real-world examples."&lt;/p&gt;
 
-<h2>4. The Code Reviewer</h2>
-<p>"Review this code for bugs, performance issues, and best practices. Suggest improvements with explanations."</p>
+&lt;h2&gt;4. The Code Reviewer&lt;/h2&gt;
+&lt;p&gt;"Review this code for bugs, performance issues, and best practices. Suggest improvements with explanations."&lt;/p&gt;
 
-<h2>5. The Content Repurposer</h2>
-<p>"Transform this blog post into: 1) A LinkedIn post 2) A Twitter thread 3) An email newsletter introduction. Maintain the key message but adapt the tone for each platform."</p>
+&lt;h2&gt;5. The Content Repurposer&lt;/h2&gt;
+&lt;p&gt;"Transform this blog post into: 1) A LinkedIn post 2) A Twitter thread 3) An email newsletter introduction. Maintain the key message but adapt the tone for each platform."&lt;/p&gt;
 
-<h2>6. The Devil's Advocate</h2>
-<p>"I'm considering [decision/idea]. Give me 5 reasons why this might fail and potential solutions for each risk."</p>
+&lt;h2&gt;6. The Devil's Advocate&lt;/h2&gt;
+&lt;p&gt;"I'm considering [decision/idea]. Give me 5 reasons why this might fail and potential solutions for each risk."&lt;/p&gt;
 
-<h2>7. The Learning Companion</h2>
-<p>"Create a 30-day learning plan for [skill]. Include daily activities, resources, and milestones to track progress."</p>
+&lt;h2&gt;7. The Learning Companion&lt;/h2&gt;
+&lt;p&gt;"Create a 30-day learning plan for [skill]. Include daily activities, resources, and milestones to track progress."&lt;/p&gt;
 
-<h2>8. The Presentation Builder</h2>
-<p>"Create an outline for a 10-slide presentation about [topic] for [audience]. Include suggested visuals and speaker notes for each slide."</p>
+&lt;h2&gt;8. The Presentation Builder&lt;/h2&gt;
+&lt;p&gt;"Create an outline for a 10-slide presentation about [topic] for [audience]. Include suggested visuals and speaker notes for each slide."&lt;/p&gt;
 
-<h2>9. The Process Optimizer</h2>
-<p>"Here's my current workflow for [task]. Identify inefficiencies and suggest a streamlined version that saves time."</p>
+&lt;h2&gt;9. The Process Optimizer&lt;/h2&gt;
+&lt;p&gt;"Here's my current workflow for [task]. Identify inefficiencies and suggest a streamlined version that saves time."&lt;/p&gt;
 
-<h2>10. The Creative Brainstormer</h2>
-<p>"I need ideas for [project/problem]. Give me 10 creative solutions, ranging from practical to ambitious. Include pros and cons for each."</p>
+&lt;h2&gt;10. The Creative Brainstormer&lt;/h2&gt;
+&lt;p&gt;"I need ideas for [project/problem]. Give me 10 creative solutions, ranging from practical to ambitious. Include pros and cons for each."&lt;/p&gt;
 
-<h2>Pro Tips</h2>
-<ul>
-<li>Always specify the output format you want</li>
-<li>Use follow-up prompts to refine results</li>
-<li>Save your best prompts for reuse</li>
-<li>Combine prompts for complex tasks</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Discover 10 powerful ChatGPT prompts that professionals use daily to automate tasks, save time, and boost their productivity.]]></excerpt:encoded>
+&lt;h2&gt;Pro Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Always specify the output format you want&lt;/li&gt;
+&lt;li&gt;Use follow-up prompts to refine results&lt;/li&gt;
+&lt;li&gt;Save your best prompts for reuse&lt;/li&gt;
+&lt;li&gt;Combine prompts for complex tasks&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Discover 10 powerful ChatGPT prompts that professionals use daily to automate tasks, save time, and boost their productivity.</excerpt:encoded>
         <wp:post_id>202</wp:post_id>
         <wp:post_date>2026-01-16 14:30:00</wp:post_date>
         <wp:post_type>post</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="category" nicename="tips-tricks"><![CDATA[Tips & Tricks]]></category>
-    </item>
+        <category domain="category" nicename="tips-tricks">Tips &amp; Tricks</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=202</guid><link>https://demo.zzprompts.com/10-chatgpt-prompts-that-will-10x-your-productivity/</link><pubDate>Fri, 16 Jan 2026 14:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-16 14:30:00</wp:post_date_gmt><wp:post_name>10-chatgpt-prompts-that-will-10x-your-productivity</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- Blog Post 3 -->
+    
     <item>
         <title>The Future of AI: What to Expect in 2026</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<p>The AI landscape is evolving at an unprecedented pace. Here's what experts predict for the rest of 2026 and how it will impact your workflow.</p>
+        <content:encoded>
+&lt;p&gt;The AI landscape is evolving at an unprecedented pace. Here's what experts predict for the rest of 2026 and how it will impact your workflow.&lt;/p&gt;
 
-<h2>Multimodal AI Goes Mainstream</h2>
-<p>The line between text, image, audio, and video AI is blurring. Expect tools that seamlessly combine all these capabilities in a single interface.</p>
+&lt;h2&gt;Multimodal AI Goes Mainstream&lt;/h2&gt;
+&lt;p&gt;The line between text, image, audio, and video AI is blurring. Expect tools that seamlessly combine all these capabilities in a single interface.&lt;/p&gt;
 
-<h2>AI Agents Take Over Routine Tasks</h2>
-<p>Autonomous AI agents that can browse the web, make purchases, schedule appointments, and manage workflows will become commonplace.</p>
+&lt;h2&gt;AI Agents Take Over Routine Tasks&lt;/h2&gt;
+&lt;p&gt;Autonomous AI agents that can browse the web, make purchases, schedule appointments, and manage workflows will become commonplace.&lt;/p&gt;
 
-<h2>Personalized AI Assistants</h2>
-<p>AI that learns your preferences, writing style, and work patterns to provide increasingly personalized assistance.</p>
+&lt;h2&gt;Personalized AI Assistants&lt;/h2&gt;
+&lt;p&gt;AI that learns your preferences, writing style, and work patterns to provide increasingly personalized assistance.&lt;/p&gt;
 
-<h2>Industry-Specific Models</h2>
-<p>Expect specialized AI models trained for specific industries like healthcare, legal, finance, and education.</p>
+&lt;h2&gt;Industry-Specific Models&lt;/h2&gt;
+&lt;p&gt;Expect specialized AI models trained for specific industries like healthcare, legal, finance, and education.&lt;/p&gt;
 
-<h2>How to Prepare</h2>
-<ul>
-<li>Stay updated with the latest AI developments</li>
-<li>Experiment with new tools as they launch</li>
-<li>Build a library of effective prompts</li>
-<li>Focus on skills that complement AI, not compete with it</li>
-</ul>
-        ]]></content:encoded>
-        <excerpt:encoded><![CDATA[Explore the latest AI trends and predictions for 2026. Learn how multimodal AI, autonomous agents, and specialized models will transform work.]]></excerpt:encoded>
+&lt;h2&gt;How to Prepare&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Stay updated with the latest AI developments&lt;/li&gt;
+&lt;li&gt;Experiment with new tools as they launch&lt;/li&gt;
+&lt;li&gt;Build a library of effective prompts&lt;/li&gt;
+&lt;li&gt;Focus on skills that complement AI, not compete with it&lt;/li&gt;
+&lt;/ul&gt;
+        </content:encoded>
+        <excerpt:encoded>Explore the latest AI trends and predictions for 2026. Learn how multimodal AI, autonomous agents, and specialized models will transform work.</excerpt:encoded>
         <wp:post_id>203</wp:post_id>
         <wp:post_date>2026-01-14 09:00:00</wp:post_date>
         <wp:post_type>post</wp:post_type>
         <wp:status>publish</wp:status>
-        <category domain="category" nicename="ai-news"><![CDATA[AI News]]></category>
-    </item>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=203</guid><link>https://demo.zzprompts.com/the-future-of-ai-what-to-expect-in-2026/</link><pubDate>Wed, 14 Jan 2026 09:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-14 09:00:00</wp:post_date_gmt><wp:post_name>the-future-of-ai-what-to-expect-in-2026</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky></item>
 
-    <!-- ============================================
-         PAGES
-         ============================================ -->
+    
+    <item>
+        <title>How to Write Better Prompts: A Masterclass</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Learn the subtle art of prompt engineering. We break down the structure of a perfect prompt and provide examples for varied use cases.&lt;/p&gt;
+&lt;h2&gt;The Anatomy of a Perfect Prompt&lt;/h2&gt;
+&lt;p&gt;Every great prompt has context, a directive, constraints, and format expectations. Mastering these four elements is key to getting high-quality outputs.&lt;/p&gt;</content:encoded>
+        <wp:post_id>204</wp:post_id>
+        <wp:post_date>2026-01-13 11:15:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tutorials">Tutorials</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=204</guid><link>https://demo.zzprompts.com/how-to-write-better-prompts-a-masterclass/</link><pubDate>Tue, 13 Jan 2026 11:15:00 +0000</pubDate><wp:post_date_gmt>2026-01-13 11:15:00</wp:post_date_gmt><wp:post_name>how-to-write-better-prompts-a-masterclass</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
 
-    <!-- About Page -->
+    
+    <item>
+        <title>Midjourney v6 vs DALL-E 3: Which is Better?</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;A side-by-side comparison of the two leading AI image generators. We test them on photorealism, text rendering, and artistic style.&lt;/p&gt;
+&lt;h2&gt;Photorealism&lt;/h2&gt;
+&lt;p&gt;Midjourney v6 takes the crown for texture and lighting, creating images that are often indistinguishable from photographs.&lt;/p&gt;
+&lt;h2&gt;Text Rendering&lt;/h2&gt;
+&lt;p&gt;DALL-E 3 shines here, accurately rendering complex text within images where Midjourney sometimes struggles.&lt;/p&gt;</content:encoded>
+        <wp:post_id>205</wp:post_id>
+        <wp:post_date>2026-01-12 15:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-reviews">Reviews</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=205</guid><link>https://demo.zzprompts.com/midjourney-v6-vs-dall-e-3-which-is-better/</link><pubDate>Mon, 12 Jan 2026 15:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-12 15:00:00</wp:post_date_gmt><wp:post_name>midjourney-v6-vs-dall-e-3-which-is-better</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>10 AI Tools Every Marketer Needs in 2026</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;The marketing landscape has changed. If you aren't using these tools, you're falling behind. From copy generation to video editing, here is the ultimate stack.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jasper for Copywriting&lt;/li&gt;
+&lt;li&gt;Midjourney for Visuals&lt;/li&gt;
+&lt;li&gt;SurferSEO for Content Optimization&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+        <wp:post_id>206</wp:post_id>
+        <wp:post_date>2026-01-11 09:30:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tips-tricks">Tips &amp; Tricks</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=206</guid><link>https://demo.zzprompts.com/10-ai-tools-every-marketer-needs-in-2026/</link><pubDate>Sun, 11 Jan 2026 09:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-11 09:30:00</wp:post_date_gmt><wp:post_name>10-ai-tools-every-marketer-needs-in-2026</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>The Ethics of AI Art: Navigating Copyright</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;As AI art becomes ubiquitous, questions of ownership and copyright are more pressing than ever. This post explores the current legal landscape.&lt;/p&gt;
+&lt;p&gt;We discuss the implications of recent court rulings and what they mean for creators using AI tools.&lt;/p&gt;</content:encoded>
+        <wp:post_id>207</wp:post_id>
+        <wp:post_date>2026-01-10 13:45:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=207</guid><link>https://demo.zzprompts.com/the-ethics-of-ai-art-navigating-copyright/</link><pubDate>Sat, 10 Jan 2026 13:45:00 +0000</pubDate><wp:post_date_gmt>2026-01-10 13:45:00</wp:post_date_gmt><wp:post_name>the-ethics-of-ai-art-navigating-copyright</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>How to Build Your Own AI Chatbot in Under an Hour</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;You don't need to be a coding wizard to build a custom chatbot. We show you how to use no-code tools to create a bot trained on your own data.&lt;/p&gt;
+&lt;p&gt;Step-by-step guide using tools like Voiceflow or Stack AI.&lt;/p&gt;</content:encoded>
+        <wp:post_id>208</wp:post_id>
+        <wp:post_date>2026-01-09 10:20:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tutorials">Tutorials</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=208</guid><link>https://demo.zzprompts.com/how-to-build-your-own-ai-chatbot-in-under-an-hour/</link><pubDate>Fri, 09 Jan 2026 10:20:00 +0000</pubDate><wp:post_date_gmt>2026-01-09 10:20:00</wp:post_date_gmt><wp:post_name>how-to-build-your-own-ai-chatbot-in-under-an-hour</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Case Study: How Agency X Increased Revenue with AI</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Real-world numbers from a design agency that integrated AI into their workflow. Spoiler: They cut production time by 40%.&lt;/p&gt;
+&lt;p&gt;We interview the CEO to find out how they managed the transition and upskilled their team.&lt;/p&gt;</content:encoded>
+        <wp:post_id>209</wp:post_id>
+        <wp:post_date>2026-01-08 16:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=209</guid><link>https://demo.zzprompts.com/case-study-how-agency-x-increased-revenue-with-ai/</link><pubDate>Thu, 08 Jan 2026 16:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-08 16:00:00</wp:post_date_gmt><wp:post_name>case-study-how-agency-x-increased-revenue-with-ai</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Understanding Large Language Models: A Guide</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;What actually happens when you type into ChatGPT? We explain the technology behind LLMs in simple, non-technical terms.&lt;/p&gt;
+&lt;p&gt;Learn about tokens, neural networks, and training data without getting a headache.&lt;/p&gt;</content:encoded>
+        <wp:post_id>210</wp:post_id>
+        <wp:post_date>2026-01-07 08:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tutorials">Tutorials</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=210</guid><link>https://demo.zzprompts.com/understanding-large-language-models-a-guide/</link><pubDate>Wed, 07 Jan 2026 08:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-07 08:00:00</wp:post_date_gmt><wp:post_name>understanding-large-language-models-a-guide</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Top 5 AI Productivity Hacks for Remote Workers</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Working from home? AI can be your best coworker. Here are 5 ways to use AI to handle admin tasks so you can focus on deep work.&lt;/p&gt;
+&lt;p&gt;From scheduling emails to transcribing meetings, these hacks will save you hours every week.&lt;/p&gt;</content:encoded>
+        <wp:post_id>211</wp:post_id>
+        <wp:post_date>2026-01-06 12:30:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tips-tricks">Tips &amp; Tricks</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=211</guid><link>https://demo.zzprompts.com/top-5-ai-productivity-hacks-for-remote-workers/</link><pubDate>Tue, 06 Jan 2026 12:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-06 12:30:00</wp:post_date_gmt><wp:post_name>top-5-ai-productivity-hacks-for-remote-workers</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Why Prompt Engineering is the Skill of the Decade</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;As AI models become more powerful, the ability to direct them effectively becomes more valuable. We discuss why you should invest in learning this skill.&lt;/p&gt;
+&lt;p&gt;It's not just about getting better answers; it's about solving complex problems faster.&lt;/p&gt;</content:encoded>
+        <wp:post_id>212</wp:post_id>
+        <wp:post_date>2026-01-05 14:15:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=212</guid><link>https://demo.zzprompts.com/why-prompt-engineering-is-the-skill-of-the-decade/</link><pubDate>Mon, 05 Jan 2026 14:15:00 +0000</pubDate><wp:post_date_gmt>2026-01-05 14:15:00</wp:post_date_gmt><wp:post_name>why-prompt-engineering-is-the-skill-of-the-decade</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>How to Monetize Your AI Art: A Practical Guide</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Turn your Midjourney creations into a revenue stream. We explore print-on-demand, stock photography, and NFT marketplaces.&lt;/p&gt;
+&lt;p&gt;Learn which platforms offer the best margins and how to protect your work.&lt;/p&gt;</content:encoded>
+        <wp:post_id>213</wp:post_id>
+        <wp:post_date>2026-01-04 11:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tips-tricks">Tips &amp; Tricks</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=213</guid><link>https://demo.zzprompts.com/how-to-monetize-your-ai-art-a-practical-guide/</link><pubDate>Sun, 04 Jan 2026 11:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-04 11:00:00</wp:post_date_gmt><wp:post_name>how-to-monetize-your-ai-art-a-practical-guide</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>The Rise of AI in Education: Friend or Foe?</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Schools are grappling with the impact of ChatGPT. We discuss the potential for personalized learning versus the risk of academic dishonesty.&lt;/p&gt;
+&lt;p&gt;Hear from teachers and students about how they are adapting to the new reality.&lt;/p&gt;</content:encoded>
+        <wp:post_id>214</wp:post_id>
+        <wp:post_date>2026-01-03 09:45:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=214</guid><link>https://demo.zzprompts.com/the-rise-of-ai-in-education-friend-or-foe/</link><pubDate>Sat, 03 Jan 2026 09:45:00 +0000</pubDate><wp:post_date_gmt>2026-01-03 09:45:00</wp:post_date_gmt><wp:post_name>the-rise-of-ai-in-education-friend-or-foe</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Automating Your Workflow with Python and ChatGPT</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;You don't need to be a developer to write scripts. Learn how to use ChatGPT to generate Python code that automates boring tasks.&lt;/p&gt;
+&lt;p&gt;We build a simple script to rename files and organize folders automatically.&lt;/p&gt;</content:encoded>
+        <wp:post_id>215</wp:post_id>
+        <wp:post_date>2026-01-02 14:20:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tutorials">Tutorials</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=215</guid><link>https://demo.zzprompts.com/automating-your-workflow-with-python-and-chatgpt/</link><pubDate>Fri, 02 Jan 2026 14:20:00 +0000</pubDate><wp:post_date_gmt>2026-01-02 14:20:00</wp:post_date_gmt><wp:post_name>automating-your-workflow-with-python-and-chatgpt</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Interview with Top AI Researcher: Jane Doe</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;We sat down with Jane Doe from OpenAI to discuss the future of AGI and safety research.&lt;/p&gt;
+&lt;p&gt;"The pace of progress is accelerating," says Doe. "Safety must be our top priority." Read the full transcript here.&lt;/p&gt;</content:encoded>
+        <wp:post_id>216</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=216</guid><link>https://demo.zzprompts.com/interview-with-top-ai-researcher-jane-doe/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>interview-with-top-ai-researcher-jane-doe</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Review: The Best AI Copywriting Tools of 2026</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;We tested the top 5 AI writers to see which one produces the most human-like content.&lt;/p&gt;
+&lt;p&gt;Our winner might surprise you. Check out the detailed breakdown of features, pricing, and output quality.&lt;/p&gt;</content:encoded>
+        <wp:post_id>217</wp:post_id>
+        <wp:post_date>2025-12-31 12:00:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-reviews">Reviews</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=217</guid><link>https://demo.zzprompts.com/review-the-best-ai-copywriting-tools-of-2026/</link><pubDate>Wed, 31 Dec 2025 12:00:00 +0000</pubDate><wp:post_date_gmt>2025-12-31 12:00:00</wp:post_date_gmt><wp:post_name>review-the-best-ai-copywriting-tools-of-2026</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>How AI is Transforming the Healthcare Industry</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;From early disease detection to personalized drug discovery, AI is saving lives. We look at the most promising breakthroughs.&lt;/p&gt;
+&lt;p&gt;A look at how AI analyzed X-rays to detect cancer 2 years earlier than human doctors.&lt;/p&gt;</content:encoded>
+        <wp:post_id>218</wp:post_id>
+        <wp:post_date>2025-12-30 08:30:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=218</guid><link>https://demo.zzprompts.com/how-ai-is-transforming-the-healthcare-industry/</link><pubDate>Tue, 30 Dec 2025 08:30:00 +0000</pubDate><wp:post_date_gmt>2025-12-30 08:30:00</wp:post_date_gmt><wp:post_name>how-ai-is-transforming-the-healthcare-industry</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Getting Started with Local LLMs: Privacy and Performance</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Want to run an AI model on your own laptop? We show you how to use Llama 3 and other open-source models offline.&lt;/p&gt;
+&lt;p&gt;Perfect for handling sensitive data that you don't want to send to the cloud.&lt;/p&gt;</content:encoded>
+        <wp:post_id>219</wp:post_id>
+        <wp:post_date>2025-12-29 15:45:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="tutorials">Tutorials</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=219</guid><link>https://demo.zzprompts.com/getting-started-with-local-llms-privacy-and-performance/</link><pubDate>Mon, 29 Dec 2025 15:45:00 +0000</pubDate><wp:post_date_gmt>2025-12-29 15:45:00</wp:post_date_gmt><wp:post_name>getting-started-with-local-llms-privacy-and-performance</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>The Convergence of VR and AI: A New Reality</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;How generative AI is creating immersive virtual worlds in real-time. The metaverse is finally becoming interesting.&lt;/p&gt;
+&lt;p&gt;Imagine a game where the NPCs have their own lives and the quest never ends.&lt;/p&gt;</content:encoded>
+        <wp:post_id>220</wp:post_id>
+        <wp:post_date>2025-12-28 10:15:00</wp:post_date>
+        <wp:post_type>post</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="category" nicename="ai-news">AI News</category>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=220</guid><link>https://demo.zzprompts.com/the-convergence-of-vr-and-ai-a-new-reality/</link><pubDate>Sun, 28 Dec 2025 10:15:00 +0000</pubDate><wp:post_date_gmt>2025-12-28 10:15:00</wp:post_date_gmt><wp:post_name>the-convergence-of-vr-and-ai-a-new-reality</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+
+    
     <item>
         <title>About Us</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[]]></content:encoded>
+        <content:encoded />
         <wp:post_id>301</wp:post_id>
         <wp:post_date>2026-01-01 10:00:00</wp:post_date>
         <wp:post_type>page</wp:post_type>
@@ -633,13 +833,13 @@ Please provide:
             <wp:meta_key>_wp_page_template</wp:meta_key>
             <wp:meta_value>page-templates/about.php</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=301</guid><link>https://demo.zzprompts.com/about-us/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>about-us</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
 
-    <!-- Contact Page -->
+    
     <item>
         <title>Contact</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[]]></content:encoded>
+        <content:encoded />
         <wp:post_id>302</wp:post_id>
         <wp:post_date>2026-01-01 10:00:00</wp:post_date>
         <wp:post_type>page</wp:post_type>
@@ -648,62 +848,803 @@ Please provide:
             <wp:meta_key>_wp_page_template</wp:meta_key>
             <wp:meta_value>page-templates/contact.php</wp:meta_value>
         </wp:postmeta>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=302</guid><link>https://demo.zzprompts.com/contact/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>contact</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
 
-    <!-- Privacy Policy Page -->
+    
     <item>
         <title>Privacy Policy</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<h2>Privacy Policy</h2>
-<p>Your privacy is important to us. This privacy policy explains what personal data we collect and how we use it.</p>
+        <content:encoded>
+&lt;h2&gt;Privacy Policy&lt;/h2&gt;
+&lt;p&gt;Your privacy is important to us. This privacy policy explains what personal data we collect and how we use it.&lt;/p&gt;
 
-<h3>Information We Collect</h3>
-<p>We collect information you provide directly, such as when you create an account, subscribe to our newsletter, or contact us.</p>
+&lt;h3&gt;Information We Collect&lt;/h3&gt;
+&lt;p&gt;We collect information you provide directly, such as when you create an account, subscribe to our newsletter, or contact us.&lt;/p&gt;
 
-<h3>How We Use Your Information</h3>
-<p>We use the information we collect to provide, maintain, and improve our services.</p>
+&lt;h3&gt;How We Use Your Information&lt;/h3&gt;
+&lt;p&gt;We use the information we collect to provide, maintain, and improve our services.&lt;/p&gt;
 
-<h3>Cookies</h3>
-<p>We use cookies to track user preferences and improve user experience.</p>
+&lt;h3&gt;Cookies&lt;/h3&gt;
+&lt;p&gt;We use cookies to track user preferences and improve user experience.&lt;/p&gt;
 
-<h3>Contact Us</h3>
-<p>If you have questions about this privacy policy, please contact us.</p>
-        ]]></content:encoded>
+&lt;h3&gt;Contact Us&lt;/h3&gt;
+&lt;p&gt;If you have questions about this privacy policy, please contact us.&lt;/p&gt;
+        </content:encoded>
         <wp:post_id>303</wp:post_id>
         <wp:post_date>2026-01-01 10:00:00</wp:post_date>
         <wp:post_type>page</wp:post_type>
         <wp:status>publish</wp:status>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=303</guid><link>https://demo.zzprompts.com/privacy-policy/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>privacy-policy</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
 
-    <!-- Terms Page -->
+    
     <item>
         <title>Terms of Service</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[
-<h2>Terms of Service</h2>
-<p>By accessing this website, you agree to be bound by these terms of service.</p>
-
-<h3>Use of Content</h3>
-<p>The prompts and content provided are for personal and commercial use. You may not redistribute or resell the prompts as-is.</p>
-
-<h3>User Conduct</h3>
-<p>You agree to use this website only for lawful purposes and in a way that does not infringe the rights of others.</p>
-
-<h3>Disclaimer</h3>
-<p>We provide prompts as templates. Results may vary based on AI model and usage. We are not responsible for outcomes generated by AI tools.</p>
-        ]]></content:encoded>
-        <wp:post_id>304</wp:post_id>
+        <content:encoded>
+&lt;h2&gt;Terms of Service&lt;/h2&gt;
+&lt;p&gt;Welcome to ZZ Prompts. By accessing this website, you agree to these terms.&lt;/p&gt;
+&lt;h3&gt;1. License&lt;/h3&gt;
+&lt;p&gt;All prompts are licensed under Creative Commons Attribution 4.0 International.&lt;/p&gt;
+&lt;h3&gt;2. User Accounts&lt;/h3&gt;
+&lt;p&gt;You are responsible for safeguarding your account credentials.&lt;/p&gt;
+        </content:encoded>
+        <wp:post_id>306</wp:post_id>
         <wp:post_date>2026-01-01 10:00:00</wp:post_date>
         <wp:post_type>page</wp:post_type>
         <wp:status>publish</wp:status>
-    </item>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=306</guid><link>https://demo.zzprompts.com/terms-of-service/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>terms-of-service</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
 
-    <!-- Blog Page -->
+    
+    <item>
+        <title>Pricing</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>
+&lt;!-- Note: This content would typically be built with blocks or a page builder --&gt;
+&lt;div class="pricing-plans"&gt;
+&lt;h2&gt;Simple, Transparent Pricing&lt;/h2&gt;
+&lt;p&gt;Choose the plan that fits your needs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Free&lt;/strong&gt;: Access to 100+ basic prompts&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pro ($19/mo)&lt;/strong&gt;: Unlimited access to premium prompts &amp; API&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Team ($49/mo)&lt;/strong&gt;: 5 seats + priority support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+        </content:encoded>
+        <wp:post_id>307</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=307</guid><link>https://demo.zzprompts.com/pricing/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>pricing</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Submit a Prompt</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>
+&lt;p&gt;Share your best AI prompts with the community and earn rewards.&lt;/p&gt;
+&lt;p&gt;[contact-form-7 id="999" title="Submit Prompt Form"]&lt;/p&gt;
+        </content:encoded>
+        <wp:post_id>308</wp:post_id>
+        <wp:post_date>2026-01-01 10:00:00</wp:post_date>
+        <wp:post_type>page</wp:post_type>
+        <wp:status>publish</wp:status>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=308</guid><link>https://demo.zzprompts.com/submit-a-prompt/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>submit-a-prompt</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <wp:term>
+        <wp:term_id>100</wp:term_id>
+        <wp:term_taxonomy>nav_menu</wp:term_taxonomy>
+        <wp:term_slug>primary-menu</wp:term_slug>
+        <wp:term_name>Primary Menu</wp:term_name>
+    </wp:term>
+    <wp:term>
+        <wp:term_id>101</wp:term_id>
+        <wp:term_taxonomy>nav_menu</wp:term_taxonomy>
+        <wp:term_slug>footer-menu</wp:term_slug>
+        <wp:term_name>Footer Menu</wp:term_name>
+    </wp:term>
+
+
+    
+    <item>
+        <title>FastAPI Production-Ready Boilerplate</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate a complete, production-ready FastAPI project structure with Docker, PostgreSQL, and JWT authentication.&lt;/p&gt;</content:encoded>
+        <wp:post_id>107</wp:post_id>
+        <wp:post_date>2026-01-20 12:00:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="coding">Coding</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Create a production-ready FastAPI project structure. Include:
+1. Docker-compose with Postgres and Redis
+2. JWT Authentication middleware
+3. SQLAlchemy models and Pydantic schemas
+4. Pytest configuration
+5. GitHub Actions CI pipeline</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=107</guid><link>https://demo.zzprompts.com/fastapi-production-ready-boilerplate/</link><pubDate>Tue, 20 Jan 2026 12:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:00:00</wp:post_date_gmt><wp:post_name>fastapi-production-ready-boilerplate</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Custom React Hook Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Create robust custom React hooks for any functionality with proper TypeScript typing and error handling.&lt;/p&gt;</content:encoded>
+        <wp:post_id>108</wp:post_id>
+        <wp:post_date>2026-01-20 12:05:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="coding">Coding</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Write a custom React hook named use[Functionality] in TypeScript.
+Requirements:
+- Strong typing
+- Error handling
+- Unit test examples
+- Usage example component</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=108</guid><link>https://demo.zzprompts.com/custom-react-hook-generator/</link><pubDate>Tue, 20 Jan 2026 12:05:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:05:00</wp:post_date_gmt><wp:post_name>custom-react-hook-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+    
+    
+    <item>
+        <title>Advanced SQL Query Optimizer</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Optimize complex SQL queries for performance. Analyzes execution plans and suggests indexing strategies.&lt;/p&gt;</content:encoded>
+        <wp:post_id>109</wp:post_id>
+        <wp:post_date>2026-01-20 12:10:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="coding">Coding</category>
+        <category domain="ai_tool" nicename="claude">Claude</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Analyze the following SQL query for performance bottlenecks:
+[Insert Query]
+
+Suggest:
+1. Indexing strategies
+2. Query rewriting techniques
+3. Explain plan interpretation</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=109</guid><link>https://demo.zzprompts.com/advanced-sql-query-optimizer/</link><pubDate>Tue, 20 Jan 2026 12:10:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:10:00</wp:post_date_gmt><wp:post_name>advanced-sql-query-optimizer</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>SaaS Pricing Model Architect</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Develop a tiered pricing strategy for your SaaS product based on value metrics and competitor analysis.&lt;/p&gt;</content:encoded>
+        <wp:post_id>110</wp:post_id>
+        <wp:post_date>2026-01-20 12:15:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="business">Business</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Design a 3-tier pricing model for a B2B SaaS tool in the [Industry] space.
+For each tier (Starter, Pro, Enterprise):
+- Define feature set
+- Suggest price point
+- Identify target buyer persona
+- Proposed value metric (per seat/usage)</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=110</guid><link>https://demo.zzprompts.com/saas-pricing-model-architect/</link><pubDate>Tue, 20 Jan 2026 12:15:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:15:00</wp:post_date_gmt><wp:post_name>saas-pricing-model-architect</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>SEO Keyword Strategy Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate a comprehensive SEO keyword strategy including long-tail keywords and search intent analysis.&lt;/p&gt;</content:encoded>
+        <wp:post_id>111</wp:post_id>
+        <wp:post_date>2026-01-20 12:20:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="marketing">Marketing</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Identify 20 high-potential keywords for [Topic]. 
+Classify by Search Intent (Informational, Commercial, Transactional).
+Estimate difficulty and competitive landscape.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=111</guid><link>https://demo.zzprompts.com/seo-keyword-strategy-generator/</link><pubDate>Tue, 20 Jan 2026 12:20:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:20:00</wp:post_date_gmt><wp:post_name>seo-keyword-strategy-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Instagram Content Calendar</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Create a 30-day Instagram content calendar tailored to your brand's niche and goals.&lt;/p&gt;</content:encoded>
+        <wp:post_id>112</wp:post_id>
+        <wp:post_date>2026-01-20 12:25:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="marketing">Marketing</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Create a 30-day Instagram content calendar for a [Brand Type] targeting [Audience].
+Include:
+- Post types (Reel, Carousel, Image)
+- Caption hooks
+- Hashtag groups</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=112</guid><link>https://demo.zzprompts.com/instagram-content-calendar/</link><pubDate>Tue, 20 Jan 2026 12:25:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:25:00</wp:post_date_gmt><wp:post_name>instagram-content-calendar</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Sci-Fi Novel Plot Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Brainstorm unique science fiction plot ideas with twists, world-building elements, and character arcs.&lt;/p&gt;</content:encoded>
+        <wp:post_id>113</wp:post_id>
+        <wp:post_date>2026-01-20 12:30:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="writing">Writing</category>
+        <category domain="ai_tool" nicename="claude">Claude</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Generate a sci-fi novel plot set in [Setting].
+Key Elements:
+- Protagonist flaw
+- Central conflict
+- Plot twist ending
+- Unique technology</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=113</guid><link>https://demo.zzprompts.com/sci-fi-novel-plot-generator/</link><pubDate>Tue, 20 Jan 2026 12:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:30:00</wp:post_date_gmt><wp:post_name>sci-fi-novel-plot-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Technical Documentation Rewriter</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Rewrite complex technical jargon into clear, user-friendly documentation for non-technical users.&lt;/p&gt;</content:encoded>
+        <wp:post_id>114</wp:post_id>
+        <wp:post_date>2026-01-20 12:35:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="writing">Writing</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Rewrite the following technical text for a non-technical audience:
+[Insert Text]
+
+Focus on clarity, brevity, and step-by-step instructions.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=114</guid><link>https://demo.zzprompts.com/technical-documentation-rewriter/</link><pubDate>Tue, 20 Jan 2026 12:35:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:35:00</wp:post_date_gmt><wp:post_name>technical-documentation-rewriter</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Cyberpunk Cityscape Prompt</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;A detailed Midjourney prompt for generating a futuristic cyberpunk city with neon lights and rain.&lt;/p&gt;</content:encoded>
+        <wp:post_id>115</wp:post_id>
+        <wp:post_date>2026-01-20 12:40:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="art">Art</category>
+        <category domain="ai_tool" nicename="midjourney">Midjourney</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>/imagine prompt: futuristic cyberpunk city street level, neon signs in japanese and english, rain slicked streets, steam rising from vents, towering skyscrapers with holographic ads, cinematic lighting, photorealistic, 8k --ar 16:9 --v 5.1</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=115</guid><link>https://demo.zzprompts.com/cyberpunk-cityscape-prompt/</link><pubDate>Tue, 20 Jan 2026 12:40:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:40:00</wp:post_date_gmt><wp:post_name>cyberpunk-cityscape-prompt</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Watercolor Portrait Prompt</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate soft, artistic watercolor portraits with Midjourney. Perfect for character design.&lt;/p&gt;</content:encoded>
+        <wp:post_id>116</wp:post_id>
+        <wp:post_date>2026-01-20 12:45:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="art">Art</category>
+        <category domain="ai_tool" nicename="midjourney">Midjourney</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>/imagine prompt: watercolor portrait of a [Subject Description], soft pastel colors, loose brushstrokes, artistic style, messy edges, white background, high detail --ar 2:3 --niji 5</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=116</guid><link>https://demo.zzprompts.com/watercolor-portrait-prompt/</link><pubDate>Tue, 20 Jan 2026 12:45:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:45:00</wp:post_date_gmt><wp:post_name>watercolor-portrait-prompt</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Startup Pitch Deck Outline</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Create a compelling pitch deck outline to secure funding for your startup.&lt;/p&gt;</content:encoded>
+        <wp:post_id>117</wp:post_id>
+        <wp:post_date>2026-01-20 12:50:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="business">Business</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Create a 12-slide pitch deck outline for a [Startup Type].
+Slides to include:
+1. Problem
+2. Solution
+3. Market Size
+4. Business Model
+5. Team
+Provide key bullet points for each slide.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=117</guid><link>https://demo.zzprompts.com/startup-pitch-deck-outline/</link><pubDate>Tue, 20 Jan 2026 12:50:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:50:00</wp:post_date_gmt><wp:post_name>startup-pitch-deck-outline</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>OKR Generator for Teams</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Define Objectives and Key Results (OKRs) for your team to align goals and measure success.&lt;/p&gt;</content:encoded>
+        <wp:post_id>118</wp:post_id>
+        <wp:post_date>2026-01-20 12:55:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="business">Business</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Generate 3 OKRs for a [Department Name] team for Q3.
+Objective: [Main Goal]
+Key Results: 3-4 measurable outcomes with specific metrics.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=118</guid><link>https://demo.zzprompts.com/okr-generator-for-teams/</link><pubDate>Tue, 20 Jan 2026 12:55:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 12:55:00</wp:post_date_gmt><wp:post_name>okr-generator-for-teams</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>CSS Grid Layout Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate complex CSS Grid layouts with clean, responsive code.&lt;/p&gt;</content:encoded>
+        <wp:post_id>119</wp:post_id>
+        <wp:post_date>2026-01-20 13:00:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="coding">Coding</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Create a CSS Grid layout for a [Page Type].
+Structure:
+- Header
+- Sidebar (25%)
+- Main Content
+- Footer
+Provide HTML structure and CSS classes.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=119</guid><link>https://demo.zzprompts.com/css-grid-layout-generator/</link><pubDate>Tue, 20 Jan 2026 13:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:00:00</wp:post_date_gmt><wp:post_name>css-grid-layout-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Email Inbox Zero System</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Specific strategies and email templates to process email efficiently and reach Inbox Zero.&lt;/p&gt;</content:encoded>
+        <wp:post_id>120</wp:post_id>
+        <wp:post_date>2026-01-20 13:05:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="productivity">Productivity</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Act as a productivity coach. Meaningful strategies to manage [Number] emails daily.
+Provide:
+- Triage method (Delete, Delegate, Defer, Do)
+- 3 Email templates for common responses
+- Time-blocking schedule</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=120</guid><link>https://demo.zzprompts.com/email-inbox-zero-system/</link><pubDate>Tue, 20 Jan 2026 13:05:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:05:00</wp:post_date_gmt><wp:post_name>email-inbox-zero-system</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Interactive Lesson Plan Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Create detailed, interactive lesson plans for any subject and grade level, including activities and assessment methods.&lt;/p&gt;</content:encoded>
+        <wp:post_id>121</wp:post_id>
+        <wp:post_date>2026-01-20 13:10:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="education">Education</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Create a 1-hour lesson plan for [Grade Level] students on [Subject/Topic].
+Include:
+- Learning Objectives
+- Warm-up Activity (10 mins)
+- Main Activity (30 mins)
+- Assessment/Exit Ticket
+- Homework assignment</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=121</guid><link>https://demo.zzprompts.com/interactive-lesson-plan-generator/</link><pubDate>Tue, 20 Jan 2026 13:10:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:10:00</wp:post_date_gmt><wp:post_name>interactive-lesson-plan-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Anki Flashcard Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate key concepts and definitions formatted for Anki or Quizlet flashcards from any text.&lt;/p&gt;</content:encoded>
+        <wp:post_id>122</wp:post_id>
+        <wp:post_date>2026-01-20 13:15:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="education">Education</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Extract 10 key terms and definitions from the following text for flashcards.
+Format: Term ; Definition
+Text: [Insert Text]</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=122</guid><link>https://demo.zzprompts.com/anki-flashcard-generator/</link><pubDate>Tue, 20 Jan 2026 13:15:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:15:00</wp:post_date_gmt><wp:post_name>anki-flashcard-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Socratic Math Tutor</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;A math tutor that guides students to the answer using Socratic questioning rather than just giving the solution.&lt;/p&gt;</content:encoded>
+        <wp:post_id>123</wp:post_id>
+        <wp:post_date>2026-01-20 13:20:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="education">Education</category>
+        <category domain="ai_tool" nicename="claude">Claude</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Act as a math tutor. I am struggling with [Math Problem].
+Do not give me the answer.
+Instead, ask me a guiding question to help me understand the first step.
+If I get it wrong, explain the concept simply and ask again.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=123</guid><link>https://demo.zzprompts.com/socratic-math-tutor/</link><pubDate>Tue, 20 Jan 2026 13:20:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:20:00</wp:post_date_gmt><wp:post_name>socratic-math-tutor</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>B2B Cold Email Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Write personalized cold emails that get responses. Uses persuasion frameworks like AIDA or PAS.&lt;/p&gt;</content:encoded>
+        <wp:post_id>124</wp:post_id>
+        <wp:post_date>2026-01-20 13:25:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="copywriting">Copywriting</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Write 3 variations of a cold email to a [Job Title] at a [Company Type].
+Goal: [Book a demo/Call]
+Product: [Product Name] - [One sentence USP]
+Use the PAS (Problem-Agitation-Solution) framework. Keep it under 150 words.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=124</guid><link>https://demo.zzprompts.com/b2b-cold-email-generator/</link><pubDate>Tue, 20 Jan 2026 13:25:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:25:00</wp:post_date_gmt><wp:post_name>b2b-cold-email-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Facebook Ad Copy Variations</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate high-converting Facebook ad copy variations focusing on different angles and hooks.&lt;/p&gt;</content:encoded>
+        <wp:post_id>125</wp:post_id>
+        <wp:post_date>2026-01-20 13:30:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="copywriting">Copywriting</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Write 3 Facebook ad primary texts for [Product].
+Angle 1: Social Proof (Testimonials)
+Angle 2: Fear of Missing Out (Urgency)
+Angle 3: Benefit-Driven
+Include a headline and CTA for each.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=125</guid><link>https://demo.zzprompts.com/facebook-ad-copy-variations/</link><pubDate>Tue, 20 Jan 2026 13:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:30:00</wp:post_date_gmt><wp:post_name>facebook-ad-copy-variations</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Landing Page Headline Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Create catchy, benefit-oriented headlines for landing pages to increase conversion rates.&lt;/p&gt;</content:encoded>
+        <wp:post_id>126</wp:post_id>
+        <wp:post_date>2026-01-20 13:35:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="copywriting">Copywriting</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Generate 10 headline variations for a landing page selling [Product/Service].
+Target Audience: [Audience]
+Main Benefit: [Benefit]
+Tone: [Tone, e.g., Professional, Quirky]
+Format: Headline + Subheadline</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=126</guid><link>https://demo.zzprompts.com/landing-page-headline-generator/</link><pubDate>Tue, 20 Jan 2026 13:35:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:35:00</wp:post_date_gmt><wp:post_name>landing-page-headline-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Custom Travel Itinerary Planner</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Plan the perfect trip with a day-by-day itinerary tailored to your interests and budget.&lt;/p&gt;</content:encoded>
+        <wp:post_id>127</wp:post_id>
+        <wp:post_date>2026-01-20 13:40:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="lifestyle">Lifestyle</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Plan a [Number]-day trip to [Destination] for [Group Composition, e.g., family with kids].
+Interests: [Interests, e.g., History, Food, Hiking]
+Budget: [Budget]
+Include: Morning, Afternoon, Evening activities and restaurant recommendations.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=127</guid><link>https://demo.zzprompts.com/custom-travel-itinerary-planner/</link><pubDate>Tue, 20 Jan 2026 13:40:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:40:00</wp:post_date_gmt><wp:post_name>custom-travel-itinerary-planner</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Weekly Meal Prep Planner</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate a healthy weekly meal plan with a grocery list based on dietary preferences.&lt;/p&gt;</content:encoded>
+        <wp:post_id>128</wp:post_id>
+        <wp:post_date>2026-01-20 13:45:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="health">Health</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Create a 5-day meal prep plan for [Diet Type, e.g., Keto, Vegan].
+Calories per day: [Number]
+Include:
+- Breakfast, Lunch, Dinner, Snack
+- Complete shopping list sorted by aisle
+- Prep instructions for Sunday</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=128</guid><link>https://demo.zzprompts.com/weekly-meal-prep-planner/</link><pubDate>Tue, 20 Jan 2026 13:45:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:45:00</wp:post_date_gmt><wp:post_name>weekly-meal-prep-planner</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Personalized Gift Idea Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Find the perfect gift for anyone based on their hobbies, age, and relationship to you.&lt;/p&gt;</content:encoded>
+        <wp:post_id>129</wp:post_id>
+        <wp:post_date>2026-01-20 13:50:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="lifestyle">Lifestyle</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Suggest 5 gift ideas for a [Age]-year-old [Relation] who loves [Interests].
+Budget: $[Amount]
+Avoid: [Exclusions]
+For each idea, explain why it's a good fit.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=129</guid><link>https://demo.zzprompts.com/personalized-gift-idea-generator/</link><pubDate>Tue, 20 Jan 2026 13:50:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:50:00</wp:post_date_gmt><wp:post_name>personalized-gift-idea-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Mock Job Interview Simulator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Practice for your next job interview with realistic questions and feedback.&lt;/p&gt;</content:encoded>
+        <wp:post_id>130</wp:post_id>
+        <wp:post_date>2026-01-20 13:55:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="career">Career</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Act as a hiring manager for a [Job Title] role at a [Company Type].
+Conduct a mock interview.
+Ask me one question at a time.
+After I answer, rate my response (1-5) and provide feedback on how to improve.
+Start with: "Tell me about yourself."</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=130</guid><link>https://demo.zzprompts.com/mock-job-interview-simulator/</link><pubDate>Tue, 20 Jan 2026 13:55:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 13:55:00</wp:post_date_gmt><wp:post_name>mock-job-interview-simulator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Dad Joke Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Generate puns and dad jokes on any specific topic. Guaranteed to make you groan.&lt;/p&gt;</content:encoded>
+        <wp:post_id>131</wp:post_id>
+        <wp:post_date>2026-01-20 14:00:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="entertainment">Entertainment</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Tell me 5 dad jokes about [Topic].
+Make sure there's a good pun in each one.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=131</guid><link>https://demo.zzprompts.com/dad-joke-generator/</link><pubDate>Tue, 20 Jan 2026 14:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:00:00</wp:post_date_gmt><wp:post_name>dad-joke-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>AI Movie Critic &amp; Recommender</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Get personalized movie recommendations based on your favorite films and mood.&lt;/p&gt;</content:encoded>
+        <wp:post_id>132</wp:post_id>
+        <wp:post_date>2026-01-20 14:05:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="entertainment">Entertainment</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>I love movies like [Movie 1], [Movie 2], and [Movie 3].
+I am in the mood for [Mood/Genre].
+Recommend 5 movies I might like.
+Include a one-sentence synopsis and why you picked it.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=132</guid><link>https://demo.zzprompts.com/ai-movie-critic-recommender/</link><pubDate>Tue, 20 Jan 2026 14:05:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:05:00</wp:post_date_gmt><wp:post_name>ai-movie-critic-recommender</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Trivia Quiz Master</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Host a trivia night with questions generated on the fly about any topic or difficulty.&lt;/p&gt;</content:encoded>
+        <wp:post_id>133</wp:post_id>
+        <wp:post_date>2026-01-20 14:10:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="entertainment">Entertainment</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Generate 10 trivia questions about [Topic].
+Difficulty: [Hard/Medium/Easy]
+Format: Question - [Answer at the end]
+Include a fun fact for each answer.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=133</guid><link>https://demo.zzprompts.com/trivia-quiz-master/</link><pubDate>Tue, 20 Jan 2026 14:10:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:10:00</wp:post_date_gmt><wp:post_name>trivia-quiz-master</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Creative Pet Name Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Find the perfect name for your new pet based on their personality and appearance.&lt;/p&gt;</content:encoded>
+        <wp:post_id>134</wp:post_id>
+        <wp:post_date>2026-01-20 14:15:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="lifestyle">Lifestyle</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>I am getting a [Species/Breed].
+Appearance: [Color, Size]
+Personality: [Traits]
+Theme: [e.g., Food, Mythological, Human Names]
+Suggest 10 unique names.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=134</guid><link>https://demo.zzprompts.com/creative-pet-name-generator/</link><pubDate>Tue, 20 Jan 2026 14:15:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:15:00</wp:post_date_gmt><wp:post_name>creative-pet-name-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Positive Reinforcement Dog Trainer</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Get tips and step-by-step guides for training your dog using positive reinforcement methods.&lt;/p&gt;</content:encoded>
+        <wp:post_id>135</wp:post_id>
+        <wp:post_date>2026-01-20 14:20:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="lifestyle">Lifestyle</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>How do I teach my dog to [Command/Behavior, e.g., "Stay"]?
+Use positive reinforcement methods.
+Break it down into small steps.
+Troubleshooting: What if the dog [Common Issue]?</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=135</guid><link>https://demo.zzprompts.com/positive-reinforcement-dog-trainer/</link><pubDate>Tue, 20 Jan 2026 14:20:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:20:00</wp:post_date_gmt><wp:post_name>positive-reinforcement-dog-trainer</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Daily Affirmations Generator</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Start your day with personalized affirmations to boost confidence and motivation.&lt;/p&gt;</content:encoded>
+        <wp:post_id>136</wp:post_id>
+        <wp:post_date>2026-01-20 14:25:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="health">Health</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Give me 5 positive affirmations for [Situation, e.g., public speaking, anxiety, starting a new job].
+Tone: Empowering and calm.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=136</guid><link>https://demo.zzprompts.com/daily-affirmations-generator/</link><pubDate>Tue, 20 Jan 2026 14:25:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:25:00</wp:post_date_gmt><wp:post_name>daily-affirmations-generator</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Guided Meditation Script Writer</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Create custom guided meditation scripts for relaxation, focus, or sleep.&lt;/p&gt;</content:encoded>
+        <wp:post_id>137</wp:post_id>
+        <wp:post_date>2026-01-20 14:30:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="health">Health</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Write a 10-minute guided meditation script for [Purpose, e.g., relieving stress].
+Include:
+- Deep breathing cues
+- Body scan visualization
+- Gentle closing</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=137</guid><link>https://demo.zzprompts.com/guided-meditation-script-writer/</link><pubDate>Tue, 20 Jan 2026 14:30:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:30:00</wp:post_date_gmt><wp:post_name>guided-meditation-script-writer</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Deep Journaling Prompts</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Unlock self-discovery with deep and thought-provoking journaling questions.&lt;/p&gt;</content:encoded>
+        <wp:post_id>138</wp:post_id>
+        <wp:post_date>2026-01-20 14:35:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="writing">Writing</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>Give me 3 deep journaling prompts to help me reflect on [Topic, e.g., my career path, relationships, personal growth].
+Avoid generic questions like "How was your day?"</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=138</guid><link>https://demo.zzprompts.com/deep-journaling-prompts/</link><pubDate>Tue, 20 Jan 2026 14:35:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:35:00</wp:post_date_gmt><wp:post_name>deep-journaling-prompts</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Devil's Advocate Debate Partner</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Sharpen your arguments by debating an AI that takes the opposing view.&lt;/p&gt;</content:encoded>
+        <wp:post_id>139</wp:post_id>
+        <wp:post_date>2026-01-20 14:40:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="education">Education</category>
+        <category domain="ai_tool" nicename="claude">Claude</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>I believe that [Opinion].
+Play "Devil's Advocate" and argue the opposite view.
+Keep your points logical and respectful.
+Challenge my assumptions.</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=139</guid><link>https://demo.zzprompts.com/devils-advocate-debate-partner/</link><pubDate>Tue, 20 Jan 2026 14:40:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:40:00</wp:post_date_gmt><wp:post_name>devils-advocate-debate-partner</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
+    <item>
+        <title>Jungian Dream Interpreter</title>
+        <dc:creator>admin</dc:creator>
+        <content:encoded>&lt;p&gt;Analyze your dreams through a Jungian lens to uncover symbols and archetypes.&lt;/p&gt;</content:encoded>
+        <wp:post_id>140</wp:post_id>
+        <wp:post_date>2026-01-20 14:45:00</wp:post_date>
+        <wp:post_type>prompt</wp:post_type>
+        <wp:status>publish</wp:status>
+        <category domain="prompt_category" nicename="fun">Fun</category>
+        <category domain="ai_tool" nicename="chatgpt">ChatGPT</category>
+        <wp:postmeta>
+            <wp:meta_key>_zz_prompt_text</wp:meta_key>
+            <wp:meta_value>I had a dream about [Dream Description].
+Interpret this using Jungian psychology.
+Identify potential archetypes (The Shadow, Anima/Animus, The Persona).
+What might this dream be telling me about my subconscious?</wp:meta_value>
+        </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=140</guid><link>https://demo.zzprompts.com/jungian-dream-interpreter/</link><pubDate>Tue, 20 Jan 2026 14:45:00 +0000</pubDate><wp:post_date_gmt>2026-01-20 14:45:00</wp:post_date_gmt><wp:post_name>jungian-dream-interpreter</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+    
     <item>
         <title>Blog</title>
         <dc:creator>admin</dc:creator>
-        <content:encoded><![CDATA[]]></content:encoded>
+        <content:encoded />
         <wp:post_id>305</wp:post_id>
         <wp:post_date>2026-01-01 10:00:00</wp:post_date>
         <wp:post_type>page</wp:post_type>
@@ -712,7 +1653,81 @@ Please provide:
             <wp:meta_key>_wp_page_template</wp:meta_key>
             <wp:meta_value>page-blog.php</wp:meta_value>
         </wp:postmeta>
+    <guid isPermaLink="false">https://demo.zzprompts.com/?p=305</guid><link>https://demo.zzprompts.com/blog/</link><pubDate>Thu, 01 Jan 2026 10:00:00 +0000</pubDate><wp:post_date_gmt>2026-01-01 10:00:00</wp:post_date_gmt><wp:post_name>blog</wp:post_name><wp:comment_status>open</wp:comment_status><wp:ping_status>closed</wp:ping_status><wp:post_parent>0</wp:post_parent><wp:menu_order>0</wp:menu_order><wp:post_password /><wp:is_sticky>0</wp:is_sticky><excerpt:encoded /></item>
+
+
+    <item>
+        <title>Submit Prompt</title>
+        <link>https://demo.zzprompts.com/submit-prompt/</link>
+        <pubDate>Thu, 01 Jan 2026 12:00:00 +0000</pubDate>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <guid isPermaLink="false">https://demo.zzprompts.com/?page_id=306</guid>
+        <description></description>
+        <content:encoded><![CDATA[Share your best AI prompts with the community and earn rewards.
+
+<!-- Note: The contact form below requires Contact Form 7 plugin. Please create a form and update the shortcode ID in Customizer or here. -->
+[contact-form-7 id="999" title="Submit Prompt Form"]]]></content:encoded>
+        <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+        <wp:post_id>306</wp:post_id>
+        <wp:post_date>2026-01-01 12:00:00</wp:post_date>
+        <wp:post_date_gmt>2026-01-01 12:00:00</wp:post_date_gmt>
+        <wp:comment_status>closed</wp:comment_status>
+        <wp:ping_status>closed</wp:ping_status>
+        <wp:post_name>submit-prompt</wp:post_name>
+        <wp:status>publish</wp:status>
+        <wp:post_parent>0</wp:post_parent>
+        <wp:menu_order>0</wp:menu_order>
+        <wp:post_type>page</wp:post_type>
+        <wp:post_password><![CDATA[]]></wp:post_password>
+        <wp:is_sticky>0</wp:is_sticky>
+        <wp:postmeta>
+            <wp:meta_key>_wp_page_template</wp:meta_key>
+            <wp:meta_value><![CDATA[default]]></wp:meta_value>
+        </wp:postmeta>
     </item>
 
-</channel>
+    <item>
+        <title>Submit Prompt Form</title>
+        <link>https://demo.zzprompts.com/?post_type=wpcf7_contact_form&#038;p=999</link>
+        <pubDate>Thu, 01 Jan 2026 12:00:00 +0000</pubDate>
+        <dc:creator><![CDATA[admin]]></dc:creator>
+        <guid isPermaLink="false">https://demo.zzprompts.com/?post_type=wpcf7_contact_form&#038;p=999</guid>
+        <description></description>
+        <content:encoded><![CDATA[<label> Your Name
+    [text* your-name autocomplete:name] </label>
+
+<label> Your Email
+    [email* your-email autocomplete:email] </label>
+
+<label> Prompt Title
+    [text* prompt-title] </label>
+
+<label> Prompt Category
+    [select* prompt-category "Marketing" "Writing" "Coding" "Business" "Design" "Productivity" "Other"] </label>
+
+<label> AI Tool Used
+    [select* ai-tool "ChatGPT" "Midjourney" "Claude" "DALL-E" "Gemini" "Other"] </label>
+
+<label> Prompt Content
+    [textarea* prompt-content x10] </label>
+
+<label> Description / Instructions
+    [textarea prompt-description x5] </label>
+
+[submit "Submit Prompt"]]]></content:encoded>
+        <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+        <wp:post_id>999</wp:post_id>
+        <wp:post_date>2026-01-01 12:00:00</wp:post_date>
+        <wp:post_date_gmt>2026-01-01 12:00:00</wp:post_date_gmt>
+        <wp:comment_status>closed</wp:comment_status>
+        <wp:ping_status>closed</wp:ping_status>
+        <wp:post_name>submit-prompt-form</wp:post_name>
+        <wp:status>publish</wp:status>
+        <wp:post_parent>0</wp:post_parent>
+        <wp:menu_order>0</wp:menu_order>
+        <wp:post_type>wpcf7_contact_form</wp:post_type>
+        <wp:post_password><![CDATA[]]></wp:post_password>
+        <wp:is_sticky>0</wp:is_sticky>
+    </item>
+
 </rss>

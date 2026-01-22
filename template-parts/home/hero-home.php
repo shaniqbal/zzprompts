@@ -117,63 +117,71 @@ defined('ABSPATH') || exit;
         
         <div class="zz-prompt-grid">
             <?php
-            $prompts_count = zzprompts_get_option('home_prompts_count', 8);
-            $prompts = new WP_Query(array(
-                'post_type'      => 'prompt',
-                'posts_per_page' => $prompts_count,
-                'orderby'        => 'date',
-                'order'          => 'DESC',
-            ));
-            
-            if ($prompts->have_posts()) :
-                while ($prompts->have_posts()) : $prompts->the_post();
-                    
-                    // Get AI Tool
-                    $ai_tools = get_the_terms(get_the_ID(), 'ai_tool');
-                    $ai_tool = $ai_tools && !is_wp_error($ai_tools) ? $ai_tools[0] : null;
-                    $ai_tool_slug = $ai_tool ? sanitize_title($ai_tool->name) : 'chatgpt';
-                    
-                    // Get like count
-                    $likes = get_post_meta(get_the_ID(), 'prompt_likes', true);
-                    $likes = $likes ? intval($likes) : 0;
-                    ?>
-                    
-                    <div class="zz-prompt-card">
-                        <?php if ($ai_tool) : ?>
-                            <span class="zz-prompt-card__badge zz-prompt-card__badge--<?php echo esc_attr($ai_tool_slug); ?>">
-                                <?php echo esc_html($ai_tool->name); ?>
-                            </span>
-                        <?php endif; ?>
-                        
-                        <h3 class="zz-prompt-card__title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h3>
-                        
-                        <p class="zz-prompt-card__excerpt">
-                            <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
-                        </p>
-                        
-                        <div class="zz-prompt-card__footer">
-                            <a href="<?php the_permalink(); ?>" class="zz-btn-copy">
-                                <i class="far fa-copy"></i>
-                                <?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?>
-                            </a>
-                            
-                            <span class="zz-prompt-card__likes">
-                                <i class="fas fa-heart"></i>
-                                <?php echo esc_html($likes); ?>
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
+            if ( ! post_type_exists('prompt') ) :
                 ?>
-                <p class="zz-text-muted"><?php esc_html_e('No prompts found.', 'zzprompts'); ?></p>
+                <div class="zz-notice">
+                    <?php esc_html_e( 'Install and activate the Prompts Core plugin to enable demo content.', 'zzprompts' ); ?>
+                </div>
                 <?php
-            endif;
+            else :
+                $prompts_count = zzprompts_get_option('home_prompts_count', 8);
+                $prompts = new WP_Query(array(
+                    'post_type'      => 'prompt',
+                    'posts_per_page' => $prompts_count,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                ));
+                
+                if ($prompts->have_posts()) :
+                    while ($prompts->have_posts()) : $prompts->the_post();
+                        
+                        // Get AI Tool
+                        $ai_tools = get_the_terms(get_the_ID(), 'ai_tool');
+                        $ai_tool = $ai_tools && !is_wp_error($ai_tools) ? $ai_tools[0] : null;
+                        $ai_tool_slug = $ai_tool ? sanitize_title($ai_tool->name) : 'chatgpt';
+                        
+                        // Get like count
+                        $likes = get_post_meta(get_the_ID(), 'prompt_likes', true);
+                        $likes = $likes ? intval($likes) : 0;
+                        ?>
+                        
+                        <div class="zz-prompt-card">
+                            <?php if ($ai_tool) : ?>
+                                <span class="zz-prompt-card__badge zz-prompt-card__badge--<?php echo esc_attr($ai_tool_slug); ?>">
+                                    <?php echo esc_html($ai_tool->name); ?>
+                                </span>
+                            <?php endif; ?>
+                            
+                            <h3 class="zz-prompt-card__title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
+                            
+                            <p class="zz-prompt-card__excerpt">
+                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                            </p>
+                            
+                            <div class="zz-prompt-card__footer">
+                                <a href="<?php the_permalink(); ?>" class="zz-btn-copy">
+                                    <i class="far fa-copy"></i>
+                                    <?php echo esc_html(zzprompts_get_option('copy_btn_text', __('Copy Prompt', 'zzprompts'))); ?>
+                                </a>
+                                
+                                <span class="zz-prompt-card__likes">
+                                    <i class="fas fa-heart"></i>
+                                    <?php echo esc_html($likes); ?>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    ?>
+                    <p class="zz-text-muted"><?php esc_html_e('No prompts found.', 'zzprompts'); ?></p>
+                    <?php
+                endif;
+            endif; // post_type_exists check
             ?>
         </div>
         
@@ -285,7 +293,8 @@ defined('ABSPATH') || exit;
             <div class="zz-stats-grid">
                 <?php
                 // Get dynamic stats
-                $prompt_count = wp_count_posts('prompt')->publish;
+                $counts = wp_count_posts('prompt');
+                $prompt_count = isset($counts->publish) ? $counts->publish : 0;
                 ?>
                 
                 <div class="zz-stat-card">

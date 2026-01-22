@@ -295,6 +295,11 @@ body.post-type-archive-prompt {
     text-shadow: 0 0 10px #F472B6;
 }
 
+/* Description */
+.zz-prompt-description {
+    margin-bottom: var(--zz-space-8, 32px);
+}
+
 /* =========================================
    6. TERMINAL BOX (Prompt Display)
    ========================================= */
@@ -584,8 +589,8 @@ body.post-type-archive-prompt {
    ========================================= */
 
 .zz-prompt-related {
-    margin-top: 2rem;
-    padding-top: 2rem;
+    margin-top: var(--zz-space-12, 48px);
+    padding-top: var(--zz-space-10, 40px);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     /* Reference style */
     position: relative;
@@ -1105,4 +1110,14 @@ body.single-prompt .zz-prompt-card__title {
 [data-theme="dark"] .zz-ad-slot__label {
     background: var(--zz-primary-bg-medium);
     color: #A5B4FC;
+}
+
+[data-theme="dark"] .zz-prompt-card__placeholder {
+    background: var(--zz-bg-surface-secondary, rgba(30, 41, 59, 0.5));
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+[data-theme="dark"] .zz-prompt-card__placeholder-text {
+    text-shadow: none;
+    color: var(--zz-text-muted);
 }

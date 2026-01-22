@@ -155,6 +155,7 @@ body.zz-layout-modern .zz-blog-full .zz-blog-grid {
 }
 
 .zz-blog-card__image {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;

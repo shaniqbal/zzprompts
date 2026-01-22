@@ -714,7 +714,7 @@ body.menu-open {
 }
 
 /* =========================================
-   20. TOAST NOTIFICATIONS
+   21. TOAST NOTIFICATIONS
    ========================================= */
 
 .zz-toast {
@@ -762,4 +762,18 @@ body.menu-open {
         width: calc(100% - 40px);
         justify-content: center;
     }
+}
+
+/* =========================================
+   22. ALERTS & NOTICES
+   ========================================= */
+
+.zz-notice {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--zz-bg-surface-secondary, #F3F4F6);
+    border-radius: var(--zz-radius-lg);
+    border: 1px dashed var(--zz-border-default, #E5E7EB);
+    color: var(--zz-text-muted);
+    font-weight: 500;
 }

@@ -56,7 +56,11 @@ get_header();
                 </div>
                 <div class="zz-about-info-row">
                     <span class="zz-about-info-label"><?php esc_html_e('Total Prompts', 'zzprompts'); ?></span>
-                    <span class="zz-about-info-val"><?php echo esc_html(wp_count_posts('prompt')->publish ?? '500'); ?>+</span>
+                    <?php 
+                    $p_counts = wp_count_posts('prompt');
+                    $p_publish = isset($p_counts->publish) ? $p_counts->publish : 0;
+                    ?>
+                    <span class="zz-about-info-val"><?php echo esc_html($p_publish > 0 ? $p_publish : '500'); ?>+</span>
                 </div>
                 <div class="zz-about-info-row">
                     <span class="zz-about-info-label"><?php esc_html_e('Active Users', 'zzprompts'); ?></span>
@@ -141,7 +145,11 @@ get_header();
     <!-- Stats Section -->
     <section class="zz-about-stats">
         <div class="zz-about-stat">
-            <span class="zz-about-stat__num"><?php echo esc_html(wp_count_posts('prompt')->publish ?? '500'); ?>+</span>
+            <?php 
+            $p_counts = wp_count_posts('prompt');
+            $p_publish = isset($p_counts->publish) ? $p_counts->publish : 0;
+            ?>
+            <span class="zz-about-stat__num"><?php echo esc_html($p_publish > 0 ? $p_publish : '500'); ?>+</span>
             <span class="zz-about-stat__label"><?php esc_html_e('Prompts', 'zzprompts'); ?></span>
         </div>
         <div class="zz-about-stat">
