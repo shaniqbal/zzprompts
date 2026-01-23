@@ -1,15 +1,26 @@
 # ZZ Prompts Theme - Documentation
 
+**Version:** 1.0.0  
+**Author:** ZZ Tech Labs  
+**Website:** https://zztechlabs.com  
+**Demo:** https://zzprompts.zztechlabs.com  
+**Support:** support@zztechlabs.com
+
+---
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Required Plugin](#required-plugin)
-3. [Theme Setup](#theme-setup)
-4. [Customizer Options](#customizer-options)
-5. [Creating Prompts](#creating-prompts)
-6. [Widgets](#widgets)
-7. [Page Templates](#page-templates)
-8. [Translation](#translation)
-9. [Support](#support)
+3. [Demo Import](#demo-import)
+4. [Theme Setup](#theme-setup)
+5. [Customizer Options](#customizer-options)
+6. [Creating Prompts](#creating-prompts)
+7. [Widgets](#widgets)
+8. [Page Templates](#page-templates)
+9. [Child Theme](#child-theme)
+10. [Translation & RTL](#translation)
+11. [Ad Management](#ad-management)
+12. [Support](#support)
 
 ---
 
@@ -42,6 +53,23 @@ After activating the theme, you'll see a notice:
 - View counting
 
 ⚠️ **Important:** The Prompts section won't appear in your admin until you activate this plugin.
+
+---
+
+## Demo Import
+
+### Using One Click Demo Import
+1. Install the "One Click Demo Import" plugin (recommended via TGM)
+2. Go to **Appearance → Import Demo Data**
+3. Click **Import** on the demo you want
+4. Wait for the import to complete (may take a few minutes)
+
+### Manual Demo Import
+1. Go to **Tools → Import → WordPress**
+2. Install the WordPress Importer if prompted
+3. Upload the file from `demo-content/demo-content.xml`
+4. Check "Download and import file attachments"
+5. Click **Submit**
 
 ---
 
@@ -159,11 +187,15 @@ The theme includes these custom widgets:
 | **ZZ: Ad Banner** | Advertisement placement | Sidebar |
 | **ZZ: Author Bio** | Author profile card | Sidebar |
 | **ZZ: Popular Posts** | Trending blog posts | Blog Sidebar |
+| **ZZ: Contact Info** | Email and location display | Footer |
 
 ### Widget Areas
-- **Main Sidebar** - Blog pages
-- **Prompt Sidebar** - Single prompt pages
-- **Footer Columns 1-4** - Footer area
+- **📰 Blog Sidebar** - Blog pages
+- **💬 Prompts Sidebar** - Single prompt pages
+- **🦶 Footer: About** - Footer Column 1
+- **🦶 Footer: Quick Links** - Footer Column 2
+- **🦶 Footer: Categories** - Footer Column 3
+- **🦶 Footer: Connect** - Footer Column 4
 
 ---
 
@@ -185,6 +217,30 @@ Create pages and assign these templates:
 
 ---
 
+## Child Theme
+
+A child theme is included for safe customizations.
+
+### Why Use a Child Theme?
+- Your custom CSS/PHP won't be lost during theme updates
+- Safe way to override templates
+- Recommended by WordPress
+
+### How to Use
+1. Upload `zzprompts-child` folder to `/wp-content/themes/`
+2. Go to **Appearance → Themes**
+3. Activate **"ZZ Prompts Child"** (NOT the parent theme)
+4. Add your custom CSS in `zzprompts-child/style.css`
+5. Add your custom PHP in `zzprompts-child/functions.php`
+
+### Overriding Templates
+To customize a template file:
+1. Copy the file from `zzprompts/` to `zzprompts-child/`
+2. Edit the copied file in your child theme
+3. Your changes will override the parent
+
+---
+
 ## Translation
 
 The theme is fully translation-ready.
@@ -196,7 +252,32 @@ The theme is fully translation-ready.
 4. Save as `.po` and `.mo` files
 
 ### RTL Support
-The theme fully supports RTL (Right-to-Left) languages like Arabic and Hebrew.
+The theme fully supports RTL (Right-to-Left) languages like Arabic and Hebrew. RTL styles are automatically loaded when an RTL language is active.
+
+---
+
+## Ad Management
+
+Monetize your site with built-in ad placements.
+
+### Configuring Ads
+Go to **Appearance → Customize → Ad Management**
+
+### Available Ad Slots
+| Location | Description |
+|----------|-------------|
+| **Header Ad** | Below navigation (all pages except homepage) |
+| **Before Prompt Terminal** | Above prompt code box |
+| **After Prompt Terminal** | Below prompt code box |
+| **Archive Grid Inline** | Between prompt cards (every 6 items) |
+| **Blog Top** | Before blog post content |
+| **Blog Bottom** | After blog post content |
+| **Sidebar** | Via ZZ: Ad Banner widget |
+
+### Adding Ad Code
+1. Enable the ad slot toggle
+2. Paste your AdSense or custom HTML/JavaScript code
+3. Save and Publish
 
 ---
 
@@ -208,38 +289,42 @@ The theme fully supports RTL (Right-to-Left) languages like Arabic and Hebrew.
 3. Switch to a default theme to verify the issue is theme-related
 
 ### Getting Help
-- **Documentation:** You're reading it!
-- **Email:** support@zzprompts.com
+- **Demo:** https://zzprompts.zztechlabs.com
+- **Email:** support@zztechlabs.com
 - **Response Time:** 24-48 hours (business days)
 
 ### What's Included in Support
-✅ Theme installation help
-✅ Bug fixes
-✅ Feature clarification
-✅ Customizer guidance
+✅ Theme installation help  
+✅ Bug fixes  
+✅ Feature clarification  
+✅ Customizer guidance  
 
 ### What's NOT Included
-❌ Third-party plugin conflicts
-❌ Custom code modifications
-❌ Server configuration
-❌ SEO optimization
+❌ Third-party plugin conflicts  
+❌ Custom code modifications  
+❌ Server configuration  
+❌ SEO optimization  
 
 ---
 
 ## Changelog
 
-### Version 1.2.0
+### Version 1.0.0 - January 2026
 - Initial ThemeForest release
 - Modern glassmorphism design
-- Custom Post Type for Prompts
-- Likes & Copy tracking
+- Custom Post Type for Prompts (via plugin)
+- Likes & Copy tracking with anti-spam
 - Dark mode support
 - RTL support
 - Block patterns
 - 8 custom widgets
+- Ad management system
+- Demo content included
 
 ---
 
 **Thank you for choosing ZZ Prompts!**
 
-© 2026 Shan Iqbal. All rights reserved.
+© 2026 ZZ Tech Labs. All rights reserved.  
+Website: https://zztechlabs.com  
+Support: support@zztechlabs.com

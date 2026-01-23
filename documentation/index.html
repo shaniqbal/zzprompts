@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZ Prompts - Documentation</title>
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --bg: #F8FAFC;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--white);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .brand span {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .nav {
+            list-style: none;
+        }
+
+        .nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: var(--primary);
+            background: #EEF2FF;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .main {
+            margin-left: var(--sidebar-width);
+            padding: 4rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        section {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #F1F5F9;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #334155;
+        }
+
+        code {
+            background: #F1F5F9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            color: #0F172A;
+            border: 1px solid #E2E8F0;
+        }
+
+        pre {
+            background: #1E293B;
+            color: #FFF;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        pre code {
+            background: transparent;
+            border: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .notice {
+            background: #FEF2F2;
+            border-left: 4px solid #EF4444;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            color: #991B1B;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            color: #1e40af;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #F8FAFC;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <div class="brand">
+            <h1>ZZ Prompts</h1>
+            <span>Documentation v1.0.0</span>
+        </div>
+        <ul class="nav">
+            <li><a href="#intro" class="active">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#demo">Demo Import</a></li>
+            <li><a href="#setup">Theme Setup</a></li>
+            <li><a href="#customizer">Customizer</a></li>
+            <li><a href="#prompts">Creating Prompts</a></li>
+            <li><a href="#widgets">Widgets</a></li>
+            <li><a href="#templates">Page Templates</a></li>
+            <li><a href="#ads">Ad Management</a></li>
+            <li><a href="#translation">Translation</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+
+        <section id="intro">
+            <h2>Welcome to ZZ Prompts</h2>
+            <p>Thank you for purchasing <strong>ZZ Prompts</strong>! This documentation will guide you through
+                installing and configuring your new AI Prompt Library theme.</p>
+
+            <div class="info-box">
+                <strong>Project Info:</strong><br>
+                Author: ZZ Tech Labs<br>
+                Version: 1.0.0<br>
+                Website: <a href="https://zztechlabs.com" target="_blank">zztechlabs.com</a>
+            </div>
+
+            <p>If you have any questions that are beyond the scope of this documentation, please contact our support
+                team.</p>
+            <a href="mailto:support@zztechlabs.com" class="btn">Contact Support</a>
+        </section>
+
+        <section id="installation">
+            <h2>Installation</h2>
+
+            <h3>Method 1: WordPress Admin (Recommended)</h3>
+            <ol>
+                <li>Go to <strong>Appearance → Themes → Add New</strong></li>
+                <li>Click <strong>Upload Theme</strong></li>
+                <li>Choose the <code>zzprompts.zip</code> file</li>
+                <li>Click <strong>Install Now</strong></li>
+                <li>After installation, click <strong>Activate</strong></li>
+            </ol>
+
+            <h3>Method 2: FTP Upload</h3>
+            <ol>
+                <li>Unzip <code>zzprompts.zip</code> on your computer</li>
+                <li>Upload the entire <code>zzprompts</code> folder to <code>/wp-content/themes/</code></li>
+                <li>Go to <strong>Appearance → Themes</strong> and activate</li>
+            </ol>
+
+            <h3>Required Plugin</h3>
+            <div class="notice">
+                After activating the theme, you will see a notice:
+                <strong>"This theme requires the following plugin: ZZ Prompts Core"</strong>
+            </div>
+            <p>You MUST click <strong>"Begin installing plugins"</strong> to install this. It handles all the core
+                features like Prompt Custom Post Type, Likes, and Views.</p>
+        </section>
+
+        <section id="demo">
+            <h2>Demo Import</h2>
+            <p>We've made it easy to get started with One Click Demo Import.</p>
+
+            <h3>How to Import</h3>
+            <ol>
+                <li>Ensure the <strong>One Click Demo Import</strong> plugin is installed (via TGM recommended plugins).
+                </li>
+                <li>Go to <strong>Appearance → Import Demo Data</strong>.</li>
+                <li>Click the <strong>Import</strong> button.</li>
+                <li>Wait for the process to finish (it may take 2-5 minutes).</li>
+            </ol>
+
+            <p><em>Alternatively, you can manually import the XML file located in
+                    <code>demo-content/demo-content.xml</code> using the WordPress Importer.</em></p>
+        </section>
+
+        <section id="setup">
+            <h2>Theme Setup</h2>
+
+            <h3>1. Set Up Menus</h3>
+            <p>Go to <strong>Appearance → Menus</strong>. Create a menu and assign it to the <strong>Primary
+                    Menu</strong> location.</p>
+
+            <h3>2. Configure Homepage</h3>
+            <p>Go to <strong>Settings → Reading</strong>. Select "A static page" and choose your desired Homepage
+                (imported from demo) as the "Homepage".</p>
+
+            <h3>3. Setup Permalinks</h3>
+            <p>Go to <strong>Settings → Permalinks</strong> and select <strong>Post name</strong>. Click Save Changes.
+            </p>
+        </section>
+
+        <section id="customizer">
+            <h2>Customizer Options</h2>
+            <p>All theme settings are located in <strong>Appearance → Customize → ZZ Prompts Settings</strong>.</p>
+
+            <table border="0">
+                <tr>
+                    <th width="30%">Section</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><strong>Homepage</strong></td>
+                    <td>Toggle sections (Hero, Prompts, Blog, CTA), edit titles and subtitles.</td>
+                </tr>
+                <tr>
+                    <td><strong>Layout & Spacing</strong></td>
+                    <td>Adjust header gaps, hero padding, and overall layout density.</td>
+                </tr>
+                <tr>
+                    <td><strong>Prompts</strong></td>
+                    <td>Customize "Copy" button text, success messages, and meta visibility.</td>
+                </tr>
+                <tr>
+                    <td><strong>Colors</strong></td>
+                    <td>Set your Primary and Accent brand colors. Dark mode is automatic.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="prompts">
+            <h2>Creating Prompts</h2>
+
+            <h3>Add a New Prompt</h3>
+            <ol>
+                <li>Go to <strong>Prompts → Add New</strong></li>
+                <li>Enter the <strong>Title</strong> (e.g., "SEO Blog Post Generator")</li>
+                <li>Add a description in the main editor.</li>
+                <li><strong>Crucial Step:</strong> Scroll down to the <strong>"Prompt Data"</strong> box and paste the
+                    actual AI prompt code there.</li>
+                <li>Select a <strong>Category</strong> (e.g., Marketing) and <strong>AI Tool</strong> (e.g., ChatGPT).
+                </li>
+                <li>Click <strong>Publish</strong>.</li>
+            </ol>
+        </section>
+
+        <section id="widgets">
+            <h2>Widgets</h2>
+            <p>The theme comes with 8 custom widgets found in <strong>Appearance → Widgets</strong>.</p>
+
+            <ul>
+                <li><strong>ZZ: Brand & Social</strong> (Footer) - Logo and social links.</li>
+                <li><strong>ZZ: Popular Prompts</strong> (Sidebar) - Top prompts by likes/views.</li>
+                <li><strong>ZZ: Newsletter</strong> (Footer) - Email signup form.</li>
+                <li><strong>ZZ: Category Tags</strong> (Sidebar/Footer) - Tag cloud for tools/categories.</li>
+                <li><strong>ZZ: Author Bio</strong> (Sidebar) - Profile card with avatar.</li>
+                <li><strong>ZZ: Ad Banner</strong> (Sidebar) - Custom ad code placement.</li>
+            </ul>
+        </section>
+
+        <section id="templates">
+            <h2>Page Templates</h2>
+            <p>When creating a new page, verify the <strong>Template</strong> setting in the Page Attributes box.</p>
+
+            <ul>
+                <li><strong>Default Template:</strong> Standard page with container.</li>
+                <li><strong>About Us:</strong> Custom layout for company info.</li>
+                <li><strong>Contact Us:</strong> Includes FAQ and contact form area.</li>
+                <li><strong>Login / Forgot Password:</strong> Custom styled auth pages.</li>
+            </ul>
+        </section>
+
+        <section id="ads">
+            <h2>Ad Management</h2>
+            <p>Monetize your site easily via <strong>Customize → Ad Management</strong>.</p>
+            <p>You can paste Google AdSense or any custom HTML/JS code into these slots:</p>
+            <ul>
+                <li>Header (Global)</li>
+                <li>Below Prompt Code (Single Prompt)</li>
+                <li>Archive Grid (In-feed native ads)</li>
+                <li>Blog Post (Top/Bottom)</li>
+            </ul>
+        </section>
+
+        <section id="translation">
+            <h2>Translation (I18n) & RTL</h2>
+            <p>The theme is fully translation-ready and supports RTL languages (Arabic, Hebrew, etc.) out of the box.
+            </p>
+
+            <h3>How to Translate</h3>
+            <ol>
+                <li>Locate the <code>prompts.pot</code> file in the <code>/languages/</code> folder.</li>
+                <li>Use a tool like <strong>Poedit</strong> or the <strong>Loco Translate</strong> plugin.</li>
+                <li>Create a new translation for your language (e.g., <code>fr_FR</code>).</li>
+                <li>Translate the strings and save.</li>
+            </ol>
+        </section>
+
+        <section id="support">
+            <h2>Support</h2>
+            <p>We are here to help! If you encounter any issues not covered here, please reach out.</p>
+
+            <ul>
+                <li><strong>Email:</strong> support@zztechlabs.com</li>
+                <li><strong>Response Time:</strong> 24-48 Business Hours</li>
+            </ul>
+
+            <p><em>Please note: Support covers theme installation and bugs. It does not cover customization services or
+                    3rd party plugin conflicts.</em></p>
+
+            <br>
+            <p>© 2026 ZZ Tech Labs. All Rights Reserved.</p>
+        </section>
+
+    </main>
+
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Update active state
+                document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

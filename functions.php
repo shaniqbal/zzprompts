@@ -341,11 +341,6 @@ function zzprompts_enqueue_assets() {
         wp_enqueue_style('zz-contact', $uri . '/assets/css/pages/contact.css', array('zz-skin'), $ver);
     }
     
-    // Auth Pages (Login, Forgot Password)
-    if (is_page_template('page-templates/login.php') || is_page_template('page-templates/forgot-password.php')) {
-        wp_enqueue_style('zz-auth', $uri . '/assets/css/pages/auth.css', array('zz-skin'), $ver);
-    }
-    
     // Default Pages (Terms, Privacy, Pricing, etc.)
     // Load for any page that doesn't use a specific template
     if (is_page() && !is_front_page() && !is_page_template()) {
@@ -481,13 +476,14 @@ function zzprompts_admin_enqueue_assets($hook) {
 add_action('admin_enqueue_scripts', 'zzprompts_admin_enqueue_assets');
 
 // Load Theme Files
-// NOTE: CPT (cpt-prompts.php) and Features (features.php) moved to zzprompts-core plugin
+// NOTE: CPT (cpt-prompts.php) and Features (features.php) are in zzprompts-core plugin
 // This follows ThemeForest "Plugin Territory" guidelines - functionality must be in a plugin
 require_once get_template_directory() . '/inc/meta-boxes.php';
 require_once get_template_directory() . '/inc/widgets.php';
 require_once get_template_directory() . '/inc/helpers.php';
 require_once get_template_directory() . '/inc/seo-schema.php';
 require_once get_template_directory() . '/inc/ad-settings.php';
+require_once get_template_directory() . '/inc/demo-import.php';
 
 /**
  * TGM Plugin Activation

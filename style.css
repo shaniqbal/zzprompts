@@ -1,17 +1,29 @@
 /*
-Theme Name: zzprompts
-Theme URI: https://zzprompts.com
-Author: Shan Iqbal
-Author URI: https://shaniqbal.com
-Description: A high-performance AI Prompt Library theme, Translation-ready, secure, and optimized for copy/paste AI prompts with integrated blog section.
-Version: 1.2.0
+Theme Name: ZZ Prompts
+Theme URI: https://zzprompts.zztechlabs.com
+Author: ZZ Tech Labs
+Author URI: https://zztechlabs.com
+Description: A premium AI Prompt Library theme for WordPress. Features modern glassmorphism design, one-click copy, like system, dark mode, RTL support, and monetization-ready ad placements. Perfect for ChatGPT, Midjourney, Claude, and DALL-E prompt collections.
+Version: 1.0.0
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.7
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zzprompts
-Tags: one-column, custom-colors, translation-ready, blog, custom-post-type, threaded-comments, custom-menu, featured-images, theme-options
+Tags: one-column, two-columns, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, rtl-language-support, theme-options, threaded-comments, translation-ready, blog, editor-style, full-width-template
 */
 
-/* Theme intentionally minimal - all custom styles in assets/css/main.css */
+/* 
+ * ZZ Prompts - AI Prompt Library WordPress Theme
+ * 
+ * All styles are organized in /assets/css/ directory:
+ * - shared-core.css  : Foundation & Reset
+ * - skin.css         : Main visual skin
+ * - pages/*.css      : Page-specific styles
+ * - components/*.css : Reusable components
+ * - themes/_dark.css : Dark mode support
+ * - i18n/_rtl.css    : RTL language support
+ * 
+ * © 2026 ZZ Tech Labs. All rights reserved.
+ */

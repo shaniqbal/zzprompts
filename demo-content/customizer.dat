@@ -1,0 +1,25 @@
+{
+    "mods": {
+        "hero_title": "Instant AI Prompts for ChatGPT, Midjourney & More",
+        "hero_subtitle": "Copy & paste production-ready prompts to speed up your workflow.",
+        "hero_search_placeholder": "Search prompts...",
+        "show_hero_section": true,
+        "blog_posts_per_page": 9,
+        "blog_show_image": true,
+        "blog_show_excerpt": true,
+        "blog_layout": "grid",
+        "blog_columns": 3,
+        "single_show_author": true,
+        "single_show_date": true,
+        "single_show_reading_time": true,
+        "single_show_share": true,
+        "single_show_comments": true,
+        "footer_copyright": "© {year} ZZ Prompts. All rights reserved.",
+        "primary_color": "#6366F1",
+        "secondary_color": "#8B5CF6"
+    },
+    "options": {
+        "blogname": "ZZ Prompts",
+        "blogdescription": "Your Ultimate AI Prompts Library"
+    }
+}

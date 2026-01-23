@@ -1,0 +1,45 @@
+{
+    "sidebar-1": {
+        "search-2": {
+            "title": "Search"
+        }
+    },
+    "sidebar-prompt": {
+        "zz_popular_prompts-2": {
+            "title": "Popular Prompts",
+            "number": 5,
+            "orderby": "likes"
+        },
+        "zz_category_tags-2": {
+            "title": "Categories",
+            "taxonomy": "prompt_category",
+            "limit": 10
+        }
+    },
+    "footer-1": {
+        "zz_brand-2": {
+            "description": "Your ultimate AI prompts collection for ChatGPT, Midjourney, Claude, and more.",
+            "show_social": true
+        }
+    },
+    "footer-2": {
+        "nav_menu-2": {
+            "title": "Quick Links",
+            "nav_menu": 0
+        }
+    },
+    "footer-3": {
+        "categories-2": {
+            "title": "Categories",
+            "count": 1,
+            "hierarchical": 0,
+            "dropdown": 0
+        }
+    },
+    "footer-4": {
+        "zz_newsletter-2": {
+            "title": "Newsletter",
+            "description": "Get the latest AI prompts and tips delivered to your inbox."
+        }
+    }
+}

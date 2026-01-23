@@ -61,13 +61,11 @@ while (have_posts()) : the_post();
             </article>
 
             <?php
-            if (comments_open() || get_comments_number()) :
-            ?>
-                <div class="zz-page-comments">
-                    <?php comments_template(); ?>
-                </div>
-            <?php
-            endif;
+            /**
+             * Comments are disabled on static pages (Privacy, Terms, Contact, etc.)
+             * Comments only appear on single blog posts (single.php)
+             * This follows ThemeForest best practices for page templates.
+             */
             ?>
         </div>
     </section>
